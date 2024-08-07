@@ -51,7 +51,7 @@ function Register() {
             flexGrow: role === 'employer' ? 1 : 0,
           }}
         >
-          I am an Employer
+          I am an Employer.
         </Button>
       </Grid>
       <Grid item xs={12} sm={role ? 12 : 6}>
