@@ -9,7 +9,6 @@ import com.nan.boilerplate.springboot.security.dto.RegistrationRequest;
 import com.nan.boilerplate.springboot.security.dto.RegistrationResponse;
 import com.nan.boilerplate.springboot.security.mapper.UserMapper;
 import com.nan.boilerplate.springboot.security.utils.SecurityConstants;
-import com.nan.boilerplate.springboot.service.CompanyValidationService;
 import com.nan.boilerplate.springboot.service.UserValidationService;
 import com.nan.boilerplate.springboot.utils.GeneralMessageAccessor;
 import lombok.RequiredArgsConstructor;
