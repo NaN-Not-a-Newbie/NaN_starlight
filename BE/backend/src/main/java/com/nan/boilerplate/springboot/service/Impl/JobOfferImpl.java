@@ -1,4 +1,4 @@
-package com.nan.boilerplate.springboot.service.serviceImpl;
+package com.nan.boilerplate.springboot.service.Impl;
 
 import com.nan.boilerplate.springboot.model.JobOffer;
 import com.nan.boilerplate.springboot.model.User;
@@ -80,25 +80,19 @@ public class JobOfferImpl implements JobOfferService {
     }
 
     @Override
-    public JobOfferResponse updateJobOffer(JobOfferRequest jobOfferRequest) {
-        JobOffer jobOffer= JobOffer.builder()
-                .title(jobOfferRequest.getTitle())
-                .location(jobOfferRequest.getLocation())
-                .education(jobOfferRequest.getEducation())
-                .salaryType(jobOfferRequest.getSalaryType())
-                .salary(jobOfferRequest.getSalary())
-                .career(jobOfferRequest.getCareer())
-                .body(jobOfferRequest.getBody())
-                .build();
-        jobOfferRepository.save(jobOffer);
-        return JobOfferResponse.builder()
-                .title(jobOfferRequest.getTitle())
-                .location(jobOfferRequest.getLocation())
-                .education(jobOfferRequest.getEducation())
-                .salaryType(jobOfferRequest.getSalaryType())
-                .salary(jobOfferRequest.getSalary())
-                .career(jobOfferRequest.getCareer())
-                .body(jobOfferRequest.getBody()).build();
+    public void updateJobOffer(Long id, JobOfferRequest jobOfferRequest) {
+        if(jobOfferRepository.existsById(id)){
+            JobOffer jobOffer= JobOffer.builder()
+                    .title(jobOfferRequest.getTitle())
+                    .location(jobOfferRequest.getLocation())
+                    .education(jobOfferRequest.getEducation())
+                    .salaryType(jobOfferRequest.getSalaryType())
+                    .salary(jobOfferRequest.getSalary())
+                    .career(jobOfferRequest.getCareer())
+                    .body(jobOfferRequest.getBody())
+                    .build();
+            jobOfferRepository.save(jobOffer);
+        }
     }
 
     @Override

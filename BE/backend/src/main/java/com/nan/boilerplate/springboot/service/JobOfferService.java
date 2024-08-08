@@ -14,7 +14,7 @@ public interface JobOfferService {
 
     JobOfferResponse addJobOffer(JobOfferRequest jobOfferRequest);
 
-    JobOfferResponse updateJobOffer(JobOfferRequest jobOfferRequest);
+    void updateJobOffer(Long id, JobOfferRequest jobOfferRequest);
 
     void deleteJobOffer(long id);
 }

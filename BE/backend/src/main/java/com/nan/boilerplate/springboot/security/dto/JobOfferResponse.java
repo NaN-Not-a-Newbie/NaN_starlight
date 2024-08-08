@@ -24,4 +24,6 @@ public class JobOfferResponse {
     private Education education;
 
     private SalaryType salaryType;
+
+    private String message;
 }

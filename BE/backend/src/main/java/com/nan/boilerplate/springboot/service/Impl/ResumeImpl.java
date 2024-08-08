@@ -1,4 +1,4 @@
-package com.nan.boilerplate.springboot.service.serviceImpl;
+package com.nan.boilerplate.springboot.service.Impl;
 
 import com.nan.boilerplate.springboot.model.JobOffer;
 import com.nan.boilerplate.springboot.model.Resume;
