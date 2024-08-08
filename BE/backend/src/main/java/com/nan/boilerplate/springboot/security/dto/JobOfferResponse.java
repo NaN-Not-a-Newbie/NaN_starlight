@@ -5,9 +5,11 @@ import com.nan.boilerplate.springboot.model.Education;
 import com.nan.boilerplate.springboot.model.SalaryType;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 @Builder
+@Setter
 public class JobOfferResponse {
     private String title;
 

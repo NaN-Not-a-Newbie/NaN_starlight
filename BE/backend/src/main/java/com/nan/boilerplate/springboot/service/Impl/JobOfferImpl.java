@@ -1,12 +1,10 @@
 package com.nan.boilerplate.springboot.service.Impl;
 
 import com.nan.boilerplate.springboot.model.JobOffer;
-import com.nan.boilerplate.springboot.model.User;
 import com.nan.boilerplate.springboot.repository.JobOfferRepository;
 import com.nan.boilerplate.springboot.security.dto.JobOfferRequest;
 import com.nan.boilerplate.springboot.security.dto.JobOfferResponse;
 import com.nan.boilerplate.springboot.security.service.UserService;
-import com.nan.boilerplate.springboot.security.utils.SecurityConstants;
 import com.nan.boilerplate.springboot.service.JobOfferService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -66,21 +64,14 @@ public class JobOfferImpl implements JobOfferService {
                 .education(jobOfferRequest.getEducation())
                 .build();
         jobOfferRepository.save(jobOffer);
-        JobOfferResponse offerResponse= JobOfferResponse.builder()
-                .title(jobOfferRequest.getTitle())
-                .body(jobOfferRequest.getBody())
-                .career(jobOfferRequest.getCareer())
-                .location(jobOfferRequest.getLocation())
-                .company(jobOfferRequest.getCompany())
-                .salary(jobOfferRequest.getSalary())
-                .salaryType(jobOfferRequest.getSalaryType())
-                .education(jobOfferRequest.getEducation())
+        JobOfferResponse jobOfferResponse=JobOfferResponse.builder()
+                .message("Add Success")
                 .build();
-        return offerResponse;
+        return jobOfferResponse;
     }
 
     @Override
-    public void updateJobOffer(Long id, JobOfferRequest jobOfferRequest) {
+    public JobOfferResponse updateJobOffer(JobOfferRequest jobOfferRequest,Long id) {
         if(jobOfferRepository.existsById(id)){
             JobOffer jobOffer= JobOffer.builder()
                     .title(jobOfferRequest.getTitle())
@@ -92,6 +83,16 @@ public class JobOfferImpl implements JobOfferService {
                     .body(jobOfferRequest.getBody())
                     .build();
             jobOfferRepository.save(jobOffer);
+            JobOfferResponse jobOfferResponse=JobOfferResponse.builder()
+                    .message("Update Success")
+                    .build();
+            return jobOfferResponse;
+        }
+        else{
+            JobOfferResponse jobOfferResponse=JobOfferResponse.builder()
+                    .message("Update Fail")
+                    .build();
+            return jobOfferResponse;
         }
     }
 
