@@ -1,8 +1,15 @@
 package com.nan.boilerplate.springboot.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 
+@Getter
+@Setter
 @Entity
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserApply {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

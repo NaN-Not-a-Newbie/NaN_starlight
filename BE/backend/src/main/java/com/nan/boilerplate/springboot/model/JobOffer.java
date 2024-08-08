@@ -1,9 +1,16 @@
 package com.nan.boilerplate.springboot.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@Getter
+@Setter
 @Entity
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class JobOffer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,6 +31,8 @@ public class JobOffer {
     private Company company;
 
     private Education education;
+
+    private SalaryType salaryType;
 
     private LocalDateTime created_at=LocalDateTime.now();
 

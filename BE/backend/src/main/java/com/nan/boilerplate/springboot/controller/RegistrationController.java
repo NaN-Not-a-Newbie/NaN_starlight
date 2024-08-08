@@ -1,6 +1,7 @@
 package com.nan.boilerplate.springboot.controller;
 
-import com.nan.boilerplate.springboot.security.dto.RegistrationRequest;
+import com.nan.boilerplate.springboot.security.dto.CompanyRegistrationRequest;
+import com.nan.boilerplate.springboot.security.dto.UserRegistrationRequest;
 import com.nan.boilerplate.springboot.security.dto.RegistrationResponse;
 import com.nan.boilerplate.springboot.security.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -20,11 +21,16 @@ public class RegistrationController {
     private final UserService userService;
 
     @PostMapping("users")
-    public ResponseEntity<RegistrationResponse> registrationRequest(@Valid @RequestBody RegistrationRequest registrationRequest) {
+    public ResponseEntity<RegistrationResponse> registrationRequest(@Valid @RequestBody UserRegistrationRequest userRegistrationRequest) {
 
-        final RegistrationResponse registrationResponse = userService.registration(registrationRequest);
+        final RegistrationResponse registrationResponse = userService.registration(userRegistrationRequest);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(registrationResponse);
+    }
+    @PostMapping("company")
+    public ResponseEntity<RegistrationResponse> registrationRequest(@Valid @RequestBody CompanyRegistrationRequest companyRegistrationRequest) {
+        final RegistrationResponse registrationResponse= null;
+        return null;
     }
 
 }

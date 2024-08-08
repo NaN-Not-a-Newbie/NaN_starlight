@@ -39,23 +39,6 @@ public class AdminController {
         }
     }
 
-    // 탈퇴시키기
-    @PatchMapping("/manageActive/withdrawUser")
-    public ResponseEntity<RegistrationResponse> withdrawUser(@RequestParam String username) {
-        try {
-
-            RegistrationResponse response = userService.withdrawUser(username);
-            if (response.getMessage().isEmpty()) {
-                return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
-            } else {
-                return ResponseEntity.ok(response);
-            }
-
-        } catch (UserNotFoundException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
-    }
-
     // 권한 관리
     @PatchMapping("/manageAuthority/demoteUser")
     public ResponseEntity<AuthenticatedUserDto> demoteUser(@RequestParam String username) {

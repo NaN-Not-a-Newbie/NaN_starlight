@@ -1,7 +1,8 @@
 package com.nan.boilerplate.springboot.service;
 
 import com.nan.boilerplate.springboot.exceptions.RegistrationException;
-import com.nan.boilerplate.springboot.security.dto.RegistrationRequest;
+import com.nan.boilerplate.springboot.security.dto.CompanyRegistrationRequest;
+import com.nan.boilerplate.springboot.security.dto.UserRegistrationRequest;
 import com.nan.boilerplate.springboot.repository.UserRepository;
 import com.nan.boilerplate.springboot.utils.ExceptionMessageAccessor;
 import lombok.RequiredArgsConstructor;
@@ -22,12 +23,17 @@ public class UserValidationService {
 
     private final ExceptionMessageAccessor exceptionMessageAccessor;
 
-    public void validateUser(RegistrationRequest registrationRequest) {
+    public void validateUser(UserRegistrationRequest userRegistrationRequest) {
 
-        final String email = registrationRequest.getEmail();
-        final String username = registrationRequest.getUsername();
+        final String username = userRegistrationRequest.getUsername();
 
-        checkEmail(email);
+        checkUsername(username);
+    }
+
+    public void validateCompany(CompanyRegistrationRequest companyRegistrationRequest) {
+
+        final String username = companyRegistrationRequest.getUsername();
+
         checkUsername(username);
     }
 
@@ -43,19 +49,6 @@ public class UserValidationService {
             throw new RegistrationException(existsUsername);
         }
 
-    }
-
-    private void checkEmail(String email) {
-
-        final boolean existsByEmail = userRepository.existsByEmail(email);
-
-        if (existsByEmail) {
-
-            log.warn("{} is already being used!", email);
-
-            final String existsEmail = exceptionMessageAccessor.getMessage(null, EMAIL_ALREADY_EXISTS);
-            throw new RegistrationException(existsEmail);
-        }
     }
 
 }
