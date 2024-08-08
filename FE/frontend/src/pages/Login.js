@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { TextField, Button, Container, Typography, Box } from '@mui/material';
+
 import axios from 'axios';
 
 function Login() {
@@ -28,8 +29,9 @@ function Login() {
         }}
       >
         <Typography component="h1" variant="h5">
-          Login
+          <b>로그인</b>
         </Typography>
+
         <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
           <TextField
             variant="outlined"

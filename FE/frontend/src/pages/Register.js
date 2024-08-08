@@ -6,7 +6,7 @@ import {
 import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import axios from 'axios';
 
-const steps = ['Account Info', 'Personal Info', 'ID Verification'];
+const steps = ['계정 정보', '개인 정보', '신분증 확인'];
 
 function Register() {
   const [role, setRole] = useState('');
@@ -51,7 +51,7 @@ function Register() {
             flexGrow: role === 'employer' ? 1 : 0,
           }}
         >
-          I am an Employer.
+          일을 찾고 있어요.
         </Button>
       </Grid>
       <Grid item xs={12} sm={role ? 12 : 6}>
@@ -66,7 +66,7 @@ function Register() {
             flexGrow: role === 'jobseeker' ? 1 : 0,
           }}
         >
-          I am a Job Seeker
+          일할 사람을 찾고 있어요.
         </Button>
       </Grid>
     </Grid>
@@ -83,7 +83,7 @@ function Register() {
               required
               fullWidth
               id="email"
-              label="Email Address"
+              label="이메일 주소"
               name="email"
               autoComplete="email"
               autoFocus
@@ -96,7 +96,7 @@ function Register() {
               required
               fullWidth
               name="password"
-              label="Password"
+              label="비밀번호"
               type="password"
               id="password"
               autoComplete="current-password"
@@ -109,7 +109,7 @@ function Register() {
               required
               fullWidth
               name="resume"
-              label="Resume"
+              label="이력서"
               type="text"
               id="resume"
               autoComplete="resume"
@@ -123,7 +123,7 @@ function Register() {
               sx={{ mt: 3, mb: 2 }}
               onClick={handleNext}
             >
-              Next
+              다음
             </Button>
           </Box>
         );
@@ -136,7 +136,7 @@ function Register() {
               required
               fullWidth
               name="name"
-              label="Name"
+              label="이름"
               type="text"
               id="name"
               value={name}
@@ -148,7 +148,7 @@ function Register() {
               required
               fullWidth
               name="location"
-              label="Location"
+              label="주소"
               type="text"
               id="location"
               value={location}
@@ -160,30 +160,30 @@ function Register() {
               required
               fullWidth
               name="gender"
-              label="Gender"
+              label="성별"
               type="text"
               id="gender"
               value={gender}
               onChange={(e) => setGender(e.target.value)}
             />
+            생년월일
             <TextField
               variant="outlined"
               margin="normal"
               required
               fullWidth
               name="age"
-              label="Age"
-              type="number"
+              type="date"
               id="age"
               value={age}
               onChange={(e) => setAge(e.target.value)}
             />
             <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }}>
               <Button variant="contained" onClick={handleBack}>
-                Back
+                이전
               </Button>
               <Button variant="contained" color="primary" onClick={handleNext}>
-                Next
+                다음
               </Button>
             </Box>
           </Box>
@@ -197,7 +197,7 @@ function Register() {
               fullWidth
               sx={{ mt: 1, mb: 1 }}
             >
-              Upload ID Card
+              신분증 업로드
               <input
                 type="file"
                 hidden
@@ -206,7 +206,7 @@ function Register() {
             </Button>
             <IconButton
               color="primary"
-              aria-label="upload picture"
+              aria-label="사진 업로드"
               component="label"
             >
               <input hidden accept="image/*" type="file" onChange={(e) => setIdCard(e.target.files[0])} />
@@ -214,10 +214,10 @@ function Register() {
             </IconButton>
             <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }}>
               <Button variant="contained" onClick={handleBack}>
-                Back
+                이전
               </Button>
               <Button variant="contained" color="primary" onClick={handleSubmit}>
-                Register
+                등록
               </Button>
             </Box>
           </Box>
@@ -238,12 +238,12 @@ function Register() {
         }}
       >
         <Typography component="h1" variant="h5">
-          Register
+          <b>회원가입</b>
         </Typography>
         {role ? (
           <>
             <Button onClick={handleRoleBack} sx={{ mb: 2 }}>
-              Choose Role Again
+              역할 다시 선택
             </Button>
             {role === 'employer' ? (
               <Paper elevation={0} sx={{ p: 2, width: '100%' }}>
@@ -264,7 +264,7 @@ function Register() {
                   required
                   fullWidth
                   id="email"
-                  label="Email Address"
+                  label="이메일 주소"
                   name="email"
                   autoComplete="email"
                   autoFocus
@@ -277,7 +277,7 @@ function Register() {
                   required
                   fullWidth
                   name="password"
-                  label="Password"
+                  label="비밀번호"
                   type="password"
                   id="password"
                   autoComplete="current-password"
@@ -290,7 +290,7 @@ function Register() {
                   required
                   fullWidth
                   name="resume"
-                  label="Resume"
+                  label="이력서"
                   type="text"
                   id="resume"
                   autoComplete="resume"
@@ -304,7 +304,7 @@ function Register() {
                   color="primary"
                   sx={{ mt: 3, mb: 2 }}
                 >
-                  Register as Job Seeker
+                  구직자로 등록
                 </Button>
               </Box>
             )}

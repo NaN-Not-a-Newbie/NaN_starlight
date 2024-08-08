@@ -16,7 +16,7 @@ function Footer() {
       }}
     >
       <Typography variant="body2">
-        © 2024 Your Company. All rights reserved.
+        © 2024 디버거야 밥묵자 All rights reserved.
       </Typography>
     </Box>
   );

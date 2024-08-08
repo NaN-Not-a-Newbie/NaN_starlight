@@ -8,11 +8,12 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import AppBar from './components/AppBar';
 import Footer from './components/Footer';
-import theme from './theme';
+import { theme, globalStyles } from './theme';
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
+      {globalStyles}
       <Router>
         <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
           <AppBar />
