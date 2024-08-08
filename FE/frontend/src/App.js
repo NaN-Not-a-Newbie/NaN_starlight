@@ -1,20 +1,32 @@
+// App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ThemeProvider } from '@mui/material/styles';
+import { Box } from '@mui/material';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import AppBar from './components/AppBar';
+import Footer from './components/Footer';
+import theme from './theme';
 
 function App() {
   return (
-    <Router>
-      <AppBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-      </Routes>
-    </Router>
+    <ThemeProvider theme={theme}>
+      <Router>
+        <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+          <AppBar />
+          <Box sx={{ flex: 1 }}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+            </Routes>
+          </Box>
+          <Footer />
+        </Box>
+      </Router>
+    </ThemeProvider>
   );
 }
 
