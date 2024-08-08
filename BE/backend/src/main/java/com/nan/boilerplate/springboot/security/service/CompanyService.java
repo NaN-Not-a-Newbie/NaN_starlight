@@ -1,11 +1,7 @@
 package com.nan.boilerplate.springboot.security.service;
 
 import com.nan.boilerplate.springboot.model.Company;
-import com.nan.boilerplate.springboot.model.User;
-import com.nan.boilerplate.springboot.security.dto.AuthenticatedUserDto;
-import com.nan.boilerplate.springboot.security.dto.CompanyRegistrationRequest;
-import com.nan.boilerplate.springboot.security.dto.RegistrationResponse;
-import com.nan.boilerplate.springboot.security.dto.UserRegistrationRequest;
+import com.nan.boilerplate.springboot.security.dto.*;
 
 public interface CompanyService {
     Company findByUsername(String username);
@@ -14,7 +10,7 @@ public interface CompanyService {
 
     Company deActivateCompany(String username);
 
-    RegistrationResponse registrationCompany(CompanyRegistrationRequest registrationRequest);
+    RegistrationResponse registration(CompanyRegistrationRequest companyRegistrationRequest);
 
-    AuthenticatedUserDto findAuthenticatedUserByUsername(String username);
+    AuthenticatedCompanyDto findAuthenticatedCompanyByCompanyName(String username);
 }

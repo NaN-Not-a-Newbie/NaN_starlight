@@ -4,13 +4,10 @@ import com.nan.boilerplate.springboot.model.Company;
 import com.nan.boilerplate.springboot.model.User;
 import com.nan.boilerplate.springboot.model.UserRole;
 import com.nan.boilerplate.springboot.repository.CompanyRepository;
-import com.nan.boilerplate.springboot.repository.UserRepository;
-import com.nan.boilerplate.springboot.security.dto.AuthenticatedUserDto;
+import com.nan.boilerplate.springboot.security.dto.AuthenticatedCompanyDto;
 import com.nan.boilerplate.springboot.security.dto.CompanyRegistrationRequest;
 import com.nan.boilerplate.springboot.security.dto.RegistrationResponse;
-import com.nan.boilerplate.springboot.security.dto.UserRegistrationRequest;
 import com.nan.boilerplate.springboot.security.mapper.UserMapper;
-import com.nan.boilerplate.springboot.security.utils.SecurityConstants;
 import com.nan.boilerplate.springboot.service.UserValidationService;
 import com.nan.boilerplate.springboot.utils.GeneralMessageAccessor;
 import lombok.RequiredArgsConstructor;
@@ -21,8 +18,12 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class CompanyServiceImpl implements CompanyService{
+public class CompanyServiceImpl implements CompanyService {
     private static final String REGISTRATION_SUCCESSFUL = "registration_successful";
+
+    private static final String WITHDRAW_SUCCESSFUL = "withdraw_successful";
+
+    private static final String WRONG_PASSWORD = "wrong_password";
 
     private final CompanyRepository companyRepository;
 
@@ -34,36 +35,7 @@ public class CompanyServiceImpl implements CompanyService{
 
     @Override
     public Company findByUsername(String username) {
-
         return companyRepository.findByUsername(username);
-    }
-
-    @Override
-    public RegistrationResponse registrationCompany(CompanyRegistrationRequest registrationRequest) {
-
-        userValidationService.validateCompany(registrationRequest); // 이미 존재하는 유저인지 확인
-
-        final Company company = UserMapper.INSTANCE.convertToCompany(registrationRequest); // 엔티티 디티오 변환
-        company.setPassword(bCryptPasswordEncoder.encode(company.getPassword()));
-        company.setRole(UserRole.COMPANY);
-//        company.setActive(false); // 가입시 isActive를 false로 설정 -> 증명자료 확인 후 true
-
-        companyRepository.save(company);
-
-        final String username = registrationRequest.getUsername();
-        final String registrationSuccessMessage = generalMessageAccessor.getMessage(null, REGISTRATION_SUCCESSFUL, username);
-
-        log.info("{} registered successfully!", username);
-
-        return new RegistrationResponse(registrationSuccessMessage);
-    }
-
-    @Override
-    public AuthenticatedUserDto findAuthenticatedUserByUsername(String username) {
-
-        final Company company = findByUsername(username);
-
-        return UserMapper.INSTANCE.convertToAuthenticatedUserDto(company);
     }
 
     @Override
@@ -82,4 +54,30 @@ public class CompanyServiceImpl implements CompanyService{
         return company;
     }
 
+    @Override
+    public RegistrationResponse registration(CompanyRegistrationRequest companyRegistrationRequest) {
+        userValidationService.validateCompany(companyRegistrationRequest); // 이미 존재하는 유저인지 확인
+
+        final Company company = UserMapper.INSTANCE.convertToCompany(companyRegistrationRequest); // 엔티티 디티오 변환
+        company.setPassword(bCryptPasswordEncoder.encode(company.getPassword()));
+        company.setRole(UserRole.COMPANY);
+        company.setActive(false); // 가입시 isActive를 false로 설정
+
+        companyRepository.save(company);
+
+        final String username = companyRegistrationRequest.getUsername();
+        final String registrationSuccessMessage = generalMessageAccessor.getMessage(null, REGISTRATION_SUCCESSFUL, username);
+
+        log.info("{} registered successfully!", username);
+
+        return new RegistrationResponse(registrationSuccessMessage);//User
+    }
+
+    @Override
+    public AuthenticatedCompanyDto findAuthenticatedCompanyByCompanyName(String username) {
+
+        final Company company = findByUsername(username);
+
+        return UserMapper.INSTANCE.convertToAuthenticatedCompanyDto(company);
+    }
 }

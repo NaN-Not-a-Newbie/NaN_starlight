@@ -1,7 +1,9 @@
 package com.nan.boilerplate.springboot.security.service;
 
 import com.nan.boilerplate.springboot.model.User;
-import com.nan.boilerplate.springboot.security.dto.*;
+import com.nan.boilerplate.springboot.security.dto.AuthenticatedUserDto;
+import com.nan.boilerplate.springboot.security.dto.UserRegistrationRequest;
+import com.nan.boilerplate.springboot.security.dto.RegistrationResponse;
 
 
 public interface UserService {
@@ -12,9 +14,7 @@ public interface UserService {
 
     User deActivateUser(String username);
 
-    RegistrationResponse registrationUser(UserRegistrationRequest registrationRequest);
-
-    RegistrationResponse registrationCompany(CompanyRegistrationRequest registrationRequest);
+    RegistrationResponse registration(UserRegistrationRequest userRegistrationRequest);
 
     AuthenticatedUserDto findAuthenticatedUserByUsername(String username);
 

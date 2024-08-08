@@ -5,7 +5,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
 @Getter
@@ -14,7 +13,7 @@ import javax.validation.constraints.NotEmpty;
 @NoArgsConstructor
 public class CompanyRegistrationRequest {
     @NotEmpty(message = "...")
-    private Long companyRegistrationNumber;
+    private Long companyRegistrationNumber;//사업자 등록 번호
 
     @NotEmpty(message = "{registration_name_not_empty}")
     private String companyName;
@@ -32,4 +31,7 @@ public class CompanyRegistrationRequest {
 
     @NotEmpty(message = "{registration_password_not_empty}")
     private String password;
+
+    @NotEmpty(message = "{registration_password_not_empty}")
+    private String password2;//검증용
 }

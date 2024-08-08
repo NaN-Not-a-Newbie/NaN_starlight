@@ -1,11 +1,12 @@
 package com.nan.boilerplate.springboot.security.service;
 
-import com.nan.boilerplate.springboot.model.Company;
 import com.nan.boilerplate.springboot.model.User;
 import com.nan.boilerplate.springboot.model.UserRole;
 import com.nan.boilerplate.springboot.repository.CompanyRepository;
 import com.nan.boilerplate.springboot.repository.UserRepository;
-import com.nan.boilerplate.springboot.security.dto.*;
+import com.nan.boilerplate.springboot.security.dto.AuthenticatedUserDto;
+import com.nan.boilerplate.springboot.security.dto.UserRegistrationRequest;
+import com.nan.boilerplate.springboot.security.dto.RegistrationResponse;
 import com.nan.boilerplate.springboot.security.mapper.UserMapper;
 import com.nan.boilerplate.springboot.security.utils.SecurityConstants;
 import com.nan.boilerplate.springboot.service.UserValidationService;
@@ -23,9 +24,11 @@ public class UserServiceImpl implements UserService {
 
     private static final String REGISTRATION_SUCCESSFUL = "registration_successful";
 
-    private final UserRepository userRepository;
+    private static final String WITHDRAW_SUCCESSFUL = "withdraw_successful";
 
-    private final CompanyRepository companyRepository;
+    private static final String WRONG_PASSWORD = "wrong_password";
+
+    private final UserRepository userRepository;
 
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
@@ -40,43 +43,23 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public RegistrationResponse registrationUser(UserRegistrationRequest registrationRequest) {
+    public RegistrationResponse registration(UserRegistrationRequest userRegistrationRequest) {
 
-        userValidationService.validateUser(registrationRequest); // 이미 존재하는 유저인지 확인
+            userValidationService.validateUser(userRegistrationRequest); // 이미 존재하는 유저인지 확인
 
-        final User user = UserMapper.INSTANCE.convertToUser(registrationRequest);
-        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        user.setUserRole(UserRole.USER);
-        user.setActive(false); // 가입시 isActive를 false로 설정 -> 증명자료 확인 후 true
+            final User user = UserMapper.INSTANCE.convertToUser(userRegistrationRequest); // 엔티티 디티오 변환
+            user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+            user.setUserRole(UserRole.USER);
+            user.setActive(false); // 가입시 isActive를 false로 설정
 
-        userRepository.save(user);
+            userRepository.save(user);
 
-        final String username = registrationRequest.getUsername();
-        final String registrationSuccessMessage = generalMessageAccessor.getMessage(null, REGISTRATION_SUCCESSFUL, username);
+            final String username = userRegistrationRequest.getUsername();
+            final String registrationSuccessMessage = generalMessageAccessor.getMessage(null, REGISTRATION_SUCCESSFUL, username);
 
-        log.info("{} registered successfully!", username);
+            log.info("{} registered successfully!", username);
 
-        return new RegistrationResponse(registrationSuccessMessage);
-    }
-
-    @Override
-    public RegistrationResponse registrationCompany(CompanyRegistrationRequest registrationRequest) {
-
-        userValidationService.validateCompany(registrationRequest); // 이미 존재하는 유저인지 확인
-
-        final Company company = UserMapper.INSTANCE.convertToCompany(registrationRequest); // 엔티티 디티오 변환
-        company.setPassword(bCryptPasswordEncoder.encode(company.getPassword()));
-        company.setRole(UserRole.COMPANY);
-        company.setActive(false); // 가입시 isActive를 false로 설정 -> 증명자료 확인 후 true
-
-        companyRepository.save(company);
-
-        final String username = registrationRequest.getUsername();
-        final String registrationSuccessMessage = generalMessageAccessor.getMessage(null, REGISTRATION_SUCCESSFUL, username);
-
-        log.info("{} registered successfully!", username);
-
-        return new RegistrationResponse(registrationSuccessMessage);
+            return new RegistrationResponse(registrationSuccessMessage);//User
     }
 
     @Override
@@ -102,7 +85,6 @@ public class UserServiceImpl implements UserService {
         userRepository.save(user);
         return user;
     }
-
 
     @Override
     public AuthenticatedUserDto demoteUser(String username){
