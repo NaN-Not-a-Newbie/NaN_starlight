@@ -1,8 +1,10 @@
 package com.nan.boilerplate.springboot.service;
 
 import com.nan.boilerplate.springboot.exceptions.RegistrationException;
+import com.nan.boilerplate.springboot.security.dto.CompanyRegistrationRequest;
 import com.nan.boilerplate.springboot.security.dto.RegistrationRequest;
 import com.nan.boilerplate.springboot.repository.UserRepository;
+import com.nan.boilerplate.springboot.security.dto.UserRegistrationRequest;
 import com.nan.boilerplate.springboot.utils.ExceptionMessageAccessor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -22,12 +24,17 @@ public class UserValidationService {
 
     private final ExceptionMessageAccessor exceptionMessageAccessor;
 
-    public void validateUser(RegistrationRequest registrationRequest) {
+    public void validateUser(UserRegistrationRequest registrationRequest) {
 
-        final String email = registrationRequest.getEmail();
         final String username = registrationRequest.getUsername();
 
-        checkEmail(email);
+        checkUsername(username);
+    }
+
+    public void validateCompany(CompanyRegistrationRequest registrationRequest) {
+
+        final String username = registrationRequest.getUsername();
+
         checkUsername(username);
     }
 
@@ -44,18 +51,18 @@ public class UserValidationService {
         }
 
     }
-
-    private void checkEmail(String email) {
-
-        final boolean existsByEmail = userRepository.existsByEmail(email);
-
-        if (existsByEmail) {
-
-            log.warn("{} is already being used!", email);
-
-            final String existsEmail = exceptionMessageAccessor.getMessage(null, EMAIL_ALREADY_EXISTS);
-            throw new RegistrationException(existsEmail);
-        }
-    }
-
 }
+//    private void checkEmail(String email) {
+//
+//        final boolean existsByEmail = userRepository.existsByEmail(email);
+//
+//        if (existsByEmail) {
+//
+//            log.warn("{} is already being used!", email);
+//
+//            final String existsEmail = exceptionMessageAccessor.getMessage(null, EMAIL_ALREADY_EXISTS);
+//            throw new RegistrationException(existsEmail);
+//        }
+//    }
+//
+
