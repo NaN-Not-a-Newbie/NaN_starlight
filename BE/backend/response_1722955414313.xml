@@ -1,0 +1,3974 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+  <response>
+    <header>
+      <resultCode>0000</resultCode>
+      <resultMsg>OK</resultMsg>
+    </header>
+    <body>
+      <items>
+        <item>
+          <busplaName>한국산업안전보건공단</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>울산광역시 중구 종가로 400 안전보건공단 본부 (성안동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <jobNm>사무 보조원(국가 및 자치단체, 공공기관)</jobNm>
+          <offerregDt>20240730</offerregDt>
+          <regDt>20240731</regDt>
+          <regagnName>한국장애인고용공단 울산지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>1</rno>
+          <rnum>1</rnum>
+          <salary>2,060,740</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-30~2024-08-09</termDate>
+        </item>
+        <item>
+          <busplaName>한국항공우주연구원</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>대전광역시 유성구 과학로 169-84 한국항공우주연구원(KARI) (어은동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>아주 작은 글씨를 읽을 수 있음</envEyesight>
+          <envHandWork>정밀한 작업가능</envHandWork>
+          <envLiftPower>5~20Kg의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>듣고 말하기에 어려움 없음</envLstnTalk>
+          <envStndWalk>일부 서서하는 작업 가능</envStndWalk>
+          <jobNm>사무 보조원(국가 및 자치단체, 공공기관)</jobNm>
+          <offerregDt>20240730</offerregDt>
+          <regDt>20240730</regDt>
+          <regagnName>한국장애인고용공단 대전지역본부</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>대졸</reqEduc>
+          <rno>2</rno>
+          <rnum>2</rnum>
+          <salary>1,300,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-30~2024-08-12</termDate>
+        </item>
+        <item>
+          <busplaName>의료법인 근우의료재단(백석요양병원)</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>충청남도 천안시 서북구 백석5길 4  (백석동)</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <jobNm>건물 청소원(클린마스터)</jobNm>
+          <offerregDt>20240730</offerregDt>
+          <regDt>20240730</regDt>
+          <regagnName>한국장애인고용공단 충남지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>3</rno>
+          <rnum>3</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-30~2024-10-29</termDate>
+        </item>
+        <item>
+          <busplaName>(주）케이디텍</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 영등포구 영등포로5길 19  (양평동2가, 동아프라임밸리 901~903호)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>비교적 큰 인쇄물을 읽을 수 있음</envEyesight>
+          <envHandWork>정밀한 작업가능</envHandWork>
+          <envLiftPower>5~20Kg의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>일부 서서하는 작업 가능</envStndWalk>
+          <jobNm>병원 급식 조리사</jobNm>
+          <offerregDt>20240730</offerregDt>
+          <regDt>20240730</regDt>
+          <regagnName>한국장애인고용공단 충남지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>4</rno>
+          <rnum>4</rnum>
+          <salary>2,700,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-30~2024-09-30</termDate>
+        </item>
+        <item>
+          <busplaName>(합) 대한상사 해피크린</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>충청남도 서산시 남부순환로 576 해피크린 (양대동)</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>비교적 큰 인쇄물을 읽을 수 있음</envEyesight>
+          <envHandWork>큰 물품 조립가능</envHandWork>
+          <envLiftPower>5~20Kg의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>세탁원</jobNm>
+          <offerregDt>20240730</offerregDt>
+          <regDt>20240730</regDt>
+          <regagnName>한국장애인고용공단 충남지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>5</rno>
+          <rnum>5</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-30~2024-10-29</termDate>
+        </item>
+        <item>
+          <busplaName>배정미래고등학교</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>부산광역시 남구 장고개로85번길 14-40 (문현동,배정미래고등학교)</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>한손작업 가능</envBothHands>
+          <envEyesight>비교적 큰 인쇄물을 읽을 수 있음</envEyesight>
+          <envHandWork>정밀한 작업가능</envHandWork>
+          <envLiftPower>5~20Kg의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>듣고 말하기에 어려움 없음</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>건물 경비원</jobNm>
+          <offerregDt>20240730</offerregDt>
+          <regDt>20240730</regDt>
+          <regagnName>한국장애인고용공단 부산지역본부</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>6</rno>
+          <rnum>6</rnum>
+          <salary>988,250</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-30~2024-08-09</termDate>
+        </item>
+        <item>
+          <busplaName>한국마사회</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경기도 과천시 경마공원대로 107  (주암동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <jobNm>사무 보조원(국가 및 자치단체, 공공기관)</jobNm>
+          <offerregDt>20240730</offerregDt>
+          <regDt>20240730</regDt>
+          <regagnName>한국장애인고용공단 경기서부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>7</rno>
+          <rnum>7</rnum>
+          <salary>1,200,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-30~2024-08-11</termDate>
+        </item>
+        <item>
+          <busplaName>(주)한섬</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 강남구 도산대로 523 (청담동) 한섬빌딩</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <jobNm>방송 및 온라인 콘텐츠 모니터요원</jobNm>
+          <offerregDt>20240730</offerregDt>
+          <regDt>20240730</regDt>
+          <regagnName>한국장애인고용공단 서울동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <reqMajor>시각디자인</reqMajor>
+          <rno>8</rno>
+          <rnum>8</rnum>
+          <salary>1,035,300</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-30~2024-08-30</termDate>
+        </item>
+        <item>
+          <busplaName>주식회사 준어패럴</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>대전광역시 대덕구 대화로106번길 66 (대화동) 232호</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>아주 작은 글씨를 읽을 수 있음</envEyesight>
+          <envHandWork>정밀한 작업가능</envHandWork>
+          <envLiftPower>20Kg 이상의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>듣고 말하기에 어려움 없음</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>인쇄, 목재, 가구 및 기타 제조 분야 단순 종사원</jobNm>
+          <offerregDt>20240730</offerregDt>
+          <regDt>20240730</regDt>
+          <regagnName>한국장애인고용공단 대전지역본부</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>9</rno>
+          <rnum>9</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-30~2024-08-09</termDate>
+        </item>
+        <item>
+          <busplaName>주식회사덕운</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>충청남도 공주시 탄천면 탄천산업단지길 55-21 주식회사 덕운</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <jobNm>인쇄, 목재, 가구 및 기타 제조 분야 단순 종사원</jobNm>
+          <offerregDt>20240730</offerregDt>
+          <regDt>20240730</regDt>
+          <regagnName>한국장애인고용공단 대전지역본부</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>10</rno>
+          <rnum>10</rnum>
+          <salary>10,000</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-30~2024-09-15</termDate>
+        </item>
+        <item>
+          <busplaName>우송고등학교</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>대전광역시 동구 동대전로131번길 53 (자양동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <jobNm>건물 청소원(클린마스터)</jobNm>
+          <offerregDt>20240730</offerregDt>
+          <regDt>20240730</regDt>
+          <regagnName>한국장애인고용공단 대전지역본부</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>11</rno>
+          <rnum>11</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-30~2024-08-07</termDate>
+        </item>
+        <item>
+          <busplaName>(주)코리아세븐</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 중구 청계천로 100 시그니처타워 4-5층</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>한손보조작업 가능</envBothHands>
+          <envEyesight>비교적 큰 인쇄물을 읽을 수 있음</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>5~20Kg의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>일부 서서하는 작업 가능</envStndWalk>
+          <jobNm>편의점 판매원</jobNm>
+          <offerregDt>20240730</offerregDt>
+          <regDt>20240730</regDt>
+          <regagnName>한국장애인고용공단 서울동부지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>12</rno>
+          <rnum>12</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-30~2024-08-30</termDate>
+        </item>
+        <item>
+          <busplaName>(주)영시큐리티</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경기도 성남시 분당구 성남대로916번길 11 글라스타워 802호 (야탑동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>일부 서서하는 작업 가능</envStndWalk>
+          <jobNm>공공시설 경비원(청사, 학교, 병원 등)</jobNm>
+          <offerregDt>20240730</offerregDt>
+          <regDt>20240730</regDt>
+          <regagnName>한국장애인고용공단 경기지역본부</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>13</rno>
+          <rnum>13</rnum>
+          <salary>2,070,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-30~2024-08-30</termDate>
+        </item>
+        <item>
+          <busplaName>한국관광공사</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>강원도 원주시 세계로 10 한국관광공사 (반곡동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <jobNm>사무 보조원(국가 및 자치단체, 공공기관)</jobNm>
+          <offerregDt>20240730</offerregDt>
+          <regDt>20240730</regDt>
+          <regagnName>한국장애인고용공단 강원지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>14</rno>
+          <rnum>14</rnum>
+          <salary>1,035,300</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-30~2024-08-14</termDate>
+        </item>
+        <item>
+          <busplaName>식품의약품안전평가원</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>충청북도 청주시 흥덕구 오송읍 오송생명2로 187 식품의약품안전평가원 사전상담과</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>아주 작은 글씨를 읽을 수 있음</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>듣고 말하기에 어려움 없음</envLstnTalk>
+          <envStndWalk>일부 서서하는 작업 가능</envStndWalk>
+          <jobNm>사무 보조원(국가 및 자치단체, 공공기관)</jobNm>
+          <offerregDt>20240730</offerregDt>
+          <regDt>20240801</regDt>
+          <regagnName>한국장애인고용공단 충북지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>15</rno>
+          <rnum>15</rnum>
+          <salary>2,060,740</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-30~2024-08-13</termDate>
+        </item>
+        <item>
+          <busplaName>전주우전초등학교</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>전라북도 전주시 완산구 우전2길 11 (효자동2가)</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <jobNm>환경 미화원</jobNm>
+          <offerregDt>20240730</offerregDt>
+          <regDt>20240730</regDt>
+          <regagnName>한국장애인고용공단 전북지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>16</rno>
+          <rnum>16</rnum>
+          <salary>1,500,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-30~2024-08-16</termDate>
+        </item>
+        <item>
+          <busplaName>더봄플러스 주식회사</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 금천구 디지털로9길 32 216-1호 (가산동, 갑을그레이트밸리)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>듣고 말하는 작업 어려움</envLstnTalk>
+          <envStndWalk>서거나 걷는 일 어려움</envStndWalk>
+          <jobNm>환경 미화원</jobNm>
+          <offerregDt>20240730</offerregDt>
+          <regDt>20240730</regDt>
+          <regagnName>한국장애인고용공단 경기동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>17</rno>
+          <rnum>17</rnum>
+          <salary>900,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-30~2024-08-15</termDate>
+        </item>
+        <item>
+          <busplaName>웬떡마을영농조합법인</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경기도 용인시 처인구 원삼면 어현로 10 웬떡마을영농조합법인</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <jobNm>총무 및 일반 사무원</jobNm>
+          <offerregDt>20240730</offerregDt>
+          <regDt>20240730</regDt>
+          <regagnName>한국장애인고용공단 경기동부지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>18</rno>
+          <rnum>18</rnum>
+          <salary>2,060,740</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-30~2024-08-30</termDate>
+        </item>
+        <item>
+          <busplaName>콘센트릭스서비스코리아 유한회사</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 강남구 테헤란로 509  (삼성동)</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <jobNm>콜센터 상담원(콜센터·고객센터·CS센터)</jobNm>
+          <offerregDt>20240730</offerregDt>
+          <regDt>20240730</regDt>
+          <regagnName>한국장애인고용공단 서울동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>19</rno>
+          <rnum>19</rnum>
+          <salary>2,060,740</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-30~2024-08-07</termDate>
+        </item>
+        <item>
+          <busplaName>(주)비에이치에스티</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>충청남도 아산시 음봉면 산동로 433-31 (주)비에이치에스티</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <jobNm>반도체공학 기술자 및 연구원</jobNm>
+          <offerregDt>20240729</offerregDt>
+          <regDt>20240730</regDt>
+          <regagnName>한국장애인고용공단 충남지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>초대졸</reqEduc>
+          <rno>20</rno>
+          <rnum>20</rnum>
+          <salary>33,000,000</salary>
+          <salaryType>연봉</salaryType>
+          <termDate>2024-07-29~2024-08-31</termDate>
+        </item>
+        <item>
+          <busplaName>주식회사링키지랩</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 성동구 성수일로6길 33  (성수동2가, 아연디지털타워)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>정밀한 작업가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>기타 서비스 단순종사원</jobNm>
+          <offerregDt>20240729</offerregDt>
+          <regDt>20240729</regDt>
+          <regagnName>한국장애인고용공단 경기동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>21</rno>
+          <rnum>21</rnum>
+          <salary>2,275,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-29~2024-08-16</termDate>
+        </item>
+        <item>
+          <busplaName>주식회사링키지랩</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 성동구 성수일로6길 33  (성수동2가, 아연디지털타워)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>정밀한 작업가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>데이터베이스 가공원</jobNm>
+          <offerregDt>20240729</offerregDt>
+          <regDt>20240729</regDt>
+          <regagnName>한국장애인고용공단 경기동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>22</rno>
+          <rnum>22</rnum>
+          <salary>2,275,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-29~2024-08-16</termDate>
+        </item>
+        <item>
+          <busplaName>주식회사링키지랩</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 성동구 성수일로6길 33  (성수동2가, 아연디지털타워)</compAddr>
+          <empType>상용직</empType>
+          <enterType>경력</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>정밀한 작업가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>디지털 포렌식 전문가 및 기타 데이터·네트워크 전문가</jobNm>
+          <offerregDt>20240729</offerregDt>
+          <regDt>20240729</regDt>
+          <regagnName>한국장애인고용공단 경기동부지사</regagnName>
+          <reqCareer>1년0개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>23</rno>
+          <rnum>23</rnum>
+          <salary>2,275,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-29~2024-08-16</termDate>
+        </item>
+        <item>
+          <busplaName>주식회사 호브(HOVE)</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 종로구 종로 33 (청진동) 2층</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <jobNm>바리스타</jobNm>
+          <offerregDt>20240729</offerregDt>
+          <regDt>20240729</regDt>
+          <regagnName>한국장애인고용공단 경기동부지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>24</rno>
+          <rnum>24</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-29~2024-08-09</termDate>
+        </item>
+        <item>
+          <busplaName>한국소비자원</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>충청북도 음성군 맹동면 용두로 54 한국소비자원</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envEyesight>비교적 큰 인쇄물을 읽을 수 있음</envEyesight>
+          <envLstnTalk>듣고 말하기에 어려움 없음</envLstnTalk>
+          <envStndWalk>일부 서서하는 작업 가능</envStndWalk>
+          <jobNm>사무 보조원(국가 및 자치단체, 공공기관)</jobNm>
+          <offerregDt>20240729</offerregDt>
+          <regDt>20240729</regDt>
+          <regagnName>한국장애인고용공단 충북지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>25</rno>
+          <rnum>25</rnum>
+          <salary>1,100,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-29~2024-10-28</termDate>
+        </item>
+        <item>
+          <busplaName>사단법인 창업진흥원</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>세종특별자치시 집현중앙7로 16 (집현동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>아주 작은 글씨를 읽을 수 있음</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>듣고 말하기에 어려움 없음</envLstnTalk>
+          <envStndWalk>서거나 걷는 일 어려움</envStndWalk>
+          <jobNm>공공행정 사무원</jobNm>
+          <offerregDt>20240729</offerregDt>
+          <regDt>20240729</regDt>
+          <regagnName>한국장애인고용공단 서울동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>26</rno>
+          <rnum>26</rnum>
+          <salary>2,109,440</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-29~2024-08-13</termDate>
+        </item>
+        <item>
+          <busplaName>(주)서울에프엔비</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>강원특별자치도 횡성군 공근면 아이티밸리길 36 서울에프엔비</compAddr>
+          <empType>상용직</empType>
+          <enterType>신입</enterType>
+          <jobNm>생산·품질 사무원 및 관리원(음식료품)</jobNm>
+          <offerregDt>20240729</offerregDt>
+          <regDt>20240729</regDt>
+          <regagnName>한국장애인고용공단 강원지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>27</rno>
+          <rnum>27</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-29~2024-08-09</termDate>
+        </item>
+        <item>
+          <busplaName>주식회사 엘케이매니지먼트</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>강원특별자치도 강릉시 창해로 307  (강문동)</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <jobNm>호텔·레스토랑 웨이터·웨이트리스</jobNm>
+          <offerregDt>20240729</offerregDt>
+          <regDt>20240729</regDt>
+          <regagnName>한국장애인고용공단 강원지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>28</rno>
+          <rnum>28</rnum>
+          <salary>2,060,740</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-29~2024-10-28</termDate>
+        </item>
+        <item>
+          <busplaName>주식회사 케이비손보씨엔에스</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 관악구 보라매로3길 23  (봉천동, 대교타워)</compAddr>
+          <empType>계약직</empType>
+          <enterType>신입</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>아주 작은 글씨를 읽을 수 있음</envEyesight>
+          <envLstnTalk>듣고 말하기에 어려움 없음</envLstnTalk>
+          <jobNm>콜센터 상담원(콜센터·고객센터·CS센터)</jobNm>
+          <offerregDt>20240729</offerregDt>
+          <regDt>20240729</regDt>
+          <regagnName>한국장애인고용공단 대전지역본부</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>29</rno>
+          <rnum>29</rnum>
+          <salary>11,430</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-29~2024-08-07</termDate>
+        </item>
+        <item>
+          <busplaName>법무법인율촌</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 강남구 테헤란로 521 파르나스타워 38층 (삼성동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>사업체 우편물 및 택배물품 관리원</jobNm>
+          <offerregDt>20240729</offerregDt>
+          <regDt>20240730</regDt>
+          <regagnName>한국장애인고용공단 서울동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>30</rno>
+          <rnum>30</rnum>
+          <salary>26,400,000</salary>
+          <salaryType>연봉</salaryType>
+          <termDate>2024-07-29~2024-08-09</termDate>
+        </item>
+        <item>
+          <busplaName>한국보훈복지의료공단부산보훈병원</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>부산광역시 사상구 백양대로 420 (주례동,보훈병원)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <jobNm>사무 보조원(국가 및 자치단체, 공공기관)</jobNm>
+          <offerregDt>20240729</offerregDt>
+          <regDt>20240729</regDt>
+          <regagnName>한국장애인고용공단 부산지역본부</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>31</rno>
+          <rnum>31</rnum>
+          <salary>2,060,740</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-30~2024-08-08</termDate>
+        </item>
+        <item>
+          <busplaName>(주)이랜드파크켄싱턴리조트경주</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경상북도 경주시 보문로 182-29  (북군동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>한손보조작업 가능</envBothHands>
+          <envEyesight>비교적 큰 인쇄물을 읽을 수 있음</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>5~20Kg의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>일부 서서하는 작업 가능</envStndWalk>
+          <jobNm>주방 보조원(일반 음식점)</jobNm>
+          <offerregDt>20240729</offerregDt>
+          <regDt>20240729</regDt>
+          <regagnName>한국장애인고용공단 경북지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>32</rno>
+          <rnum>32</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-29~2024-08-31</termDate>
+        </item>
+        <item>
+          <busplaName>티피</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 구로구 디지털로31길 12 (구로동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>큰 물품 조립가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>일부 서서하는 작업 가능</envStndWalk>
+          <jobNm>매장 정리원(매장 보조원)</jobNm>
+          <offerregDt>20240726</offerregDt>
+          <regDt>20240726</regDt>
+          <regagnName>한국장애인고용공단 서울남부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>33</rno>
+          <rnum>33</rnum>
+          <salary>1,252,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-26~2024-10-25</termDate>
+        </item>
+        <item>
+          <busplaName>(주)에이스중공업</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>전북특별자치도 김제시 백산면 지평선산단3길 89-13 .</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <jobNm>사무 보조원</jobNm>
+          <offerregDt>20240726</offerregDt>
+          <regDt>20240726</regDt>
+          <regagnName>한국장애인고용공단 전북지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <reqLicens>전기기능사/건설기계정비기능사/</reqLicens>
+          <rno>34</rno>
+          <rnum>34</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-26~2024-08-30</termDate>
+        </item>
+        <item>
+          <busplaName>전략물자관리원</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 강남구 영동대로 511 트레이드타워 16층 (삼성동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <jobNm>사무 보조원(국가 및 자치단체, 공공기관)</jobNm>
+          <offerregDt>20240726</offerregDt>
+          <regDt>20240726</regDt>
+          <regagnName>한국장애인고용공단 서울동부지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>35</rno>
+          <rnum>35</rnum>
+          <salary>1,180,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-26~2024-08-08</termDate>
+        </item>
+        <item>
+          <busplaName>(주)에이스중공업</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>전북특별자치도 김제시 백산면 지평선산단3길 89-13 .</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <jobNm>환경 미화원</jobNm>
+          <offerregDt>20240726</offerregDt>
+          <regDt>20240726</regDt>
+          <regagnName>한국장애인고용공단 전북지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>36</rno>
+          <rnum>36</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-26~2024-08-30</termDate>
+        </item>
+        <item>
+          <busplaName>해운대중학교</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>부산광역시 해운대구 우동2로30번길 99 (우동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <jobNm>공공시설 경비원(청사, 학교, 병원 등)</jobNm>
+          <offerregDt>20240726</offerregDt>
+          <regDt>20240730</regDt>
+          <regagnName>한국장애인고용공단 부산지역본부</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>37</rno>
+          <rnum>37</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-26~2024-08-07</termDate>
+        </item>
+        <item>
+          <busplaName>(주)비씨월드제약</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경기도 여주시 가남읍 여주남로 872-23 (삼군리)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>5~20Kg의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>환경 미화원</jobNm>
+          <offerregDt>20240725</offerregDt>
+          <regDt>20240725</regDt>
+          <regagnName>한국장애인고용공단 경기동부지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>38</rno>
+          <rnum>38</rnum>
+          <salary>2,090,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-25~2024-08-16</termDate>
+        </item>
+        <item>
+          <busplaName>나누리수원병원</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경기도 수원시 영통구 중부대로 295 나누리수원병원 (원천동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>아주 작은 글씨를 읽을 수 있음</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>5~20Kg의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>기타 서비스 단순종사원</jobNm>
+          <offerregDt>20240725</offerregDt>
+          <regDt>20240725</regDt>
+          <regagnName>한국장애인고용공단 경기지역본부</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>39</rno>
+          <rnum>39</rnum>
+          <salary>24,750,000</salary>
+          <salaryType>연봉</salaryType>
+          <termDate>2024-07-25~2024-08-30</termDate>
+        </item>
+        <item>
+          <busplaName>한국산업은행</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 영등포구 은행로 14 (여의도동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <jobNm>은행 사무원(출납창구 제외)</jobNm>
+          <offerregDt>20240725</offerregDt>
+          <regDt>20240725</regDt>
+          <regagnName>한국장애인고용공단 서울남부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>40</rno>
+          <rnum>40</rnum>
+          <salary>2,100,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-25~2024-08-08</termDate>
+        </item>
+        <item>
+          <busplaName>한국철도공사</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>대전광역시 동구 중앙로 240 (소제동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>아주 작은 글씨를 읽을 수 있음</envEyesight>
+          <envHandWork>정밀한 작업가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>듣고 말하기에 어려움 없음</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>사무 보조원(국가 및 자치단체, 공공기관)</jobNm>
+          <offerregDt>20240725</offerregDt>
+          <regDt>20240725</regDt>
+          <regagnName>한국장애인고용공단 대전지역본부</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>41</rno>
+          <rnum>41</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-25~2024-08-07</termDate>
+        </item>
+        <item>
+          <busplaName>(주)씰테크</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경기도 용인시 처인구 이동읍 묘봉로173번길 51-13  .</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <jobNm>총무 및 일반 사무원</jobNm>
+          <offerregDt>20240725</offerregDt>
+          <regDt>20240725</regDt>
+          <regagnName>한국장애인고용공단 경기동부지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>42</rno>
+          <rnum>42</rnum>
+          <salary>28,000,000</salary>
+          <salaryType>연봉</salaryType>
+          <termDate>2024-07-25~2024-09-30</termDate>
+        </item>
+        <item>
+          <busplaName>오류중학교</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 구로구 고척로27바길 19 (고척동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>비교적 큰 인쇄물을 읽을 수 있음</envEyesight>
+          <envHandWork>큰 물품 조립가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>공공장소 환경미화원 (공원, 휴양림 등)</jobNm>
+          <offerregDt>20240724</offerregDt>
+          <regDt>20240724</regDt>
+          <regagnName>한국장애인고용공단 서울남부지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>43</rno>
+          <rnum>43</rnum>
+          <salary>12,140</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-24~2024-08-31</termDate>
+        </item>
+        <item>
+          <busplaName>장애인보호작업장 금별</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>충청남도 당진시 송산면 막부리길 97-2 .</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>비교적 큰 인쇄물을 읽을 수 있음</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>5~20Kg의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>일부 서서하는 작업 가능</envStndWalk>
+          <jobNm>의약품, 농약, 비료 등 기타 석유화학 기술자 및 연구원</jobNm>
+          <offerregDt>20240724</offerregDt>
+          <regDt>20240724</regDt>
+          <regagnName>한국장애인고용공단 충남지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>44</rno>
+          <rnum>44</rnum>
+          <salary>778,940</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-24~2024-09-30</termDate>
+        </item>
+        <item>
+          <busplaName>평택우리병원</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경기도 평택시 비전5로 20-18 1층-4층(비전동)</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <jobNm>기타 서비스 단순종사원</jobNm>
+          <offerregDt>20240724</offerregDt>
+          <regDt>20240724</regDt>
+          <regagnName>한국장애인고용공단 경기지역본부</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>45</rno>
+          <rnum>45</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-24~2024-08-30</termDate>
+        </item>
+        <item>
+          <busplaName>주식회사다굼</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경기도 안양시 동안구 흥안대로 94  (호계동, 리치밸리)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <jobNm>건물 청소원(클린마스터)</jobNm>
+          <offerregDt>20240723</offerregDt>
+          <regDt>20240723</regDt>
+          <regagnName>한국장애인고용공단 경기서부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>46</rno>
+          <rnum>46</rnum>
+          <salary>1,771,270</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-23~2024-08-09</termDate>
+        </item>
+        <item>
+          <busplaName>한국은행</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 중구 남대문로 39 (남대문로3가)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>정밀한 작업가능</envHandWork>
+          <envLiftPower>5~20Kg의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>듣고 말하기에 어려움 없음</envLstnTalk>
+          <envStndWalk>일부 서서하는 작업 가능</envStndWalk>
+          <jobNm>사무 보조원(국가 및 자치단체, 공공기관)</jobNm>
+          <offerregDt>20240723</offerregDt>
+          <regDt>20240723</regDt>
+          <regagnName>한국장애인고용공단 서울지역본부</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>47</rno>
+          <rnum>47</rnum>
+          <salary>71,200</salary>
+          <salaryType>일급</salaryType>
+          <termDate>2024-07-23~2024-08-07</termDate>
+        </item>
+        <item>
+          <busplaName>주식회사하얀나라</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>전라남도 화순군 동면 농소길 37 주식회사 하얀나라 1층</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <jobNm>인쇄, 목재, 가구 및 기타 제조 분야 단순 종사원</jobNm>
+          <offerregDt>20240723</offerregDt>
+          <regDt>20240730</regDt>
+          <regagnName>한국장애인고용공단 전남지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>48</rno>
+          <rnum>48</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-23~2024-08-30</termDate>
+        </item>
+        <item>
+          <busplaName>주식회사 청신</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경상남도 함안군 군북면 함안산단1길 26-14 2003-2</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>큰 물품 조립가능</envHandWork>
+          <envLiftPower>20Kg 이상의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>세탁보조원</jobNm>
+          <offerregDt>20240723</offerregDt>
+          <regDt>20240724</regDt>
+          <regagnName>한국장애인고용공단 경남동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>49</rno>
+          <rnum>49</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-23~2024-08-30</termDate>
+        </item>
+        <item>
+          <busplaName>에스케이쉴더스 주식회사</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경기도 성남시 분당구 판교로227번길 23  (삼평동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envLstnTalk>듣고 말하기에 어려움 없음</envLstnTalk>
+          <envStndWalk>일부 서서하는 작업 가능</envStndWalk>
+          <jobNm>인사노무 사무보조원</jobNm>
+          <offerregDt>20240723</offerregDt>
+          <regDt>20240723</regDt>
+          <regagnName>한국장애인고용공단 경기동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>초대졸</reqEduc>
+          <rno>50</rno>
+          <rnum>50</rnum>
+          <salary>2,160,740</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-23~2024-08-09</termDate>
+        </item>
+        <item>
+          <busplaName>(주)녹십자이엠</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경기도 성남시 분당구 구미로 8 (구미동) 분당엠타워 2층</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>큰 물품 조립가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>듣고 말하기에 어려움 없음</envLstnTalk>
+          <envStndWalk>일부 서서하는 작업 가능</envStndWalk>
+          <jobNm>건물 청소원(클린마스터)</jobNm>
+          <offerregDt>20240723</offerregDt>
+          <regDt>20240723</regDt>
+          <regagnName>한국장애인고용공단 경기동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>51</rno>
+          <rnum>51</rnum>
+          <salary>1,130,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-23~2024-08-09</termDate>
+        </item>
+        <item>
+          <busplaName>인생설렁탕 군산시청점</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>전라북도 군산시 조촌로 36 (조촌동)</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <jobNm>주방 보조원(일반 음식점)</jobNm>
+          <offerregDt>20240723</offerregDt>
+          <regDt>20240723</regDt>
+          <regagnName>한국장애인고용공단 전북지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>52</rno>
+          <rnum>52</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-23~2024-08-17</termDate>
+        </item>
+        <item>
+          <busplaName>군산동고등학교</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>전라북도 군산시 달여길 50 (개정동)</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <jobNm>환경 미화원</jobNm>
+          <offerregDt>20240722</offerregDt>
+          <regDt>20240722</regDt>
+          <regagnName>한국장애인고용공단 전북지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>53</rno>
+          <rnum>53</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-22~2024-08-23</termDate>
+        </item>
+        <item>
+          <busplaName>레코딩코리아</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>세종특별자치시 부강면 시장1길 6 .</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <jobNm>마케팅홍보 사무보조원</jobNm>
+          <offerregDt>20240722</offerregDt>
+          <regDt>20240722</regDt>
+          <regagnName>한국장애인고용공단 충북지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>54</rno>
+          <rnum>54</rnum>
+          <salary>2,060,740</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-22~2024-08-30</termDate>
+        </item>
+        <item>
+          <busplaName>계룡건설산업（주）</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>대전광역시 서구 문정로48번길 48  (탄방동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>비교적 큰 인쇄물을 읽을 수 있음</envEyesight>
+          <envHandWork>정밀한 작업가능</envHandWork>
+          <envLiftPower>20Kg 이상의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>듣고 말하기에 어려움 없음</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>건물 청소원(클린마스터)</jobNm>
+          <offerregDt>20240722</offerregDt>
+          <regDt>20240722</regDt>
+          <regagnName>한국장애인고용공단 대전지역본부</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>55</rno>
+          <rnum>55</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-22~2024-07-30</termDate>
+        </item>
+        <item>
+          <busplaName>부산힘찬병원</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>부산광역시 동래구 충렬대로 255 부산 힘찬병원 (수안동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <jobNm>병원 안내원 및 병원고객 도우미</jobNm>
+          <offerregDt>20240722</offerregDt>
+          <regDt>20240722</regDt>
+          <regagnName>한국장애인고용공단 부산지역본부</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>56</rno>
+          <rnum>56</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-22~2024-08-07</termDate>
+        </item>
+        <item>
+          <busplaName>(재)우체국시설관리단</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 광진구 강변역로 2 동서울 우편물류센터 4층 (구의동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <jobNm>공공행정 사무원</jobNm>
+          <offerregDt>20240722</offerregDt>
+          <regDt>20240724</regDt>
+          <regagnName>한국장애인고용공단 서울북부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>57</rno>
+          <rnum>57</rnum>
+          <salary>2,200,740</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-22~2024-08-06</termDate>
+        </item>
+        <item>
+          <busplaName>에스케이쉴더스 주식회사</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경기도 성남시 분당구 판교로227번길 23  (삼평동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envLstnTalk>듣고 말하기에 어려움 없음</envLstnTalk>
+          <envStndWalk>일부 서서하는 작업 가능</envStndWalk>
+          <jobNm>건물 청소원(클린마스터)</jobNm>
+          <offerregDt>20240722</offerregDt>
+          <regDt>20240722</regDt>
+          <regagnName>한국장애인고용공단 경기동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>58</rno>
+          <rnum>58</rnum>
+          <salary>1,152,500</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-22~2024-08-30</termDate>
+        </item>
+        <item>
+          <busplaName>새통영병원</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경상남도 통영시 무전7길 192 (무전동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <jobNm>주차 관리·안내원</jobNm>
+          <offerregDt>20240722</offerregDt>
+          <regDt>20240722</regDt>
+          <regagnName>한국장애인고용공단 경남동부지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>59</rno>
+          <rnum>59</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-22~2024-08-09</termDate>
+        </item>
+        <item>
+          <busplaName>남해수산유통</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>전북특별자치도 전주시 덕진구 신복로 142 (팔복동4가)</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envEyesight>아주 작은 글씨를 읽을 수 있음</envEyesight>
+          <envHandWork>정밀한 작업가능</envHandWork>
+          <envLstnTalk>듣고 말하기에 어려움 없음</envLstnTalk>
+          <jobNm>전산자료 입력원(DB·단순자료)</jobNm>
+          <offerregDt>20240719</offerregDt>
+          <regDt>20240719</regDt>
+          <regagnName>한국장애인고용공단 전북지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>대졸</reqEduc>
+          <rno>60</rno>
+          <rnum>60</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-19~2024-08-16</termDate>
+        </item>
+        <item>
+          <busplaName>주식회사 토리든</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>대전광역시 서구 도안북로93번길 10-3  (도안동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>경력</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>듣고 말하기에 어려움 없음</envLstnTalk>
+          <envStndWalk>서거나 걷는 일 어려움</envStndWalk>
+          <jobNm>회계 사무원(일반 사업체)</jobNm>
+          <offerregDt>20240719</offerregDt>
+          <regDt>20240719</regDt>
+          <regagnName>한국장애인고용공단 대전지역본부</regagnName>
+          <reqCareer>0년24개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>61</rno>
+          <rnum>61</rnum>
+          <salary>35,000,000</salary>
+          <salaryType>연봉</salaryType>
+          <termDate>2024-07-19~2024-08-07</termDate>
+        </item>
+        <item>
+          <busplaName>한화시스템(주)</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경상북도 구미시 1공단로 244  (공단동, 사서함50호)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>아주 작은 글씨를 읽을 수 있음</envEyesight>
+          <envHandWork>정밀한 작업가능</envHandWork>
+          <envLiftPower>5~20Kg의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>듣고 말하기에 어려움 없음</envLstnTalk>
+          <envStndWalk>일부 서서하는 작업 가능</envStndWalk>
+          <jobNm>기타 전자 부품·제품 조립·검사원</jobNm>
+          <offerregDt>20240719</offerregDt>
+          <regDt>20240722</regDt>
+          <regagnName>한국장애인고용공단 경북지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>62</rno>
+          <rnum>62</rnum>
+          <salary>33,800,000</salary>
+          <salaryType>연봉</salaryType>
+          <termDate>2024-07-19~2024-09-18</termDate>
+        </item>
+        <item>
+          <busplaName>디비손해보험주식회사</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 강남구 테헤란로 432  (대치동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>큰 물품 조립가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>건물 청소원(클린마스터)</jobNm>
+          <offerregDt>20240719</offerregDt>
+          <regDt>20240722</regDt>
+          <regagnName>한국장애인고용공단 서울동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>63</rno>
+          <rnum>63</rnum>
+          <salary>790,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-19~2024-08-30</termDate>
+        </item>
+        <item>
+          <busplaName>주식회사 하림산업 함열식품공장</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>전북특별자치도 익산시 함열읍 익산대로78길 332 익산대로 78길 137, 익산대로 78길313, 익산대로 78길 61-44</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>5~20Kg의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>지게차 운전원</jobNm>
+          <offerregDt>20240719</offerregDt>
+          <regDt>20240719</regDt>
+          <regagnName>한국장애인고용공단 전북지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>64</rno>
+          <rnum>64</rnum>
+          <salary>2,590,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-19~2024-08-09</termDate>
+        </item>
+        <item>
+          <busplaName>(주)풍산시스템</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경기도 안산시 상록구 안산테콤1길 19  (사사동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <jobNm>건물 청소원(클린마스터)</jobNm>
+          <offerregDt>20240718</offerregDt>
+          <regDt>20240718</regDt>
+          <regagnName>한국장애인고용공단 충남지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>65</rno>
+          <rnum>65</rnum>
+          <salary>24,800,000</salary>
+          <salaryType>연봉</salaryType>
+          <termDate>2024-07-18~2024-10-17</termDate>
+        </item>
+        <item>
+          <busplaName>디딤돌장애인자립생활센터</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경기도 양주시 백석읍 고릉말로 150 1</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <jobNm>사회복지사(사회복지시설)</jobNm>
+          <offerregDt>20240718</offerregDt>
+          <regDt>20240725</regDt>
+          <regagnName>한국장애인고용공단 경기북부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>66</rno>
+          <rnum>66</rnum>
+          <salary>2,060,740</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-18~2024-09-24</termDate>
+        </item>
+        <item>
+          <busplaName>현대밋숀(주)</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>울산광역시 울주군 온산읍 화산로 229 현대밋숀</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>한손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>큰 물품 조립가능</envHandWork>
+          <envLiftPower>5~20Kg의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>서거나 걷는 일 어려움</envStndWalk>
+          <jobNm>공장경비원</jobNm>
+          <offerregDt>20240718</offerregDt>
+          <regDt>20240718</regDt>
+          <regagnName>한국장애인고용공단 울산지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>67</rno>
+          <rnum>67</rnum>
+          <salary>2,330,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-18~2024-09-06</termDate>
+        </item>
+        <item>
+          <busplaName>마라톤정형외과병원</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>대전광역시 서구 둔산남로 87 (둔산동)</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>비교적 큰 인쇄물을 읽을 수 있음</envEyesight>
+          <envHandWork>정밀한 작업가능</envHandWork>
+          <envLiftPower>5~20Kg의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>사업체 구내식당 급식 조리사</jobNm>
+          <offerregDt>20240718</offerregDt>
+          <regDt>20240718</regDt>
+          <regagnName>한국장애인고용공단 대전지역본부</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>68</rno>
+          <rnum>68</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-18~2024-08-07</termDate>
+        </item>
+        <item>
+          <busplaName>가톨릭대학교 성빈센트병원</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경기도 수원시 팔달구 중부대로 93 (지동), 성빈센트병원 93-6</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>한손보조작업 가능</envBothHands>
+          <envEyesight>비교적 큰 인쇄물을 읽을 수 있음</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>일부 서서하는 작업 가능</envStndWalk>
+          <jobNm>병원 안내원 및 병원고객 도우미</jobNm>
+          <offerregDt>20240718</offerregDt>
+          <regDt>20240725</regDt>
+          <regagnName>한국장애인고용공단 경기지역본부</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>69</rno>
+          <rnum>69</rnum>
+          <salary>10,000</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-18~2024-08-31</termDate>
+        </item>
+        <item>
+          <busplaName>(주)참존원주공장</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>강원도 원주시 태장공단길 58 (태장동)</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>듣고 말하기에 어려움 없음</envLstnTalk>
+          <envStndWalk>일부 서서하는 작업 가능</envStndWalk>
+          <jobNm>제품 포장원(섬유, 전기전자, 식품 제외)</jobNm>
+          <offerregDt>20240718</offerregDt>
+          <regDt>20240718</regDt>
+          <regagnName>한국장애인고용공단 강원지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>70</rno>
+          <rnum>70</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-18~2024-08-31</termDate>
+        </item>
+        <item>
+          <busplaName>(주)위드케이에이씨</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>강원특별자치도 원주시 문막읍 반산2로 86 위드케이에이씨</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <jobNm>자동차 부품 조립·검사원</jobNm>
+          <offerregDt>20240718</offerregDt>
+          <regDt>20240718</regDt>
+          <regagnName>한국장애인고용공단 강원지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>71</rno>
+          <rnum>71</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-18~2024-08-30</termDate>
+        </item>
+        <item>
+          <busplaName>농업회사법인 설성식품 주식회사</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>강원특별자치도 원주시 지정면 조엄로 347-2 설성식품</compAddr>
+          <empType>상용직</empType>
+          <enterType>신입</enterType>
+          <jobNm>기타 식품가공 종사원</jobNm>
+          <offerregDt>20240718</offerregDt>
+          <regDt>20240718</regDt>
+          <regagnName>한국장애인고용공단 강원지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>72</rno>
+          <rnum>72</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-18~2024-08-31</termDate>
+        </item>
+        <item>
+          <busplaName>주식회사 하림산업 함열식품공장</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>전북특별자치도 익산시 함열읍 익산대로78길 332 익산대로 78길 137, 익산대로 78길313, 익산대로 78길 61-44</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>5~20Kg의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>식품 분야 단순 종사원</jobNm>
+          <offerregDt>20240718</offerregDt>
+          <regDt>20240718</regDt>
+          <regagnName>한국장애인고용공단 전북지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>73</rno>
+          <rnum>73</rnum>
+          <salary>2,590,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-18~2024-08-09</termDate>
+        </item>
+        <item>
+          <busplaName>더봄플러스 주식회사</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 금천구 디지털로9길 32 216-1호 (가산동, 갑을그레이트밸리)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envEyesight>비교적 큰 인쇄물을 읽을 수 있음</envEyesight>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>일부 서서하는 작업 가능</envStndWalk>
+          <jobNm>건물 청소원(클린마스터)</jobNm>
+          <offerregDt>20240717</offerregDt>
+          <regDt>20240717</regDt>
+          <regagnName>한국장애인고용공단 경기서부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>74</rno>
+          <rnum>74</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-17~2024-08-16</termDate>
+        </item>
+        <item>
+          <busplaName>(주)승산팩아산</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>충청남도 아산시 음봉면 음봉면로30번길 110 (주)승산팩아산</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>큰 물품 조립가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>듣고 말하는 작업 어려움</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>인쇄, 목재, 가구 및 기타 제조 분야 단순 종사원</jobNm>
+          <offerregDt>20240717</offerregDt>
+          <regDt>20240717</regDt>
+          <regagnName>한국장애인고용공단 충남지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>75</rno>
+          <rnum>75</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-17~2024-09-30</termDate>
+        </item>
+        <item>
+          <busplaName>(주)현대캐터링시스템</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경기도 성남시 분당구 야탑로 98 2층 (주)현대캐터링시스템 (야탑동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>일부 서서하는 작업 가능</envStndWalk>
+          <jobNm>단체 급식 보조원</jobNm>
+          <offerregDt>20240717</offerregDt>
+          <regDt>20240719</regDt>
+          <regagnName>한국장애인고용공단 전남지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>76</rno>
+          <rnum>76</rnum>
+          <salary>1,035,300</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-17~2024-08-09</termDate>
+        </item>
+        <item>
+          <busplaName>주식회사에이치피케이</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경기도 평택시 진위면 진위2산단로 15-24 진위면</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <jobNm>환경 미화원</jobNm>
+          <offerregDt>20240717</offerregDt>
+          <regDt>20240717</regDt>
+          <regagnName>한국장애인고용공단 경기지역본부</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>77</rno>
+          <rnum>77</rnum>
+          <salary>10,000</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-17~2024-08-30</termDate>
+        </item>
+        <item>
+          <busplaName>주식회사일영이푸드(102FOOD)</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>부산광역시 기장군 정관읍 산단7로 65 (예림리) (주)일영이푸드)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <jobNm>식품 분야 단순 종사원</jobNm>
+          <offerregDt>20240717</offerregDt>
+          <regDt>20240717</regDt>
+          <regagnName>한국장애인고용공단 부산지역본부</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>78</rno>
+          <rnum>78</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-17~2024-08-09</termDate>
+        </item>
+        <item>
+          <busplaName>(주)씨에스상사</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>강원특별자치도 삼척시 도계읍 강원남부로 2048-134 1층</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <jobNm>섬유제품 포장원</jobNm>
+          <offerregDt>20240717</offerregDt>
+          <regDt>20240717</regDt>
+          <regagnName>한국장애인고용공단 강원지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>79</rno>
+          <rnum>79</rnum>
+          <salary>10,000</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-17~2024-09-30</termDate>
+        </item>
+        <item>
+          <busplaName>투썸플레이스(주)</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 중구 을지로 170 (을지로4가) 8층</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>비교적 큰 인쇄물을 읽을 수 있음</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>매장 정리원(매장 보조원)</jobNm>
+          <offerregDt>20240717</offerregDt>
+          <regDt>20240724</regDt>
+          <regagnName>한국장애인고용공단 서울지역본부</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>80</rno>
+          <rnum>80</rnum>
+          <salary>10,000</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-17~2024-10-16</termDate>
+        </item>
+        <item>
+          <busplaName>(주)제이엘</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>충청북도 진천군 광혜원면 광혜원산단2길 112 CJ제일제당내 (주)제이엘</compAddr>
+          <empType>상용직</empType>
+          <enterType>경력</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>아주 작은 글씨를 읽을 수 있음</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>5~20Kg의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>일부 서서하는 작업 가능</envStndWalk>
+          <jobNm>지게차 운전원</jobNm>
+          <offerregDt>20240716</offerregDt>
+          <regDt>20240716</regDt>
+          <regagnName>한국장애인고용공단 충북지사</regagnName>
+          <reqCareer>1년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <reqLicens>지게차운전기능사/</reqLicens>
+          <rno>81</rno>
+          <rnum>81</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-16~2024-09-15</termDate>
+        </item>
+        <item>
+          <busplaName>쿠팡주식회사</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 송파구 송파대로 570  (신천동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>서거나 걷는 일 어려움</envStndWalk>
+          <jobNm>환경·청소 관리자</jobNm>
+          <offerregDt>20240716</offerregDt>
+          <regDt>20240716</regDt>
+          <regagnName>한국장애인고용공단 서울동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>82</rno>
+          <rnum>82</rnum>
+          <salary>1,220,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-16~2024-08-16</termDate>
+        </item>
+        <item>
+          <busplaName>(주)티제이팜</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경기도 평택시 진위면 갈곶리 265-3</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>비교적 큰 인쇄물을 읽을 수 있음</envEyesight>
+          <envHandWork>정밀한 작업가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>듣고 말하기에 어려움 없음</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>전산자료 입력원(DB·단순자료)</jobNm>
+          <offerregDt>20240716</offerregDt>
+          <regDt>20240716</regDt>
+          <regagnName>한국장애인고용공단 경기지역본부</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>83</rno>
+          <rnum>83</rnum>
+          <salary>2,060,740</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-16~2024-08-30</termDate>
+        </item>
+        <item>
+          <busplaName>가톨릭관동대학교 국제성모병원</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>인천광역시 서구 심곡로100번길 25  (심곡동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <jobNm>병동 보조원</jobNm>
+          <offerregDt>20240716</offerregDt>
+          <regDt>20240716</regDt>
+          <regagnName>한국장애인고용공단 인천지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>84</rno>
+          <rnum>84</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-16~2024-08-30</termDate>
+        </item>
+        <item>
+          <busplaName>현대해상화재보험(주)</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 종로구 세종대로 163 현대해상빌딩</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>듣고 말하기에 어려움 없음</envLstnTalk>
+          <envStndWalk>서거나 걷는 일 어려움</envStndWalk>
+          <jobNm>사무 보조원</jobNm>
+          <offerregDt>20240716</offerregDt>
+          <regDt>20240716</regDt>
+          <regagnName>한국장애인고용공단 서울지역본부</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>85</rno>
+          <rnum>85</rnum>
+          <salary>2,260,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-16~2024-09-30</termDate>
+        </item>
+        <item>
+          <busplaName>일신건설(주)</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>울산광역시 동구 꽃바위로 264 (방어동)</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>정밀한 작업가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>듣고 말하기에 어려움 없음</envLstnTalk>
+          <envStndWalk>서거나 걷는 일 어려움</envStndWalk>
+          <jobNm>총무 및 일반 사무원</jobNm>
+          <offerregDt>20240716</offerregDt>
+          <regDt>20240716</regDt>
+          <regagnName>한국장애인고용공단 울산지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>고졸</reqEduc>
+          <reqMajor>토목공학</reqMajor>
+          <rno>86</rno>
+          <rnum>86</rnum>
+          <salary>110,000</salary>
+          <salaryType>일급</salaryType>
+          <termDate>2024-07-16~2024-09-20</termDate>
+        </item>
+        <item>
+          <busplaName>롯데건설（주）</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 서초구 잠원로14길 29 롯데건설  (잠원동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>20Kg 이상의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>일부 서서하는 작업 가능</envStndWalk>
+          <jobNm>건물 청소원(클린마스터)</jobNm>
+          <offerregDt>20240715</offerregDt>
+          <regDt>20240715</regDt>
+          <regagnName>한국장애인고용공단 울산지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>87</rno>
+          <rnum>87</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-15~2024-08-16</termDate>
+        </item>
+        <item>
+          <busplaName>(주)학산</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>강원도 강릉시 구정면 현천길 7 (구정면)</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envLstnTalk>듣고 말하기에 어려움 없음</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>배송·납품 운전원(납품영업 포함)</jobNm>
+          <offerregDt>20240715</offerregDt>
+          <regDt>20240718</regDt>
+          <regagnName>한국장애인고용공단 강원지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>88</rno>
+          <rnum>88</rnum>
+          <salary>2,060,740</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-15~2024-09-30</termDate>
+        </item>
+        <item>
+          <busplaName>제일폴리캠(주)새만금공장</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>전북특별자치도 군산시 새만금산단3로 357 제일폴리캠(주) 새만금공장 (오식도동)</compAddr>
+          <empType>시간제</empType>
+          <enterType>무관</enterType>
+          <jobNm>환경·청소 관리자</jobNm>
+          <offerregDt>20240715</offerregDt>
+          <regDt>20240715</regDt>
+          <regagnName>한국장애인고용공단 전북지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>89</rno>
+          <rnum>89</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-15~2024-08-08</termDate>
+        </item>
+        <item>
+          <busplaName>(주)엔젤싹스</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경기도 광주시 순암로 350 (중대동)</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>비교적 큰 인쇄물을 읽을 수 있음</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>듣고 말하는 작업 어려움</envLstnTalk>
+          <envStndWalk>서거나 걷는 일 어려움</envStndWalk>
+          <jobNm>섬유·의복 분야 단순 종사원</jobNm>
+          <offerregDt>20240715</offerregDt>
+          <regDt>20240715</regDt>
+          <regagnName>한국장애인고용공단 경기동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>90</rno>
+          <rnum>90</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-15~2024-07-31</termDate>
+        </item>
+        <item>
+          <busplaName>옥천식품</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경기도 이천시 모가면 진상미로 989-35 옥천식품</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envStndWalk>일부 서서하는 작업 가능</envStndWalk>
+          <jobNm>식품 포장원</jobNm>
+          <offerregDt>20240715</offerregDt>
+          <regDt>20240715</regDt>
+          <regagnName>한국장애인고용공단 경기동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>91</rno>
+          <rnum>91</rnum>
+          <salary>2,060,740</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-15~2024-08-15</termDate>
+        </item>
+        <item>
+          <busplaName>씨제이프레시웨이주식회사</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경기도 용인시 기흥구 기곡로 32  (하갈동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>비교적 큰 인쇄물을 읽을 수 있음</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>5~20Kg의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>주방정리원</jobNm>
+          <offerregDt>20240715</offerregDt>
+          <regDt>20240715</regDt>
+          <regagnName>한국장애인고용공단 경기동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>92</rno>
+          <rnum>92</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-15~2024-08-15</termDate>
+        </item>
+        <item>
+          <busplaName>해강의료재단 위더스요양병원</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경기도 광주시 초월읍 경충대로 974-56 974-43 위더스요양병원</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>큰 물품 조립가능</envHandWork>
+          <envLiftPower>20Kg 이상의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>일부 서서하는 작업 가능</envStndWalk>
+          <jobNm>기타 보건·의료 서비스 종사원</jobNm>
+          <offerregDt>20240715</offerregDt>
+          <regDt>20240715</regDt>
+          <regagnName>한국장애인고용공단 경기동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>93</rno>
+          <rnum>93</rnum>
+          <salary>2,060,740</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-15~2024-08-16</termDate>
+        </item>
+        <item>
+          <busplaName>(주)웹젠</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경기도 성남시 분당구 판교로 242 (삼평동) 판교디지털센터 B동</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <jobNm>바리스타</jobNm>
+          <offerregDt>20240712</offerregDt>
+          <regDt>20240712</regDt>
+          <regagnName>한국장애인고용공단 경기동부지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>94</rno>
+          <rnum>94</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-12~2024-08-30</termDate>
+        </item>
+        <item>
+          <busplaName>(주)동성엔지니어링</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경상북도 경산시 성암로21길 39 (옥산동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>정밀한 작업가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>건물 청소원(클린마스터)</jobNm>
+          <offerregDt>20240712</offerregDt>
+          <regDt>20240712</regDt>
+          <regagnName>한국장애인고용공단 서울동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>95</rno>
+          <rnum>95</rnum>
+          <salary>19,632,000</salary>
+          <salaryType>연봉</salaryType>
+          <termDate>2024-07-12~2024-08-16</termDate>
+        </item>
+        <item>
+          <busplaName>제이비우리캐피탈 (주)</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>전라북도 전주시 덕진구 백제대로 566 18층 (금암동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <jobNm>각종 단체 및 기타 고객서비스 관리자</jobNm>
+          <offerregDt>20240712</offerregDt>
+          <regDt>20240712</regDt>
+          <regagnName>한국장애인고용공단 전북지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>96</rno>
+          <rnum>96</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-12~2024-08-16</termDate>
+        </item>
+        <item>
+          <busplaName>제이비우리캐피탈 (주)</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>전라북도 전주시 덕진구 백제대로 566 18층 (금암동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <jobNm>안마사</jobNm>
+          <offerregDt>20240712</offerregDt>
+          <regDt>20240712</regDt>
+          <regagnName>한국장애인고용공단 전북지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>97</rno>
+          <rnum>97</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-12~2024-08-16</termDate>
+        </item>
+        <item>
+          <busplaName>주식회사링키지랩</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 성동구 성수일로6길 33  (성수동2가, 아연디지털타워)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>정밀한 작업가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>바리스타</jobNm>
+          <offerregDt>20240711</offerregDt>
+          <regDt>20240711</regDt>
+          <regagnName>한국장애인고용공단 경기동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>98</rno>
+          <rnum>98</rnum>
+          <salary>1,137,500</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-11~2024-08-30</termDate>
+        </item>
+        <item>
+          <busplaName>(주)씨앤알</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 동작구 동작대로35길 2 원일빌딩 4층 (사당동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>비교적 큰 인쇄물을 읽을 수 있음</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>듣고 말하는 작업 어려움</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>주방정리원</jobNm>
+          <offerregDt>20240711</offerregDt>
+          <regDt>20240711</regDt>
+          <regagnName>한국장애인고용공단 경기동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>99</rno>
+          <rnum>99</rnum>
+          <salary>2,060,740</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-11~2024-08-30</termDate>
+        </item>
+        <item>
+          <busplaName>자라리테일코리아</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 강남구 영동대로 511  (삼성동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>비교적 큰 인쇄물을 읽을 수 있음</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>5~20Kg의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>창고 관리원</jobNm>
+          <offerregDt>20240711</offerregDt>
+          <regDt>20240718</regDt>
+          <regagnName>한국장애인고용공단 서울동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>100</rno>
+          <rnum>100</rnum>
+          <salary>1,558,990</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-11~2024-10-10</termDate>
+        </item>
+        <item>
+          <busplaName>(주)케이티아이에스(ktisCorporation)</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 영등포구 여의대로 14  (여의도동, 케이티빌딩10층)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>한손보조작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>일부 서서하는 작업 가능</envStndWalk>
+          <jobNm>환경 미화원</jobNm>
+          <offerregDt>20240711</offerregDt>
+          <regDt>20240712</regDt>
+          <regagnName>한국장애인고용공단 서울지역본부</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>101</rno>
+          <rnum>101</rnum>
+          <salary>1,200,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-11~2024-08-12</termDate>
+        </item>
+        <item>
+          <busplaName>주식회사 태일씨앤티</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 관악구 남부순환로 1795 (봉천동, 한우빌딩)</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>듣고 말하기에 어려움 없음</envLstnTalk>
+          <jobNm>환경 미화원</jobNm>
+          <offerregDt>20240711</offerregDt>
+          <regDt>20240711</regDt>
+          <regagnName>한국장애인고용공단 서울남부지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>102</rno>
+          <rnum>102</rnum>
+          <salary>1,050,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-11~2024-08-31</termDate>
+        </item>
+        <item>
+          <busplaName>(주)엔씨소프트서비스</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>부산광역시 동구 중앙대로 192 한국교직원공제회 4층 (초량동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>큰 물품 조립가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>듣고 말하기에 어려움 없음</envLstnTalk>
+          <envStndWalk>일부 서서하는 작업 가능</envStndWalk>
+          <jobNm>네일 아티스트(손톱 관리사)</jobNm>
+          <offerregDt>20240710</offerregDt>
+          <regDt>20240710</regDt>
+          <regagnName>한국장애인고용공단 경기동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>103</rno>
+          <rnum>103</rnum>
+          <salary>1,500,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-10~2024-08-30</termDate>
+        </item>
+        <item>
+          <busplaName>에이피씨</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>충청남도 천안시 동남구 수신면 장산2길 79-8 에이피씨</compAddr>
+          <empType>상용직</empType>
+          <enterType>신입</enterType>
+          <jobNm>웹 디자이너</jobNm>
+          <offerregDt>20240710</offerregDt>
+          <regDt>20240710</regDt>
+          <regagnName>한국장애인고용공단 충남지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>104</rno>
+          <rnum>104</rnum>
+          <salary>2,060,740</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-10~2024-08-31</termDate>
+        </item>
+        <item>
+          <busplaName>코앤전자산업(주)</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>충청남도 천안시 서북구 입장면 위례성로 1909-4 (기로리)</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <jobNm>전기·전자 분야 단순 종사원</jobNm>
+          <offerregDt>20240710</offerregDt>
+          <regDt>20240715</regDt>
+          <regagnName>한국장애인고용공단 충남지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>105</rno>
+          <rnum>105</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-10~2024-10-09</termDate>
+        </item>
+        <item>
+          <busplaName>주식회사 와이케이컴퍼니</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경상북도 경주시 안강읍 두류길 131 -</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <jobNm>인쇄, 목재, 가구 및 기타 제조 분야 단순 종사원</jobNm>
+          <offerregDt>20240710</offerregDt>
+          <regDt>20240710</regDt>
+          <regagnName>한국장애인고용공단 경북지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>106</rno>
+          <rnum>106</rnum>
+          <salary>2,500,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-10~2024-08-31</termDate>
+        </item>
+        <item>
+          <busplaName>한국동그라미파트너스</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>대전광역시 대덕구 대덕대로1447번길 40 한국타이어앤테크놀로지 대전공장 한국동그라미파트너스 (목상동)</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>비교적 큰 인쇄물을 읽을 수 있음</envEyesight>
+          <envHandWork>정밀한 작업가능</envHandWork>
+          <envLiftPower>20Kg 이상의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>듣고 말하기에 어려움 없음</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>제과·제빵원</jobNm>
+          <offerregDt>20240710</offerregDt>
+          <regDt>20240710</regDt>
+          <regagnName>한국장애인고용공단 대전지역본부</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>107</rno>
+          <rnum>107</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-10~2024-08-16</termDate>
+        </item>
+        <item>
+          <busplaName>(주)대덕개발</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>대전광역시 서구 대덕대로 129  (갈마동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <jobNm>건물 청소원(클린마스터)</jobNm>
+          <offerregDt>20240709</offerregDt>
+          <regDt>20240709</regDt>
+          <regagnName>한국장애인고용공단 충북지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>108</rno>
+          <rnum>108</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-09~2024-09-30</termDate>
+        </item>
+        <item>
+          <busplaName>영동군장애인보호작업장</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>충청북도 영동군 영동읍 반곡동길 8 영동군 장애인보호작업장</compAddr>
+          <empType>상용직</empType>
+          <enterType>신입</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>아주 작은 글씨를 읽을 수 있음</envEyesight>
+          <envHandWork>정밀한 작업가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>듣고 말하기에 어려움 없음</envLstnTalk>
+          <envStndWalk>일부 서서하는 작업 가능</envStndWalk>
+          <jobNm>기타 시각 디자이너(디자인 보조원 포함)</jobNm>
+          <offerregDt>20240709</offerregDt>
+          <regDt>20240709</regDt>
+          <regagnName>한국장애인고용공단 충북지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>109</rno>
+          <rnum>109</rnum>
+          <salary>2,060,740</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-09~2024-08-30</termDate>
+        </item>
+        <item>
+          <busplaName>한일튜브(주)</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>울산광역시 남구 사평로 202 (부곡동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <jobNm>자동차 부품 조립·검사원</jobNm>
+          <offerregDt>20240709</offerregDt>
+          <regDt>20240709</regDt>
+          <regagnName>한국장애인고용공단 울산지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>110</rno>
+          <rnum>110</rnum>
+          <salary>79,410</salary>
+          <salaryType>일급</salaryType>
+          <termDate>2024-07-09~2024-10-08</termDate>
+        </item>
+        <item>
+          <busplaName>(주)파라텍</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>충청남도 서산시 수석산업로 51  (수석동)</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>아주 작은 글씨를 읽을 수 있음</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>5~20Kg의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>듣고 말하는 작업 어려움</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>생산·품질 사무원 및 관리원(그 외 분야)</jobNm>
+          <offerregDt>20240709</offerregDt>
+          <regDt>20240709</regDt>
+          <regagnName>한국장애인고용공단 충남지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>111</rno>
+          <rnum>111</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-09~2024-10-08</termDate>
+        </item>
+        <item>
+          <busplaName>미성산업</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>전라북도 전주시 덕진구 신복천변3길 12 157-4 (팔복동1가)</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <jobNm>경·소형 화물차 운전원</jobNm>
+          <offerregDt>20240708</offerregDt>
+          <regDt>20240708</regDt>
+          <regagnName>한국장애인고용공단 전북지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>112</rno>
+          <rnum>112</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-08~2024-08-16</termDate>
+        </item>
+        <item>
+          <busplaName>주식회사 푸른솔 파트너스</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>충청남도 아산시 배방읍 고불로 68 .</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <jobNm>세탁원</jobNm>
+          <offerregDt>20240708</offerregDt>
+          <regDt>20240708</regDt>
+          <regagnName>한국장애인고용공단 충남지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>113</rno>
+          <rnum>113</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-08~2024-08-31</termDate>
+        </item>
+        <item>
+          <busplaName>이지요 드 누보</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>부산광역시 부산진구 서전로58번길 47 (전포동)</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <jobNm>건물 청소원(클린마스터)</jobNm>
+          <offerregDt>20240708</offerregDt>
+          <regDt>20240711</regDt>
+          <regagnName>한국장애인고용공단 부산지역본부</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>114</rno>
+          <rnum>114</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-08~2024-08-23</termDate>
+        </item>
+        <item>
+          <busplaName>(주) 현대그린푸드</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경기도 용인시 수지구 문인로 30  (동천동, 현대그린푸드)</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>정밀한 작업가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>주방 보조원(일반 음식점)</jobNm>
+          <offerregDt>20240708</offerregDt>
+          <regDt>20240708</regDt>
+          <regagnName>한국장애인고용공단 대전지역본부</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <reqLicens>한식조리기능사/양식조리기능사/</reqLicens>
+          <rno>115</rno>
+          <rnum>115</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-08~2024-09-24</termDate>
+        </item>
+        <item>
+          <busplaName>(주)호텔신라</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 중구 동호로 249  (장충동2가)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>일부 서서하는 작업 가능</envStndWalk>
+          <jobNm>건물 청소원(클린마스터)</jobNm>
+          <offerregDt>20240708</offerregDt>
+          <regDt>20240708</regDt>
+          <regagnName>한국장애인고용공단 서울지역본부</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>116</rno>
+          <rnum>116</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-08~2024-10-07</termDate>
+        </item>
+        <item>
+          <busplaName>대성산업</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>충청남도 보령시 남포면 고루머리길 6 .</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>큰 물품 조립가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>세탁원</jobNm>
+          <offerregDt>20240705</offerregDt>
+          <regDt>20240705</regDt>
+          <regagnName>한국장애인고용공단 충남지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>117</rno>
+          <rnum>117</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-05~2024-10-04</termDate>
+        </item>
+        <item>
+          <busplaName>기장물산(주)</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>부산광역시 기장군 일광읍 신평길 30-16 </compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>아주 작은 글씨를 읽을 수 있음</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>듣고 말하기에 어려움 없음</envLstnTalk>
+          <envStndWalk>일부 서서하는 작업 가능</envStndWalk>
+          <jobNm>식품 분야 단순 종사원</jobNm>
+          <offerregDt>20240705</offerregDt>
+          <regDt>20240705</regDt>
+          <regagnName>한국장애인고용공단 부산지역본부</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>118</rno>
+          <rnum>118</rnum>
+          <salary>1,479,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-05~2024-08-31</termDate>
+        </item>
+        <item>
+          <busplaName>녹십자수의약품주식회사</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경기도 용인시 기흥구 중부대로 438 (구갈동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <jobNm>인쇄, 목재, 가구 및 기타 제조 분야 단순 종사원</jobNm>
+          <offerregDt>20240704</offerregDt>
+          <regDt>20240704</regDt>
+          <regagnName>한국장애인고용공단 충남지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>119</rno>
+          <rnum>119</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-04~2024-08-31</termDate>
+        </item>
+        <item>
+          <busplaName>에스케이모바일에너지(주)</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>충청남도 서산시 지곡면 무장산업로 59-122 SK온 서산공장 내</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>아주 작은 글씨를 읽을 수 있음</envEyesight>
+          <envHandWork>정밀한 작업가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>듣고 말하기에 어려움 없음</envLstnTalk>
+          <envStndWalk>일부 서서하는 작업 가능</envStndWalk>
+          <jobNm>사무 보조원</jobNm>
+          <offerregDt>20240702</offerregDt>
+          <regDt>20240702</regDt>
+          <regagnName>한국장애인고용공단 충남지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>120</rno>
+          <rnum>120</rnum>
+          <salary>1,069,100</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-02~2024-08-31</termDate>
+        </item>
+        <item>
+          <busplaName>푸디스트주식회사</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 용산구 청파로 363 푸디스트본사 (서계동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>경력</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>비교적 큰 인쇄물을 읽을 수 있음</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>바리스타 및 티마스터 보조원</jobNm>
+          <offerregDt>20240702</offerregDt>
+          <regDt>20240702</regDt>
+          <regagnName>한국장애인고용공단 경기동부지사</regagnName>
+          <reqCareer>1년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>121</rno>
+          <rnum>121</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-02~2024-08-15</termDate>
+        </item>
+        <item>
+          <busplaName>쿠팡주식회사</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 송파구 송파대로 570  (신천동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>서거나 걷는 일 어려움</envStndWalk>
+          <jobNm>환경 미화원</jobNm>
+          <offerregDt>20240702</offerregDt>
+          <regDt>20240702</regDt>
+          <regagnName>한국장애인고용공단 서울동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>122</rno>
+          <rnum>122</rnum>
+          <salary>1,220,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-02~2024-08-16</termDate>
+        </item>
+        <item>
+          <busplaName>쿠팡주식회사</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 송파구 송파대로 570  (신천동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>서거나 걷는 일 어려움</envStndWalk>
+          <jobNm>온라인 상품등록원</jobNm>
+          <offerregDt>20240702</offerregDt>
+          <regDt>20240702</regDt>
+          <regagnName>한국장애인고용공단 서울동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>123</rno>
+          <rnum>123</rnum>
+          <salary>2,100,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-02~2024-08-16</termDate>
+        </item>
+        <item>
+          <busplaName>쿠팡주식회사</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 송파구 송파대로 570  (신천동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>서거나 걷는 일 어려움</envStndWalk>
+          <jobNm>기타 경영지원 서비스 관리자</jobNm>
+          <offerregDt>20240702</offerregDt>
+          <regDt>20240702</regDt>
+          <regagnName>한국장애인고용공단 서울동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>124</rno>
+          <rnum>124</rnum>
+          <salary>2,100,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-02~2024-08-16</termDate>
+        </item>
+        <item>
+          <busplaName>쿠팡주식회사</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 송파구 송파대로 570  (신천동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>서거나 걷는 일 어려움</envStndWalk>
+          <jobNm>온라인 채팅 상담원</jobNm>
+          <offerregDt>20240702</offerregDt>
+          <regDt>20240702</regDt>
+          <regagnName>한국장애인고용공단 서울동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>125</rno>
+          <rnum>125</rnum>
+          <salary>2,100,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-02~2024-08-16</termDate>
+        </item>
+        <item>
+          <busplaName>쿠팡주식회사</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 송파구 송파대로 570  (신천동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>서거나 걷는 일 어려움</envStndWalk>
+          <jobNm>각종 단체 및 기타 고객서비스 관리자</jobNm>
+          <offerregDt>20240702</offerregDt>
+          <regDt>20240702</regDt>
+          <regagnName>한국장애인고용공단 서울동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>126</rno>
+          <rnum>126</rnum>
+          <salary>2,100,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-02~2024-08-16</termDate>
+        </item>
+        <item>
+          <busplaName>쿠팡주식회사</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 송파구 송파대로 570  (신천동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>서거나 걷는 일 어려움</envStndWalk>
+          <jobNm>웹 운영자(홈페이지 관리자)</jobNm>
+          <offerregDt>20240702</offerregDt>
+          <regDt>20240702</regDt>
+          <regagnName>한국장애인고용공단 서울동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>127</rno>
+          <rnum>127</rnum>
+          <salary>2,100,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-02~2024-08-16</termDate>
+        </item>
+        <item>
+          <busplaName>쿠팡주식회사</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 송파구 송파대로 570  (신천동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>서거나 걷는 일 어려움</envStndWalk>
+          <jobNm>방송 및 온라인 콘텐츠 모니터요원</jobNm>
+          <offerregDt>20240702</offerregDt>
+          <regDt>20240702</regDt>
+          <regagnName>한국장애인고용공단 서울동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>128</rno>
+          <rnum>128</rnum>
+          <salary>2,100,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-02~2024-08-16</termDate>
+        </item>
+        <item>
+          <busplaName>쿠팡주식회사</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 송파구 송파대로 570  (신천동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>서거나 걷는 일 어려움</envStndWalk>
+          <jobNm>마케팅홍보 사무보조원</jobNm>
+          <offerregDt>20240701</offerregDt>
+          <regDt>20240701</regDt>
+          <regagnName>한국장애인고용공단 경기동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>129</rno>
+          <rnum>129</rnum>
+          <salary>2,100,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-01~2024-08-31</termDate>
+        </item>
+        <item>
+          <busplaName>쿠팡주식회사</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 송파구 송파대로 570  (신천동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>서거나 걷는 일 어려움</envStndWalk>
+          <jobNm>총무 사무보조원</jobNm>
+          <offerregDt>20240701</offerregDt>
+          <regDt>20240701</regDt>
+          <regagnName>한국장애인고용공단 경기동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>130</rno>
+          <rnum>130</rnum>
+          <salary>2,100,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-01~2024-08-31</termDate>
+        </item>
+        <item>
+          <busplaName>쿠팡주식회사</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 송파구 송파대로 570  (신천동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>서거나 걷는 일 어려움</envStndWalk>
+          <jobNm>보험 심사원 및 사무원</jobNm>
+          <offerregDt>20240701</offerregDt>
+          <regDt>20240701</regDt>
+          <regagnName>한국장애인고용공단 경기동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>131</rno>
+          <rnum>131</rnum>
+          <salary>2,100,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-01~2024-08-31</termDate>
+        </item>
+        <item>
+          <busplaName>쿠팡주식회사</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 송파구 송파대로 570  (신천동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>서거나 걷는 일 어려움</envStndWalk>
+          <jobNm>사무 보조원</jobNm>
+          <offerregDt>20240701</offerregDt>
+          <regDt>20240701</regDt>
+          <regagnName>한국장애인고용공단 경기동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>132</rno>
+          <rnum>132</rnum>
+          <salary>2,100,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-01~2024-08-31</termDate>
+        </item>
+        <item>
+          <busplaName>쿠팡주식회사</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 송파구 송파대로 570  (신천동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>서거나 걷는 일 어려움</envStndWalk>
+          <jobNm>모니터 요원</jobNm>
+          <offerregDt>20240701</offerregDt>
+          <regDt>20240701</regDt>
+          <regagnName>한국장애인고용공단 경기동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>133</rno>
+          <rnum>133</rnum>
+          <salary>2,100,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-01~2024-08-31</termDate>
+        </item>
+        <item>
+          <busplaName>(사)중증장애인복지협회 도둠프린팅</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>광주광역시 동구 의재로109번길 32-4 .</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <jobNm>인쇄, 목재, 가구 및 기타 제조 분야 단순 종사원</jobNm>
+          <offerregDt>20240701</offerregDt>
+          <regDt>20240701</regDt>
+          <regagnName>한국장애인고용공단 광주지역본부</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>134</rno>
+          <rnum>134</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-01~2024-09-30</termDate>
+        </item>
+        <item>
+          <busplaName>쿠팡주식회사</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 송파구 송파대로 570  (신천동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>서거나 걷는 일 어려움</envStndWalk>
+          <jobNm>온라인 판매원</jobNm>
+          <offerregDt>20240701</offerregDt>
+          <regDt>20240701</regDt>
+          <regagnName>한국장애인고용공단 경기동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>135</rno>
+          <rnum>135</rnum>
+          <salary>2,100,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-07-01~2024-08-31</termDate>
+        </item>
+        <item>
+          <busplaName>(주)씨앤알</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 동작구 동작대로35길 2 원일빌딩 4층 (사당동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>비교적 큰 인쇄물을 읽을 수 있음</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>듣고 말하는 작업 어려움</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>주방 보조원(일반 음식점)</jobNm>
+          <offerregDt>20240701</offerregDt>
+          <regDt>20240701</regDt>
+          <regagnName>한국장애인고용공단 경기동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>136</rno>
+          <rnum>136</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-01~2024-08-09</termDate>
+        </item>
+        <item>
+          <busplaName>주식회사온봄산업</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경상남도 창녕군 장마면 초곡길 320 (주)온봄산업</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>비교적 큰 인쇄물을 읽을 수 있음</envEyesight>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>듣고 말하는 작업 어려움</envLstnTalk>
+          <envStndWalk>서거나 걷는 일 어려움</envStndWalk>
+          <jobNm>인쇄, 목재, 가구 및 기타 제조 분야 단순 종사원</jobNm>
+          <offerregDt>20240701</offerregDt>
+          <regDt>20240708</regDt>
+          <regagnName>한국장애인고용공단 경남동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>137</rno>
+          <rnum>137</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-07-01~2024-09-30</termDate>
+        </item>
+        <item>
+          <busplaName>(주)부현전기</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>인천광역시 부평구 부평대로 153 대명벨리온 2518호(부평동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <jobNm>공사현장 신호수</jobNm>
+          <offerregDt>20240701</offerregDt>
+          <regDt>20240705</regDt>
+          <regagnName>한국장애인고용공단 인천지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>138</rno>
+          <rnum>138</rnum>
+          <salary>140,000</salary>
+          <salaryType>일급</salaryType>
+          <termDate>2024-07-01~2024-09-30</termDate>
+        </item>
+        <item>
+          <busplaName>(주)휴넷</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 구로구 디지털로26길 5 (구로동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>5~20Kg의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>환경 미화원</jobNm>
+          <offerregDt>20240627</offerregDt>
+          <regDt>20240627</regDt>
+          <regagnName>한국장애인고용공단 서울남부지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>139</rno>
+          <rnum>139</rnum>
+          <salary>1,036,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-06-27~2024-08-30</termDate>
+        </item>
+        <item>
+          <busplaName>분당러스크재활병원</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경기도 성남시 분당구 정자일로156번길 6 뉴본타워3층(분당러스크병원 영양팀) (정자동,뉴본타워)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>아주 작은 글씨를 읽을 수 있음</envEyesight>
+          <envHandWork>정밀한 작업가능</envHandWork>
+          <envLiftPower>20Kg 이상의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>듣고 말하기에 어려움 없음</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>시설 요양보호사(노인요양사)</jobNm>
+          <offerregDt>20240627</offerregDt>
+          <regDt>20240627</regDt>
+          <regagnName>한국장애인고용공단 경기동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>140</rno>
+          <rnum>140</rnum>
+          <salary>26,000,000</salary>
+          <salaryType>연봉</salaryType>
+          <termDate>2024-06-27~2024-09-26</termDate>
+        </item>
+        <item>
+          <busplaName>행복믿음 주식회사</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 종로구 종로 26  (서린동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>건물 청소원(클린마스터)</jobNm>
+          <offerregDt>20240627</offerregDt>
+          <regDt>20240627</regDt>
+          <regagnName>한국장애인고용공단 서울지역본부</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>141</rno>
+          <rnum>141</rnum>
+          <salary>2,400,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-06-27~2024-09-26</termDate>
+        </item>
+        <item>
+          <busplaName>푸디스트주식회사</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 용산구 청파로 363 푸디스트본사 (서계동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>비교적 큰 인쇄물을 읽을 수 있음</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>건물 청소원(클린마스터)</jobNm>
+          <offerregDt>20240627</offerregDt>
+          <regDt>20240627</regDt>
+          <regagnName>한국장애인고용공단 경기동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>142</rno>
+          <rnum>142</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-06-27~2024-08-09</termDate>
+        </item>
+        <item>
+          <busplaName>엔에스시스템(주)</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>충청남도 보령시 주포면 배재길 6-77 엔에스시스템(주)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>서거나 걷는 일 어려움</envStndWalk>
+          <jobNm>사무 보조원</jobNm>
+          <offerregDt>20240626</offerregDt>
+          <regDt>20240626</regDt>
+          <regagnName>한국장애인고용공단 충남지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>143</rno>
+          <rnum>143</rnum>
+          <salary>828,240</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-06-26~2024-08-31</termDate>
+        </item>
+        <item>
+          <busplaName>제주국제자유도시개발센터</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>제주특별자치도 제주시 첨단로 213-4 제주첨단과학기술단지 엘리트빌딩 3층(영평동)</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>아주 작은 글씨를 읽을 수 있음</envEyesight>
+          <envHandWork>정밀한 작업가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>듣고 말하기에 어려움 없음</envLstnTalk>
+          <envStndWalk>일부 서서하는 작업 가능</envStndWalk>
+          <jobNm>공공행정 사무원</jobNm>
+          <offerregDt>20240626</offerregDt>
+          <regDt>20240702</regDt>
+          <regagnName>한국장애인고용공단 제주지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>144</rno>
+          <rnum>144</rnum>
+          <salary>2,067,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-06-26~2024-09-04</termDate>
+        </item>
+        <item>
+          <busplaName>분당러스크재활병원</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경기도 성남시 분당구 정자일로156번길 6 뉴본타워3층(분당러스크병원 영양팀) (정자동,뉴본타워)</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>아주 작은 글씨를 읽을 수 있음</envEyesight>
+          <envHandWork>정밀한 작업가능</envHandWork>
+          <envLiftPower>20Kg 이상의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>듣고 말하기에 어려움 없음</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>간호조무사(요양병원 제외)</jobNm>
+          <offerregDt>20240625</offerregDt>
+          <regDt>20240625</regDt>
+          <regagnName>한국장애인고용공단 경기동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>145</rno>
+          <rnum>145</rnum>
+          <salary>26,000,000</salary>
+          <salaryType>연봉</salaryType>
+          <termDate>2024-06-25~2024-09-24</termDate>
+        </item>
+        <item>
+          <busplaName>주식회사 마천생활건강</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>부산광역시 금정구 금강로446번길 8 (구서동, 천양스카이빌)</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>한손작업 가능</envBothHands>
+          <envEyesight>비교적 큰 인쇄물을 읽을 수 있음</envEyesight>
+          <envHandWork>큰 물품 조립가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>듣고 말하기에 어려움 없음</envLstnTalk>
+          <envStndWalk>서거나 걷는 일 어려움</envStndWalk>
+          <jobNm>텔레마케터(콜센터)</jobNm>
+          <offerregDt>20240625</offerregDt>
+          <regDt>20240625</regDt>
+          <regagnName>한국장애인고용공단 충남지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>146</rno>
+          <rnum>146</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-06-25~2024-09-24</termDate>
+        </item>
+        <item>
+          <busplaName>주식회사그린산업</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>충청북도 제천시 백운면 금봉로 365 리솜포레스트 지하6층 그린산업세탁실</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>큰 물품 조립가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>세탁원</jobNm>
+          <offerregDt>20240624</offerregDt>
+          <regDt>20240624</regDt>
+          <regagnName>한국장애인고용공단 충남지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>147</rno>
+          <rnum>147</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-06-24~2024-09-07</termDate>
+        </item>
+        <item>
+          <busplaName>주식회사 위드센</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 서초구 반포대로 13 (서초동) 지하 1층</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <jobNm>바리스타 및 티마스터 보조원</jobNm>
+          <offerregDt>20240624</offerregDt>
+          <regDt>20240628</regDt>
+          <regagnName>한국장애인고용공단 서울지역본부</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>148</rno>
+          <rnum>148</rnum>
+          <salary>1,391,660</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-06-24~2024-09-23</termDate>
+        </item>
+        <item>
+          <busplaName>(주)디지토</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>강원특별자치도 원주시 문막읍 동화큰골길 26-7 (주)디지토</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <jobNm>기타 서비스 단순종사원</jobNm>
+          <offerregDt>20240624</offerregDt>
+          <regDt>20240628</regDt>
+          <regagnName>한국장애인고용공단 강원지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>149</rno>
+          <rnum>149</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-06-24~2024-08-31</termDate>
+        </item>
+        <item>
+          <busplaName>아이본병원</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>충청남도 천안시 서북구 불당25로 208 3,4,5층(중원타워1,2)  (불당동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>큰 물품 조립가능</envHandWork>
+          <envLiftPower>5~20Kg의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>환자케어 보조원(환자이동 도우미 등)</jobNm>
+          <offerregDt>20240621</offerregDt>
+          <regDt>20240621</regDt>
+          <regagnName>한국장애인고용공단 충남지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>150</rno>
+          <rnum>150</rnum>
+          <salary>1,548,020</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-06-21~2024-09-20</termDate>
+        </item>
+        <item>
+          <busplaName>주식회사 스마일유통</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>대전광역시 동구 용운로1번길 13 (대동)</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <jobNm>제품 단순검사원(섬유, 전기전자, 식품 제외)</jobNm>
+          <offerregDt>20240621</offerregDt>
+          <regDt>20240621</regDt>
+          <regagnName>한국장애인고용공단 대전지역본부</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>151</rno>
+          <rnum>151</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-06-21~2024-07-12</termDate>
+        </item>
+        <item>
+          <busplaName>이조은산소 주식회사</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>광주광역시 광산구 평동산단6번로 102-14 (월전동)</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <jobNm>기타 서비스 단순종사원</jobNm>
+          <offerregDt>20240620</offerregDt>
+          <regDt>20240620</regDt>
+          <regagnName>한국장애인고용공단 광주지역본부</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>152</rno>
+          <rnum>152</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-06-20~2024-09-19</termDate>
+        </item>
+        <item>
+          <busplaName>한국장애인고용산업주식회사</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 영등포구 영등포로5길 19 (양평동2가)912호</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <jobNm>경비 관리자</jobNm>
+          <offerregDt>20240618</offerregDt>
+          <regDt>20240618</regDt>
+          <regagnName>한국장애인고용공단 서울남부지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>153</rno>
+          <rnum>153</rnum>
+          <salary>1,035,300</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-06-18~2024-08-16</termDate>
+        </item>
+        <item>
+          <busplaName>천안재활병원</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>충청남도 천안시 서북구 쌍용대로 225 SRRC 천안재활병원 (성정동)</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envLstnTalk>듣고 말하기에 어려움 없음</envLstnTalk>
+          <envStndWalk>일부 서서하는 작업 가능</envStndWalk>
+          <jobNm>환자케어 보조원(환자이동 도우미 등)</jobNm>
+          <offerregDt>20240614</offerregDt>
+          <regDt>20240614</regDt>
+          <regagnName>한국장애인고용공단 충남지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>154</rno>
+          <rnum>154</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-06-14~2024-09-13</termDate>
+        </item>
+        <item>
+          <busplaName>(주) 현대그린푸드</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경기도 용인시 수지구 문인로 30  (동천동, 현대그린푸드)</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>한손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>주방 보조원(일반 음식점)</jobNm>
+          <offerregDt>20240614</offerregDt>
+          <regDt>20240614</regDt>
+          <regagnName>한국장애인고용공단 충남지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>155</rno>
+          <rnum>155</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-06-14~2024-09-13</termDate>
+        </item>
+        <item>
+          <busplaName>(주)케이티씨에스(호남본부)</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>광주광역시 북구 무등로202번길 15 (신안동), 2층 호남마케팅부서 내 </compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <jobNm>환경·청소 관리자</jobNm>
+          <offerregDt>20240613</offerregDt>
+          <regDt>20240613</regDt>
+          <regagnName>한국장애인고용공단 광주지역본부</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>156</rno>
+          <rnum>156</rnum>
+          <salary>1,100,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-06-13~2024-09-01</termDate>
+        </item>
+        <item>
+          <busplaName>천왕중학교</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 구로구 천왕로 63 (천왕동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <jobNm>공공장소 환경미화원 (공원, 휴양림 등)</jobNm>
+          <offerregDt>20240613</offerregDt>
+          <regDt>20240613</regDt>
+          <regagnName>한국장애인고용공단 서울남부지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>157</rno>
+          <rnum>157</rnum>
+          <salary>12,140</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-06-13~2024-09-12</termDate>
+        </item>
+        <item>
+          <busplaName>(주)에이치엘아산</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>충청남도 아산시 둔포면 봉재길63번길 31-1 (주)에이치엘아산</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <jobNm>세탁보조원</jobNm>
+          <offerregDt>20240612</offerregDt>
+          <regDt>20240612</regDt>
+          <regagnName>한국장애인고용공단 충남지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>158</rno>
+          <rnum>158</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-06-12~2024-09-11</termDate>
+        </item>
+        <item>
+          <busplaName>(주)현대캐터링시스템</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경기도 성남시 분당구 야탑로 98 2층 (주)현대캐터링시스템 (야탑동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <jobNm>주방 보조원(일반 음식점)</jobNm>
+          <offerregDt>20240612</offerregDt>
+          <regDt>20240612</regDt>
+          <regagnName>한국장애인고용공단 경기동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>159</rno>
+          <rnum>159</rnum>
+          <salary>9,680</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-06-12~2024-09-11</termDate>
+        </item>
+        <item>
+          <busplaName>하이디라오코리아（유）</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 영등포구 경인로 870 하이디라오코리아(유) (영등포동1가, 제이앤에스빌딩)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>비교적 큰 인쇄물을 읽을 수 있음</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>주방 보조원(일반 음식점)</jobNm>
+          <offerregDt>20240611</offerregDt>
+          <regDt>20240611</regDt>
+          <regagnName>한국장애인고용공단 서울지역본부</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>160</rno>
+          <rnum>160</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-06-11~2024-08-10</termDate>
+        </item>
+        <item>
+          <busplaName>주식회사 그린큐브</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>전라남도 무안군 삼향읍 영산로 1392-30 1392-30</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>큰 물품 조립가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>듣고 말하는 작업 어려움</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>재활용품 및 폐기물 선별원</jobNm>
+          <offerregDt>20240611</offerregDt>
+          <regDt>20240612</regDt>
+          <regagnName>한국장애인고용공단 전남지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>161</rno>
+          <rnum>161</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-06-11~2024-08-10</termDate>
+        </item>
+        <item>
+          <busplaName>(주)호텔롯데 시그니엘부산</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>부산광역시 해운대구 달맞이길 30 (중동, 엘시티)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <jobNm>음식재료준비원</jobNm>
+          <offerregDt>20240611</offerregDt>
+          <regDt>20240611</regDt>
+          <regagnName>한국장애인고용공단 부산지역본부</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>162</rno>
+          <rnum>162</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-06-11~2024-08-23</termDate>
+        </item>
+        <item>
+          <busplaName>사회복지법인 애광원 애광노인요양원</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>부산광역시 금정구 금샘로17번안길 45 (장전동)</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>비교적 큰 인쇄물을 읽을 수 있음</envEyesight>
+          <envLiftPower>20Kg 이상의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>듣고 말하기에 어려움 없음</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>시설 요양보호사(노인요양사)</jobNm>
+          <offerregDt>20240610</offerregDt>
+          <regDt>20240610</regDt>
+          <regagnName>한국장애인고용공단 부산지역본부</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>163</rno>
+          <rnum>163</rnum>
+          <salary>2,318,230</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-06-10~2024-08-30</termDate>
+        </item>
+        <item>
+          <busplaName>포항영신고등학교</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경상북도 포항시 북구 소티재로 107 포항영신고등학교 (우현동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <jobNm>학교 급식 조리사</jobNm>
+          <offerregDt>20240610</offerregDt>
+          <regDt>20240610</regDt>
+          <regagnName>한국장애인고용공단 경북지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>164</rno>
+          <rnum>164</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-06-10~2024-08-31</termDate>
+        </item>
+        <item>
+          <busplaName>(주)현대그린푸드 서한ENP지점</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경상북도 경주시 건천읍 용명공단길 173-47 1층</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <jobNm>주방 보조원(일반 음식점)</jobNm>
+          <offerregDt>20240610</offerregDt>
+          <regDt>20240610</regDt>
+          <regagnName>한국장애인고용공단 경북지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>165</rno>
+          <rnum>165</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-06-10~2024-08-31</termDate>
+        </item>
+        <item>
+          <busplaName>(주)에스에스글로벌</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>충청남도 아산시 둔포면 윤보선로336번길 71-16 (주)에스에스글로벌</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>비교적 큰 인쇄물을 읽을 수 있음</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>5~20Kg의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>인쇄, 목재, 가구 및 기타 제조 분야 단순 종사원</jobNm>
+          <offerregDt>20240607</offerregDt>
+          <regDt>20240607</regDt>
+          <regagnName>한국장애인고용공단 충남지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>166</rno>
+          <rnum>166</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-06-07~2024-08-31</termDate>
+        </item>
+        <item>
+          <busplaName>앙쥬주식회사</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>부산광역시 기장군 정관읍 산단3로 92-82 앙쥬주식회사</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>아주 작은 글씨를 읽을 수 있음</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>5~20Kg의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>일부 서서하는 작업 가능</envStndWalk>
+          <jobNm>제품 포장원(섬유, 전기전자, 식품 제외)</jobNm>
+          <offerregDt>20240607</offerregDt>
+          <regDt>20240607</regDt>
+          <regagnName>한국장애인고용공단 부산지역본부</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>167</rno>
+          <rnum>167</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-06-07~2024-09-06</termDate>
+        </item>
+        <item>
+          <busplaName>시온직업재활센터</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>광주광역시 광산구 사암로106번길 79-14 (우산동)</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <jobNm>기타 보건·의료 서비스 종사원</jobNm>
+          <offerregDt>20240604</offerregDt>
+          <regDt>20240604</regDt>
+          <regagnName>한국장애인고용공단 광주지역본부</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>168</rno>
+          <rnum>168</rnum>
+          <salary>500,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-06-04~2024-09-03</termDate>
+        </item>
+        <item>
+          <busplaName>(주)이지피에스</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경기도 용인시 처인구 모현읍 백옥대로 2414-20 .</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <jobNm>건물 청소원(클린마스터)</jobNm>
+          <offerregDt>20240604</offerregDt>
+          <regDt>20240604</regDt>
+          <regagnName>한국장애인고용공단 경기동부지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>169</rno>
+          <rnum>169</rnum>
+          <salary>10,000</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-06-04~2024-08-31</termDate>
+        </item>
+        <item>
+          <busplaName>(주)한진</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 중구 남대문로 63 , 한진빌딩 신관 21층</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>아주 작은 글씨를 읽을 수 있음</envEyesight>
+          <envLstnTalk>듣고 말하기에 어려움 없음</envLstnTalk>
+          <envStndWalk>서거나 걷는 일 어려움</envStndWalk>
+          <jobNm>콜센터 상담원(콜센터·고객센터·CS센터)</jobNm>
+          <offerregDt>20240604</offerregDt>
+          <regDt>20240604</regDt>
+          <regagnName>한국장애인고용공단 서울지역본부</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>170</rno>
+          <rnum>170</rnum>
+          <salary>11,500</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-06-04~2024-08-31</termDate>
+        </item>
+        <item>
+          <busplaName>주식회사 우리델리카</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>충청북도 진천군 덕산읍 신척산단4로 6 (덕산읍)</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>5~20Kg의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>기타 식품가공 종사원</jobNm>
+          <offerregDt>20240604</offerregDt>
+          <regDt>20240604</regDt>
+          <regagnName>한국장애인고용공단 충북지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>171</rno>
+          <rnum>171</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-06-04~2024-08-31</termDate>
+        </item>
+        <item>
+          <busplaName>이화피닉스요양병원</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>충청남도 아산시 배방읍 배방산길 57-5 이화피닉스요양병원</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>큰 물품 조립가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>병원 안내원 및 병원고객 도우미</jobNm>
+          <offerregDt>20240603</offerregDt>
+          <regDt>20240603</regDt>
+          <regagnName>한국장애인고용공단 충남지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>172</rno>
+          <rnum>172</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-06-03~2024-09-02</termDate>
+        </item>
+        <item>
+          <busplaName>(주)코리아세븐</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 중구 청계천로 100 시그니처타워 4-5층</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>큰 물품 조립가능</envHandWork>
+          <envLiftPower>5~20Kg의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>매장서빙원 및 매장 정리원(카페, 패스트푸드점 등)</jobNm>
+          <offerregDt>20240603</offerregDt>
+          <regDt>20240604</regDt>
+          <regagnName>한국장애인고용공단 서울지역본부</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>173</rno>
+          <rnum>173</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-06-03~2024-09-02</termDate>
+        </item>
+        <item>
+          <busplaName>알비코리아(주)</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>인천광역시 서구 백범로603번길 4 (가좌동)</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>비교적 큰 인쇄물을 읽을 수 있음</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>5~20Kg의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>듣고 말하기에 어려움 없음</envLstnTalk>
+          <envStndWalk>일부 서서하는 작업 가능</envStndWalk>
+          <jobNm>PCB 부품·제품 조립·검사원</jobNm>
+          <offerregDt>20240531</offerregDt>
+          <regDt>20240531</regDt>
+          <regagnName>한국장애인고용공단 인천지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>174</rno>
+          <rnum>174</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-05-31~2024-08-30</termDate>
+        </item>
+        <item>
+          <busplaName>주식회사 조인스위드</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 구로구 디지털로31길 59-14 (구로동)</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <jobNm>바리스타</jobNm>
+          <offerregDt>20240530</offerregDt>
+          <regDt>20240530</regDt>
+          <regagnName>한국장애인고용공단 서울남부지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>175</rno>
+          <rnum>175</rnum>
+          <salary>1,040,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-05-30~2024-08-29</termDate>
+        </item>
+        <item>
+          <busplaName>주식회사하누리</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경기도 평택시 진위면 진위2산단로 140 1030호, 1031 (더퍼스트타워 평택), LG로 222</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>한손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>큰 물품 조립가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>일부 서서하는 작업 가능</envStndWalk>
+          <jobNm>건물 청소원(클린마스터)</jobNm>
+          <offerregDt>20240530</offerregDt>
+          <regDt>20240530</regDt>
+          <regagnName>한국장애인고용공단 경남동부지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>176</rno>
+          <rnum>176</rnum>
+          <salary>2,220,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-05-30~2024-08-23</termDate>
+        </item>
+        <item>
+          <busplaName>리모니안코리아 주식회사</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>인천광역시 서구 가정로77번길 26-1 301호 (가좌동)</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envEyesight>아주 작은 글씨를 읽을 수 있음</envEyesight>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>서거나 걷는 일 어려움</envStndWalk>
+          <jobNm>마케팅·광고·홍보·상품기획 사무원</jobNm>
+          <offerregDt>20240529</offerregDt>
+          <regDt>20240529</regDt>
+          <regagnName>한국장애인고용공단 인천지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>고졸</reqEduc>
+          <rno>177</rno>
+          <rnum>177</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-05-29~2024-08-28</termDate>
+        </item>
+        <item>
+          <busplaName>마포구고용복지지원센터</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 마포구 매봉산로 18 마포창업복지관 1,2층 (상암동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>듣고 말하기에 어려움 없음</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>바리스타 및 티마스터 보조원</jobNm>
+          <offerregDt>20240529</offerregDt>
+          <regDt>20240529</regDt>
+          <regagnName>한국장애인고용공단 서울지역본부</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>178</rno>
+          <rnum>178</rnum>
+          <salary>9,900</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-05-29~2024-06-14</termDate>
+        </item>
+        <item>
+          <busplaName>(주)신성엔지니어링</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>경기도 성남시 분당구 대왕판교로395번길 8 (백현동)</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>정밀한 작업가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>기타 기계 조립·검사원</jobNm>
+          <offerregDt>20240529</offerregDt>
+          <regDt>20240529</regDt>
+          <regagnName>한국장애인고용공단 충남지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>179</rno>
+          <rnum>179</rnum>
+          <salary>12,000</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-05-29~2024-08-28</termDate>
+        </item>
+        <item>
+          <busplaName>케이원보안시스템</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>충청남도 천안시 동남구 쌍용대로 46 (쌍용동) 가람빌딩 2층</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>큰 물품 조립가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>서거나 걷는 일 어려움</envStndWalk>
+          <jobNm>건물 경비원</jobNm>
+          <offerregDt>20240524</offerregDt>
+          <regDt>20240524</regDt>
+          <regagnName>한국장애인고용공단 충남지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>180</rno>
+          <rnum>180</rnum>
+          <salary>2,268,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-05-24~2024-08-23</termDate>
+        </item>
+        <item>
+          <busplaName>국립생태원</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>충청남도 서천군 마서면 금강로 1210 .</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>큰 물품 조립가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>총무 및 일반 사무원</jobNm>
+          <offerregDt>20240517</offerregDt>
+          <regDt>20240517</regDt>
+          <regagnName>한국장애인고용공단 충남지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>181</rno>
+          <rnum>181</rnum>
+          <salary>2,060,740</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-05-17~2024-08-16</termDate>
+        </item>
+        <item>
+          <busplaName>연세대학교 의과대학 강남세브란스병원</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 강남구 언주로 211 (도곡동)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>아주 작은 글씨를 읽을 수 있음</envEyesight>
+          <envHandWork>작은 물품 조립가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>오랫동안 가능</envStndWalk>
+          <jobNm>총무 사무보조원</jobNm>
+          <offerregDt>20240514</offerregDt>
+          <regDt>20240521</regDt>
+          <regagnName>한국장애인고용공단 서울동부지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>182</rno>
+          <rnum>182</rnum>
+          <salary>1,300,000</salary>
+          <salaryType>월급</salaryType>
+          <termDate>2024-05-14~2024-08-13</termDate>
+        </item>
+        <item>
+          <busplaName>한국전력공사 경인건설본부</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>서울특별시 중구 퇴계로 140 (남산동3가)</compAddr>
+          <empType>계약직</empType>
+          <enterType>무관</enterType>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>듣고 말하는 작업 어려움</envLstnTalk>
+          <envStndWalk>서거나 걷는 일 어려움</envStndWalk>
+          <jobNm>사무 보조원(국가 및 자치단체, 공공기관)</jobNm>
+          <offerregDt>20240509</offerregDt>
+          <regDt>20240509</regDt>
+          <regagnName>한국장애인고용공단 서울지역본부</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>183</rno>
+          <rnum>183</rnum>
+          <salary>78,880</salary>
+          <salaryType>일급</salaryType>
+          <termDate>2024-05-09~2024-05-23</termDate>
+        </item>
+        <item>
+          <busplaName>(주) 엠디에스</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>충청남도 아산시 둔포면 이화서길 23 엠디에스</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <jobNm>세탁원</jobNm>
+          <offerregDt>20240509</offerregDt>
+          <regDt>20240516</regDt>
+          <regagnName>한국장애인고용공단 충남지사</regagnName>
+          <reqCareer>무관</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>184</rno>
+          <rnum>184</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-05-09~2024-08-08</termDate>
+        </item>
+        <item>
+          <busplaName>원업크리에이티브</busplaName>
+          <cntctNo>1588-1519</cntctNo>
+          <compAddr>울산광역시 남구 대학로 164 (무거동, 웰츠타워) 2층</compAddr>
+          <empType>상용직</empType>
+          <enterType>무관</enterType>
+          <envBothHands>양손작업 가능</envBothHands>
+          <envEyesight>일상적 활동 가능</envEyesight>
+          <envHandWork>정밀한 작업가능</envHandWork>
+          <envLiftPower>5Kg 이내의 물건을 다룰 수 있음</envLiftPower>
+          <envLstnTalk>간단한 듣고 말하기 가능</envLstnTalk>
+          <envStndWalk>서거나 걷는 일 어려움</envStndWalk>
+          <jobNm>마케팅·광고·홍보·상품기획 사무원</jobNm>
+          <offerregDt>20240509</offerregDt>
+          <regDt>20240509</regDt>
+          <regagnName>한국장애인고용공단 울산지사</regagnName>
+          <reqCareer>0년개월</reqCareer>
+          <reqEduc>무관</reqEduc>
+          <rno>185</rno>
+          <rnum>185</rnum>
+          <salary>9,860</salary>
+          <salaryType>시급</salaryType>
+          <termDate>2024-05-09~2024-08-08</termDate>
+        </item>
+      </items>
+      <numOfRows>185</numOfRows>
+      <pageNo>1</pageNo>
+      <totalCount>185</totalCount>
+    </body>
+  </response>
