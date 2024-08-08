@@ -19,7 +19,7 @@ public class RegistrationController {
 
     private final UserService userService;
 
-    @PostMapping
+    @PostMapping("users")
     public ResponseEntity<RegistrationResponse> registrationRequest(@Valid @RequestBody RegistrationRequest registrationRequest) {
 
         final RegistrationResponse registrationResponse = userService.registration(registrationRequest);
