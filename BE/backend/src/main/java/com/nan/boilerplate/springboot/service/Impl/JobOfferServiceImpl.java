@@ -14,13 +14,13 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class JobOfferImpl implements JobOfferService {
+public class JobOfferServiceImpl implements JobOfferService {
     private final JobOfferRepository jobOfferRepository;
     private final UserService userService;
 
 
     @Autowired
-    public JobOfferImpl(JobOfferRepository jobOfferRepository, UserService userService) {
+    public JobOfferServiceImpl(JobOfferRepository jobOfferRepository, UserService userService) {
         this.jobOfferRepository = jobOfferRepository;
         this.userService = userService;
     }
@@ -64,35 +64,42 @@ public class JobOfferImpl implements JobOfferService {
                 .education(jobOfferRequest.getEducation())
                 .build();
         jobOfferRepository.save(jobOffer);
-        JobOfferResponse jobOfferResponse=JobOfferResponse.builder()
+        JobOfferResponse jobOfferResponse = JobOfferResponse.builder()
                 .message("Add Success")
                 .build();
         return jobOfferResponse;
     }
 
     @Override
-    public JobOfferResponse updateJobOffer(JobOfferRequest jobOfferRequest,Long id) {
+    public JobOfferResponse updateJobOffer(Long id, JobOfferRequest jobOfferRequest) {
         if(jobOfferRepository.existsById(id)){
-            JobOffer jobOffer= JobOffer.builder()
-                    .title(jobOfferRequest.getTitle())
-                    .location(jobOfferRequest.getLocation())
-                    .education(jobOfferRequest.getEducation())
-                    .salaryType(jobOfferRequest.getSalaryType())
-                    .salary(jobOfferRequest.getSalary())
-                    .career(jobOfferRequest.getCareer())
-                    .body(jobOfferRequest.getBody())
-                    .build();
-            jobOfferRepository.save(jobOffer);
-            JobOfferResponse jobOfferResponse=JobOfferResponse.builder()
+            JobOffer existJobOffer = jobOfferRepository.getReferenceById(id);
+            existJobOffer.setTitle(jobOfferRequest.getTitle());
+            existJobOffer.setLocation(jobOfferRequest.getLocation());
+            existJobOffer.setEducation(jobOfferRequest.getEducation());
+            existJobOffer.setSalaryType(jobOfferRequest.getSalaryType());
+            existJobOffer.setSalary(jobOfferRequest.getSalary());
+            existJobOffer.setCareer(jobOfferRequest.getCareer());
+            existJobOffer.setBody(jobOfferRequest.getBody());
+//            JobOffer jobOffer = JobOffer.builder()
+//                    .title(jobOfferRequest.getTitle())
+//                    .location(jobOfferRequest.getLocation())
+//                    .education(jobOfferRequest.getEducation())
+//                    .salaryType(jobOfferRequest.getSalaryType())
+//                    .salary(jobOfferRequest.getSalary())
+//                    .career(jobOfferRequest.getCareer())
+//                    .body(jobOfferRequest.getBody())
+//                    .build();
+//            jobOfferRepository.save(jobOffer);
+            jobOfferRepository.save(existJobOffer);
+            return JobOfferResponse.builder()
                     .message("Update Success")
                     .build();
-            return jobOfferResponse;
         }
         else{
-            JobOfferResponse jobOfferResponse=JobOfferResponse.builder()
+            return JobOfferResponse.builder()
                     .message("Update Fail")
                     .build();
-            return jobOfferResponse;
         }
     }
 

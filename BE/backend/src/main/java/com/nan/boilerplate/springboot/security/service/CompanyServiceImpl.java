@@ -56,21 +56,26 @@ public class CompanyServiceImpl implements CompanyService {
 
     @Override
     public RegistrationResponse registration(CompanyRegistrationRequest companyRegistrationRequest) {
-        userValidationService.validateCompany(companyRegistrationRequest); // 이미 존재하는 유저인지 확인
+        if (!companyRegistrationRequest.getPassword().equals(companyRegistrationRequest.getPassword2())) {
+            return new RegistrationResponse(WRONG_PASSWORD);
+        } else {
+            userValidationService.validateCompany(companyRegistrationRequest); // 이미 존재하는 유저인지 확인
 
-        final Company company = UserMapper.INSTANCE.convertToCompany(companyRegistrationRequest); // 엔티티 디티오 변환
-        company.setPassword(bCryptPasswordEncoder.encode(company.getPassword()));
-        company.setRole(UserRole.COMPANY);
-        company.setActive(false); // 가입시 isActive를 false로 설정
+            final Company company = UserMapper.INSTANCE.convertToCompany(companyRegistrationRequest);
+            company.setPassword(bCryptPasswordEncoder.encode(company.getPassword()));
+            company.setRole(UserRole.COMPANY);
+            company.setActive(false); // 가입시 isActive를 false로 설정
 
-        companyRepository.save(company);
+            companyRepository.save(company);
 
-        final String username = companyRegistrationRequest.getUsername();
-        final String registrationSuccessMessage = generalMessageAccessor.getMessage(null, REGISTRATION_SUCCESSFUL, username);
+            final String username = companyRegistrationRequest.getUsername();
+            final String registrationSuccessMessage = generalMessageAccessor.getMessage(null, REGISTRATION_SUCCESSFUL, username);
 
-        log.info("{} registered successfully!", username);
+            log.info("{} registered successfully!", username);
 
-        return new RegistrationResponse(registrationSuccessMessage);//User
+            return new RegistrationResponse(registrationSuccessMessage);
+        }
+
     }
 
     @Override

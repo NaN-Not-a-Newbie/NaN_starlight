@@ -18,7 +18,7 @@ public class Company {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String CompanyName;
+    private String companyName;
 
     private Long companyRegistrationNumber;
 
@@ -26,9 +26,9 @@ public class Company {
 
     private String password;
 
-    private String PhoneNum;
+    private String phoneNum;
 
-    private String CompanyAddress;
+    private String companyAddress;
 
     private UserRole role;
 

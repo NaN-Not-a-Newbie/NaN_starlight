@@ -18,7 +18,7 @@ public interface UserMapper {
 
     User convertToUser(UserRegistrationRequest userRegistrationRequest);
 
-    Company convertToCompany(CompanyRegistrationRequest comapanyRegistrationRequest);
+    Company convertToCompany(CompanyRegistrationRequest companyRegistrationRequest);
 
     AuthenticatedUserDto convertToAuthenticatedUserDto(User user);
 

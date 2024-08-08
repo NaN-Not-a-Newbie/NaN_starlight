@@ -12,8 +12,8 @@ import javax.validation.constraints.NotEmpty;
 @ToString
 @NoArgsConstructor
 public class CompanyRegistrationRequest {
-    @NotEmpty(message = "...")
-    private Long companyRegistrationNumber;//사업자 등록 번호
+
+    private Long companyRegistrationNumber; //사업자 등록 번호
 
     @NotEmpty(message = "{registration_name_not_empty}")
     private String companyName;
@@ -33,5 +33,5 @@ public class CompanyRegistrationRequest {
     private String password;
 
     @NotEmpty(message = "{registration_password_not_empty}")
-    private String password2;//검증용
+    private String password2; //검증용
 }

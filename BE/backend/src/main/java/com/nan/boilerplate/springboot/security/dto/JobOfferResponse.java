@@ -22,6 +22,7 @@ public class JobOfferResponse {
     private Long career;
 
     private Company company;
+//    private Long companyId;
 
     private Education education;
 

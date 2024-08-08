@@ -18,6 +18,8 @@ public interface ResumeService {
 
     ResumeResponse addResume(ResumeRequest resumeRequest);
 
-    ResumeResponse updateResume(ResumeRequest resumeRequest);
+    ResumeResponse updateResume(Long id, ResumeRequest resumeRequest);
+
+    ResumeResponse deleteResume(Long id);
 
 }

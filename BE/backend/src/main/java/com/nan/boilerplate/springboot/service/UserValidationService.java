@@ -1,6 +1,7 @@
 package com.nan.boilerplate.springboot.service;
 
 import com.nan.boilerplate.springboot.exceptions.RegistrationException;
+import com.nan.boilerplate.springboot.repository.CompanyRepository;
 import com.nan.boilerplate.springboot.security.dto.CompanyRegistrationRequest;
 import com.nan.boilerplate.springboot.security.dto.UserRegistrationRequest;
 import com.nan.boilerplate.springboot.repository.UserRepository;
@@ -21,6 +22,8 @@ public class UserValidationService {
 
     private final UserRepository userRepository;
 
+    private final CompanyRepository companyRepository;
+
     private final ExceptionMessageAccessor exceptionMessageAccessor;
 
     public void validateUser(UserRegistrationRequest userRegistrationRequest) {
@@ -34,12 +37,26 @@ public class UserValidationService {
 
         final String username = companyRegistrationRequest.getUsername();
 
-        checkUsername(username);
+        checkUsernameCompany(username);
     }
 
     private void checkUsername(String username) {
 
         final boolean existsByUsername = userRepository.existsByUsername(username);
+
+        if (existsByUsername) {
+
+            log.warn("{} is already being used!", username);
+
+            final String existsUsername = exceptionMessageAccessor.getMessage(null, USERNAME_ALREADY_EXISTS);
+            throw new RegistrationException(existsUsername);
+        }
+
+    }
+
+    private void checkUsernameCompany(String username) {
+
+        final boolean existsByUsername = companyRepository.existsByUsername(username);
 
         if (existsByUsername) {
 
