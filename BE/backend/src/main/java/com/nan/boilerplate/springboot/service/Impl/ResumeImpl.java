@@ -1,15 +1,12 @@
-package com.nan.boilerplate.springboot.service.serviceImpl;
+package com.nan.boilerplate.springboot.service.Impl;
 
-import com.nan.boilerplate.springboot.model.JobOffer;
 import com.nan.boilerplate.springboot.model.Resume;
 import com.nan.boilerplate.springboot.repository.ResumeRepository;
-import com.nan.boilerplate.springboot.security.dto.JobOfferResponse;
 import com.nan.boilerplate.springboot.security.dto.ResumeRequest;
 import com.nan.boilerplate.springboot.security.dto.ResumeResponse;
 import com.nan.boilerplate.springboot.service.ResumeService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
