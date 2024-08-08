@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="StarLight" uuid="0c9185e4-891f-4c0b-a674-72503328e74a">
+    <data-source source="LOCAL" name="starlight@localhost" uuid="4805e7ef-47ef-45fe-9404-261ab54c6a6c">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
