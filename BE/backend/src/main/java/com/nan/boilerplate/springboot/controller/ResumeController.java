@@ -47,7 +47,7 @@ public class ResumeController {
         return ResponseEntity.ok(resumeService.addResume(resumeRequest));
     }
 
-    @PostMapping("/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<ResumeResponse> updateResume(@PathVariable Long id, @RequestBody ResumeRequest resumeRequest) {
         return ResponseEntity.ok(resumeService.updateResume(id, resumeRequest));
     }

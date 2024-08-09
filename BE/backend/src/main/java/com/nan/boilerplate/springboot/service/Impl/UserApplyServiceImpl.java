@@ -49,17 +49,34 @@ public class UserApplyServiceImpl implements UserApplyService {
 
     @Override
     public UserApplyResponse addUserApply(UserApplyRequest userApplyRequest) {
-        // resume의 user가.. 모르겠음 ㅜㅜ
-        return null;
+        UserApply userApply = UserApply.builder()
+                .jobOffer(userApplyRequest.getJobOffer())
+                .resume(userApplyRequest.getResume())
+                .hire(false)
+                .build();
+        return UserApplyResponse.builder()
+                .message("Success apply")
+                .build();
+
     }
 
     @Override
-    public UserApplyResponse updateUserApply(Long id, UserApplyRequest userApplyRequest) {
+    public UserApplyResponse updateUserApply(Long id, UserApplyRequest userApplyRequest,Long code) {
         if (userApplyRepository.existsById(id)) {
             UserApply existUserApply = userApplyRepository.getReferenceById(id);
-//            existUserApply.setResume();
-//            existUserApply.setJobOffer();
-//            existUserApply.setHire();
+            if (code == 1) {
+                existUserApply.setHire(true);
+                return UserApplyResponse.builder()
+                        .message("Hired").build();
+            } else if (code == 0) {
+                existUserApply.setHire(false);
+                return UserApplyResponse.builder()
+                        .message("Fired").build();
+            } else {
+                return UserApplyResponse.builder()
+                        .message("code Error").build();
+
+            }
         }
         return null;
     }
