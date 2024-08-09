@@ -13,7 +13,7 @@ public interface UserApplyService {
 
     UserApplyResponse addUserApply(UserApplyRequest userApplyRequest);
 
-    UserApplyResponse updateUserApply(Long id, UserApplyRequest userApplyRequest);
+    UserApplyResponse updateUserApply(Long id, UserApplyRequest userApplyRequest,Long code);
 
     UserApplyResponse deleteUserApplyResponse(Long id);
 }

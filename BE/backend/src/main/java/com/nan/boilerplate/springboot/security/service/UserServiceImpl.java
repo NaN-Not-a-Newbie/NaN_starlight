@@ -50,7 +50,7 @@ public class UserServiceImpl implements UserService {
             final User user = UserMapper.INSTANCE.convertToUser(userRegistrationRequest); // 엔티티 디티오 변환
             user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
             user.setUserRole(UserRole.USER);
-            user.setActive(false); // 가입시 isActive를 false로 설정
+            user.setActive(true); // 가입시 isActive를 false로 설정
 
             userRepository.save(user);
 
