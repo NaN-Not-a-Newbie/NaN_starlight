@@ -25,19 +25,20 @@ public class JwtTokenService {
     private final AuthenticationManager authenticationManager;
 
     public LoginResponse getLoginResponse(LoginRequest loginRequest) {
-
+        System.out.println("2-----------------");
         final String username = loginRequest.getUsername();
         final String password = loginRequest.getPassword();
-
+        System.out.println("21-----------------");
         final UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(username, password);
-
+        System.out.println("22-----------------");
         authenticationManager.authenticate(usernamePasswordAuthenticationToken);
-
+        System.out.println("23-----------------");
         final AuthenticatedUserDto authenticatedUserDto = userService.findAuthenticatedUserByUsername(username);
-
+        System.out.println("24-----------------");
         final User user = UserMapper.INSTANCE.convertToUser(authenticatedUserDto);
+        System.out.println("25-----------------");
         final String token = jwtTokenManager.generateToken(user);
-
+        System.out.println("26-----------------");
         log.info("{} has successfully logged in!", user.getUsername());
 
         return new LoginResponse(token);

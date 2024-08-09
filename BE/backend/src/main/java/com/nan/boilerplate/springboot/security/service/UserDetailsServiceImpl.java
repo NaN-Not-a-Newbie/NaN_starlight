@@ -40,4 +40,5 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
         return new User(authenticatedUsername, authenticatedPassword, Collections.singletonList(grantedAuthority));
     }
+
 }

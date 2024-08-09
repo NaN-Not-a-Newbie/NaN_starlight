@@ -5,6 +5,9 @@ import com.nan.boilerplate.springboot.security.jwt.JwtAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Primary;
+import org.springframework.core.annotation.Order;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -21,6 +24,7 @@ import static org.springframework.http.HttpMethod.*;
 @EnableWebSecurity
 @RequiredArgsConstructor
 @EnableGlobalMethodSecurity(prePostEnabled = true)
+@Order(1)
 public class SecurityConfiguration {
 
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
@@ -28,19 +32,19 @@ public class SecurityConfiguration {
     private final JwtAuthenticationEntryPoint unauthorizedHandler;
 
     @Bean
-    public AuthenticationManager authenticationManager(final AuthenticationConfiguration authenticationConfiguration) throws Exception {
+    public AuthenticationManager UserauthenticationManager(final AuthenticationConfiguration authenticationConfiguration) throws Exception {
         return authenticationConfiguration.getAuthenticationManager();
     }
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain userSecurityFilterChain(HttpSecurity http) throws Exception {
 
         //@formatter:off
 
         return http.cors().and().csrf().disable()
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
                 .authorizeRequests()
-                .antMatchers("/register", "/health", "/login", "/api/swagger/**", "/actuator/**").permitAll()
+                .antMatchers("/register/**", "/health", "/login", "/api/swagger/**", "/actuator/**","jobOffer/**").permitAll()
                 .antMatchers(GET, "/api/books").hasAnyAuthority("ADMIN")
                 .antMatchers(PATCH, "/admin/manageActive/**").hasAnyAuthority("ADMIN", "STAFF") // 로그인 승인
                 .antMatchers(PATCH, "/admin/manageAuthority/**").hasAnyAuthority("ADMIN")

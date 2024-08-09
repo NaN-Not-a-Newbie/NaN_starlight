@@ -8,6 +8,9 @@ spring:
     url: jdbc:mysql://localhost:3306/${MYSQL_DATABASE:starlight}?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false
     username: ${MYSQL_USER:root}
     password: ${MYSQL_PASSWORD:rc583013}
+  main:
+    allow-bean-definition-overriding: true
+
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:
@@ -47,6 +50,13 @@ jwt:
   issuer: ${JWT_ISSUER:https://github.com/your-github-id}
   expirationMinute: 60
 
+logging:
+  level:
+    root: INFO
+    org:
+      springframework: DEBUG
+      # 특정 패키지의 로그 레벨도 설정할 수 있습니다
+      org.springframework.security: DEBUG
 swagger:
   contact-name: ${SWAGGER_CONTACT_NAME:your-name}
   contact-mail: ${SWAGGER_CONTACT_MAIL:example@example.com}
