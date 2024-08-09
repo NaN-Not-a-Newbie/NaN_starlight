@@ -30,7 +30,7 @@ public class Company {
 
     private String companyAddress;
 
-    private UserRole role;
+    private UserRole userRole;
 
     private boolean isActive;
 

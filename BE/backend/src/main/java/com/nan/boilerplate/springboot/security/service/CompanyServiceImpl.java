@@ -63,7 +63,7 @@ public class CompanyServiceImpl implements CompanyService {
 
             final Company company = UserMapper.INSTANCE.convertToCompany(companyRegistrationRequest);
             company.setPassword(bCryptPasswordEncoder.encode(company.getPassword()));
-            company.setRole(UserRole.COMPANY);
+            company.setUserRole(UserRole.COMPANY);
             company.setActive(false); // 가입시 isActive를 false로 설정
 
             companyRepository.save(company);

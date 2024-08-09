@@ -40,7 +40,8 @@ public class SecurityConfiguration {
         return http.cors().and().csrf().disable()
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
                 .authorizeRequests()
-                .antMatchers("/register/**", "/health", "/login", "/api/swagger/**", "/actuator/**").permitAll()
+                .antMatchers("/register/**", "/health", "/login/**", "/api/swagger/**", "/actuator/**",
+                        "/jobOffer/**").permitAll() // 로그인 순환참조 이슈로 인한 임시 조치
                 .antMatchers(GET, "/api/books").hasAnyAuthority("ADMIN")
                 .antMatchers(PATCH, "/admin/manageActive/**").hasAnyAuthority("ADMIN", "STAFF") // 로그인 승인
                 .antMatchers(PATCH, "/admin/manageAuthority/**").hasAnyAuthority("ADMIN")
