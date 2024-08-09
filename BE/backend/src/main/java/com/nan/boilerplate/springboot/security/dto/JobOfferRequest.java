@@ -20,7 +20,7 @@ public class JobOfferRequest {
 
     private Long career;
 
-    private Company company;
+    private String companyName;
 
     private SalaryType salaryType;
 

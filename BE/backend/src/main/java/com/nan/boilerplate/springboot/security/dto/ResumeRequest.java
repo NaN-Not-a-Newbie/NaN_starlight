@@ -11,4 +11,5 @@ import lombok.*;
 public class ResumeRequest {
     private String title;
     private String body;
+    private String username;
 }

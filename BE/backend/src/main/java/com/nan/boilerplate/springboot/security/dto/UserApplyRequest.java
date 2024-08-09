@@ -11,7 +11,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserApplyRequest {
-    private Resume resume;
-    private JobOffer jobOffer;
+    private Long resumeId;
+    private Long jobOfferId;
     private boolean hire;
 }
