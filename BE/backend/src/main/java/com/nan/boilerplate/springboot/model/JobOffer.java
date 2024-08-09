@@ -36,5 +36,4 @@ public class JobOffer {
 
     private LocalDateTime created_at=LocalDateTime.now();
 
-
 }

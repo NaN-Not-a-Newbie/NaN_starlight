@@ -10,6 +10,7 @@ import javax.persistence.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+// 유저가 지원한 구인공고
 public class UserApply {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

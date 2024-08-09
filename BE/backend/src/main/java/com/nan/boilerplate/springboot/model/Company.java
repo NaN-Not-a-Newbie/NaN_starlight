@@ -7,9 +7,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+@Entity
 @Getter
 @Setter
-@Entity
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -18,23 +18,23 @@ public class Company {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String companyName;
+
+    private Long companyRegistrationNumber;
+
     private String username;
 
     private String password;
 
-    private String CompanyName;
+    private String phoneNum;
 
-    private String CompanyNum;
+    private String companyAddress;
 
-    private String PhoneNum;
-
-    private String CompanyAddress;
+    private UserRole role;
 
     private boolean isActive;
 
-    private UserRole Role;
-
-    public boolean isActive(){
+    public boolean isActive() {
         return isActive;
     }
 }

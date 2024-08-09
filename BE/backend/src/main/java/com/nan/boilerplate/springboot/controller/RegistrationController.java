@@ -3,6 +3,7 @@ package com.nan.boilerplate.springboot.controller;
 import com.nan.boilerplate.springboot.security.dto.CompanyRegistrationRequest;
 import com.nan.boilerplate.springboot.security.dto.UserRegistrationRequest;
 import com.nan.boilerplate.springboot.security.dto.RegistrationResponse;
+import com.nan.boilerplate.springboot.security.service.CompanyService;
 import com.nan.boilerplate.springboot.security.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -19,6 +20,7 @@ import javax.validation.Valid;
 public class RegistrationController {
 
     private final UserService userService;
+    private final CompanyService companyService;
 
     @PostMapping("users")
     public ResponseEntity<RegistrationResponse> registrationRequest(@Valid @RequestBody UserRegistrationRequest userRegistrationRequest) {
@@ -29,8 +31,8 @@ public class RegistrationController {
     }
     @PostMapping("company")
     public ResponseEntity<RegistrationResponse> registrationRequest(@Valid @RequestBody CompanyRegistrationRequest companyRegistrationRequest) {
-        final RegistrationResponse registrationResponse= null;
-        return null;
+        final RegistrationResponse registrationResponse = companyService.registration(companyRegistrationRequest);
+        return ResponseEntity.status(HttpStatus.CREATED).body(registrationResponse);
     }
 
 }

@@ -14,7 +14,6 @@ public class ResumeResponse {
     private String title;
     private String body;
     private User user;
-
-
+    private String message;
 
 }

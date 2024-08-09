@@ -1,0 +1,70 @@
+package com.nan.boilerplate.springboot.service.Impl;
+
+import com.nan.boilerplate.springboot.model.Resume;
+import com.nan.boilerplate.springboot.repository.ResumeRepository;
+import com.nan.boilerplate.springboot.security.dto.ResumeRequest;
+import com.nan.boilerplate.springboot.security.dto.ResumeResponse;
+import com.nan.boilerplate.springboot.security.service.UserService;
+import com.nan.boilerplate.springboot.security.utils.SecurityConstants;
+import com.nan.boilerplate.springboot.service.ResumeService;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+@Service
+@Slf4j
+@RequiredArgsConstructor
+public class ResumeServiceImpl implements ResumeService{
+    private final ResumeRepository resumeRepository;
+    private final UserService userService;
+
+    @Override
+    public List<ResumeResponse> getAllResumes() {
+        List<Resume> resumes = resumeRepository.findAll();
+        List<ResumeResponse> resumesResponses = new ArrayList<>();
+        for (Resume resume : resumes) {
+            resumesResponses.add(ResumeResponse.builder()
+                    .body(resume.getBody())
+                    .title(resume.getTitle()).build());
+        }
+        return resumesResponses;
+    }
+
+
+    @Override
+    public Optional<Resume> getResumeById(Long id) { return resumeRepository.findById(id); }
+
+    // 이력서 작성
+    @Override
+    public ResumeResponse addResume(ResumeRequest resumeRequest) {
+        Resume resume = Resume.builder()
+                .title(resumeRequest.getTitle())
+                .body(resumeRequest.getBody())
+                .user(userService.findByUsername(SecurityConstants.getAuthenticatedUsername()))
+                .build();
+        resumeRepository.save(resume);
+
+        return ResumeResponse.builder().message("Add Success").build();
+    }
+
+    // 이력서 수정
+    @Override
+    public ResumeResponse updateResume(Long id, ResumeRequest resumeRequest) {
+        if(resumeRepository.existsById(id)) {
+            Resume existResume = resumeRepository.getReferenceById(id);
+            existResume.setTitle(resumeRequest.getTitle());
+            existResume.setBody(resumeRequest.getBody());
+            return ResumeResponse.builder().message("Update Success").build();
+        } else {
+            return ResumeResponse.builder().message("Update Fail").build();
+        }
+    }
+
+    public ResumeResponse deleteResume(Long id) {
+        resumeRepository.deleteById(id);
+        return  ResumeResponse.builder().message("Delete Success").build();}
+}
