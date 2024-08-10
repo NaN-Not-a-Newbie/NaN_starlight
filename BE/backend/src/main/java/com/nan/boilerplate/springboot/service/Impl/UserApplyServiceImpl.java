@@ -51,17 +51,13 @@ public class UserApplyServiceImpl implements UserApplyService {
     }
 
     @Override
-    public UserApplyResponse addUserApply(UserApplyRequest userApplyRequest) {
+    public Long addUserApply(UserApplyRequest userApplyRequest) {
         UserApply userApply = UserApply.builder()
                 .jobOffer(jobOfferRepository.findById(userApplyRequest.getJobOfferId()).get())
                 .resume(resumeRepository.findById(userApplyRequest.getResumeId()).get())
                 .hire(false)
                 .build();
-        userApplyRepository.save(userApply);
-        return UserApplyResponse.builder()
-                .message("Success apply")
-                .build();
-
+        return userApplyRepository.save(userApply).getId();
     }
 
     @Override

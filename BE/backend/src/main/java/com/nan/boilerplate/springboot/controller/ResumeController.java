@@ -7,9 +7,11 @@ import com.nan.boilerplate.springboot.service.ResumeService;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
 import java.util.List;
 
 @CrossOrigin
@@ -43,8 +45,12 @@ public class ResumeController {
     }
 
     @PostMapping
-    public ResponseEntity<ResumeResponse> addResume(@RequestBody ResumeRequest resumeRequest) {
-        return ResponseEntity.ok(resumeService.addResume(resumeRequest));
+    public ResponseEntity<Void> addResume(@RequestBody ResumeRequest resumeRequest) {
+        Long createdresumeId = resumeService.addResume(resumeRequest);
+
+        return ResponseEntity.status(HttpStatus.MOVED_PERMANENTLY)
+                .location(URI.create("/resume/" + createdresumeId))
+                .build();  // 리다이렉트
     }
 
     @PutMapping("/{id}")

@@ -11,7 +11,7 @@ public interface UserApplyService {
     List<UserApplyResponse> getAllUserApply();
     Optional<UserApply> getUserApply(Long id);
 
-    UserApplyResponse addUserApply(UserApplyRequest userApplyRequest);
+    Long addUserApply(UserApplyRequest userApplyRequest);
 
     UserApplyResponse updateUserApply(Long id, UserApplyRequest userApplyRequest,Long code);
 

@@ -49,10 +49,23 @@ public class RegistrationController {
         }
     }
     @PostMapping("company")
-    public String registrationRequest(@Valid @RequestBody CompanyRegistrationRequest companyRegistrationRequest, RedirectAttributes redirectAttributes) {
-        final RegistrationResponse registrationResponse = userService.registrationCompany(companyRegistrationRequest);
-        redirectAttributes.addFlashAttribute("registrationResponse", registrationResponse);
-        return "redirect:/login/Company";
-    }
+    public ResponseEntity<LoginResponse> registrationRequest(@Valid @RequestBody CompanyRegistrationRequest companyRegistrationRequest, RedirectAttributes redirectAttributes) {
+        String message=userService.registrationCompany(companyRegistrationRequest).getMessage();
+        User user=userService.findByUsername(companyRegistrationRequest.getUsername());
+        LoginRequest loginRequest = LoginRequest.builder()
+                .password(companyRegistrationRequest.getPassword()).username(companyRegistrationRequest.getUsername()).build();
 
+        if (user.isActive()) {
+
+            try {
+                final LoginResponse loginResponse = jwtTokenService.getLoginResponse(loginRequest);
+                loginResponse.setMessage(message);
+                return ResponseEntity.ok(loginResponse);
+            } catch (Exception e) {
+                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+            }
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+    }
 }

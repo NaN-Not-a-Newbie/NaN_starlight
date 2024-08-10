@@ -5,9 +5,11 @@ import com.nan.boilerplate.springboot.security.dto.UserApplyRequest;
 import com.nan.boilerplate.springboot.security.dto.UserApplyResponse;
 import com.nan.boilerplate.springboot.service.UserApplyService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
 import java.util.List;
 
 @CrossOrigin
@@ -40,8 +42,12 @@ public class UserApplyController {
     }
 
     @PostMapping
-    public ResponseEntity<UserApplyResponse> addUserApply(@RequestBody UserApplyRequest userApplyrequest) {
-        return ResponseEntity.ok(userApplyService.addUserApply(userApplyrequest));
+    public ResponseEntity<Void> addUserApply(@RequestBody UserApplyRequest userApplyrequest) {
+        Long createdUserApplyId = userApplyService.addUserApply(userApplyrequest);
+
+        return ResponseEntity.status(HttpStatus.MOVED_PERMANENTLY)
+                .location(URI.create("/userApply/" + createdUserApplyId))
+                .build();  // 리다이렉트
     }
 
     @PutMapping("/{id}")
