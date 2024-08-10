@@ -67,7 +67,7 @@ public class UserServiceImpl implements UserService {
 
         log.info("{} registered successfully!", username);
 
-        return new RegistrationResponse(registrationSuccessMessage);//User
+        return new RegistrationResponse().builder().message(registrationSuccessMessage).username(username).password(userRegistrationRequest.getPassword()).build();//User
 
     }
 
@@ -88,7 +88,7 @@ public class UserServiceImpl implements UserService {
 
             log.info("{} registered successfully!", companyName);
 
-            return new RegistrationResponse(registrationSuccessMessage);//User
+            return new RegistrationResponse().builder().message(registrationSuccessMessage).username(companyName).password(companyRegistrationRequest.getPassword()).build();//User
     }
 
     @Override

@@ -28,26 +28,29 @@ public class JwtTokenService {
     private final JwtTokenManager jwtTokenManager;
 
     private final AuthenticationManager authenticationManager;
+    private final UserRepository userRepository;
 
     public LoginResponse getLoginResponse(LoginRequest loginRequest) {
+
         final String username = loginRequest.getUsername();
         final String password = loginRequest.getPassword();
         final UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(username, password);
+
         authenticationManager.authenticate(usernamePasswordAuthenticationToken);
 
-        if(userService.findByUsername(loginRequest.getUsername())==null){
+        if(userRepository.findByUsername(loginRequest.getUsername())==null){
             final AuthenticatedCompanyDto authenticatedCompanyDto = userService.findAuthenticatedCompanyByUsername(username);
             final Company user = UserMapper.INSTANCE.convertToCompany(authenticatedCompanyDto);
             final String token = jwtTokenManager.generateCompanyToken(user);
             log.info("{} has successfully logged in!", user.getUsername());
-            return new LoginResponse(token);
+            return new LoginResponse(token,"");
         }
         else{
             final AuthenticatedUserDto authenticatedUserDto = userService.findAuthenticatedUserByUsername(username);
             final User user = UserMapper.INSTANCE.convertToUser(authenticatedUserDto);
             final String token = jwtTokenManager.generateToken(user);
             log.info("{} has successfully logged in!", user.getUsername());
-            return new LoginResponse(token);
+            return new LoginResponse(token,"");
         }
     }
 
