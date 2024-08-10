@@ -16,7 +16,7 @@ public interface ResumeService {
 
     Optional<Resume> getResumeById(Long id);
 
-    ResumeResponse addResume(ResumeRequest resumeRequest);
+    Long addResume(ResumeRequest resumeRequest);
 
     ResumeResponse updateResume(Long id, ResumeRequest resumeRequest);
 

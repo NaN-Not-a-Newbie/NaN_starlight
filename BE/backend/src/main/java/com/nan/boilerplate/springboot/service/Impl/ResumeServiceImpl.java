@@ -40,16 +40,14 @@ public class ResumeServiceImpl implements ResumeService{
 
     // 이력서 작성
     @Override
-    public ResumeResponse addResume(ResumeRequest resumeRequest) {
+    public Long addResume(ResumeRequest resumeRequest) {
         Resume resume = Resume.builder()
                 .title(resumeRequest.getTitle())
                 .body(resumeRequest.getBody())
                 .user(userService.findByUsername(resumeRequest.getUsername()))
                 .build();
 //                .user(userService.findByUsername(SecurityConstants.getAuthenticatedUsername()))
-        resumeRepository.save(resume);
-
-        return ResumeResponse.builder().message("Add Success").build();
+        return resumeRepository.save(resume).getId();
     }
 
     // 이력서 수정
