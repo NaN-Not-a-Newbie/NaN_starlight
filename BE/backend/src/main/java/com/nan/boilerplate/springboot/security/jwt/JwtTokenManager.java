@@ -50,6 +50,22 @@ public class JwtTokenManager {
         //@formatter:on
     }
 
+    public String generateToken(Company company) {
+
+        final String username = company.getUsername();
+        final UserRole userRole = company.getUserRole();
+
+        //@formatter:off
+        return JWT.create()
+                .withSubject(username)
+                .withIssuer(jwtProperties.getIssuer())
+                .withClaim("role", userRole.name())
+                .withIssuedAt(new Date())
+                .withExpiresAt(new Date(System.currentTimeMillis() + jwtProperties.getExpirationMinute() * 60 * 1000))
+                .sign(Algorithm.HMAC256(jwtProperties.getSecretKey().getBytes()));
+        //@formatter:on
+    }
+
     public String getUsernameFromToken(String token) {
 
         final DecodedJWT decodedJWT = getDecodedJWT(token);

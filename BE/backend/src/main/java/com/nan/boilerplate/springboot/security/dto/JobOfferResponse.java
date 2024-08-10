@@ -15,6 +15,8 @@ public class JobOfferResponse {
 
     private String body;
 
+    private SalaryType salaryType;
+
     private Long salary;
 
     private String location;
@@ -22,11 +24,9 @@ public class JobOfferResponse {
     private Long career;
 
     private String companyName;
-//    private Long companyId;
+//    private Company company;
 
     private Education education;
-
-    private SalaryType salaryType;
 
     private String message;
 }
