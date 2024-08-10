@@ -1,6 +1,7 @@
 package com.nan.boilerplate.springboot.security.service;
 
 import com.nan.boilerplate.springboot.model.UserRole;
+import com.nan.boilerplate.springboot.security.dto.AuthenticatedCompanyDto;
 import com.nan.boilerplate.springboot.security.dto.AuthenticatedUserDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -28,6 +29,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) {
 
         final AuthenticatedUserDto authenticatedUser = userService.findAuthenticatedUserByUsername(username);
+        final AuthenticatedCompanyDto authenticatedCompanyDto = userService.findAuthenticatedCompanyByUsername(username);
 
         if (Objects.isNull(authenticatedUser)) {
             throw new UsernameNotFoundException(USERNAME_OR_PASSWORD_INVALID);
