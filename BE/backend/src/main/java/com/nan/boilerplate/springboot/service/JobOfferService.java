@@ -12,7 +12,7 @@ public interface JobOfferService {
 
     Optional<JobOffer> getJobOfferById(long id);
 
-    JobOfferResponse addJobOffer(JobOfferRequest jobOfferRequest);
+    JobOffer addJobOffer(JobOfferRequest jobOfferRequest);
 
     JobOfferResponse updateJobOffer(Long id, JobOfferRequest jobOfferRequest);
 

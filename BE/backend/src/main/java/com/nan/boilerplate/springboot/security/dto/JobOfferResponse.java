@@ -21,7 +21,7 @@ public class JobOfferResponse {
 
     private Long career;
 
-    private Company company;
+    private String companyName;
 //    private Long companyId;
 
     private Education education;

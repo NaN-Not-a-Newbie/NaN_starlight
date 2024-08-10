@@ -33,7 +33,7 @@ public class JobOfferServiceImpl implements JobOfferService {
                      .location(offer.getLocation())
                      .title(offer.getTitle())
                      .career(offer.getCareer())
-                     .company(offer.getCompany())
+                     .companyName(offer.getCompany().getCompanyName())
                      .salary(offer.getSalary())
                      .education(offer.getEducation())
                      .salaryType(offer.getSalaryType())
@@ -48,7 +48,7 @@ public class JobOfferServiceImpl implements JobOfferService {
     }
 
     @Override
-    public JobOfferResponse addJobOffer(JobOfferRequest jobOfferRequest) {
+    public JobOffer addJobOffer(JobOfferRequest jobOfferRequest) {
 //        User writer = userService.findByUsername(SecurityConstants.getAuthenticatedUsername());
         JobOffer jobOffer = JobOffer.builder()
                 .title(jobOfferRequest.getTitle())
@@ -60,11 +60,8 @@ public class JobOfferServiceImpl implements JobOfferService {
                 .salaryType(jobOfferRequest.getSalaryType())
                 .education(jobOfferRequest.getEducation())
                 .build();
-        jobOfferRepository.save(jobOffer);
-        JobOfferResponse jobOfferResponse = JobOfferResponse.builder()
-                .message("Add Success")
-                .build();
-        return jobOfferResponse;
+
+        return jobOfferRepository.save(jobOffer);
     }
 
     @Override
