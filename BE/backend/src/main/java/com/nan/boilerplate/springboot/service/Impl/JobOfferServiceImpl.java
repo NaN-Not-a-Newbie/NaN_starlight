@@ -7,12 +7,15 @@ import com.nan.boilerplate.springboot.security.dto.JobOfferRequest;
 import com.nan.boilerplate.springboot.security.dto.JobOfferResponse;
 import com.nan.boilerplate.springboot.security.dto.JobOfferSimpleResponse;
 import com.nan.boilerplate.springboot.security.service.UserService;
+import com.nan.boilerplate.springboot.security.utils.SecurityConstants;
 import com.nan.boilerplate.springboot.service.JobOfferService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.webjars.NotFoundException;
 
+import javax.naming.AuthenticationException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -64,25 +67,26 @@ public class JobOfferServiceImpl implements JobOfferService {
     }
 
     @Override
-    public JobOfferResponse updateJobOffer(Long id, JobOfferRequest jobOfferRequest) {
-        if (!jobOfferRepository.existsById(id)) {
-            return JobOfferResponse.builder()
-                    .message("Update Fail - not exist joboffer")
-                    .build();
+    public Long updateJobOffer(Long id, JobOfferRequest jobOfferRequest) {
+        String myName = SecurityConstants.getAuthenticatedUsername(); // 로그인 된 계정의 username
+        String author = jobOfferRepository.getReferenceById(id).getCompany().getUsername(); // 글 작성자
+        if (jobOfferRepository.existsById(id) && author.equals(myName)) {
+            JobOffer existJobOffer = jobOfferRepository.getReferenceById(id);
+            existJobOffer.setTitle(jobOfferRequest.getTitle());
+            existJobOffer.setLocation(jobOfferRequest.getLocation());
+            existJobOffer.setEducation(jobOfferRequest.getEducation());
+            existJobOffer.setSalaryType(jobOfferRequest.getSalaryType());
+            existJobOffer.setSalary(jobOfferRequest.getSalary());
+            existJobOffer.setCareer(jobOfferRequest.getCareer());
+            existJobOffer.setBody(jobOfferRequest.getBody());
+            return jobOfferRepository.save(existJobOffer).getId();
+        } else {
+            if (!jobOfferRepository.existsById(id)) {
+                throw new NotFoundException("not exist JobOffer with id: {id}");
+            } else {
+                throw new NotFoundException("not exist JobOffer with id: {id}");
+            }
         }
-        JobOffer existJobOffer = jobOfferRepository.getReferenceById(id);
-        existJobOffer.setTitle(jobOfferRequest.getTitle());
-        existJobOffer.setLocation(jobOfferRequest.getLocation());
-        existJobOffer.setEducation(jobOfferRequest.getEducation());
-        existJobOffer.setSalaryType(jobOfferRequest.getSalaryType());
-        existJobOffer.setSalary(jobOfferRequest.getSalary());
-        existJobOffer.setCareer(jobOfferRequest.getCareer());
-        existJobOffer.setBody(jobOfferRequest.getBody());
-
-        jobOfferRepository.save(existJobOffer);
-        return JobOfferResponse.builder()
-                .message("Update Success")
-                .build();
     }
 
 

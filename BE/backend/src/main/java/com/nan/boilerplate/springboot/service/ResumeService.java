@@ -18,7 +18,7 @@ public interface ResumeService {
 
     Long addResume(ResumeRequest resumeRequest);
 
-    ResumeResponse updateResume(Long id, ResumeRequest resumeRequest);
+    Long updateResume(Long id, ResumeRequest resumeRequest);
 
     ResumeResponse deleteResume(Long id);
 

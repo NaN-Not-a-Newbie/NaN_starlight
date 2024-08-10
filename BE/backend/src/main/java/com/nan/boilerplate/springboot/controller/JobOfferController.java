@@ -63,9 +63,12 @@ public class JobOfferController {
     }
 
     @PutMapping("/{id}")
-    public String updateJobOffer(@PathVariable Long id, @RequestBody JobOfferRequest jobOfferRequest) {
-        JobOfferResponse response = jobOfferService.updateJobOffer(id, jobOfferRequest);
-        return "redirect:/jobOffer";
+    public ResponseEntity<Void> updateJobOffer(@PathVariable Long id, @RequestBody JobOfferRequest jobOfferRequest) {
+        Long updatedJobOfferId = jobOfferService.updateJobOffer(id, jobOfferRequest);
+
+        return ResponseEntity.status(HttpStatus.MOVED_PERMANENTLY)
+                .location(URI.create("/jobOffer/" + updatedJobOfferId))
+                .build();  // 리다이렉트
     }
 
     @DeleteMapping("/{id}")

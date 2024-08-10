@@ -1,5 +1,6 @@
 package com.nan.boilerplate.springboot.service.Impl;
 
+import com.nan.boilerplate.springboot.model.JobOffer;
 import com.nan.boilerplate.springboot.model.Resume;
 import com.nan.boilerplate.springboot.repository.ResumeRepository;
 import com.nan.boilerplate.springboot.security.dto.ResumeRequest;
@@ -10,6 +11,7 @@ import com.nan.boilerplate.springboot.service.ResumeService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.webjars.NotFoundException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,14 +54,20 @@ public class ResumeServiceImpl implements ResumeService{
 
     // 이력서 수정
     @Override
-    public ResumeResponse updateResume(Long id, ResumeRequest resumeRequest) {
-        if(resumeRepository.existsById(id)) {
+    public Long updateResume(Long id, ResumeRequest resumeRequest) {
+        String myName = SecurityConstants.getAuthenticatedUsername(); // 로그인 된 계정의 username
+        String author = resumeRepository.getReferenceById(id).getUser().getUsername(); // 글 작성자
+        if (resumeRepository.existsById(id) && author.equals(myName)) {
             Resume existResume = resumeRepository.getReferenceById(id);
             existResume.setTitle(resumeRequest.getTitle());
             existResume.setBody(resumeRequest.getBody());
-            return ResumeResponse.builder().message("Update Success").build();
+            return resumeRepository.save(existResume).getId();
         } else {
-            return ResumeResponse.builder().message("Update Fail").build();
+            if (!resumeRepository.existsById(id)) {
+                throw new NotFoundException("not exist JobOffer with id: {id}");
+            } else {
+                throw new NotFoundException("not exist JobOffer with id: {id}");
+            }
         }
     }
 

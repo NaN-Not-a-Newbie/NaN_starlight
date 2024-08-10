@@ -54,8 +54,12 @@ public class ResumeController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ResumeResponse> updateResume(@PathVariable Long id, @RequestBody ResumeRequest resumeRequest) {
-        return ResponseEntity.ok(resumeService.updateResume(id, resumeRequest));
+    public ResponseEntity<Void> updateResume(@PathVariable Long id, @RequestBody ResumeRequest resumeRequest) {
+        Long updatedResumeId = resumeService.updateResume(id, resumeRequest);
+
+        return ResponseEntity.status(HttpStatus.MOVED_PERMANENTLY)
+                .location(URI.create("/resume/" + updatedResumeId))
+                .build();  // 리다이렉트
     }
 
     @DeleteMapping("/{id}")
