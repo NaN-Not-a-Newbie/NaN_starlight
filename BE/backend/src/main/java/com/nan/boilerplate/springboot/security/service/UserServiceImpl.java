@@ -15,6 +15,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.crypto.spec.OAEPParameterSpec;
+import java.util.Optional;
+
 
 @Slf4j
 @Service
@@ -39,17 +42,18 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findByUsername(String username) {
-
         return userRepository.findByUsername(username);
     }
 
     @Override
-    public Company findByCompanyName(String username) {
+    public Optional<Company> findByCompanyName(String username) {
         return companyRepository.findByUsername(username);
     }
+
+
     @Override
     public RegistrationResponse registrationUser(UserRegistrationRequest userRegistrationRequest) {
-        userValidationService.validateUser(userRegistrationRequest); // 이미 존재하는 유저인지 확인
+        userValidationService.validateUsernameUnique(userRegistrationRequest.getUsername()); // 이미 존재하는 유저인지 확인
 
         final User user = UserMapper.INSTANCE.convertToUser(userRegistrationRequest); // 엔티티 디티오 변환
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
@@ -70,11 +74,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public RegistrationResponse registrationCompany(CompanyRegistrationRequest companyRegistrationRequest) {
 
-            userValidationService.validateCompany(companyRegistrationRequest); // 이미 존재하는 유저인지 확인
+        userValidationService.validateUsernameUnique(companyRegistrationRequest.getUsername()); // 이미 존재하는 유저인지 확인
 
             final Company company = UserMapper.INSTANCE.convertToCompany(companyRegistrationRequest); // 엔티티 디티오 변환
             company.setPassword(bCryptPasswordEncoder.encode(company.getPassword()));
-            company.setRole(UserRole.COMPANY);
+            company.setUserRole(UserRole.COMPANY);
             company.setActive(true); // 가입시 isActive를 false로 설정
 
             companyRepository.save(company);
@@ -89,7 +93,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public AuthenticatedCompanyDto findAuthenticatedCompanyByUsername(String username) {
-        final Company company = findByCompanyName(username);
+        final Company company = findByCompanyName(username).get();
 
         return UserMapper.INSTANCE.convertToAuthenticatedCompanyDto(company);
     }
@@ -120,7 +124,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Company activateCompany(String username) {
-        Company company = companyRepository.findByUsername(username);
+        Company company = companyRepository.findByUsername(username).get();
         company.setActive(false);
         companyRepository.save(company);
         return company;
@@ -128,7 +132,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Company deActivateCompany(String username) {
-        Company company = companyRepository.findByUsername(username);
+        Company company = companyRepository.findByUsername(username).get();
         company.setActive(false);
         companyRepository.save(company);
         return company;

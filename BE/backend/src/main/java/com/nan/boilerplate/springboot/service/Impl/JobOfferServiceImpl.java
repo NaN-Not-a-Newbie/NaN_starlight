@@ -55,7 +55,7 @@ public class JobOfferServiceImpl implements JobOfferService {
                 .body(jobOfferRequest.getBody())
                 .career(jobOfferRequest.getCareer())
                 .location(jobOfferRequest.getLocation())
-                .company(companyRepository.findByUsername(jobOfferRequest.getCompanyName()))
+                .company(companyRepository.findByUsername(jobOfferRequest.getCompanyName()).get())
                 .salary(jobOfferRequest.getSalary())
                 .salaryType(jobOfferRequest.getSalaryType())
                 .education(jobOfferRequest.getEducation())

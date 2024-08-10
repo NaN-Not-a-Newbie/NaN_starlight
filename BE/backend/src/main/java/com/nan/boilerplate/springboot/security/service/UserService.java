@@ -4,6 +4,8 @@ import com.nan.boilerplate.springboot.model.Company;
 import com.nan.boilerplate.springboot.model.User;
 import com.nan.boilerplate.springboot.security.dto.*;
 
+import java.util.Optional;
+
 
 public interface UserService {
 
@@ -21,7 +23,7 @@ public interface UserService {
 
     AuthenticatedUserDto promoteUser(String username);
 
-    Company findByCompanyName(String username);
+    Optional<Company> findByCompanyName(String username);
 
     Company activateCompany(String username);
 

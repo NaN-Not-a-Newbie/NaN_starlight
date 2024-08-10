@@ -47,10 +47,11 @@ public class LoginController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
     }
+
     @PostMapping("/Company")
     public ResponseEntity<LoginResponse> companyLoginRequest(@Valid @RequestBody LoginRequest loginRequest) {
         System.out.println("1--------------");
-        Company company = userService.findByCompanyName(loginRequest.getUsername());
+        Company company = userService.findByCompanyName(loginRequest.getUsername()).get();
         System.out.println("1-----------------");
 
         if (company.isActive()) {

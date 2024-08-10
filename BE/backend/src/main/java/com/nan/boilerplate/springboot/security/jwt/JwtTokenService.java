@@ -1,6 +1,9 @@
 package com.nan.boilerplate.springboot.security.jwt;
 
+import com.nan.boilerplate.springboot.model.Company;
 import com.nan.boilerplate.springboot.model.User;
+import com.nan.boilerplate.springboot.repository.UserRepository;
+import com.nan.boilerplate.springboot.security.dto.AuthenticatedCompanyDto;
 import com.nan.boilerplate.springboot.security.dto.AuthenticatedUserDto;
 import com.nan.boilerplate.springboot.security.dto.LoginRequest;
 import com.nan.boilerplate.springboot.security.dto.LoginResponse;
@@ -11,6 +14,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.stereotype.Service;
+
+import javax.validation.constraints.Null;
 
 
 @Slf4j
@@ -23,6 +28,7 @@ public class JwtTokenService {
     private final JwtTokenManager jwtTokenManager;
 
     private final AuthenticationManager authenticationManager;
+    private final UserRepository userRepository;
 
     public LoginResponse getLoginResponse(LoginRequest loginRequest) {
         System.out.println("2-----------------");
@@ -33,15 +39,23 @@ public class JwtTokenService {
         System.out.println("22-----------------");
         authenticationManager.authenticate(usernamePasswordAuthenticationToken);
         System.out.println("23-----------------");
-        final AuthenticatedUserDto authenticatedUserDto = userService.findAuthenticatedUserByUsername(username);
-        System.out.println("24-----------------");
-        final User user = UserMapper.INSTANCE.convertToUser(authenticatedUserDto);
-        System.out.println("25-----------------");
-        final String token = jwtTokenManager.generateToken(user);
-        System.out.println("26-----------------");
-        log.info("{} has successfully logged in!", user.getUsername());
 
-        return new LoginResponse(token);
+        if(userRepository.findByUsername(loginRequest.getUsername())==null){
+            final AuthenticatedCompanyDto authenticatedCompanyDto = userService.findAuthenticatedCompanyByUsername(username);
+            final Company user = UserMapper.INSTANCE.convertToCompany(authenticatedCompanyDto);
+            final String token = jwtTokenManager.generateCompanyToken(user);
+            System.out.println("26-----------------");
+            log.info("{} has successfully logged in!", user.getUsername());
+            return new LoginResponse(token);
+        }
+        else{
+            final AuthenticatedUserDto authenticatedUserDto = userService.findAuthenticatedUserByUsername(username);
+            final User user = UserMapper.INSTANCE.convertToUser(authenticatedUserDto);
+            final String token = jwtTokenManager.generateToken(user);
+            System.out.println("261-----------------");
+            log.info("{} has successfully logged in!", user.getUsername());
+            return new LoginResponse(token);
+        }
     }
 
 }

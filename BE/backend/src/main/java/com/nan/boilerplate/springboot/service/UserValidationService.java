@@ -26,46 +26,58 @@ public class UserValidationService {
 
     private final ExceptionMessageAccessor exceptionMessageAccessor;
 
-    public void validateUser(UserRegistrationRequest userRegistrationRequest) {
+//    public void validateUser(UserRegistrationRequest userRegistrationRequest) {
+//
+//        final String username = userRegistrationRequest.getUsername();
+//
+//        checkUsername(username);
+//    }
+//
+//    public void validateCompany(CompanyRegistrationRequest companyRegistrationRequest) {
+//
+//        final String username = companyRegistrationRequest.getUsername();
+//
+//        checkUsernameCompany(username);
+//    }
 
-        final String username = userRegistrationRequest.getUsername();
+    public void validateUsernameUnique(String username) {
+        boolean usernameExistsInUsers = userRepository.existsByUsername(username);
+        boolean usernameExistsInCompany = companyRepository.existsByUsername(username);
 
-        checkUsername(username);
-    }
-
-    public void validateCompany(CompanyRegistrationRequest companyRegistrationRequest) {
-
-        final String username = companyRegistrationRequest.getUsername();
-
-        checkUsernameCompany(username);
-    }
-
-    private void checkUsername(String username) {
-
-        final boolean existsByUsername = userRepository.existsByUsername(username);
-
-        if (existsByUsername) {
-
+        if (usernameExistsInUsers || usernameExistsInCompany) {
             log.warn("{} is already being used!", username);
 
             final String existsUsername = exceptionMessageAccessor.getMessage(null, USERNAME_ALREADY_EXISTS);
             throw new RegistrationException(existsUsername);
         }
-
     }
 
-    private void checkUsernameCompany(String username) {
-
-        final boolean existsByUsername = companyRepository.existsByUsername(username);
-
-        if (existsByUsername) {
-
-            log.warn("{} is already being used!", username);
-
-            final String existsUsername = exceptionMessageAccessor.getMessage(null, USERNAME_ALREADY_EXISTS);
-            throw new RegistrationException(existsUsername);
-        }
-
-    }
+//    private void checkUsername(String username) {
+//
+//        final boolean existsByUsername = userRepository.existsByUsername(username);
+//
+//        if (existsByUsername) {
+//
+//            log.warn("{} is already being used!", username);
+//
+//            final String existsUsername = exceptionMessageAccessor.getMessage(null, USERNAME_ALREADY_EXISTS);
+//            throw new RegistrationException(existsUsername);
+//        }
+//
+//    }
+//
+//    private void checkUsernameCompany(String username) {
+//
+//        final boolean existsByUsername = companyRepository.existsByUsername(username);
+//
+//        if (existsByUsername) {
+//
+//            log.warn("{} is already being used!", username);
+//
+//            final String existsUsername = exceptionMessageAccessor.getMessage(null, USERNAME_ALREADY_EXISTS);
+//            throw new RegistrationException(existsUsername);
+//        }
+//
+//    }
 
 }
