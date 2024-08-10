@@ -26,7 +26,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     private static final String USERNAME_OR_PASSWORD_INVALID = "Invalid username or password.";
 
     private final UserService userService;
-    private final UserServiceImpl userServiceImpl;
 
     @Override
     public UserDetails loadUserByUsername(String username) {

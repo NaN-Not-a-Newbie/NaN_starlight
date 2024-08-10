@@ -1,5 +1,6 @@
 package com.nan.boilerplate.springboot.controller;
 
+import com.nan.boilerplate.springboot.exceptions.UserNotFoundException;
 import com.nan.boilerplate.springboot.model.Company;
 import com.nan.boilerplate.springboot.model.User;
 import com.nan.boilerplate.springboot.security.dto.LoginRequest;
@@ -26,50 +27,48 @@ public class LoginController {
     // 로그인
     @PostMapping("/User")
     public ResponseEntity<LoginResponse> userLoginRequest(@Valid @RequestBody LoginRequest loginRequest) {
-        System.out.println("1--------------");
+
         User user = userService.findByUsername(loginRequest.getUsername());
 
-        System.out.println("1-----------------");
-
-        if (user.isActive()) {
-            System.out.println("12----------------");
-            try {
-                System.out.println("13-----------------");
-                final LoginResponse loginResponse = jwtTokenService.getLoginResponse(loginRequest);
-                System.out.println("14-----------------");
-                return ResponseEntity.ok(loginResponse);
-            } catch (Exception e) {
-                System.out.println("15-----------------");
-                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-            }
-        } else {
-            System.out.println("16----------------");
+        if (!user.isActive()) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
+
+        try {
+            final LoginResponse loginResponse = jwtTokenService.getLoginResponse(loginRequest);
+            return ResponseEntity.ok(loginResponse);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+
+
+
+//      얼리 리턴 미적용
+//        if (user.isActive()) {
+//            try {
+//                final LoginResponse loginResponse = jwtTokenService.getLoginResponse(loginRequest);
+//                return ResponseEntity.ok(loginResponse);
+//            } catch (Exception e) {
+//                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+//            }
+//        } else {
+//            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+//        }
     }
 
     @PostMapping("/Company")
     public ResponseEntity<LoginResponse> companyLoginRequest(@Valid @RequestBody LoginRequest loginRequest) {
-        System.out.println("1--------------");
         Company company = userService.findByCompanyName(loginRequest.getUsername()).get();
-        System.out.println("1-----------------");
 
-        if (company.isActive()) {
-            System.out.println("12----------------");
-            try {
-                System.out.println("13-----------------");
-                final LoginResponse loginResponse = jwtTokenService.getLoginResponse(loginRequest);
-                System.out.println(loginResponse);
-                System.out.println("14-----------------");
-                return ResponseEntity.ok(loginResponse);
-            } catch (Exception e) {
-                System.out.println("15-----------------");
-                System.out.println(e);
-                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-            }
-        } else {
-            System.out.println("16----------------");
+        if (!company.isActive()) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+
+        try {
+            final LoginResponse loginResponse = jwtTokenService.getLoginResponse(loginRequest);
+            return ResponseEntity.ok(loginResponse);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
 }
