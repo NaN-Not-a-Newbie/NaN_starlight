@@ -1,12 +1,11 @@
 package com.nan.boilerplate.springboot.security.service;
 
+import com.nan.boilerplate.springboot.model.Company;
 import com.nan.boilerplate.springboot.model.User;
 import com.nan.boilerplate.springboot.model.UserRole;
 import com.nan.boilerplate.springboot.repository.CompanyRepository;
 import com.nan.boilerplate.springboot.repository.UserRepository;
-import com.nan.boilerplate.springboot.security.dto.AuthenticatedUserDto;
-import com.nan.boilerplate.springboot.security.dto.UserRegistrationRequest;
-import com.nan.boilerplate.springboot.security.dto.RegistrationResponse;
+import com.nan.boilerplate.springboot.security.dto.*;
 import com.nan.boilerplate.springboot.security.mapper.UserMapper;
 import com.nan.boilerplate.springboot.security.utils.SecurityConstants;
 import com.nan.boilerplate.springboot.service.UserValidationService;
@@ -15,6 +14,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import javax.crypto.spec.OAEPParameterSpec;
+import java.util.Optional;
 
 
 @Slf4j
@@ -30,6 +32,8 @@ public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
 
+    private final CompanyRepository companyRepository;
+
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
     private final UserValidationService userValidationService;
@@ -38,28 +42,60 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findByUsername(String username) {
-
         return userRepository.findByUsername(username);
     }
 
     @Override
-    public RegistrationResponse registration(UserRegistrationRequest userRegistrationRequest) {
+    public Optional<Company> findByCompanyName(String username) {
+        return companyRepository.findByUsername(username);
+    }
 
-            userValidationService.validateUser(userRegistrationRequest); // 이미 존재하는 유저인지 확인
 
-            final User user = UserMapper.INSTANCE.convertToUser(userRegistrationRequest); // 엔티티 디티오 변환
-            user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-            user.setUserRole(UserRole.USER);
-            user.setActive(true); // 가입시 isActive를 false로 설정
+    @Override
+    public RegistrationResponse registrationUser(UserRegistrationRequest userRegistrationRequest) {
+        userValidationService.validateUsernameUnique(userRegistrationRequest.getUsername()); // 이미 존재하는 유저인지 확인
 
-            userRepository.save(user);
+        final User user = UserMapper.INSTANCE.convertToUser(userRegistrationRequest); // 엔티티 디티오 변환
+        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+        user.setUserRole(UserRole.USER);
+        user.setActive(true); // 가입시 isActive를 false로 설정
 
-            final String username = userRegistrationRequest.getUsername();
-            final String registrationSuccessMessage = generalMessageAccessor.getMessage(null, REGISTRATION_SUCCESSFUL, username);
+        userRepository.save(user);
 
-            log.info("{} registered successfully!", username);
+        final String username = userRegistrationRequest.getUsername();
+        final String registrationSuccessMessage = generalMessageAccessor.getMessage(null, REGISTRATION_SUCCESSFUL, username);
+
+        log.info("{} registered successfully!", username);
+
+        return new RegistrationResponse(registrationSuccessMessage);//User
+
+    }
+
+    @Override
+    public RegistrationResponse registrationCompany(CompanyRegistrationRequest companyRegistrationRequest) {
+
+        userValidationService.validateUsernameUnique(companyRegistrationRequest.getUsername()); // 이미 존재하는 유저인지 확인
+
+            final Company company = UserMapper.INSTANCE.convertToCompany(companyRegistrationRequest); // 엔티티 디티오 변환
+            company.setPassword(bCryptPasswordEncoder.encode(company.getPassword()));
+            company.setUserRole(UserRole.COMPANY);
+            company.setActive(true); // 가입시 isActive를 false로 설정
+
+            companyRepository.save(company);
+
+            final String companyName = companyRegistrationRequest.getCompanyName();
+            final String registrationSuccessMessage = generalMessageAccessor.getMessage(null, REGISTRATION_SUCCESSFUL, companyName);
+
+            log.info("{} registered successfully!", companyName);
 
             return new RegistrationResponse(registrationSuccessMessage);//User
+    }
+
+    @Override
+    public AuthenticatedCompanyDto findAuthenticatedCompanyByUsername(String username) {
+        final Company company = findByCompanyName(username).get();
+
+        return UserMapper.INSTANCE.convertToAuthenticatedCompanyDto(company);
     }
 
     @Override
@@ -86,6 +122,21 @@ public class UserServiceImpl implements UserService {
         return user;
     }
 
+    @Override
+    public Company activateCompany(String username) {
+        Company company = companyRepository.findByUsername(username).get();
+        company.setActive(false);
+        companyRepository.save(company);
+        return company;
+    }
+
+    @Override
+    public Company deActivateCompany(String username) {
+        Company company = companyRepository.findByUsername(username).get();
+        company.setActive(false);
+        companyRepository.save(company);
+        return company;
+    }
     @Override
     public AuthenticatedUserDto demoteUser(String username){
         User user = userRepository.findByUsername(username);

@@ -3,10 +3,15 @@ package com.nan.boilerplate.springboot.service.Impl;
 
 import com.nan.boilerplate.springboot.model.JobOffer;
 import com.nan.boilerplate.springboot.model.UserApply;
+import com.nan.boilerplate.springboot.repository.JobOfferRepository;
+import com.nan.boilerplate.springboot.repository.ResumeRepository;
 import com.nan.boilerplate.springboot.repository.UserApplyRepository;
+import com.nan.boilerplate.springboot.repository.UserRepository;
 import com.nan.boilerplate.springboot.security.dto.JobOfferResponse;
 import com.nan.boilerplate.springboot.security.dto.UserApplyRequest;
 import com.nan.boilerplate.springboot.security.dto.UserApplyResponse;
+import com.nan.boilerplate.springboot.security.service.UserService;
+import com.nan.boilerplate.springboot.service.JobOfferService;
 import com.nan.boilerplate.springboot.service.UserApplyService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -20,13 +25,11 @@ import java.util.Optional;
 
 @Service
 @Slf4j
+@RequiredArgsConstructor
 public class UserApplyServiceImpl implements UserApplyService {
     private final UserApplyRepository userApplyRepository;
-
-    @Autowired
-    public UserApplyServiceImpl(UserApplyRepository userApplyRepository) {
-        this.userApplyRepository = userApplyRepository;
-    }
+    private final JobOfferRepository jobOfferRepository;
+    private final ResumeRepository resumeRepository;
 
     @Override
     public List<UserApplyResponse> getAllUserApply() {
@@ -50,10 +53,11 @@ public class UserApplyServiceImpl implements UserApplyService {
     @Override
     public UserApplyResponse addUserApply(UserApplyRequest userApplyRequest) {
         UserApply userApply = UserApply.builder()
-                .jobOffer(userApplyRequest.getJobOffer())
-                .resume(userApplyRequest.getResume())
+                .jobOffer(jobOfferRepository.findById(userApplyRequest.getJobOfferId()).get())
+                .resume(resumeRepository.findById(userApplyRequest.getResumeId()).get())
                 .hire(false)
                 .build();
+        userApplyRepository.save(userApply);
         return UserApplyResponse.builder()
                 .message("Success apply")
                 .build();

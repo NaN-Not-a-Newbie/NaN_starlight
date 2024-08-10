@@ -1,14 +1,14 @@
 package com.nan.boilerplate.springboot.service.Impl;
 
-import com.nan.boilerplate.springboot.model.Company;
 import com.nan.boilerplate.springboot.model.JobOffer;
+import com.nan.boilerplate.springboot.repository.CompanyRepository;
 import com.nan.boilerplate.springboot.repository.JobOfferRepository;
 import com.nan.boilerplate.springboot.security.dto.JobOfferRequest;
 import com.nan.boilerplate.springboot.security.dto.JobOfferResponse;
-import com.nan.boilerplate.springboot.security.service.CompanyService;
 import com.nan.boilerplate.springboot.security.service.UserService;
-import com.nan.boilerplate.springboot.security.utils.SecurityConstants;
 import com.nan.boilerplate.springboot.service.JobOfferService;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,17 +17,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@Slf4j
+@RequiredArgsConstructor
 public class JobOfferServiceImpl implements JobOfferService {
     private final JobOfferRepository jobOfferRepository;
-    private final CompanyService companyService;
-
-
-    @Autowired
-    public JobOfferServiceImpl(JobOfferRepository jobOfferRepository, CompanyService companyService) {
-        this.jobOfferRepository = jobOfferRepository;
-        this.companyService = companyService;
-    }
-
+    private final CompanyRepository companyRepository;
 
     @Override
     public List<JobOfferResponse> getAllJobOffers() {
@@ -61,8 +55,7 @@ public class JobOfferServiceImpl implements JobOfferService {
                 .body(jobOfferRequest.getBody())
                 .career(jobOfferRequest.getCareer())
                 .location(jobOfferRequest.getLocation())
-//                .company(companyService.findByCompanyId(jobOfferRequest.getCompanyId()))
-//                .company(companyService.findByUsername(SecurityConstants.getAuthenticatedUsername()))
+                .company(companyRepository.findByUsername(jobOfferRequest.getCompanyName()).get())
                 .salary(jobOfferRequest.getSalary())
                 .salaryType(jobOfferRequest.getSalaryType())
                 .education(jobOfferRequest.getEducation())

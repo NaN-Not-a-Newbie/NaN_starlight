@@ -34,6 +34,21 @@ public class JwtTokenManager {
                 .sign(Algorithm.HMAC256(jwtProperties.getSecretKey().getBytes()));
         //@formatter:on
     }
+    public String generateCompanyToken(Company user) {
+
+        final String username = user.getUsername();
+        final UserRole userRole = user.getUserRole();
+
+        //@formatter:off
+        return JWT.create()
+                .withSubject(username)
+                .withIssuer(jwtProperties.getIssuer())
+                .withClaim("role", userRole.name())
+                .withIssuedAt(new Date())
+                .withExpiresAt(new Date(System.currentTimeMillis() + jwtProperties.getExpirationMinute() * 60 * 1000))
+                .sign(Algorithm.HMAC256(jwtProperties.getSecretKey().getBytes()));
+        //@formatter:on
+    }
 
     public String generateToken(Company company) {
 
