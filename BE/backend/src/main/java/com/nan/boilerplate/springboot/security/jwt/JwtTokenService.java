@@ -28,7 +28,6 @@ public class JwtTokenService {
     private final JwtTokenManager jwtTokenManager;
 
     private final AuthenticationManager authenticationManager;
-    private final UserRepository userRepository;
 
     public LoginResponse getLoginResponse(LoginRequest loginRequest) {
 
@@ -38,7 +37,7 @@ public class JwtTokenService {
 
         authenticationManager.authenticate(usernamePasswordAuthenticationToken);
 
-        if(userRepository.findByUsername(loginRequest.getUsername())==null){
+        if(userService.findByUsername(loginRequest.getUsername())==null){
             final AuthenticatedCompanyDto authenticatedCompanyDto = userService.findAuthenticatedCompanyByUsername(username);
             final Company user = UserMapper.INSTANCE.convertToCompany(authenticatedCompanyDto);
             final String token = jwtTokenManager.generateCompanyToken(user);
