@@ -7,7 +7,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/${MYSQL_DATABASE:starlight}?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false
     username: ${MYSQL_USER:root}
-    password: ${MYSQL_PASSWORD:rc583013}
+    password: ${MYSQL_PASSWORD:admin}
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:

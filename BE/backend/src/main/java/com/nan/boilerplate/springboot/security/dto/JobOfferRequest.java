@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter
+@Setter
 @Builder
 public class JobOfferRequest {
     private String title;
@@ -20,7 +21,7 @@ public class JobOfferRequest {
 
     private Long career;
 
-    private Company company;
+    private Long companyId;
 
     private SalaryType salaryType;
 

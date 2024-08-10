@@ -1,10 +1,13 @@
 package com.nan.boilerplate.springboot.service.Impl;
 
+import com.nan.boilerplate.springboot.model.Company;
 import com.nan.boilerplate.springboot.model.JobOffer;
 import com.nan.boilerplate.springboot.repository.JobOfferRepository;
 import com.nan.boilerplate.springboot.security.dto.JobOfferRequest;
 import com.nan.boilerplate.springboot.security.dto.JobOfferResponse;
+import com.nan.boilerplate.springboot.security.service.CompanyService;
 import com.nan.boilerplate.springboot.security.service.UserService;
+import com.nan.boilerplate.springboot.security.utils.SecurityConstants;
 import com.nan.boilerplate.springboot.service.JobOfferService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,13 +19,13 @@ import java.util.Optional;
 @Service
 public class JobOfferServiceImpl implements JobOfferService {
     private final JobOfferRepository jobOfferRepository;
-    private final UserService userService;
+    private final CompanyService companyService;
 
 
     @Autowired
-    public JobOfferServiceImpl(JobOfferRepository jobOfferRepository, UserService userService) {
+    public JobOfferServiceImpl(JobOfferRepository jobOfferRepository, CompanyService companyService) {
         this.jobOfferRepository = jobOfferRepository;
-        this.userService = userService;
+        this.companyService = companyService;
     }
 
 
@@ -58,7 +61,8 @@ public class JobOfferServiceImpl implements JobOfferService {
                 .body(jobOfferRequest.getBody())
                 .career(jobOfferRequest.getCareer())
                 .location(jobOfferRequest.getLocation())
-                .company(jobOfferRequest.getCompany())
+//                .company(companyService.findByCompanyId(jobOfferRequest.getCompanyId()))
+//                .company(companyService.findByUsername(SecurityConstants.getAuthenticatedUsername()))
                 .salary(jobOfferRequest.getSalary())
                 .salaryType(jobOfferRequest.getSalaryType())
                 .education(jobOfferRequest.getEducation())

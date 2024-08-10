@@ -6,6 +6,8 @@ import com.nan.boilerplate.springboot.security.dto.*;
 public interface CompanyService {
     Company findByUsername(String username);
 
+//    Company findByCompanyId(Long id);
+
     Company activateCompany(String username);
 
     Company deActivateCompany(String username);

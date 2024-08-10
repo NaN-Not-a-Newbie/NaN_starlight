@@ -38,6 +38,8 @@ public class CompanyServiceImpl implements CompanyService {
         return companyRepository.findByUsername(username);
     }
 
+//    public Company findByCompanyId(Long id) { return companyRepository.findByCompanyId(id); }
+
     @Override
     public Company activateCompany(String username) {
         Company company = companyRepository.findByUsername(username);
