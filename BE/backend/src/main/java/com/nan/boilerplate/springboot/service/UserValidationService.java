@@ -1,7 +1,9 @@
 package com.nan.boilerplate.springboot.service;
 
 import com.nan.boilerplate.springboot.exceptions.RegistrationException;
-import com.nan.boilerplate.springboot.security.dto.RegistrationRequest;
+import com.nan.boilerplate.springboot.repository.CompanyRepository;
+import com.nan.boilerplate.springboot.security.dto.CompanyRegistrationRequest;
+import com.nan.boilerplate.springboot.security.dto.UserRegistrationRequest;
 import com.nan.boilerplate.springboot.repository.UserRepository;
 import com.nan.boilerplate.springboot.utils.ExceptionMessageAccessor;
 import lombok.RequiredArgsConstructor;
@@ -20,42 +22,62 @@ public class UserValidationService {
 
     private final UserRepository userRepository;
 
+    private final CompanyRepository companyRepository;
+
     private final ExceptionMessageAccessor exceptionMessageAccessor;
 
-    public void validateUser(RegistrationRequest registrationRequest) {
+//    public void validateUser(UserRegistrationRequest userRegistrationRequest) {
+//
+//        final String username = userRegistrationRequest.getUsername();
+//
+//        checkUsername(username);
+//    }
+//
+//    public void validateCompany(CompanyRegistrationRequest companyRegistrationRequest) {
+//
+//        final String username = companyRegistrationRequest.getUsername();
+//
+//        checkUsernameCompany(username);
+//    }
 
-        final String email = registrationRequest.getEmail();
-        final String username = registrationRequest.getUsername();
+    public void validateUsernameUnique(String username) {
+        boolean usernameExistsInUsers = userRepository.existsByUsername(username);
+        boolean usernameExistsInCompany = companyRepository.existsByUsername(username);
 
-        checkEmail(email);
-        checkUsername(username);
-    }
-
-    private void checkUsername(String username) {
-
-        final boolean existsByUsername = userRepository.existsByUsername(username);
-
-        if (existsByUsername) {
-
+        if (usernameExistsInUsers || usernameExistsInCompany) {
             log.warn("{} is already being used!", username);
 
             final String existsUsername = exceptionMessageAccessor.getMessage(null, USERNAME_ALREADY_EXISTS);
             throw new RegistrationException(existsUsername);
         }
-
     }
 
-    private void checkEmail(String email) {
-
-        final boolean existsByEmail = userRepository.existsByEmail(email);
-
-        if (existsByEmail) {
-
-            log.warn("{} is already being used!", email);
-
-            final String existsEmail = exceptionMessageAccessor.getMessage(null, EMAIL_ALREADY_EXISTS);
-            throw new RegistrationException(existsEmail);
-        }
-    }
+//    private void checkUsername(String username) {
+//
+//        final boolean existsByUsername = userRepository.existsByUsername(username);
+//
+//        if (existsByUsername) {
+//
+//            log.warn("{} is already being used!", username);
+//
+//            final String existsUsername = exceptionMessageAccessor.getMessage(null, USERNAME_ALREADY_EXISTS);
+//            throw new RegistrationException(existsUsername);
+//        }
+//
+//    }
+//
+//    private void checkUsernameCompany(String username) {
+//
+//        final boolean existsByUsername = companyRepository.existsByUsername(username);
+//
+//        if (existsByUsername) {
+//
+//            log.warn("{} is already being used!", username);
+//
+//            final String existsUsername = exceptionMessageAccessor.getMessage(null, USERNAME_ALREADY_EXISTS);
+//            throw new RegistrationException(existsUsername);
+//        }
+//
+//    }
 
 }

@@ -40,10 +40,15 @@ public class SecurityConfiguration {
         return http.cors().and().csrf().disable()
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
                 .authorizeRequests()
-                .antMatchers("/register", "/health", "/login", "/api/swagger/**", "/actuator/**").permitAll()
-                .antMatchers(GET, "/api/books").hasAnyAuthority("ADMIN")
+                .antMatchers("/register/**", "/health", "/login/**", "/api/swagger/**", "/actuator/**").permitAll()
                 .antMatchers(PATCH, "/admin/manageActive/**").hasAnyAuthority("ADMIN", "STAFF") // 로그인 승인
                 .antMatchers(PATCH, "/admin/manageAuthority/**").hasAnyAuthority("ADMIN")
+//                .antMatchers(POST, "/resume").hasAnyAuthority("USER") // 공고 작성과 수정은 회사만,
+//                .antMatchers(POST, "/jobOffer").hasAnyAuthority("COMPANY") // 지원서 작성과 수정은 유저만 허용
+                .antMatchers(POST, "/userApply").hasAnyAuthority("USER")
+//                .antMatchers(PUT, "/resume/{id}").hasAnyAuthority("USER")
+//                .antMatchers(PUT, "/jobOffer/{id}").hasAnyAuthority("COMPANY")
+                .antMatchers(PUT, "/userApply/{id}").hasAnyAuthority("COMPANY")
                 .anyRequest().authenticated().and()
                 .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)

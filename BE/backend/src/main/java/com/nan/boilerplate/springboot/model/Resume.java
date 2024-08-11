@@ -1,9 +1,16 @@
 package com.nan.boilerplate.springboot.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Resume {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
