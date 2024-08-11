@@ -61,14 +61,14 @@ public class UserApplyServiceImpl implements UserApplyService {
     }
 
     @Override
-    public UserApplyResponse updateUserApply(Long id, UserApplyRequest userApplyRequest,Long code) {
+    public UserApplyResponse updateUserApply(Long id, UserApplyRequest userApplyRequest) {
         if (userApplyRepository.existsById(id)) {
             UserApply existUserApply = userApplyRepository.getReferenceById(id);
-            if (code == 1) {
+            if (userApplyRequest.getHireCode() == 1) {
                 existUserApply.setHire(true);
                 return UserApplyResponse.builder()
                         .message("Hired").build();
-            } else if (code == 0) {
+            } else if (userApplyRequest.getHireCode() == 0) {
                 existUserApply.setHire(false);
                 return UserApplyResponse.builder()
                         .message("Fired").build();
