@@ -1,11 +1,12 @@
 package com.nan.boilerplate.springboot.security.dto;
 
-import com.nan.boilerplate.springboot.model.Company;
-import com.nan.boilerplate.springboot.model.Education;
-import com.nan.boilerplate.springboot.model.SalaryType;
+import com.nan.boilerplate.springboot.model.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 @Getter
 @Builder
@@ -15,8 +16,6 @@ public class JobOfferResponse {
 
     private String body;
 
-    private SalaryType salaryType;
-
     private Long salary;
 
     private String location;
@@ -25,6 +24,20 @@ public class JobOfferResponse {
 
     private String companyName;
 //    private Company company;
+
+    private EnvEyesight envEyesight;
+
+    private EnvBothHands envBothHands;
+
+    private EnvHandWork envhandWork;
+
+    private SalaryType salaryType;
+
+    private EnvLiftPower envLiftPower;
+
+    private EnvStndWalk envStndWalk;
+
+    private EnvLstnTalk envLstnTalk;
 
     private Education education;
 

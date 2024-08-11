@@ -54,6 +54,12 @@ public class JobOfferServiceImpl implements JobOfferService {
                 .salary(jobOfferRequest.getSalary())
                 .salaryType(jobOfferRequest.getSalaryType())
                 .education(jobOfferRequest.getEducation())
+                .envEyesight(jobOfferRequest.getEnvEyesight())
+                .envhandWork(jobOfferRequest.getEnvhandWork())
+                .envLiftPower(jobOfferRequest.getEnvLiftPower())
+                .envBothHands(jobOfferRequest.getEnvBothHands())
+                .envStndWalk(jobOfferRequest.getEnvStndWalk())
+                .envLstnTalk(jobOfferRequest.getEnvLstnTalk())
                 .build();
 //        jobOfferRepository.save(jobOffer);
         return jobOfferRepository.save(jobOffer).getId();
@@ -78,7 +84,12 @@ public class JobOfferServiceImpl implements JobOfferService {
         existJobOffer.setSalary(jobOfferRequest.getSalary());
         existJobOffer.setCareer(jobOfferRequest.getCareer());
         existJobOffer.setBody(jobOfferRequest.getBody());
-
+        existJobOffer.setEnvEyesight(jobOfferRequest.getEnvEyesight());
+        existJobOffer.setEnvhandWork(jobOfferRequest.getEnvhandWork());
+        existJobOffer.setEnvLiftPower(jobOfferRequest.getEnvLiftPower());
+        existJobOffer.setEnvStndWalk(jobOfferRequest.getEnvStndWalk());
+        existJobOffer.setEnvBothHands(jobOfferRequest.getEnvBothHands());
+        existJobOffer.setEnvLstnTalk(jobOfferRequest.getEnvLstnTalk());
         jobOfferRepository.save(existJobOffer);
         return JobOfferResponse.builder()
                 .message("Update Success")
