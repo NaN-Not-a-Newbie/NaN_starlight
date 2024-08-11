@@ -5,6 +5,7 @@ import com.nan.boilerplate.springboot.model.Resume;
 import com.nan.boilerplate.springboot.repository.ResumeRepository;
 import com.nan.boilerplate.springboot.security.dto.ResumeRequest;
 import com.nan.boilerplate.springboot.security.dto.ResumeResponse;
+import com.nan.boilerplate.springboot.security.dto.ResumeSimpleResponse;
 import com.nan.boilerplate.springboot.security.service.UserService;
 import com.nan.boilerplate.springboot.security.utils.SecurityConstants;
 import com.nan.boilerplate.springboot.service.ResumeService;
@@ -25,12 +26,11 @@ public class ResumeServiceImpl implements ResumeService{
     private final UserService userService;
 
     @Override
-    public List<ResumeResponse> getAllResumes() {
+    public List<ResumeSimpleResponse> getAllResumes() {
         List<Resume> resumes = resumeRepository.findAll();
-        List<ResumeResponse> resumesResponses = new ArrayList<>();
+        List<ResumeSimpleResponse> resumesResponses = new ArrayList<>();
         for (Resume resume : resumes) {
-            resumesResponses.add(ResumeResponse.builder()
-                    .body(resume.getBody())
+            resumesResponses.add(ResumeSimpleResponse.builder()
                     .title(resume.getTitle()).build());
         }
         return resumesResponses;
@@ -46,22 +46,23 @@ public class ResumeServiceImpl implements ResumeService{
         Resume resume = Resume.builder()
                 .title(resumeRequest.getTitle())
                 .body(resumeRequest.getBody())
-                .user(userService.findByUsername(resumeRequest.getUsername()))
+                .user(userService.findByUsername(SecurityConstants.getAuthenticatedUsername()))
                 .build();
-//                .user(userService.findByUsername(SecurityConstants.getAuthenticatedUsername()))
         return resumeRepository.save(resume).getId();
     }
 
     // 이력서 수정
     @Override
-    public Long updateResume(Long id, ResumeRequest resumeRequest) {
+    public ResumeSimpleResponse updateResume(Long id, ResumeRequest resumeRequest) {
         String myName = SecurityConstants.getAuthenticatedUsername(); // 로그인 된 계정의 username
         String author = resumeRepository.getReferenceById(id).getUser().getUsername(); // 글 작성자
         if (resumeRepository.existsById(id) && author.equals(myName)) {
             Resume existResume = resumeRepository.getReferenceById(id);
             existResume.setTitle(resumeRequest.getTitle());
             existResume.setBody(resumeRequest.getBody());
-            return resumeRepository.save(existResume).getId();
+            return ResumeSimpleResponse.builder()
+                    .title(resumeRepository.save(existResume)
+                            .getTitle()).build();
         } else {
             if (!resumeRepository.existsById(id)) {
                 throw new NotFoundException("not exist JobOffer with id: {id}");
@@ -71,7 +72,7 @@ public class ResumeServiceImpl implements ResumeService{
         }
     }
 
-    public ResumeResponse deleteResume(Long id) {
+    public void deleteResume(Long id) {
         resumeRepository.deleteById(id);
-        return  ResumeResponse.builder().message("Delete Success").build();}
+    }
 }
