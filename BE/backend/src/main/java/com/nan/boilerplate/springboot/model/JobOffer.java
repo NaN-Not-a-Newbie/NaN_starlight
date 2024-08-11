@@ -51,7 +51,7 @@ public class JobOffer {
     @Enumerated(EnumType.STRING)
     private Education education;
 
-    @Enumerated(EnumType.STRING.STRING)
+    @Enumerated(EnumType.STRING)
     private SalaryType salaryType;
 
     private LocalDateTime created_at=LocalDateTime.now();
