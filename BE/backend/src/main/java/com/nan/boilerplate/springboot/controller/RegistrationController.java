@@ -1,5 +1,6 @@
 package com.nan.boilerplate.springboot.controller;
 
+import com.nan.boilerplate.springboot.model.Company;
 import com.nan.boilerplate.springboot.model.User;
 import com.nan.boilerplate.springboot.security.dto.*;
 import com.nan.boilerplate.springboot.security.jwt.JwtTokenService;
@@ -51,11 +52,11 @@ public class RegistrationController {
     @PostMapping("company")
     public ResponseEntity<LoginResponse> registrationRequest(@Valid @RequestBody CompanyRegistrationRequest companyRegistrationRequest, RedirectAttributes redirectAttributes) {
         String message=userService.registrationCompany(companyRegistrationRequest).getMessage();
-        User user=userService.findByUsername(companyRegistrationRequest.getUsername());
+        Company company=userService.findByCompanyName(companyRegistrationRequest.getUsername()).get();
         LoginRequest loginRequest = LoginRequest.builder()
                 .password(companyRegistrationRequest.getPassword()).username(companyRegistrationRequest.getUsername()).build();
 
-        if (user.isActive()) {
+        if (company.isActive()) {
 
             try {
                 final LoginResponse loginResponse = jwtTokenService.getLoginResponse(loginRequest);
