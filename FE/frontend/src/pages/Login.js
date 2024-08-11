@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { TextField, Button, Container, Typography, Box } from '@mui/material';
-
+import { Link } from 'react-router-dom';  // Link 컴포넌트 import
 import axios from 'axios';
 
 function Login() {
@@ -68,6 +68,12 @@ function Login() {
           >
             로그인
           </Button>
+          <Typography variant="body2" color="textSecondary">
+            회원이 아니신가요?{' '}
+            <Link to="/register" style={{ textDecoration: 'underline', color: '#1976d2' }}>
+              회원가입
+            </Link>
+          </Typography>
         </Box>
       </Box>
     </Container>

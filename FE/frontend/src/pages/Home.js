@@ -1,11 +1,32 @@
-import { Container, Typography } from '@mui/material';
+import { Box, Container,Paper,  } from '@mui/material';
 import React from 'react';
+
 
 function Home() {
   return (
     <div>
       <Container>
-        <Typography variant='h6'>메인</Typography>
+        <Box
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            '& > :not(style)': {
+              m: 1,
+              width: '100%',
+              height: 120,
+              borderRadius: '10px',
+            },
+          }}
+        >
+          <Paper elevation={3} />
+          <Paper elevation={3} />
+          <Paper elevation={3} />
+          <Paper elevation={3} />
+          <Paper elevation={3} />
+          <Paper elevation={3} />
+          <Paper elevation={3} />
+          <Paper elevation={3} />
+        </Box>
       </Container>
     </div>
   );

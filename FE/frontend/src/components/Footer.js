@@ -9,33 +9,44 @@ function Footer() {
   const [value, setValue] = useState(0);
   const navigate = useNavigate();
 
-  return (
-    <Box 
-      sx={{ 
-        position: 'fixed', 
-        bottom: 0, 
-        width: '100%', 
-        backgroundColor: 'primary.main', 
-        zIndex: 1000,
-      }}
-    >
-      <BottomNavigation
-        value={value}
-        onChange={(event, newValue) => {
-          setValue(newValue);
+  const handleNavigationChange = (event, newValue) => {
+    setValue(newValue);
 
-          // 각 네비게이션 아이템 클릭 시 해당 경로로 이동
-          if (newValue === 0) navigate('/');
-          else if (newValue === 1) navigate('/jobs');
-          else if (newValue === 2) navigate('/mypage');
+    // 각 네비게이션 아이템 클릭 시 해당 경로로 이동
+    if (newValue === 0) {
+      navigate('/');
+    } else if (newValue === 1) {
+      navigate('/jobs');
+    } else if (newValue === 2) {
+      const token = localStorage.getItem('token');
+      if (token) {
+        navigate('/mypage');
+      } else {
+        navigate('/login');
+      }
+    }
+  };
+
+  return (
+    <>
+      <Box
+        sx={{
+          position: 'fixed',
+          bottom: 0,
+          width: '100%',
+          backgroundColor: 'primary.main',
+          zIndex: 1000,
+          borderTop: '2px solid #ccc',
         }}
-        showLabels
       >
-        <BottomNavigationAction label="홈" icon={<HomeIcon />} />
-        <BottomNavigationAction label="채용공고" icon={<WorkIcon />} />
-        <BottomNavigationAction label="마이 페이지" icon={<AccountCircleIcon />} />
-      </BottomNavigation>
-    </Box>
+        <BottomNavigation value={value} onChange={handleNavigationChange} showLabels>
+          <BottomNavigationAction label="홈" icon={<HomeIcon />} />
+          <BottomNavigationAction label="채용공고" icon={<WorkIcon />} />
+          <BottomNavigationAction label="마이 페이지" icon={<AccountCircleIcon />} />
+        </BottomNavigation>
+      </Box>
+      <Box sx={{ paddingBottom: '56px' }} />
+    </>
   );
 }
 

@@ -9,6 +9,7 @@ import Register from './pages/Register';
 import AppBar from './components/AppBar';
 import Footer from './components/Footer';
 import { theme, globalStyles } from './theme';
+import Notification from './pages/Notification';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              <Route path="/notification" element={<Notification />} />
             </Routes>
           </Box>
           <Footer />
