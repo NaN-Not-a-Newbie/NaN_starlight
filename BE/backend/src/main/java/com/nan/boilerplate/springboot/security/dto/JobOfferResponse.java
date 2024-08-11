@@ -41,5 +41,5 @@ public class JobOfferResponse {
 
     private Education education;
 
-    private String message;
+//    private String message;
 }

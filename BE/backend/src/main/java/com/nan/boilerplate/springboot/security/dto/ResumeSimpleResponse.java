@@ -1,7 +1,5 @@
 package com.nan.boilerplate.springboot.security.dto;
 
-
-import com.nan.boilerplate.springboot.model.User;
 import lombok.*;
 
 @Getter
@@ -9,10 +7,6 @@ import lombok.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ResumeResponse {
-
+public class ResumeSimpleResponse {
     private String title;
-    private String body;
-    private String userName;
-
 }

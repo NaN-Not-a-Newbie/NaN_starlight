@@ -50,7 +50,7 @@ public class JobOfferServiceImpl implements JobOfferService {
                 .body(jobOfferRequest.getBody())
                 .career(jobOfferRequest.getCareer())
                 .location(jobOfferRequest.getLocation())
-                .company(companyRepository.findByUsername(jobOfferRequest.getCompanyName()).get())
+                .company(companyRepository.findByUsername(SecurityConstants.getAuthenticatedUsername()).get())
                 .salary(jobOfferRequest.getSalary())
                 .salaryType(jobOfferRequest.getSalaryType())
                 .education(jobOfferRequest.getEducation())
@@ -61,39 +61,39 @@ public class JobOfferServiceImpl implements JobOfferService {
                 .envStndWalk(jobOfferRequest.getEnvStndWalk())
                 .envLstnTalk(jobOfferRequest.getEnvLstnTalk())
                 .build();
-//        jobOfferRepository.save(jobOffer);
+
         return jobOfferRepository.save(jobOffer).getId();
-//        JobOfferResponse jobOfferResponse = JobOfferResponse.builder()
-//                .message("Add Success")
-//                .build();
-//        return jobOfferResponse;
     }
 
     @Override
-    public JobOfferResponse updateJobOffer(Long id, JobOfferRequest jobOfferRequest) {
-        if (!jobOfferRepository.existsById(id)) {
-            return JobOfferResponse.builder()
-                    .message("Update Fail - not exist joboffer")
-                    .build();
+    public JobOfferSimpleResponse updateJobOffer(Long id, JobOfferRequest jobOfferRequest) {
+        String myName = SecurityConstants.getAuthenticatedUsername(); // 로그인 된 계정의 username
+        String author = jobOfferRepository.getReferenceById(id).getCompany().getUsername(); // 글 작성자
+
+        if (jobOfferRepository.existsById(id) && author.equals(myName)) {
+            JobOffer existJobOffer = jobOfferRepository.getReferenceById(id);
+            existJobOffer.setTitle(jobOfferRequest.getTitle());
+            existJobOffer.setLocation(jobOfferRequest.getLocation());
+            existJobOffer.setEducation(jobOfferRequest.getEducation());
+            existJobOffer.setSalaryType(jobOfferRequest.getSalaryType());
+            existJobOffer.setSalary(jobOfferRequest.getSalary());
+            existJobOffer.setCareer(jobOfferRequest.getCareer());
+            existJobOffer.setBody(jobOfferRequest.getBody());
+            existJobOffer.setEnvEyesight(jobOfferRequest.getEnvEyesight());
+            existJobOffer.setEnvhandWork(jobOfferRequest.getEnvhandWork());
+            existJobOffer.setEnvLiftPower(jobOfferRequest.getEnvLiftPower());
+            existJobOffer.setEnvStndWalk(jobOfferRequest.getEnvStndWalk());
+            existJobOffer.setEnvBothHands(jobOfferRequest.getEnvBothHands());
+            existJobOffer.setEnvLstnTalk(jobOfferRequest.getEnvLstnTalk());
+            return JobOfferSimpleResponse.builder().title(jobOfferRepository.save(existJobOffer).getTitle()).build();
+
+        } else {
+            if (!jobOfferRepository.existsById(id)) {
+                throw new NotFoundException("not exist JobOffer with id: {id}");
+            } else {
+                throw new NotFoundException("not exist JobOffer with id: {id}");
+            }
         }
-        JobOffer existJobOffer = jobOfferRepository.getReferenceById(id);
-        existJobOffer.setTitle(jobOfferRequest.getTitle());
-        existJobOffer.setLocation(jobOfferRequest.getLocation());
-        existJobOffer.setEducation(jobOfferRequest.getEducation());
-        existJobOffer.setSalaryType(jobOfferRequest.getSalaryType());
-        existJobOffer.setSalary(jobOfferRequest.getSalary());
-        existJobOffer.setCareer(jobOfferRequest.getCareer());
-        existJobOffer.setBody(jobOfferRequest.getBody());
-        existJobOffer.setEnvEyesight(jobOfferRequest.getEnvEyesight());
-        existJobOffer.setEnvhandWork(jobOfferRequest.getEnvhandWork());
-        existJobOffer.setEnvLiftPower(jobOfferRequest.getEnvLiftPower());
-        existJobOffer.setEnvStndWalk(jobOfferRequest.getEnvStndWalk());
-        existJobOffer.setEnvBothHands(jobOfferRequest.getEnvBothHands());
-        existJobOffer.setEnvLstnTalk(jobOfferRequest.getEnvLstnTalk());
-        jobOfferRepository.save(existJobOffer);
-        return JobOfferResponse.builder()
-                .message("Update Success")
-                .build();
     }
 
 

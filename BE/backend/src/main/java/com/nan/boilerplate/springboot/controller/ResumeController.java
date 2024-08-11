@@ -3,6 +3,7 @@ package com.nan.boilerplate.springboot.controller;
 import com.nan.boilerplate.springboot.model.Resume;
 import com.nan.boilerplate.springboot.security.dto.ResumeRequest;
 import com.nan.boilerplate.springboot.security.dto.ResumeResponse;
+import com.nan.boilerplate.springboot.security.dto.ResumeSimpleResponse;
 import com.nan.boilerplate.springboot.service.ResumeService;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -26,40 +27,44 @@ public class ResumeController {
     }
 
     @GetMapping
-    public ResponseEntity<List<ResumeResponse>> getAllResumes() {
+    public ResponseEntity<List<ResumeSimpleResponse>> getAllResumes() {
         return ResponseEntity.ok(resumeService.getAllResumes());
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<ResumeResponse> getResumeById(@PathVariable Long id) {
+        System.out.printf("getResumeById({id})1---------\n", id);
         if (resumeService.getResumeById(id).isEmpty()) {
             return ResponseEntity.notFound().build();
-        } else {
-            Resume resume = resumeService.getResumeById(id).get();
-            return ResponseEntity.ok(ResumeResponse.builder()
-                            .title(resume.getTitle())
-                            .body(resume.getBody())
-                            .user(resume.getUser())
-                            .build());
         }
+        Resume resume = resumeService.getResumeById(id).get();
+        System.out.printf("getResumeById({id})2---------\n", id);
+        return ResponseEntity.ok(ResumeResponse.builder()
+                .title(resume.getTitle())
+                .body(resume.getBody())
+                .userName(resume.getUser().getName())
+                .build());
+
     }
 
     @PostMapping
-    public ResponseEntity<Void> addResume(@RequestBody ResumeRequest resumeRequest) {
-        Long createdresumeId = resumeService.addResume(resumeRequest);
+    public ResponseEntity<ResumeSimpleResponse> addResume(@RequestBody ResumeRequest resumeRequest) {
+        Long createdResumeId = resumeService.addResume(resumeRequest);
 
         return ResponseEntity.status(HttpStatus.MOVED_PERMANENTLY)
-                .location(URI.create("/resume/" + createdresumeId))
+                .location(URI.create("/resume/" + createdResumeId))
                 .build();  // 리다이렉트
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ResumeResponse> updateResume(@PathVariable Long id, @RequestBody ResumeRequest resumeRequest) {
-        return ResponseEntity.ok(resumeService.updateResume(id, resumeRequest));
+    public ResponseEntity<ResumeSimpleResponse> updateResume(@PathVariable Long id, @RequestBody ResumeRequest resumeRequest) {
+
+        return ResponseEntity.ok(resumeService.updateResume(id, resumeRequest));  // 리다이렉트
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<ResumeResponse> deleteResume(@PathVariable Long id) {
-        return ResponseEntity.ok(resumeService.deleteResume(id));
+    public ResponseEntity<Void> deleteResume(@PathVariable Long id) {
+        resumeService.deleteResume(id);
+        return ResponseEntity.noContent().build();
     }
 }

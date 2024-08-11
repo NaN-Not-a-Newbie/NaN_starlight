@@ -1,6 +1,7 @@
 package com.nan.boilerplate.springboot.security.dto;
 
 import com.nan.boilerplate.springboot.model.User;
+import com.nan.boilerplate.springboot.security.utils.SecurityConstants;
 import lombok.*;
 
 @Getter
@@ -11,5 +12,4 @@ import lombok.*;
 public class ResumeRequest {
     private String title;
     private String body;
-    private String username;
 }

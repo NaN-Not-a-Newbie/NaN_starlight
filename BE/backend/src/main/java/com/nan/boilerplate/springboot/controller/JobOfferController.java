@@ -43,6 +43,8 @@ public class JobOfferController {
                 .salary(offer.getSalary())
                 .education(offer.getEducation())
                 .salaryType(offer.getSalaryType())
+                .body(offer.getBody())
+                .location(offer.getLocation())
                 .build();
         return ResponseEntity.ok(response);
 
@@ -63,9 +65,9 @@ public class JobOfferController {
     }
 
     @PutMapping("/{id}")
-    public String updateJobOffer(@PathVariable Long id, @RequestBody JobOfferRequest jobOfferRequest) {
-        JobOfferResponse response = jobOfferService.updateJobOffer(id, jobOfferRequest);
-        return "redirect:/jobOffer";
+    public ResponseEntity<JobOfferSimpleResponse> updateJobOffer(@PathVariable Long id, @RequestBody JobOfferRequest jobOfferRequest) {
+
+        return ResponseEntity.ok(jobOfferService.updateJobOffer(id, jobOfferRequest));
     }
 
     @DeleteMapping("/{id}")

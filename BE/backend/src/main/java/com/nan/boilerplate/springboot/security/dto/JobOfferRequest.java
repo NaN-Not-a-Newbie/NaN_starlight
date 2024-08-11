@@ -9,6 +9,7 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
 @Getter
+@Setter
 @Builder
 public class JobOfferRequest {
     private String title;
@@ -21,9 +22,9 @@ public class JobOfferRequest {
 
     private Long career;
 
-    private SalaryType salaryType;
+//    private String companyName;
 
-    private String companyName;
+    private SalaryType salaryType;
 
     private EnvEyesight envEyesight;
 

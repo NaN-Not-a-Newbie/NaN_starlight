@@ -55,7 +55,6 @@ public class LoginController {
             try {
                 final LoginResponse loginResponse = jwtTokenService.getLoginResponse(loginRequest);
                 loginResponse.setMessage("Welcome Company");
-                System.out.println(loginResponse);
                 return ResponseEntity.ok(loginResponse);
             } catch (Exception e) {
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
