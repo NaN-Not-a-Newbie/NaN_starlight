@@ -52,7 +52,7 @@ public class RegistrationController {
     @PostMapping("company")
     public ResponseEntity<LoginResponse> registrationRequest(@Valid @RequestBody CompanyRegistrationRequest companyRegistrationRequest, RedirectAttributes redirectAttributes) {
         String message=userService.registrationCompany(companyRegistrationRequest).getMessage();
-        Company company = userService.findByCompanyName(companyRegistrationRequest.getUsername()).get();
+        Company company=userService.findByCompanyName(companyRegistrationRequest.getUsername()).get();
         LoginRequest loginRequest = LoginRequest.builder()
                 .password(companyRegistrationRequest.getPassword()).username(companyRegistrationRequest.getUsername()).build();
 

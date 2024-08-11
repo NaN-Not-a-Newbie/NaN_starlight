@@ -11,7 +11,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserApplyRequest {
+    private Long hireCode;
     private Long resumeId;
     private Long jobOfferId;
-    private boolean hire;
 }
