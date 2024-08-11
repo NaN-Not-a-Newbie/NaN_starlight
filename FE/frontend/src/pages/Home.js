@@ -1,9 +1,12 @@
+import { Container, Typography } from '@mui/material';
 import React from 'react';
 
 function Home() {
   return (
     <div>
-      <h2>Home Page</h2>
+      <Container>
+        <Typography variant='h6'>메인</Typography>
+      </Container>
     </div>
   );
 }

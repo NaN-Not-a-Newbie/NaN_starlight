@@ -9,10 +9,11 @@ function MyAppBar() {
   return (
     <AppBar position="static">
       <Toolbar>
-      <Typography 
+        <Typography 
           variant="h6" 
-          component="div" 
-          sx={{ flexGrow: 1, fontFamily: 'Danjo-bold-Regular, Arial, sans-serif' }}
+          component={Link} 
+          to="/" 
+          sx={{ flexGrow: 1, fontFamily: 'Danjo-bold-Regular, Arial, sans-serif', cursor: 'pointer', textDecoration: 'none', color: 'inherit' }}
         >
           별자리✨
         </Typography>
