@@ -53,23 +53,20 @@ public class JobOfferServiceImpl implements JobOfferService {
                 .body(jobOfferRequest.getBody())
                 .career(jobOfferRequest.getCareer())
                 .location(jobOfferRequest.getLocation())
-                .company(companyRepository.findByUsername(jobOfferRequest.getCompanyName()).get())
+                .company(companyRepository.findByUsername(SecurityConstants.getAuthenticatedUsername()).get())
                 .salary(jobOfferRequest.getSalary())
                 .salaryType(jobOfferRequest.getSalaryType())
                 .education(jobOfferRequest.getEducation())
                 .build();
-//        jobOfferRepository.save(jobOffer);
+
         return jobOfferRepository.save(jobOffer).getId();
-//        JobOfferResponse jobOfferResponse = JobOfferResponse.builder()
-//                .message("Add Success")
-//                .build();
-//        return jobOfferResponse;
     }
 
     @Override
-    public Long updateJobOffer(Long id, JobOfferRequest jobOfferRequest) {
+    public JobOfferSimpleResponse updateJobOffer(Long id, JobOfferRequest jobOfferRequest) {
         String myName = SecurityConstants.getAuthenticatedUsername(); // 로그인 된 계정의 username
         String author = jobOfferRepository.getReferenceById(id).getCompany().getUsername(); // 글 작성자
+
         if (jobOfferRepository.existsById(id) && author.equals(myName)) {
             JobOffer existJobOffer = jobOfferRepository.getReferenceById(id);
             existJobOffer.setTitle(jobOfferRequest.getTitle());
@@ -79,7 +76,8 @@ public class JobOfferServiceImpl implements JobOfferService {
             existJobOffer.setSalary(jobOfferRequest.getSalary());
             existJobOffer.setCareer(jobOfferRequest.getCareer());
             existJobOffer.setBody(jobOfferRequest.getBody());
-            return jobOfferRepository.save(existJobOffer).getId();
+            return JobOfferSimpleResponse.builder().title(jobOfferRepository.save(existJobOffer).getTitle()).build();
+
         } else {
             if (!jobOfferRepository.existsById(id)) {
                 throw new NotFoundException("not exist JobOffer with id: {id}");

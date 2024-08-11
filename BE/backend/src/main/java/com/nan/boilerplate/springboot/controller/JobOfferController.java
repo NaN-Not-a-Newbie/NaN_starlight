@@ -43,6 +43,8 @@ public class JobOfferController {
                 .salary(offer.getSalary())
                 .education(offer.getEducation())
                 .salaryType(offer.getSalaryType())
+                .body(offer.getBody())
+                .location(offer.getLocation())
                 .build();
         return ResponseEntity.ok(response);
 
@@ -63,12 +65,9 @@ public class JobOfferController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Void> updateJobOffer(@PathVariable Long id, @RequestBody JobOfferRequest jobOfferRequest) {
-        Long updatedJobOfferId = jobOfferService.updateJobOffer(id, jobOfferRequest);
+    public ResponseEntity<JobOfferSimpleResponse> updateJobOffer(@PathVariable Long id, @RequestBody JobOfferRequest jobOfferRequest) {
 
-        return ResponseEntity.status(HttpStatus.MOVED_PERMANENTLY)
-                .location(URI.create("/jobOffer/" + updatedJobOfferId))
-                .build();  // 리다이렉트
+        return ResponseEntity.ok(jobOfferService.updateJobOffer(id, jobOfferRequest));
     }
 
     @DeleteMapping("/{id}")
