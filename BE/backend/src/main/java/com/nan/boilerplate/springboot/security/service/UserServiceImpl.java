@@ -16,6 +16,12 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.crypto.spec.OAEPParameterSpec;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 
@@ -58,6 +64,7 @@ public class UserServiceImpl implements UserService {
         final User user = UserMapper.INSTANCE.convertToUser(userRegistrationRequest); // 엔티티 디티오 변환
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         user.setUserRole(UserRole.USER);
+        user.setAge(calculateAge(userRegistrationRequest.getBirthday()));
         user.setActive(true); // 가입시 isActive를 false로 설정
 
         userRepository.save(user);
@@ -152,5 +159,23 @@ public class UserServiceImpl implements UserService {
         userRepository.save(user);
         return new AuthenticatedUserDto(username, user.getUserRole(), user.isActive());
     }
+
+
+    private int calculateAge(String birthday) {
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate birthDate = LocalDate.parse(birthday, formatter);
+        LocalDate currentDate = LocalDate.now();
+
+        int age = Period.between(birthDate, currentDate).getYears();
+
+        // 생일이 지났는지
+        if (currentDate.getDayOfYear() < birthDate.getDayOfYear()) {
+            age -= 1;
+        }
+
+        return age;
+    }
+
 }
 

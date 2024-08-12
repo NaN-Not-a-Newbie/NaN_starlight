@@ -45,6 +45,7 @@ public class RegistrationController {
             } catch (Exception e) {
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
             }
+
         } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }

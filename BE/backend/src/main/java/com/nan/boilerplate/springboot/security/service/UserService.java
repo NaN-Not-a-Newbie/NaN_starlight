@@ -33,4 +33,6 @@ public interface UserService {
 
     AuthenticatedCompanyDto findAuthenticatedCompanyByUsername(String username);
 
+//    String calculateAge(String birthday);
+
 }
