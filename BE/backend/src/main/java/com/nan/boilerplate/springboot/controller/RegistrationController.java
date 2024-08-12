@@ -8,10 +8,12 @@ import com.nan.boilerplate.springboot.security.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
@@ -50,8 +52,9 @@ public class RegistrationController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
     }
-    @PostMapping("company")
-    public ResponseEntity<LoginResponse> registrationRequest(@Valid @RequestBody CompanyRegistrationRequest companyRegistrationRequest, RedirectAttributes redirectAttributes) {
+    @PostMapping(value = "company",consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<LoginResponse> registrationRequest(@Valid @RequestBody CompanyRegistrationRequest companyRegistrationRequest,@ModelAttribute MultipartFile file) {
+        String url="https://1ebe585vxl.apigw.ntruss.com/custom/v1/33475/5116e9b921ac357634a337737a845c7b73a4b097c45f9b0a51b04a7cf51a6f0e/document/biz-license";
         String message=userService.registrationCompany(companyRegistrationRequest).getMessage();
         Company company=userService.findByCompanyName(companyRegistrationRequest.getUsername()).get();
         LoginRequest loginRequest = LoginRequest.builder()
