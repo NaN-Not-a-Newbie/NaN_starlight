@@ -8,6 +8,4 @@ public interface FileService {
     void FileUpload(MultipartFile file, String uuid);
 
     List<String> NaverOCRCompany(MultipartFile multipartFile, String uuid);
-
-    List<String> NaverOCRUser(MultipartFile multipartFile, String uuid);
 }

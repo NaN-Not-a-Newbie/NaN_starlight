@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.nan.boilerplate.springboot.service.FileService;
+import io.swagger.v3.core.util.Json;
 import lombok.RequiredArgsConstructor;
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.json.JSONArray;
@@ -93,51 +94,6 @@ public class FileServceImpl implements FileService {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        return parseData;
-    }
-
-    @Override
-    public List<String> NaverOCRUser(MultipartFile multipartFile, String uuid) {
-        List<String> parseData = null;
-
-        try {
-            // JSON 데이터 구성
-            JSONObject json = new JSONObject();
-            json.put("version", "V2");
-            json.put("requestId", UUID.randomUUID().toString());
-            json.put("timestamp", System.currentTimeMillis());
-
-            JSONObject image = new JSONObject();
-            image.put("format", multipartFile.getOriginalFilename().substring(multipartFile.getOriginalFilename().lastIndexOf(".")+1));
-            image.put("data", Base64.encodeBase64String(multipartFile.getBytes()));
-            image.put("name", "StarLightCompany");
-
-            JSONArray images = new JSONArray();
-            images.put(image);
-            json.put("images", images);
-
-            // RestTemplate 인스턴스 생성
-            RestTemplate restTemplate = new RestTemplate();
-            // HttpHeaders 설정
-            HttpHeaders httpHeaders = new HttpHeaders();
-            httpHeaders.setContentType(MediaType.APPLICATION_JSON);
-            httpHeaders.set("X-OCR-SECRET", CompanyKey);
-
-            // HttpEntity 생성 (요청 바디와 헤더 포함)
-            HttpEntity<String> requestEntity = new HttpEntity<>(json.toString(), httpHeaders);
-
-            // POST 요청 보내기
-            ResponseEntity<String> response = restTemplate.postForEntity(Companyapi, requestEntity, String.class);
-
-            // 응답 처리
-            String responseBody = response.getBody();
-            System.out.println(responseBody);
-            parseData = jsonparse(responseBody);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
         return parseData;
     }
 
@@ -149,16 +105,48 @@ public class FileServceImpl implements FileService {
             // JSON 문자열을 JsonNode 객체로 변환
             JsonNode jsonNode = objectMapper.readTree(response);
 
-            // JSON 객체에서 데이터 추출
-            JsonNode imageNode = jsonNode.get("images");
-            JsonNode resultNode = jsonNode.get("result");
-
-            parseData.add(resultNode.get("birth").get("text").asText());
-            parseData.add(resultNode.get("bisAddress").get("text").asText());
-            parseData.add(resultNode.get("bisAddress").get("text").asText());
-            parseData.add(resultNode.get("registerNumber").get("text").asText().replace("-",""));
-            parseData.add(resultNode.get("bisType").get("text").asText());
-            parseData.add(resultNode.get("CompanyName").get("text").asText());
+            parseData.add(jsonNode.path("images")
+                    .path(0)
+                    .path("bizLicense")
+                    .path("result")
+                    .path("birth")
+                    .path(0)
+                    .path("text").asText());
+            parseData.add(jsonNode.path("images")
+                    .path(0)
+                    .path("bizLicense")
+                    .path("result")
+                    .path("bisAddress")
+                    .path(0)
+                    .path("text").asText());
+            parseData.add(jsonNode.path("images")
+                    .path(0)
+                    .path("bizLicense")
+                    .path("result")
+                    .path("registerNumber")
+                    .path(0)
+                    .path("text").asText());
+            parseData.add(jsonNode.path("images")
+                    .path(0)
+                    .path("bizLicense")
+                    .path("result")
+                    .path("registerNumber")
+                    .path(0)
+                    .path("text").asText().replace("-",""));
+            parseData.add(jsonNode.path("images")
+                    .path(0)
+                    .path("bizLicense")
+                    .path("result")
+                    .path("bisType")
+                    .path(0)
+                    .path("text").asText());
+            parseData.add(jsonNode.path("images")
+                    .path(0)
+                    .path("bizLicense")
+                    .path("result")
+                    .path("companyName")
+                    .path(0)
+                    .path("text").asText());
             
             System.out.println(parseData);
             return parseData;
