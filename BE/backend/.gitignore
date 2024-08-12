@@ -1,4 +1,4 @@
 .idea/
 target/
 # Ignore application.yml file
-application.yml
+BE/backend/src/main/resources/application.yml
