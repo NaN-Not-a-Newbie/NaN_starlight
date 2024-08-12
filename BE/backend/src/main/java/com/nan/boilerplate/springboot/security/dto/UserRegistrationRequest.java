@@ -26,7 +26,7 @@ public class UserRegistrationRequest {
     @NotEmpty(message = "{registration_password_not_empty}")
     private String password; // 알파벳 대.소문자, 특수문자, 숫자 모두 포함한 10~18자리
 
-    private Long age;
+//    private Long age; --> birthday로 계산하기
 
     private String birthday;
 

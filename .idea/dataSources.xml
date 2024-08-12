@@ -14,7 +14,7 @@
       </jdbc-additional-properties>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="@creeper0809.synology.me" uuid="bb026e8d-991f-4357-9a67-a21f816d5aa5">
+    <data-source source="LOCAL" name="@creeper0809.synology.me" uuid="db17da47-aebf-4270-86f7-29b0be41be69">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>

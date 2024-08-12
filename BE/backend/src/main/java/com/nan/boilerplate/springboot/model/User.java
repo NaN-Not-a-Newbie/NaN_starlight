@@ -26,7 +26,7 @@ public class User {
 
     private String password;
 
-    private Long age;
+    private int age;
 
     private String SignPath;
 
@@ -34,7 +34,7 @@ public class User {
 
     private String birthday;
 
-    private String PhoneNum;
+    private String phoneNum;
 
     private boolean isMale;
 
