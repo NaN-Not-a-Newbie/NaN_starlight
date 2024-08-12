@@ -51,7 +51,6 @@ public class JobOfferController {
                 .salaryType(offer.getSalaryType())
                 .body(offer.getBody())
                 .location(offer.getLocation())
-
                 .build();
         return ResponseEntity.ok(response);
 

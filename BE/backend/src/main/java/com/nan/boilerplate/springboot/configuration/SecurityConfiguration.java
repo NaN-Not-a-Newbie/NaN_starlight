@@ -40,7 +40,9 @@ public class SecurityConfiguration {
         return http.cors().and().csrf().disable()
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
                 .authorizeRequests()
-                .antMatchers("/register/**", "/health", "/login/**", "/api/swagger/**", "/actuator/**").permitAll()
+                .antMatchers("/register/**", "/login/**", "/api/swagger/**", "/actuator/**").permitAll()
+//                .antMatchers("/register/**", "/health", "/login/**", "/api/swagger/**", "/actuator/**").permitAll()
+                .antMatchers(GET, "/jobOffer/**").permitAll()
                 .antMatchers(PATCH, "/admin/manageActive/**").hasAnyAuthority("ADMIN", "STAFF") // 로그인 승인
                 .antMatchers(PATCH, "/admin/manageAuthority/**").hasAnyAuthority("ADMIN")
 //                .antMatchers(POST, "/resume").hasAnyAuthority("USER") // 공고 작성과 수정은 회사만,
