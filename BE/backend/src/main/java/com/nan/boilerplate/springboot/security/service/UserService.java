@@ -19,6 +19,8 @@ public interface UserService {
 
     AuthenticatedUserDto findAuthenticatedUserByUsername(String username);
 
+
+
     AuthenticatedUserDto demoteUser(String username);
 
     AuthenticatedUserDto promoteUser(String username);
