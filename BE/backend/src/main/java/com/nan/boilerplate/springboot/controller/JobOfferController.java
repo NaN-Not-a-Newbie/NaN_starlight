@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.awt.print.Pageable;
 import java.net.URI;
 import java.util.List;
 
@@ -81,4 +82,16 @@ public class JobOfferController {
         jobOfferService.deleteJobOffer(id);
         return ResponseEntity.noContent().build();
     }
+
+//    @GetMapping("/gove")
+//    public ResponseEntity<Void> goveJobOffer(){
+//        try{
+//            jobOfferService.getOptialJobOffers();
+//            return ResponseEntity.noContent().build();
+//    }
+//        catch (Exception e){
+//            return ResponseEntity.notFound().build();
+//        }
+//    }
+    //existjobOffer 개발하면 풀것 User.Role Staff로 설정
 }

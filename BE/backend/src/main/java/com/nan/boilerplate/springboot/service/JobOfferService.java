@@ -5,6 +5,7 @@ import com.nan.boilerplate.springboot.security.dto.JobOfferRequest;
 import com.nan.boilerplate.springboot.security.dto.JobOfferResponse;
 import com.nan.boilerplate.springboot.security.dto.JobOfferSimpleResponse;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,4 +20,8 @@ public interface JobOfferService {
     JobOfferSimpleResponse updateJobOffer(Long id, JobOfferRequest jobOfferRequest);
 
     void deleteJobOffer(long id);
+
+    List<String> getOptialJobOffers() throws IOException, InterruptedException;
+
+    boolean existsJobOffer(long id);
 }

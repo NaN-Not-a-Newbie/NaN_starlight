@@ -55,7 +55,7 @@ public class RegistrationController {
         }
     }
     @PostMapping(value = "company")
-    public ResponseEntity<LoginResponse> registrationRequest(@Valid @RequestBody CompanyRegistrationRequest companyRegistrationRequest,@ModelAttribute MultipartFile file) {
+    public ResponseEntity<LoginResponse> registrationRequest(@Valid @RequestBody CompanyRegistrationRequest companyRegistrationRequest) {
 
         String message=userService.registrationCompany(companyRegistrationRequest).getMessage();
         Company company=userService.findByCompanyName(companyRegistrationRequest.getUsername()).get();
