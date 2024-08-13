@@ -24,4 +24,6 @@ public interface JobOfferService {
     List<String> getOptialJobOffers() throws IOException, InterruptedException;
 
     boolean existsJobOffer(long id);
+
+    List<JobOfferSimpleResponse> initialJobOffer();
 }

@@ -6,6 +6,8 @@ import com.nan.boilerplate.springboot.repository.JobOfferRepository;
 import com.nan.boilerplate.springboot.security.dto.JobOfferRequest;
 import com.nan.boilerplate.springboot.security.dto.JobOfferResponse;
 import com.nan.boilerplate.springboot.security.dto.JobOfferSimpleResponse;
+import com.nan.boilerplate.springboot.security.jwt.JwtTokenManager;
+import com.nan.boilerplate.springboot.security.service.UserDetailsServiceImpl;
 import com.nan.boilerplate.springboot.security.service.UserService;
 import com.nan.boilerplate.springboot.security.utils.SecurityConstants;
 import com.nan.boilerplate.springboot.service.JobOfferService;
@@ -17,6 +19,8 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
@@ -46,6 +50,9 @@ import java.util.Optional;
 public class JobOfferServiceImpl implements JobOfferService {
     private final JobOfferRepository jobOfferRepository;
     private final CompanyRepository companyRepository;
+    private final UserDetailsServiceImpl userDetailsServiceImpl;
+    private final UserService userService;
+    private final JwtTokenManager jwtTokenManager;
     @Value("${API-KEY.JobOfferApi}")
     String jobOfferApi;
     @Value("${API-KEY.JobOfferKey}")
@@ -57,6 +64,7 @@ public class JobOfferServiceImpl implements JobOfferService {
         List<JobOfferSimpleResponse> offersResponses = new ArrayList<>();
         for (JobOffer offer : offers) {
             offersResponses.add(JobOfferSimpleResponse.builder()
+                    .id(offer.getId())
                     .title(offer.getTitle())
                     .companyName(offer.getCompany().getCompanyName())
                     .build());
@@ -292,5 +300,31 @@ public class JobOfferServiceImpl implements JobOfferService {
     @Override
     public boolean existsJobOffer(long id) {
         return false;
+    }
+
+    @Override
+    public List<JobOfferSimpleResponse> initialJobOffer() {
+        String myName = SecurityConstants.getAuthenticatedUsername();
+        User user = userService.findByUsername(myName);
+        EnvHandWork envHandWork=user.getEnvhandWork();
+        EnvBothHands envBothHands=user.getEnvBothHands();
+        EnvEyesight envEyesight=user.getEnvEyesight();
+        EnvLiftPower envLiftPower=user.getEnvLiftPower();
+        EnvLstnTalk envLstnTalk=user.getEnvLstnTalk();
+        EnvStndWalk envStndWalk=user.getEnvStndWalk();
+
+        List<JobOffer> jobOffers=jobOfferRepository.findByEnvhandWorkOrEnvBothHandsOrEnvLiftPowerOrEnvLstnTalkOrEnvStndWalkOrEnvEyesight(
+                envHandWork,envBothHands,envLiftPower,envLstnTalk,envStndWalk,envEyesight);
+        System.out.println(jobOffers.size());
+        System.out.println(jobOffers.get(0));
+        List<JobOfferSimpleResponse> offersResponses = new ArrayList<>();
+        for(JobOffer offer:jobOffers){
+            offersResponses.add(JobOfferSimpleResponse.builder()
+                    .id(offer.getId())
+                    .title(offer.getTitle())
+                    .companyName(offer.getCompany().getCompanyName())
+                    .build());
+        }
+        return offersResponses;
     }
 }

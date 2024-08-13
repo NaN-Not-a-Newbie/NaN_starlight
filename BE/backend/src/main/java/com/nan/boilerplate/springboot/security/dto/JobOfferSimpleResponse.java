@@ -8,6 +8,8 @@ import lombok.Setter;
 @Builder
 @Setter
 public class JobOfferSimpleResponse {
+    private Long id;
+
     private String title;
 
     private String companyName;

@@ -57,11 +57,6 @@ public class JobOfferController {
 
     }
 
-//    @PostMapping
-//    public ResponseEntity<JobOfferResponse> addJobOffer(@RequestBody JobOfferRequest jobOfferRequest) {
-//        return ResponseEntity.ok(jobOfferService.addJobOffer(jobOfferRequest));
-//    }
-
     @PostMapping
     public ResponseEntity<Void> addJobOffer(@RequestBody JobOfferRequest jobOfferRequest) {
         Long createdJobOfferId = jobOfferService.addJobOffer(jobOfferRequest);
@@ -81,6 +76,13 @@ public class JobOfferController {
     public ResponseEntity<Void> deleteJobOffer(@PathVariable Long id) {
         jobOfferService.deleteJobOffer(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/initial")
+    public ResponseEntity<List<JobOfferSimpleResponse>> initialJobOffer(){
+        List<JobOfferSimpleResponse> offers=jobOfferService.initialJobOffer();
+
+        return ResponseEntity.ok(offers);
     }
 
 //    @GetMapping("/gove")
