@@ -43,5 +43,23 @@ public class JobOfferResponse {
 
     private String deadLine;
 
-//    private String message;
+    public static JobOfferResponse toDTO(JobOffer offer) {
+        return JobOfferResponse.builder()
+                .title(offer.getTitle())
+                .career(offer.getCareer())
+                .companyName(offer.getCompany().getCompanyName())
+                .salary(offer.getSalary())
+                .education(offer.getEducation())
+                .envBothHands(offer.getEnvBothHands())
+                .envEyesight(offer.getEnvEyesight())
+                .envhandWork(offer.getEnvhandWork())
+                .envLiftPower(offer.getEnvLiftPower())
+                .envLstnTalk(offer.getEnvLstnTalk())
+                .envStndWalk(offer.getEnvStndWalk())
+                .salaryType(offer.getSalaryType())
+                .body(offer.getBody())
+                .location(offer.getLocation())
+                .deadLine(offer.getDeadLine())
+                .build();
+    }
 }
