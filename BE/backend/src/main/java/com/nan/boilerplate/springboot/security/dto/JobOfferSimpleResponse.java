@@ -15,19 +15,7 @@ import java.util.List;
 public class JobOfferSimpleResponse {
     private Long id;
 
-    private String title;
-
     private String companyName;
-
-    private String location;
-
-    private SalaryType salaryType;
-
-    private Long salary;
-
-//    private String deadLine;
-
-//    private Company company;
 
     private String title;
 
@@ -51,6 +39,8 @@ public class JobOfferSimpleResponse {
 
     private EnvLstnTalk envLstnTalk;
 
+    private String location;
+
     private String deadLine;
 
     public static JobOfferSimpleResponse toDTO(JobOffer offer) {
@@ -68,6 +58,7 @@ public class JobOfferSimpleResponse {
                 .envLiftPower(offer.getEnvLiftPower())
                 .envStndWalk(offer.getEnvStndWalk())
                 .envLstnTalk(offer.getEnvLstnTalk())
+                .location(offer.getLocation())
                 .deadLine(offer.getDeadLine())
                 .build();
     }

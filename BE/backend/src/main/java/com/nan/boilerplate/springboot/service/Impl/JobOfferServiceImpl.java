@@ -1,6 +1,6 @@
 package com.nan.boilerplate.springboot.service.Impl;
 
-import com.nan.boilerplate.springboot.model.JobOffer;
+import com.nan.boilerplate.springboot.model.*;
 import com.nan.boilerplate.springboot.repository.CompanyRepository;
 import com.nan.boilerplate.springboot.repository.JobOfferRepository;
 import com.nan.boilerplate.springboot.security.dto.JobOfferRequest;
@@ -48,6 +48,7 @@ import java.net.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @Slf4j
@@ -66,15 +67,15 @@ public class JobOfferServiceImpl implements JobOfferService {
     @Override
     public List<JobOfferSimpleResponse> getAllJobOffers() {
         List<JobOffer> offers = jobOfferRepository.findAll();
-        List<JobOfferSimpleResponse> offersResponses = new ArrayList<>();
-        for (JobOffer offer : offers) {
-            offersResponses.add(JobOfferSimpleResponse.builder()
-                    .id(offer.getId())
-                    .title(offer.getTitle())
-                    .companyName(offer.getCompany().getCompanyName())
-                    .build());
-        }
-        return offersResponses;
+//        List<JobOfferSimpleResponse> offersResponses = new ArrayList<>();
+//        for (JobOffer offer : offers) {
+//            offersResponses.add(JobOfferSimpleResponse.builder()
+//                    .id(offer.getId())
+//                    .title(offer.getTitle())
+//                    .companyName(offer.getCompany().getCompanyName())
+//                    .build());
+//        }
+//        return offersResponses;
 
         return offers.stream().map(JobOfferSimpleResponse::toDTO).collect(Collectors.toList());
     }
@@ -150,7 +151,7 @@ public class JobOfferServiceImpl implements JobOfferService {
     }
 
     @Override
-    public List<String> getOptialJobOffers() {
+    public void getOfficialJobOffers() {
         try {
             // HttpClient 생성
             HttpClient client = HttpClient.newHttpClient();
@@ -300,7 +301,6 @@ public class JobOfferServiceImpl implements JobOfferService {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return List.of();
     }
     private String getTextContent(Element element, String tagName) {
         NodeList nodeList = element.getElementsByTagName(tagName);
