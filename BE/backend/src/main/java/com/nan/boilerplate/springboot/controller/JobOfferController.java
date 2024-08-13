@@ -4,11 +4,14 @@ import com.nan.boilerplate.springboot.model.JobOffer;
 import com.nan.boilerplate.springboot.security.dto.JobOfferRequest;
 import com.nan.boilerplate.springboot.security.dto.JobOfferResponse;
 import com.nan.boilerplate.springboot.security.dto.JobOfferSimpleResponse;
+import com.nan.boilerplate.springboot.security.utils.SecurityConstants;
 import com.nan.boilerplate.springboot.service.JobOfferService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.webjars.NotFoundException;
 
 import java.net.URI;
 import java.util.List;
@@ -28,6 +31,11 @@ public class JobOfferController {
     public ResponseEntity<List<JobOfferSimpleResponse>> getAllJobOffers() {
         List<JobOfferSimpleResponse> jobOfferResponses = jobOfferService.getAllJobOffers();
         return ResponseEntity.ok(jobOfferResponses);
+    }
+
+    @GetMapping("/page")
+    public ResponseEntity<List<JobOfferSimpleResponse>> getAllJobOffersPage(Pageable pageable) {
+        return ResponseEntity.ok(jobOfferService.getAllJobOffersPage(pageable));
     }
 
     @GetMapping("/{id}")
@@ -51,15 +59,11 @@ public class JobOfferController {
                 .salaryType(offer.getSalaryType())
                 .body(offer.getBody())
                 .location(offer.getLocation())
+                .deadLine(offer.getDeadLine())
                 .build();
         return ResponseEntity.ok(response);
 
     }
-
-//    @PostMapping
-//    public ResponseEntity<JobOfferResponse> addJobOffer(@RequestBody JobOfferRequest jobOfferRequest) {
-//        return ResponseEntity.ok(jobOfferService.addJobOffer(jobOfferRequest));
-//    }
 
     @PostMapping
     public ResponseEntity<Void> addJobOffer(@RequestBody JobOfferRequest jobOfferRequest) {
@@ -72,6 +76,16 @@ public class JobOfferController {
 
     @PutMapping("/{id}")
     public ResponseEntity<JobOfferSimpleResponse> updateJobOffer(@PathVariable Long id, @RequestBody JobOfferRequest jobOfferRequest) {
+        if (jobOfferService.getJobOfferById(id).isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+
+        String myName = SecurityConstants.getAuthenticatedUsername(); // 로그인 된 계정의 username
+        String author = jobOfferService.getJobOfferById(id).get().getCompany().getUsername(); // 글 작성자
+
+        if (!author.equals(myName)) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
 
         return ResponseEntity.ok(jobOfferService.updateJobOffer(id, jobOfferRequest));
     }

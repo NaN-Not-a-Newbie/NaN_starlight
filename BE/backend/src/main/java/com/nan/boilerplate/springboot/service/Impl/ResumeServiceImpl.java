@@ -54,22 +54,14 @@ public class ResumeServiceImpl implements ResumeService{
     // 이력서 수정
     @Override
     public ResumeSimpleResponse updateResume(Long id, ResumeRequest resumeRequest) {
-        String myName = SecurityConstants.getAuthenticatedUsername(); // 로그인 된 계정의 username
-        String author = resumeRepository.getReferenceById(id).getUser().getUsername(); // 글 작성자
-        if (resumeRepository.existsById(id) && author.equals(myName)) {
+
             Resume existResume = resumeRepository.getReferenceById(id);
             existResume.setTitle(resumeRequest.getTitle());
             existResume.setBody(resumeRequest.getBody());
             return ResumeSimpleResponse.builder()
                     .title(resumeRepository.save(existResume)
                             .getTitle()).build();
-        } else {
-            if (!resumeRepository.existsById(id)) {
-                throw new NotFoundException("not exist JobOffer with id: {id}");
-            } else {
-                throw new NotFoundException("not exist JobOffer with id: {id}");
-            }
-        }
+
     }
 
     public void deleteResume(Long id) {

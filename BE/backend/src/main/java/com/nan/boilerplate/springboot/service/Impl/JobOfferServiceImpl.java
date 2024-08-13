@@ -11,13 +11,18 @@ import com.nan.boilerplate.springboot.security.utils.SecurityConstants;
 import com.nan.boilerplate.springboot.service.JobOfferService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.tomcat.websocket.AuthenticationException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.webjars.NotFoundException;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @Slf4j
@@ -29,14 +34,33 @@ public class JobOfferServiceImpl implements JobOfferService {
     @Override
     public List<JobOfferSimpleResponse> getAllJobOffers() {
         List<JobOffer> offers = jobOfferRepository.findAll();
-        List<JobOfferSimpleResponse> offersResponses = new ArrayList<>();
-        for (JobOffer offer : offers) {
-            offersResponses.add(JobOfferSimpleResponse.builder()
-                    .title(offer.getTitle())
-                    .companyName(offer.getCompany().getCompanyName())
-                    .build());
-        }
-        return offersResponses;
+//        List<JobOfferSimpleResponse> offersResponses = new ArrayList<>();
+//        for (JobOffer offer : offers) {
+//            offersResponses.add(JobOfferSimpleResponse.builder()
+//                    .id(offer.getId())
+//                    .companyName(offer.getCompany().getCompanyName())
+//                    .title(offer.getTitle())
+//                    .salaryType(offer.getSalaryType())
+//                    .salary(offer.getSalary())
+//                    .career(offer.getSalary())
+//                    .education(offer.getEducation())
+//                    .envEyesight(offer.getEnvEyesight())
+//                    .envBothHands(offer.getEnvBothHands())
+//                    .envhandWork(offer.getEnvhandWork())
+//                    .envLiftPower(offer.getEnvLiftPower())
+//                    .envStndWalk(offer.getEnvStndWalk())
+//                    .envLstnTalk(offer.getEnvLstnTalk())
+//                    .deadLine(offer.getDeadLine())
+//                    .build());
+//        }
+        return offers.stream().map(JobOfferSimpleResponse::toDTO).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<JobOfferSimpleResponse> getAllJobOffersPage(Pageable pageable) {
+        List<JobOffer> jobOffers = jobOfferRepository.findAll(pageable).getContent();
+
+        return jobOffers.stream().map(JobOfferSimpleResponse::toDTO).collect(Collectors.toList());
     }
 
     @Override
@@ -69,38 +93,34 @@ public class JobOfferServiceImpl implements JobOfferService {
 
     @Override
     public JobOfferSimpleResponse updateJobOffer(Long id, JobOfferRequest jobOfferRequest) {
-        String myName = SecurityConstants.getAuthenticatedUsername(); // 로그인 된 계정의 username
-        String author = jobOfferRepository.getReferenceById(id).getCompany().getUsername(); // 글 작성자
+        JobOffer existJobOffer = jobOfferRepository.getReferenceById(id);
+        existJobOffer.setTitle(jobOfferRequest.getTitle());
+        existJobOffer.setLocation(jobOfferRequest.getLocation());
+        existJobOffer.setEducation(jobOfferRequest.getEducation());
+        existJobOffer.setSalaryType(jobOfferRequest.getSalaryType());
+        existJobOffer.setSalary(jobOfferRequest.getSalary());
+        existJobOffer.setCareer(jobOfferRequest.getCareer());
+        existJobOffer.setBody(jobOfferRequest.getBody());
+        existJobOffer.setEnvEyesight(jobOfferRequest.getEnvEyesight());
+        existJobOffer.setEnvhandWork(jobOfferRequest.getEnvhandWork());
+        existJobOffer.setEnvLiftPower(jobOfferRequest.getEnvLiftPower());
+        existJobOffer.setEnvStndWalk(jobOfferRequest.getEnvStndWalk());
+        existJobOffer.setEnvBothHands(jobOfferRequest.getEnvBothHands());
+        existJobOffer.setEnvLstnTalk(jobOfferRequest.getEnvLstnTalk());
+        existJobOffer.setDeadLine(jobOfferRequest.getDeadLine());
 
-        if (jobOfferRepository.existsById(id) && author.equals(myName)) {
-            JobOffer existJobOffer = jobOfferRepository.getReferenceById(id);
-            existJobOffer.setTitle(jobOfferRequest.getTitle());
-            existJobOffer.setLocation(jobOfferRequest.getLocation());
-            existJobOffer.setEducation(jobOfferRequest.getEducation());
-            existJobOffer.setSalaryType(jobOfferRequest.getSalaryType());
-            existJobOffer.setSalary(jobOfferRequest.getSalary());
-            existJobOffer.setCareer(jobOfferRequest.getCareer());
-            existJobOffer.setBody(jobOfferRequest.getBody());
-            existJobOffer.setEnvEyesight(jobOfferRequest.getEnvEyesight());
-            existJobOffer.setEnvhandWork(jobOfferRequest.getEnvhandWork());
-            existJobOffer.setEnvLiftPower(jobOfferRequest.getEnvLiftPower());
-            existJobOffer.setEnvStndWalk(jobOfferRequest.getEnvStndWalk());
-            existJobOffer.setEnvBothHands(jobOfferRequest.getEnvBothHands());
-            existJobOffer.setEnvLstnTalk(jobOfferRequest.getEnvLstnTalk());
-            return JobOfferSimpleResponse.builder().title(jobOfferRepository.save(existJobOffer).getTitle()).build();
+        JobOffer updetedJobOffer = jobOfferRepository.save(existJobOffer);
+        return JobOfferSimpleResponse.builder()
+                .title(updetedJobOffer.getTitle())
+                .companyName(updetedJobOffer.getCompany().getCompanyName())
+                .build();
 
-        } else {
-            if (!jobOfferRepository.existsById(id)) {
-                throw new NotFoundException("not exist JobOffer with id: {id}");
-            } else {
-                throw new NotFoundException("not exist JobOffer with id: {id}");
-            }
-        }
+
     }
-
 
     @Override
     public void deleteJobOffer(long id) {
         jobOfferRepository.deleteById(id);
     }
+
 }
