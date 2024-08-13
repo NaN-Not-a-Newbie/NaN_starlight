@@ -344,7 +344,9 @@ public class JobOfferServiceImpl implements JobOfferService {
                     .id(offer.getId())
                     .title(offer.getTitle())
                     .companyName(offer.getCompany().getCompanyName())
-                    .build());
+                    .location(offer.getLocation())
+                    .salaryType(offer.getSalaryType())
+                    .salary(offer.getSalary()).build());
         }
         return offersResponses;
     }
