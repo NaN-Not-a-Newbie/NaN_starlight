@@ -20,13 +20,6 @@ spring:
       properties:
         hibernate.use_sql_comments: true
         hibernate.format_sql: true
-API-KEY:
-  UserKey: c2hVS3dhUnF0VEFjU2xkU0FPWGt2Slh6d09tQW5IS0E=
-  CompanyKey : TGltQ3V1WXBtY0VaTW1taENJY0NicFB4dXdzZ25jV3g=
-  UserAPI : https://1ebe585vxl.apigw.ntruss.com/custom/v1/33476/e2c0bb4b43b08b26faf01093e26742fa22d0d4abe2700fa825297dbcd4b7f35f/document/id-card
-  CompanyAPI : https://1ebe585vxl.apigw.ntruss.com/custom/v1/33475/5116e9b921ac357634a337737a845c7b73a4b097c45f9b0a51b04a7cf51a6f0e/document/biz-license
-  JobOfferApi: https://apis.data.go.kr/B552583/job/job_list_env
-  JobOfferKey: serviceKey=x1pc42aSDv8am9Ucfx%2BPSOF8QJ2p%2BR%2F6sjJaVeS7JHoIgPuHxDFF%2FwLi1X0vZxjnr6uip4ZxSKo%2FBCqmLqvFeQ%3D%3D
 
 springdoc:
   show-actuator: true
