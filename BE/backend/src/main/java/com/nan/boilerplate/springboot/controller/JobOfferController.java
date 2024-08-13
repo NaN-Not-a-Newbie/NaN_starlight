@@ -18,7 +18,7 @@ import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.server.ResponseStatusException;
 import org.webjars.NotFoundException;
 
-import java.awt.print.Pageable;
+
 import java.net.URI;
 import java.util.List;
 
@@ -58,24 +58,6 @@ public class JobOfferController {
             return ResponseEntity.notFound().build();
         }
         JobOffer offer = jobOfferService.getJobOfferById(id).get();
-//        JobOfferResponse.toDTO(offer);
-//        JobOfferResponse response = JobOfferResponse.builder()
-//                .title(offer.getTitle())
-//                .career(offer.getCareer())
-//                .companyName(offer.getCompany().getCompanyName())
-//                .salary(offer.getSalary())
-//                .education(offer.getEducation())
-//                .envBothHands(offer.getEnvBothHands())
-//                .envEyesight(offer.getEnvEyesight())
-//                .envhandWork(offer.getEnvhandWork())
-//                .envLiftPower(offer.getEnvLiftPower())
-//                .envLstnTalk(offer.getEnvLstnTalk())
-//                .envStndWalk(offer.getEnvStndWalk())
-//                .salaryType(offer.getSalaryType())
-//                .body(offer.getBody())
-//                .location(offer.getLocation())
-//                .deadLine(offer.getDeadLine())
-//                .build();
         return ResponseEntity.ok(JobOfferResponse.toDTO(offer));
 
     }

@@ -69,15 +69,16 @@ public class JobOfferServiceImpl implements JobOfferService {
     @Override
     public List<JobOfferSimpleResponse> getAllJobOffers() {
         List<JobOffer> offers = jobOfferRepository.findAll();
-        List<JobOfferSimpleResponse> offersResponses = new ArrayList<>();
-        for (JobOffer offer : offers) {
-            offersResponses.add(JobOfferSimpleResponse.builder()
-                    .id(offer.getId())
-                    .title(offer.getTitle())
-                    .companyName(offer.getCompany().getCompanyName())
-                    .build());
-        }
-        return offersResponses;
+//        List<JobOfferSimpleResponse> offersResponses = new ArrayList<>();
+//        for (JobOffer offer : offers) {
+//            offersResponses.add(JobOfferSimpleResponse.builder()
+//                    .id(offer.getId())
+//                    .title(offer.getTitle())
+//                    .companyName(offer.getCompany().getCompanyName())
+//                    .build());
+//        }
+
+        return offers.stream().map(JobOfferSimpleResponse::toDTO).collect(Collectors.toList());
     }
 
     @Override
@@ -308,6 +309,7 @@ public class JobOfferServiceImpl implements JobOfferService {
         }
         return List.of();
     }
+    
     private String getTextContent(Element element, String tagName) {
         NodeList nodeList = element.getElementsByTagName(tagName);
         if (nodeList.getLength() > 0) {

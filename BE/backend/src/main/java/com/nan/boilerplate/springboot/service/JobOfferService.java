@@ -31,4 +31,4 @@ public interface JobOfferService {
 
     List<JobOfferSimpleResponse> initialJobOffer();
 }
-}
+
