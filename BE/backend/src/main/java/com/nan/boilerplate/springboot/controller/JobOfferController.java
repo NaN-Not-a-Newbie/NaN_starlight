@@ -7,6 +7,7 @@ import com.nan.boilerplate.springboot.security.dto.JobOfferSimpleResponse;
 import com.nan.boilerplate.springboot.security.utils.SecurityConstants;
 import com.nan.boilerplate.springboot.service.JobOfferService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,7 +35,7 @@ public class JobOfferController {
     }
 
     @GetMapping("/page")
-    public ResponseEntity<List<JobOfferSimpleResponse>> getAllJobOffersPage(Pageable pageable) {
+    public ResponseEntity<Page<JobOfferSimpleResponse>> getAllJobOffersPage(Pageable pageable) {
         return ResponseEntity.ok(jobOfferService.getAllJobOffersPage(pageable));
     }
 

@@ -4,6 +4,7 @@ import com.nan.boilerplate.springboot.model.JobOffer;
 import com.nan.boilerplate.springboot.security.dto.JobOfferRequest;
 import com.nan.boilerplate.springboot.security.dto.JobOfferResponse;
 import com.nan.boilerplate.springboot.security.dto.JobOfferSimpleResponse;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.Optional;
 public interface JobOfferService {
     List<JobOfferSimpleResponse> getAllJobOffers();
 
-    List<JobOfferSimpleResponse> getAllJobOffersPage(Pageable pageable);
+    Page<JobOfferSimpleResponse> getAllJobOffersPage(Pageable pageable);
 
     Optional<JobOffer> getJobOfferById(long id);
 

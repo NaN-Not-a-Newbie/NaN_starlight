@@ -13,6 +13,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.tomcat.websocket.AuthenticationException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -34,34 +35,23 @@ public class JobOfferServiceImpl implements JobOfferService {
     @Override
     public List<JobOfferSimpleResponse> getAllJobOffers() {
         List<JobOffer> offers = jobOfferRepository.findAll();
-//        List<JobOfferSimpleResponse> offersResponses = new ArrayList<>();
-//        for (JobOffer offer : offers) {
-//            offersResponses.add(JobOfferSimpleResponse.builder()
-//                    .id(offer.getId())
-//                    .companyName(offer.getCompany().getCompanyName())
-//                    .title(offer.getTitle())
-//                    .salaryType(offer.getSalaryType())
-//                    .salary(offer.getSalary())
-//                    .career(offer.getSalary())
-//                    .education(offer.getEducation())
-//                    .envEyesight(offer.getEnvEyesight())
-//                    .envBothHands(offer.getEnvBothHands())
-//                    .envhandWork(offer.getEnvhandWork())
-//                    .envLiftPower(offer.getEnvLiftPower())
-//                    .envStndWalk(offer.getEnvStndWalk())
-//                    .envLstnTalk(offer.getEnvLstnTalk())
-//                    .deadLine(offer.getDeadLine())
-//                    .build());
-//        }
+
         return offers.stream().map(JobOfferSimpleResponse::toDTO).collect(Collectors.toList());
     }
 
     @Override
-    public List<JobOfferSimpleResponse> getAllJobOffersPage(Pageable pageable) {
-        List<JobOffer> jobOffers = jobOfferRepository.findAll(pageable).getContent();
+    public Page<JobOfferSimpleResponse> getAllJobOffersPage(Pageable pageable) {
 
-        return jobOffers.stream().map(JobOfferSimpleResponse::toDTO).collect(Collectors.toList());
+        return jobOfferRepository.findAll(pageable).map(JobOfferSimpleResponse::toDTO);
     }
+
+
+//    @Override
+//    public List<JobOfferSimpleResponse> getAllJobOffersPage(Pageable pageable) {
+//        List<JobOffer> jobOffers = jobOfferRepository.findAll(pageable).getContent();
+//
+//        return jobOffers.stream().map(JobOfferSimpleResponse::toDTO).collect(Collectors.toList());
+//    }
 
     @Override
     public Optional<JobOffer> getJobOfferById(long id) {
