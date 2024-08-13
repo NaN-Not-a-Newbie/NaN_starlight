@@ -20,7 +20,7 @@ public class Company {
 
     private String companyName;
 
-    private Long companyRegistrationNumber;
+    private String companyRegistrationNumber;
 
     private String username;
 

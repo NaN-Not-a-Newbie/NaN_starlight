@@ -5,20 +5,21 @@ import com.nan.boilerplate.springboot.model.User;
 import com.nan.boilerplate.springboot.security.dto.*;
 import com.nan.boilerplate.springboot.security.jwt.JwtTokenService;
 import com.nan.boilerplate.springboot.security.service.UserService;
+import com.nan.boilerplate.springboot.service.FileService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 import java.net.URI;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 
 @CrossOrigin
@@ -29,6 +30,7 @@ public class RegistrationController {
 
     private final UserService userService;
     private final JwtTokenService jwtTokenService;
+    private final FileService fileService;
     @PostMapping("users")
     public ResponseEntity<LoginResponse> registrationRequest(@Valid @RequestBody UserRegistrationRequest userRegistrationRequest) {
         String message=userService.registrationUser(userRegistrationRequest).getMessage();
@@ -50,6 +52,7 @@ public class RegistrationController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
     }
+
     @PostMapping("company")
     public ResponseEntity<LoginResponse> registrationRequest(@Valid @RequestBody CompanyRegistrationRequest companyRegistrationRequest, RedirectAttributes redirectAttributes) {
         String message=userService.registrationCompany(companyRegistrationRequest).getMessage();
@@ -69,5 +72,11 @@ public class RegistrationController {
         } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
+    }
+    @PostMapping(value = "/company/IDcard", consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<String>> CompanyIDOCR(@ModelAttribute MultipartFile file){
+
+        String boundary = "----" + UUID.randomUUID().toString().replaceAll("-", "");
+        return ResponseEntity.ok(fileService.NaverOCRCompany(file, boundary));
     }
 }

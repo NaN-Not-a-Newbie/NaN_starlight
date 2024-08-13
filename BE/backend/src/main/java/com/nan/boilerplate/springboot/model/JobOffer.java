@@ -1,6 +1,9 @@
 package com.nan.boilerplate.springboot.model;
 
 import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -11,6 +14,7 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@EntityListeners(AuditingEntityListener.class)
 public class JobOffer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,6 +29,8 @@ public class JobOffer {
     private String location;
 
     private Long career;
+
+    private String deadLine;
 
     @ManyToOne
     @JoinColumn(name="company_id")
@@ -54,6 +60,10 @@ public class JobOffer {
     @Enumerated(EnumType.STRING)
     private SalaryType salaryType;
 
-    private LocalDateTime created_at=LocalDateTime.now();
+    @CreatedDate
+    private LocalDateTime createdAt;
+
+    @LastModifiedDate
+    private LocalDateTime updatedAt;
 
 }

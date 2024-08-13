@@ -31,15 +31,14 @@ public class LoginController {
 
         User user = userService.findByUsername(loginRequest.getUsername());
         if (user.isActive()) {
-
-            try {
+                System.out.println("----------1");
                 final LoginResponse loginResponse = jwtTokenService.getLoginResponse(loginRequest);
+                System.out.println("----------2");
                 loginResponse.setMessage("Welcome User");
                 System.out.println(loginResponse);
                 return ResponseEntity.ok(loginResponse);
-            } catch (Exception e) {
-                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-            }
+
+
         } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
@@ -59,6 +58,7 @@ public class LoginController {
             } catch (Exception e) {
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
             }
+
         } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }

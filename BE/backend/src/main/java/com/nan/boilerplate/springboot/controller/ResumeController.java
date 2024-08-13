@@ -4,6 +4,7 @@ import com.nan.boilerplate.springboot.model.Resume;
 import com.nan.boilerplate.springboot.security.dto.ResumeRequest;
 import com.nan.boilerplate.springboot.security.dto.ResumeResponse;
 import com.nan.boilerplate.springboot.security.dto.ResumeSimpleResponse;
+import com.nan.boilerplate.springboot.security.utils.SecurityConstants;
 import com.nan.boilerplate.springboot.service.ResumeService;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -58,6 +59,15 @@ public class ResumeController {
 
     @PutMapping("/{id}")
     public ResponseEntity<ResumeSimpleResponse> updateResume(@PathVariable Long id, @RequestBody ResumeRequest resumeRequest) {
+        if (resumeService.getResumeById(id).isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+
+        String myName = SecurityConstants.getAuthenticatedUsername(); // 로그인 된 계정의 username
+        String author = resumeService.getResumeById(id).get().getUser().getUsername(); // 글 작성자
+        if (!author.equals(myName)) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
 
         return ResponseEntity.ok(resumeService.updateResume(id, resumeRequest));  // 리다이렉트
     }

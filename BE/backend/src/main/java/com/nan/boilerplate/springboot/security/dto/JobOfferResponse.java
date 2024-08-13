@@ -41,5 +41,7 @@ public class JobOfferResponse {
 
     private Education education;
 
+    private String deadLine;
+
 //    private String message;
 }

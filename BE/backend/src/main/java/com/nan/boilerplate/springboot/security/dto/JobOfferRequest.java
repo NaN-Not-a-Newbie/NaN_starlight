@@ -39,4 +39,6 @@ public class JobOfferRequest {
     private EnvLstnTalk envLstnTalk;
 
     private Education education;
+
+    private String deadLine;
 }
