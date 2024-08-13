@@ -18,6 +18,7 @@ import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.server.ResponseStatusException;
 import org.webjars.NotFoundException;
 
+import java.awt.print.Pageable;
 import java.net.URI;
 import java.util.List;
 
@@ -109,4 +110,23 @@ public class JobOfferController {
         jobOfferService.deleteJobOffer(id);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/initial")
+    public ResponseEntity<List<JobOfferSimpleResponse>> initialJobOffer(){
+        List<JobOfferSimpleResponse> offers=jobOfferService.initialJobOffer();
+
+        return ResponseEntity.ok(offers);
+    }
+
+//    @GetMapping("/gove")
+//    public ResponseEntity<Void> goveJobOffer(){
+//        try{
+//            jobOfferService.getOptialJobOffers();
+//            return ResponseEntity.noContent().build();
+//    }
+//        catch (Exception e){
+//            return ResponseEntity.notFound().build();
+//        }
+//    }
+    //existjobOffer 개발하면 풀것 User.Role Staff로 설정
 }

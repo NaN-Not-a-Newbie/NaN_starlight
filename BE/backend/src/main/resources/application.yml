@@ -8,6 +8,7 @@ spring:
     url: jdbc:mysql://creeper0809.synology.me:3306/${MYSQL_DATABASE:starlight}?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false
     username: ${MYSQL_USER:user}
     password: ${MYSQL_PASSWORD:Op[08090712}
+  #asdfasdfasdfds
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:
