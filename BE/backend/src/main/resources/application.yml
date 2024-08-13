@@ -8,6 +8,7 @@ spring:
     url: jdbc:mysql://creeper0809.synology.me:3306/${MYSQL_DATABASE:starlight}?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false
     username: ${MYSQL_USER:user}
     password: ${MYSQL_PASSWORD:Op[08090712}
+  #asdfasdfasdfds
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:
@@ -19,7 +20,6 @@ spring:
       properties:
         hibernate.use_sql_comments: true
         hibernate.format_sql: true
-
 API-KEY:
   UserKey: c2hVS3dhUnF0VEFjU2xkU0FPWGt2Slh6d09tQW5IS0E=
   CompanyKey : TGltQ3V1WXBtY0VaTW1taENJY0NicFB4dXdzZ25jV3g=
@@ -27,6 +27,7 @@ API-KEY:
   CompanyAPI : https://1ebe585vxl.apigw.ntruss.com/custom/v1/33475/5116e9b921ac357634a337737a845c7b73a4b097c45f9b0a51b04a7cf51a6f0e/document/biz-license
   JobOfferApi: https://apis.data.go.kr/B552583/job/job_list_env
   JobOfferKey: serviceKey=x1pc42aSDv8am9Ucfx%2BPSOF8QJ2p%2BR%2F6sjJaVeS7JHoIgPuHxDFF%2FwLi1X0vZxjnr6uip4ZxSKo%2FBCqmLqvFeQ%3D%3D
+
 springdoc:
   show-actuator: true
   paths-to-match: /**
