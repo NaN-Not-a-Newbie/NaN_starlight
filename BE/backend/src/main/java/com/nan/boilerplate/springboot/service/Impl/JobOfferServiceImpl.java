@@ -65,8 +65,8 @@ public class JobOfferServiceImpl implements JobOfferService {
     String jobOfferKey;
 
     @Override
-    public List<JobOfferSimpleResponse> getAllJobOffers() {
-        List<JobOffer> offers = jobOfferRepository.findAll();
+    public List<JobOfferSimpleResponse> getAllJobOffers(Pageable pageable) {
+        List<JobOffer> offers = jobOfferRepository.findAllJobOffer(pageable);
 //        List<JobOfferSimpleResponse> offersResponses = new ArrayList<>();
 //        for (JobOffer offer : offers) {
 //            offersResponses.add(JobOfferSimpleResponse.builder()
@@ -80,11 +80,11 @@ public class JobOfferServiceImpl implements JobOfferService {
         return offers.stream().map(JobOfferSimpleResponse::toDTO).collect(Collectors.toList());
     }
 
-    @Override
-    public Page<JobOfferSimpleResponse> getAllJobOffersPage(Pageable pageable) {
-
-        return jobOfferRepository.findAll(pageable).map(JobOfferSimpleResponse::toDTO);
-    }
+//    @Override
+//    public Page<JobOfferSimpleResponse> getAllJobOffersPage(Pageable pageable) {
+//
+//        return jobOfferRepository.findAll(pageable).map(JobOfferSimpleResponse::toDTO);
+//    }
 
     @Override
     public Optional<JobOffer> getJobOfferById(long id) {
@@ -99,6 +99,7 @@ public class JobOfferServiceImpl implements JobOfferService {
                 .body(jobOfferRequest.getBody())
                 .career(jobOfferRequest.getCareer())
                 .location(jobOfferRequest.getLocation())
+                .cntctNo(jobOfferRequest.getCntctNo())
                 .company(companyRepository.findByUsername(SecurityConstants.getAuthenticatedUsername()).get())
                 .salary(jobOfferRequest.getSalary())
                 .salaryType(jobOfferRequest.getSalaryType())
@@ -127,6 +128,7 @@ public class JobOfferServiceImpl implements JobOfferService {
             existJobOffer.setSalaryType(jobOfferRequest.getSalaryType());
             existJobOffer.setSalary(jobOfferRequest.getSalary());
             existJobOffer.setCareer(jobOfferRequest.getCareer());
+            existJobOffer.setCntctNo(jobOfferRequest.getCntctNo());
             existJobOffer.setBody(jobOfferRequest.getBody());
             existJobOffer.setEnvEyesight(jobOfferRequest.getEnvEyesight());
             existJobOffer.setEnvhandWork(jobOfferRequest.getEnvhandWork());
@@ -197,6 +199,7 @@ public class JobOfferServiceImpl implements JobOfferService {
                     String career = getTextContent(itemElement, "reqCareer");
                     String location = getTextContent(itemElement, "compAddr");
                     String salary = getTextContent(itemElement, "salary");
+                    String cntctNo = getTextContent(itemElement, "cntctNo");
 
                     EnvBothHands[] envBothHands1=EnvBothHands.values();
                     EnvEyesight[] envEyesight1=EnvEyesight.values();
@@ -268,6 +271,7 @@ public class JobOfferServiceImpl implements JobOfferService {
                             .Body(busplaName+" "+empType+" 채용")
                             .career(career.equals("무관") ? 0 :
                                     (career.contains("년") ? Long.parseLong(career.substring(0, career.indexOf("년")).trim()) : 0))
+                            .cntctNo(cntctNo)
                             .education(education2)
                             .envBothHands(envBothHands2)
                             .envEyesight(envEyesight2)
@@ -316,8 +320,9 @@ public class JobOfferServiceImpl implements JobOfferService {
     }
 
     @Override
-    public List<JobOfferSimpleResponse> initialJobOffer() {
+    public List<JobOfferSimpleResponse> initialJobOffer(Pageable pageable) {
         String myName = SecurityConstants.getAuthenticatedUsername();
+        System.out.println("2"+myName);
         User user = userService.findByUsername(myName);
         EnvHandWork envHandWork=user.getEnvhandWork();
         EnvBothHands envBothHands=user.getEnvBothHands();
@@ -327,7 +332,7 @@ public class JobOfferServiceImpl implements JobOfferService {
         EnvStndWalk envStndWalk=user.getEnvStndWalk();
 
         List<JobOffer> jobOffers=jobOfferRepository.findByEnvhandWorkOrEnvBothHandsOrEnvLiftPowerOrEnvLstnTalkOrEnvStndWalkOrEnvEyesight(
-                envHandWork,envBothHands,envLiftPower,envLstnTalk,envStndWalk,envEyesight);
+                envHandWork,envBothHands,envLiftPower,envLstnTalk,envStndWalk,envEyesight,pageable);
         System.out.println(jobOffers.size());
         System.out.println(jobOffers.get(0));
         List<JobOfferSimpleResponse> offersResponses = new ArrayList<>();

@@ -24,6 +24,8 @@ public class JobOfferResponse {
 
     private String companyName;
 //    private Company company;
+    private  String cntctNo;
+
 
     private EnvEyesight envEyesight;
 

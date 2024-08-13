@@ -53,9 +53,11 @@ public class SecurityConstants {
     public static String getAuthenticatedUsername() {
 
         final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
         final UserDetails userDetails = (UserDetails) authentication.getPrincipal();
 
         return userDetails.getUsername();
     }
 
 }
+

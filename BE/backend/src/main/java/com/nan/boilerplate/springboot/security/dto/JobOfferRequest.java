@@ -22,6 +22,7 @@ public class JobOfferRequest {
 
     private Long career;
 
+    private String cntctNo;
 //    private String companyName;
 
     private SalaryType salaryType;

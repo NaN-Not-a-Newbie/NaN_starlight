@@ -13,8 +13,9 @@ import java.util.List;
 import java.util.Optional;
 
 public interface JobOfferRepository extends JpaRepository<JobOffer, Long> {
-    Page<JobOffer> findAll(Pageable pageable);
+    List<JobOffer> findAllJobOffer(Pageable pageable);
+
     List<JobOffer> findByEnvhandWorkOrEnvBothHandsOrEnvLiftPowerOrEnvLstnTalkOrEnvStndWalkOrEnvEyesight(
             EnvHandWork envHandWork, EnvBothHands envBothHands, EnvLiftPower envLiftPower
-            , EnvLstnTalk envLstnTalk, EnvStndWalk envStndWalk, EnvEyesight envEyesight);
+            , EnvLstnTalk envLstnTalk, EnvStndWalk envStndWalk, EnvEyesight envEyesight,Pageable pageable);
 }

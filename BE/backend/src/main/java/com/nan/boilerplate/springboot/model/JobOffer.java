@@ -36,6 +36,8 @@ public class JobOffer {
     @JoinColumn(name="company_id")
     private Company company;
 
+    private String cntctNo;
+
     @Enumerated(EnumType.STRING)
     private EnvEyesight envEyesight;
 

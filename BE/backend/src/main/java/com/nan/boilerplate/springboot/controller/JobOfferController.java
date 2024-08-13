@@ -29,14 +29,9 @@ public class JobOfferController {
     }
 
     @GetMapping
-    public ResponseEntity<List<JobOfferSimpleResponse>> getAllJobOffers() {
-        List<JobOfferSimpleResponse> jobOfferResponses = jobOfferService.getAllJobOffers();
+    public ResponseEntity<List<JobOfferSimpleResponse>> getAllJobOffers(Pageable pageable) {
+        List<JobOfferSimpleResponse> jobOfferResponses = jobOfferService.getAllJobOffers(pageable);
         return ResponseEntity.ok(jobOfferResponses);
-    }
-
-    @GetMapping("/page")
-    public ResponseEntity<Page<JobOfferSimpleResponse>> getAllJobOffersPage(Pageable pageable) {
-        return ResponseEntity.ok(jobOfferService.getAllJobOffersPage(pageable));
     }
 
     @GetMapping("/{id}")
@@ -98,9 +93,12 @@ public class JobOfferController {
     }
 
     @GetMapping("/initial")
-    public ResponseEntity<List<JobOfferSimpleResponse>> initialJobOffer(){
-        List<JobOfferSimpleResponse> offers=jobOfferService.initialJobOffer();
-
+    public ResponseEntity<List<JobOfferSimpleResponse>> initialJobOffer(Pageable pageable){
+        List<JobOfferSimpleResponse> offers=jobOfferService.initialJobOffer(pageable);
+//        size : 한 페이지당 담길 데이터의 양 ex) 10, 5, ...
+//        page : size를 기준으로 몇번째 페이지인지? ex) 0, 1, ...
+//        sort : 무엇을 기준으로 정렬할 것인지? ex) createdAt,DESC, description
+//        page=0&size=10&sort=description,DESC
         return ResponseEntity.ok(offers);
     }
 

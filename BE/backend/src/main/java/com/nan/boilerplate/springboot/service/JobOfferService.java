@@ -12,9 +12,9 @@ import java.util.List;
 import java.util.Optional;
 
 public interface JobOfferService {
-    List<JobOfferSimpleResponse> getAllJobOffers();
+    List<JobOfferSimpleResponse> getAllJobOffers(Pageable pageable);
 
-    Page<JobOfferSimpleResponse> getAllJobOffersPage(Pageable pageable);
+//    Page<JobOfferSimpleResponse> getAllJobOffersPage(Pageable pageable);
 
     Optional<JobOffer> getJobOfferById(long id);
 
@@ -29,5 +29,5 @@ public interface JobOfferService {
 
     boolean existsJobOffer(long id);
 
-    List<JobOfferSimpleResponse> initialJobOffer();
+    List<JobOfferSimpleResponse> initialJobOffer(Pageable pageable);
 }
