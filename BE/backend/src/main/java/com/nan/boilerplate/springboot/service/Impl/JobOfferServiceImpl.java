@@ -1,6 +1,6 @@
 package com.nan.boilerplate.springboot.service.Impl;
 
-import com.nan.boilerplate.springboot.model.*;
+import com.nan.boilerplate.springboot.model.JobOffer;
 import com.nan.boilerplate.springboot.repository.CompanyRepository;
 import com.nan.boilerplate.springboot.repository.JobOfferRepository;
 import com.nan.boilerplate.springboot.security.dto.JobOfferRequest;
@@ -13,7 +13,12 @@ import com.nan.boilerplate.springboot.security.utils.SecurityConstants;
 import com.nan.boilerplate.springboot.service.JobOfferService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.tomcat.websocket.AuthenticationException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -70,6 +75,14 @@ public class JobOfferServiceImpl implements JobOfferService {
                     .build());
         }
         return offersResponses;
+
+        return offers.stream().map(JobOfferSimpleResponse::toDTO).collect(Collectors.toList());
+    }
+
+    @Override
+    public Page<JobOfferSimpleResponse> getAllJobOffersPage(Pageable pageable) {
+
+        return jobOfferRepository.findAll(pageable).map(JobOfferSimpleResponse::toDTO);
     }
 
     @Override

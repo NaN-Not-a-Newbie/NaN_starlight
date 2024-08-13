@@ -60,6 +60,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public RegistrationResponse registrationUser(UserRegistrationRequest userRegistrationRequest) {
         userValidationService.validateUsernameUnique(userRegistrationRequest.getUsername()); // 이미 존재하는 유저인지 확인
+        userValidationService.checkPassword(userRegistrationRequest.getPassword(), userRegistrationRequest.getPassword2());
 
         final User user = UserMapper.INSTANCE.convertToUser(userRegistrationRequest); // 엔티티 디티오 변환
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
@@ -82,6 +83,7 @@ public class UserServiceImpl implements UserService {
     public RegistrationResponse registrationCompany(CompanyRegistrationRequest companyRegistrationRequest) {
 
         userValidationService.validateUsernameUnique(companyRegistrationRequest.getUsername()); // 이미 존재하는 유저인지 확인
+        userValidationService.checkPassword(companyRegistrationRequest.getPassword(), companyRegistrationRequest.getPassword2());
 
             final Company company = UserMapper.INSTANCE.convertToCompany(companyRegistrationRequest); // 엔티티 디티오 변환
             company.setPassword(bCryptPasswordEncoder.encode(company.getPassword()));

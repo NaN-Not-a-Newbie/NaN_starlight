@@ -5,17 +5,13 @@ import com.nan.boilerplate.springboot.model.User;
 import com.nan.boilerplate.springboot.security.dto.*;
 import com.nan.boilerplate.springboot.security.jwt.JwtTokenService;
 import com.nan.boilerplate.springboot.security.service.UserService;
-import com.nan.boilerplate.springboot.service.FileService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
@@ -31,8 +27,6 @@ public class RegistrationController {
 
     private final UserService userService;
     private final JwtTokenService jwtTokenService;
-    private final FileService fileService;
-
     @PostMapping("users")
     public ResponseEntity<LoginResponse> registrationRequest(@Valid @RequestBody UserRegistrationRequest userRegistrationRequest) {
         String message=userService.registrationUser(userRegistrationRequest).getMessage();
@@ -54,9 +48,9 @@ public class RegistrationController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
     }
-    @PostMapping(value = "company")
-    public ResponseEntity<LoginResponse> registrationRequest(@Valid @RequestBody CompanyRegistrationRequest companyRegistrationRequest) {
 
+    @PostMapping("company")
+    public ResponseEntity<LoginResponse> registrationRequest(@Valid @RequestBody CompanyRegistrationRequest companyRegistrationRequest, RedirectAttributes redirectAttributes) {
         String message=userService.registrationCompany(companyRegistrationRequest).getMessage();
         Company company=userService.findByCompanyName(companyRegistrationRequest.getUsername()).get();
         LoginRequest loginRequest = LoginRequest.builder()

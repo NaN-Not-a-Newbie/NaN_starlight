@@ -30,13 +30,13 @@ public class JwtTokenService {
     private final AuthenticationManager authenticationManager;
 
     public LoginResponse getLoginResponse(LoginRequest loginRequest) {
-
+        System.out.println("----------10");
         final String username = loginRequest.getUsername();
         final String password = loginRequest.getPassword();
         final UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(username, password);
-
+        System.out.println("----------20");
         authenticationManager.authenticate(usernamePasswordAuthenticationToken);
-
+        System.out.println("----------30");
         if(userService.findByUsername(loginRequest.getUsername())==null){
             final AuthenticatedCompanyDto authenticatedCompanyDto = userService.findAuthenticatedCompanyByUsername(username);
             final Company user = UserMapper.INSTANCE.convertToCompany(authenticatedCompanyDto);

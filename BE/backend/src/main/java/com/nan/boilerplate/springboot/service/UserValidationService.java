@@ -52,6 +52,16 @@ public class UserValidationService {
         }
     }
 
+    // 비밀번호 검증하는 로직
+    public void checkPassword(String password1, String password2) {
+        if (!password1.equals(password2)) {
+            log.warn("Password does not match!");
+
+            final String notMatch = "Password does not match!";
+            throw new RegistrationException(notMatch);
+        }
+    }
+
 //    private void checkUsername(String username) {
 //
 //        final boolean existsByUsername = userRepository.existsByUsername(username);
