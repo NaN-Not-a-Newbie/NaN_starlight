@@ -81,19 +81,23 @@ public class UserServiceImpl implements UserService {
         userValidationService.validateUsernameUnique(companyRegistrationRequest.getUsername()); // 이미 존재하는 유저인지 확인
         userValidationService.checkPassword(companyRegistrationRequest.getPassword(), companyRegistrationRequest.getPassword2());
 
-            final Company company = UserMapper.INSTANCE.convertToCompany(companyRegistrationRequest); // 엔티티 디티오 변환
-            company.setPassword(bCryptPasswordEncoder.encode(company.getPassword()));
-            company.setUserRole(UserRole.COMPANY);
-            company.setActive(true); // 가입시 isActive를 false로 설정
+        if (!companyRegistrationRequest.getCompanyRegistrationNumber().chars().allMatch(Character::isDigit)) {
+            throw new BadRequestException("사업자등록번호는 숫자로만 입력하세요.");
+        }
 
-            companyRepository.save(company);
+        final Company company = UserMapper.INSTANCE.convertToCompany(companyRegistrationRequest); // 엔티티 디티오 변환
+        company.setPassword(bCryptPasswordEncoder.encode(company.getPassword()));
+        company.setUserRole(UserRole.COMPANY);
+        company.setActive(true); // 가입시 isActive를 false로 설정
 
-            final String companyName = companyRegistrationRequest.getCompanyName();
-            final String registrationSuccessMessage = generalMessageAccessor.getMessage(null, REGISTRATION_SUCCESSFUL, companyName);
+        companyRepository.save(company);
 
-            log.info("{} registered successfully!", companyName);
+        final String companyName = companyRegistrationRequest.getCompanyName();
+        final String registrationSuccessMessage = generalMessageAccessor.getMessage(null, REGISTRATION_SUCCESSFUL, companyName);
 
-            return new RegistrationResponse().builder().message(registrationSuccessMessage).username(companyName).password(companyRegistrationRequest.getPassword()).build();//User
+        log.info("{} registered successfully!", companyName);
+
+        return new RegistrationResponse().builder().message(registrationSuccessMessage).username(companyName).password(companyRegistrationRequest.getPassword()).build();//User
     }
 
     @Override
@@ -194,6 +198,35 @@ public class UserServiceImpl implements UserService {
                     .envStndWalk(user.getEnvStndWalk())
                     .envLstnTalk(user.getEnvLstnTalk())
                     .education(user.getEducation())
+                    .build();
+        }
+
+    }
+
+    @Override
+    public CompanyInfoDTO updateCompanyInfo(CompanyInfoDTO request) {
+        String myName = SecurityConstants.getAuthenticatedUsername();
+
+        if (!request.getCompanyRegistrationNumber().chars().allMatch(Character::isDigit)) {
+            throw new BadRequestException("사업자등록번호는 숫자로만 입력하세요.");
+        }
+
+        if (companyRepository.findByUsername(myName).isEmpty()) {
+            throw new UserNotFoundException("존재하지 않는 유저입니다.");
+        } else {
+            Company company = companyRepository.findByUsername(myName).get();
+
+            // 수정 로직
+            company.setCompanyName(request.getCompanyName());
+            company.setCompanyRegistrationNumber(request.getCompanyRegistrationNumber());
+            company.setPhoneNum(request.getPhoneNum());
+            company.setCompanyAddress(request.getCompanyAddress());
+            companyRepository.save(company);
+            return CompanyInfoDTO.builder()
+                    .companyName(company.getCompanyName())
+                    .companyRegistrationNumber(company.getCompanyRegistrationNumber())
+                    .phoneNum(company.getPhoneNum())
+                    .companyAddress(company.getCompanyAddress())
                     .build();
         }
 

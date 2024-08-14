@@ -1,6 +1,7 @@
 package com.nan.boilerplate.springboot.controller;
 
 import com.nan.boilerplate.springboot.model.User;
+import com.nan.boilerplate.springboot.security.dto.CompanyInfoDTO;
 import com.nan.boilerplate.springboot.security.dto.UserInfoDTO;
 import com.nan.boilerplate.springboot.security.service.UserService;
 import com.nan.boilerplate.springboot.security.utils.SecurityConstants;
@@ -9,8 +10,11 @@ import com.nan.boilerplate.springboot.service.PageableValidationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.parameters.P;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @CrossOrigin
 @RestController
@@ -23,11 +27,14 @@ public class MemberInfoController {  // 회원정보 수정 컨트롤러
         this.userService = userService;
     }
 
-    @PutMapping
+    @PutMapping("/user")
     public ResponseEntity<UserInfoDTO> updateUserInfo(@RequestBody UserInfoDTO userRequest) {
-
         return ResponseEntity.ok(userService.updateUserInfo(userRequest));
+    }
 
+    @PutMapping("/company")
+    public ResponseEntity<CompanyInfoDTO> updateCompanyInfo(@Valid @RequestBody CompanyInfoDTO companyRequest) {
+        return ResponseEntity.ok(userService.updateCompanyInfo(companyRequest));
     }
 
     @PostMapping("/pwCheck")

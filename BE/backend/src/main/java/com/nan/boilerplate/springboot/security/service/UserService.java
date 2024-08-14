@@ -37,6 +37,8 @@ public interface UserService {
 
     UserInfoDTO updateUserInfo(UserInfoDTO request);
 
+    CompanyInfoDTO updateCompanyInfo(CompanyInfoDTO request);
+
     String validPassword(String password, String encodedPassword);
 
 //    String validCompanyPassword(String password, String encodedPassword);
