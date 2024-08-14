@@ -1,5 +1,6 @@
 package com.nan.boilerplate.springboot.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -26,7 +27,7 @@ public class User {
 
     private String password;
 
-    private int age;
+    private String age;
 
     private String SignPath;
 

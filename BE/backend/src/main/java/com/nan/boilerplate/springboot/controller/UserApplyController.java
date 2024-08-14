@@ -41,7 +41,7 @@ public class UserApplyController {
         }
     }
 
-    @PostMapping
+    @PostMapping      // User만 허용
     public ResponseEntity<Void> addUserApply(@RequestBody UserApplyRequest userApplyrequest) {
         Long createdUserApplyId = userApplyService.addUserApply(userApplyrequest);
 
@@ -50,10 +50,17 @@ public class UserApplyController {
                 .build();  // 리다이렉트
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/{id}")     // Company만 허용
     public ResponseEntity<UserApplyResponse> updateUserApply(@PathVariable Long id, @RequestBody UserApplyRequest userApplyrequest) {
         return ResponseEntity.ok(userApplyService.updateUserApply(id, userApplyrequest));
     }
+
+    // hire, interview 모두 기본값 false
+    // PUT updateUserApply -> setHire(true)     채용
+    // PUT updateUserApply -> setHire(false)    미채용
+    // PUT updateUserApply -> setInterview(true)    면접 요청
+    // PUT updateUserApply -> setInterview(false)   면접 요청 취소(필요할까?)
+
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUserApply(@PathVariable Long id) {

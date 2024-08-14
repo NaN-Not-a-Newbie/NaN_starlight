@@ -35,6 +35,10 @@ public interface UserService {
 
     AuthenticatedCompanyDto findAuthenticatedCompanyByUsername(String username);
 
-//    String calculateAge(String birthday);
+    UserInfoDTO updateUserInfo(UserInfoDTO request);
+
+    String validPassword(String password, String encodedPassword);
+
+//    String validCompanyPassword(String password, String encodedPassword);
 
 }
