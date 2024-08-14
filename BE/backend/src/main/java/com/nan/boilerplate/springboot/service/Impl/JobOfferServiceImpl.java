@@ -303,16 +303,13 @@ public class JobOfferServiceImpl implements JobOfferService {
     public Page<JobOfferSimpleResponse> initialJobOffer(Pageable pageable) {
         String myName = SecurityConstants.getAuthenticatedUsername();
 //        System.out.println("2"+myName);
-        User user = userService.findByUsername(myName);
+        User user = userService.findByUsername(myName).get();
         EnvHandWork envHandWork = user.getEnvhandWork();
         EnvBothHands envBothHands = user.getEnvBothHands();
         EnvEyesight envEyesight = user.getEnvEyesight();
         EnvLiftPower envLiftPower = user.getEnvLiftPower();
         EnvLstnTalk envLstnTalk = user.getEnvLstnTalk();
         EnvStndWalk envStndWalk = user.getEnvStndWalk();
-
-//        Page<JobOffer> jobOffers=jobOfferRepository.findByEnvhandWorkOrEnvBothHandsOrEnvLiftPowerOrEnvLstnTalkOrEnvStndWalkOrEnvEyesight(
-//                envHandWork,envBothHands,envLiftPower,envLstnTalk,envStndWalk,envEyesight,pageable).map();
 
         return jobOfferRepository
                 .findByEnvhandWorkOrEnvBothHandsOrEnvLiftPowerOrEnvLstnTalkOrEnvStndWalkOrEnvEyesight(

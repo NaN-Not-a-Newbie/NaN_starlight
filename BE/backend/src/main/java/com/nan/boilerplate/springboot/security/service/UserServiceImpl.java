@@ -47,7 +47,7 @@ public class UserServiceImpl implements UserService {
     private final GeneralMessageAccessor generalMessageAccessor;
 
     @Override
-    public User findByUsername(String username) {
+    public Optional<User> findByUsername(String username) {
         return userRepository.findByUsername(username);
     }
 
@@ -110,14 +110,14 @@ public class UserServiceImpl implements UserService {
     @Override
     public AuthenticatedUserDto findAuthenticatedUserByUsername(String username) {
 
-        final User user = findByUsername(username);
+        final User user = findByUsername(username).get();
 
         return UserMapper.INSTANCE.convertToAuthenticatedUserDto(user);
     }
 
     @Override
     public User activateUser(String username) {
-        User user = userRepository.findByUsername(username);
+        User user = userRepository.findByUsername(username).get();
         user.setActive(true);
         userRepository.save(user);
         return user;
@@ -125,7 +125,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User deActivateUser(String username) {
-        User user = userRepository.findByUsername(username);
+        User user = userRepository.findByUsername(username).get();
         user.setActive(false);
         userRepository.save(user);
         return user;
@@ -148,7 +148,7 @@ public class UserServiceImpl implements UserService {
     }
     @Override
     public AuthenticatedUserDto demoteUser(String username){
-        User user = userRepository.findByUsername(username);
+        User user = userRepository.findByUsername(username).get();
         user.setUserRole(UserRole.USER);
         userRepository.save(user);
         return new AuthenticatedUserDto(username, user.getUserRole(), user.isActive());
@@ -156,7 +156,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public AuthenticatedUserDto promoteUser(String username){
-        User user = userRepository.findByUsername(username);
+        User user = userRepository.findByUsername(username).get();
         user.setUserRole(UserRole.STAFF);
         userRepository.save(user);
         return new AuthenticatedUserDto(username, user.getUserRole(), user.isActive());

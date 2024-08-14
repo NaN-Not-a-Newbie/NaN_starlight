@@ -7,9 +7,11 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
-public class LoginResponse {
+public class LoginResponse extends LoginFailResponse{
     private String token;
-    private String message;
 
+    public LoginResponse(String token, String message) {
+        super(message);
+        this.token = token;
+    }
 }
