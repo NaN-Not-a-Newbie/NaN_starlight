@@ -232,6 +232,26 @@ public class UserServiceImpl implements UserService {
 
     }
 
+    @Override
+    public String validPassword(String password, String encodedPassword) {
+        if (bCryptPasswordEncoder.matches(password, encodedPassword)) {
+            return "Yes";
+        } else {
+            return "틀린 비밀번호 입니다.";
+        }
+
+    }
+
+    @Override
+    public String withdraw(UserRole userRole, Long id) {
+        if (userRole == UserRole.USER) {
+            userRepository.deleteById(id);
+        } else if (userRole == UserRole.COMPANY){
+            companyRepository.deleteById(id);
+        }
+        return "withdraw success";
+    }
+
     private String calculateAge(String birthday) {
         String regex = "\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])";
         if (!birthday.matches(regex)) {
@@ -254,16 +274,6 @@ public class UserServiceImpl implements UserService {
         } else {
             return String.valueOf(age);
         }
-    }
-
-    @Override
-    public String validPassword(String password, String encodedPassword) {
-        if (bCryptPasswordEncoder.matches(password, encodedPassword)) {
-            return "Yes";
-        } else {
-            return "틀린 비밀번호 입니다.";
-        }
-
     }
 
 }

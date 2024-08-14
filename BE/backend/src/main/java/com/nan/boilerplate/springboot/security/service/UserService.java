@@ -2,6 +2,7 @@ package com.nan.boilerplate.springboot.security.service;
 
 import com.nan.boilerplate.springboot.model.Company;
 import com.nan.boilerplate.springboot.model.User;
+import com.nan.boilerplate.springboot.model.UserRole;
 import com.nan.boilerplate.springboot.security.dto.*;
 
 import java.util.Optional;
@@ -18,7 +19,6 @@ public interface UserService {
     RegistrationResponse registrationUser(UserRegistrationRequest userRegistrationRequest);
 
     AuthenticatedUserDto findAuthenticatedUserByUsername(String username);
-
 
 
     AuthenticatedUserDto demoteUser(String username);
@@ -41,6 +41,6 @@ public interface UserService {
 
     String validPassword(String password, String encodedPassword);
 
-//    String validCompanyPassword(String password, String encodedPassword);
+    String withdraw(UserRole userRole, Long id);
 
 }
