@@ -12,11 +12,9 @@ import java.util.List;
 import java.util.Optional;
 
 public interface JobOfferService {
-//    List<JobOfferSimpleResponse> getAllJobOffers();
+    List<JobOfferSimpleResponse> getAllJobOffers(Pageable pageable);
 
-    Page<JobOfferSimpleResponse> getAllJobOffersPage(Pageable pageable);
-
-//    List<JobOfferSimpleResponse> initialJobOfferPage(Pageable pageable);
+//    Page<JobOfferSimpleResponse> getAllJobOffersPage(Pageable pageable);
 
     Optional<JobOffer> getJobOfferById(long id);
 
@@ -27,12 +25,9 @@ public interface JobOfferService {
 
     void deleteJobOffer(long id);
 
-    List<String> getOptialJobOffers() throws IOException, InterruptedException;
+    void getOfficialJobOffers() throws IOException, InterruptedException;
 
     boolean existsJobOffer(long id);
 
-    Page<JobOfferSimpleResponse> findByEnv(Pageable pageable);
-
-//    List<JobOfferSimpleResponse> initialJobOffer();
+    List<JobOfferSimpleResponse> initialJobOffer(Pageable pageable);
 }
-

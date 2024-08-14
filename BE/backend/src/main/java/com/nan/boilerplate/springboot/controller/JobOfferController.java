@@ -7,7 +7,6 @@ import com.nan.boilerplate.springboot.security.dto.JobOfferSimpleResponse;
 import com.nan.boilerplate.springboot.security.utils.SecurityConstants;
 import com.nan.boilerplate.springboot.service.JobOfferService;
 import lombok.extern.slf4j.Slf4j;
-import org.springdoc.api.annotations.ParameterObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -17,7 +16,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.server.ResponseStatusException;
 import org.webjars.NotFoundException;
-
 
 import java.net.URI;
 import java.util.List;
@@ -34,23 +32,15 @@ public class JobOfferController {
         this.jobOfferService = jobOfferService;
     }
 
-//    @GetMapping
-//    public ResponseEntity<List<JobOfferSimpleResponse>> getAllJobOffers() {
-//        List<JobOfferSimpleResponse> jobOfferResponses = jobOfferService.getAllJobOffers();
-//        return ResponseEntity.ok(jobOfferResponses);
-//    }
+    @GetMapping
+    public ResponseEntity<List<JobOfferSimpleResponse>> getAllJobOffers(Pageable pageable) {
+        List<JobOfferSimpleResponse> jobOfferResponses = jobOfferService.getAllJobOffers(pageable);
+        return ResponseEntity.ok(jobOfferResponses);
+    }
 
-    // 로그인 안 된 상태에서 전체 공고 페이징
     @GetMapping("/page")
-    public ResponseEntity<Page<JobOfferSimpleResponse>> getAllJobOffersPage(@ParameterObject Pageable pageable) {
-        try {
-            Page<JobOfferSimpleResponse> page = jobOfferService.getAllJobOffersPage(pageable);
-            return ResponseEntity.ok(page);
-
-        } catch (Exception e) {
-            log.error("Error occurred while fetching job offers page", e);
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "서버에서 문제가 발생했습니다.");
-        }
+    public ResponseEntity<Page<JobOfferSimpleResponse>> getAllJobOffersPage(Pageable pageable) {
+        return ResponseEntity.ok(jobOfferService.getAllJobOffersPage(pageable));
     }
 
     @GetMapping("/{id}")
@@ -94,12 +84,15 @@ public class JobOfferController {
         return ResponseEntity.noContent().build();
     }
 
-//    @GetMapping("/initial")
-//    public ResponseEntity<List<JobOfferSimpleResponse>> initialJobOffer(){
-//        List<JobOfferSimpleResponse> offers=jobOfferService.initialJobOffer();
-//
-//        return ResponseEntity.ok(offers);
-//    }
+    @GetMapping("/initial")
+    public ResponseEntity<List<JobOfferSimpleResponse>> initialJobOffer(Pageable pageable){
+        List<JobOfferSimpleResponse> offers=jobOfferService.initialJobOffer(pageable);
+//        size : 한 페이지당 담길 데이터의 양 ex) 10, 5, ...
+//        page : size를 기준으로 몇번째 페이지인지? ex) 0, 1, ...
+//        sort : 무엇을 기준으로 정렬할 것인지? ex) createdAt,DESC, description
+//        page=0&size=10&sort=description,DESC
+        return ResponseEntity.ok(offers);
+    }
 
 //    @GetMapping("/gove")
 //    public ResponseEntity<Void> goveJobOffer(){

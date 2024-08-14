@@ -7,7 +7,6 @@ import com.nan.boilerplate.springboot.security.jwt.JwtTokenService;
 import com.nan.boilerplate.springboot.security.service.UserService;
 import com.nan.boilerplate.springboot.service.FileService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -32,7 +31,6 @@ public class RegistrationController {
     private final UserService userService;
     private final JwtTokenService jwtTokenService;
     private final FileService fileService;
-
     @PostMapping("users")
     public ResponseEntity<LoginResponse> registrationRequest(@Valid @RequestBody UserRegistrationRequest userRegistrationRequest) {
         String message=userService.registrationUser(userRegistrationRequest).getMessage();
@@ -54,9 +52,9 @@ public class RegistrationController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
     }
-    @PostMapping(value = "company")
-    public ResponseEntity<LoginResponse> registrationRequest(@Valid @RequestBody CompanyRegistrationRequest companyRegistrationRequest) {
 
+    @PostMapping("company")
+    public ResponseEntity<LoginResponse> registrationRequest(@Valid @RequestBody CompanyRegistrationRequest companyRegistrationRequest, RedirectAttributes redirectAttributes) {
         String message=userService.registrationCompany(companyRegistrationRequest).getMessage();
         Company company=userService.findByCompanyName(companyRegistrationRequest.getUsername()).get();
         LoginRequest loginRequest = LoginRequest.builder()

@@ -13,7 +13,6 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 public class JobOfferSimpleResponse {
-
     private Long id;
 
     private String companyName;
