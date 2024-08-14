@@ -5,6 +5,7 @@ import com.nan.boilerplate.springboot.security.dto.UserApplyRequest;
 import com.nan.boilerplate.springboot.security.dto.UserApplyResponse;
 import com.nan.boilerplate.springboot.service.UserApplyService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,8 +21,8 @@ public class UserApplyController {
     private final UserApplyService userApplyService;
 
     @GetMapping
-    public ResponseEntity<List<UserApplyResponse>> getAllUserApplies() {
-        List<UserApplyResponse> jobOfferResponses = userApplyService.getAllUserApply();
+    public ResponseEntity<List<UserApplyResponse>> getAllUserApplies(Pageable pageable) {
+        List<UserApplyResponse> jobOfferResponses = userApplyService.getAllUserApply(pageable);
         return ResponseEntity.ok(jobOfferResponses);
     }
 
