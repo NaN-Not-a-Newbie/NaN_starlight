@@ -31,18 +31,23 @@ public class JobOfferController {
     public JobOfferController(JobOfferService jobOfferService) {
         this.jobOfferService = jobOfferService;
     }
-
+    
+    // 로그인 안 된 상태에서 모든 공고 페이징 불러오기
     @GetMapping
-    public ResponseEntity<List<JobOfferSimpleResponse>> getAllJobOffers(Pageable pageable) {
-        List<JobOfferSimpleResponse> jobOfferResponses = jobOfferService.getAllJobOffers(pageable);
-        return ResponseEntity.ok(jobOfferResponses);
-    }
+    public ResponseEntity<Page<JobOfferSimpleResponse>> getAllJobOffers(Pageable pageable) {
+        try {
+            // 서비스 호출 및 응답 생성
+            Page<JobOfferSimpleResponse> page = jobOfferService.getAllJobOffers(pageable);
+            return ResponseEntity.ok(page);
 
-    @GetMapping("/page")
-    public ResponseEntity<Page<JobOfferSimpleResponse>> getAllJobOffersPage(Pageable pageable) {
-        return ResponseEntity.ok(jobOfferService.getAllJobOffersPage(pageable));
+        } catch (Exception e) {
+            // 오류 발생 시 예외 처리 및 로깅
+            log.error("Error occurred while fetching job offers page", e);
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "서버에서 문제가 발생했습니다.");
+        }
     }
-
+    
+    // 공고 자세히 보기
     @GetMapping("/{id}")
     public ResponseEntity<JobOfferResponse> getJobOfferById(@PathVariable Long id) {
         if (jobOfferService.getJobOfferById(id).isEmpty()) {
@@ -84,14 +89,21 @@ public class JobOfferController {
         return ResponseEntity.noContent().build();
     }
 
+    // 로그인 된 상태에서 맞춤화된 공고 불러오기
     @GetMapping("/initial")
-    public ResponseEntity<List<JobOfferSimpleResponse>> initialJobOffer(Pageable pageable){
-        List<JobOfferSimpleResponse> offers=jobOfferService.initialJobOffer(pageable);
+    public ResponseEntity<Page<JobOfferSimpleResponse>> initialJobOffer(Pageable pageable){
+        try {
+            return ResponseEntity.ok(jobOfferService.initialJobOffer(pageable));
+        } catch (Exception e) {
+
+            log.error("Error occurred while fetching job offers page", e);
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "서버에서 문제가 발생했습니다.");
+        }
 //        size : 한 페이지당 담길 데이터의 양 ex) 10, 5, ...
 //        page : size를 기준으로 몇번째 페이지인지? ex) 0, 1, ...
 //        sort : 무엇을 기준으로 정렬할 것인지? ex) createdAt,DESC, description
 //        page=0&size=10&sort=description,DESC
-        return ResponseEntity.ok(offers);
+
     }
 
 //    @GetMapping("/gove")

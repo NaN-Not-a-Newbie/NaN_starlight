@@ -64,33 +64,21 @@ public class JobOfferServiceImpl implements JobOfferService {
     @Value("${API-KEY.JobOfferKey}")
     String jobOfferKey;
 
+    // 로그인 안 된 상태에서 모든 공고 불러오기
     @Override
-    public List<JobOfferSimpleResponse> getAllJobOffers(Pageable pageable) {
-        List<JobOffer> offers = jobOfferRepository.findAllJobOffer(pageable);
-//        List<JobOfferSimpleResponse> offersResponses = new ArrayList<>();
-//        for (JobOffer offer : offers) {
-//            offersResponses.add(JobOfferSimpleResponse.builder()
-//                    .id(offer.getId())
-//                    .title(offer.getTitle())
-//                    .companyName(offer.getCompany().getCompanyName())
-//                    .build());
-//        }
-//        return offersResponses;
+    public Page<JobOfferSimpleResponse> getAllJobOffers(Pageable pageable) {
 
-        return offers.stream().map(JobOfferSimpleResponse::toDTO).collect(Collectors.toList());
+        return jobOfferRepository.findAll(pageable).map(JobOfferSimpleResponse::toDTO);
     }
-
-//    @Override
-//    public Page<JobOfferSimpleResponse> getAllJobOffersPage(Pageable pageable) {
-//
-//        return jobOfferRepository.findAll(pageable).map(JobOfferSimpleResponse::toDTO);
-//    }
-
+    
+    
+    // 공고 자세히 보기
     @Override
     public Optional<JobOffer> getJobOfferById(long id) {
         return jobOfferRepository.findById(id);
     }
-
+    
+    // 공고 작성
     @Override
     public Long addJobOffer(JobOfferRequest jobOfferRequest) {
 //        User writer = userService.findByUsername(SecurityConstants.getAuthenticatedUsername());
@@ -115,36 +103,27 @@ public class JobOfferServiceImpl implements JobOfferService {
         return jobOfferRepository.save(jobOffer).getId();
     }
 
+    // 공고 수정
     @Override
     public JobOfferSimpleResponse updateJobOffer(Long id, JobOfferRequest jobOfferRequest) {
-        String myName = SecurityConstants.getAuthenticatedUsername(); // 로그인 된 계정의 username
-        String author = jobOfferRepository.getReferenceById(id).getCompany().getUsername(); // 글 작성자
 
-        if (jobOfferRepository.existsById(id) && author.equals(myName)) {
-            JobOffer existJobOffer = jobOfferRepository.getReferenceById(id);
-            existJobOffer.setTitle(jobOfferRequest.getTitle());
-            existJobOffer.setLocation(jobOfferRequest.getLocation());
-            existJobOffer.setEducation(jobOfferRequest.getEducation());
-            existJobOffer.setSalaryType(jobOfferRequest.getSalaryType());
-            existJobOffer.setSalary(jobOfferRequest.getSalary());
-            existJobOffer.setCareer(jobOfferRequest.getCareer());
-            existJobOffer.setCntctNo(jobOfferRequest.getCntctNo());
-            existJobOffer.setBody(jobOfferRequest.getBody());
-            existJobOffer.setEnvEyesight(jobOfferRequest.getEnvEyesight());
-            existJobOffer.setEnvhandWork(jobOfferRequest.getEnvhandWork());
-            existJobOffer.setEnvLiftPower(jobOfferRequest.getEnvLiftPower());
-            existJobOffer.setEnvStndWalk(jobOfferRequest.getEnvStndWalk());
-            existJobOffer.setEnvBothHands(jobOfferRequest.getEnvBothHands());
-            existJobOffer.setEnvLstnTalk(jobOfferRequest.getEnvLstnTalk());
-            return JobOfferSimpleResponse.builder().title(jobOfferRepository.save(existJobOffer).getTitle()).build();
+        JobOffer existJobOffer = jobOfferRepository.getReferenceById(id);
+        existJobOffer.setTitle(jobOfferRequest.getTitle());
+        existJobOffer.setLocation(jobOfferRequest.getLocation());
+        existJobOffer.setEducation(jobOfferRequest.getEducation());
+        existJobOffer.setSalaryType(jobOfferRequest.getSalaryType());
+        existJobOffer.setSalary(jobOfferRequest.getSalary());
+        existJobOffer.setCareer(jobOfferRequest.getCareer());
+        existJobOffer.setCntctNo(jobOfferRequest.getCntctNo());
+        existJobOffer.setBody(jobOfferRequest.getBody());
+        existJobOffer.setEnvEyesight(jobOfferRequest.getEnvEyesight());
+        existJobOffer.setEnvhandWork(jobOfferRequest.getEnvhandWork());
+        existJobOffer.setEnvLiftPower(jobOfferRequest.getEnvLiftPower());
+        existJobOffer.setEnvStndWalk(jobOfferRequest.getEnvStndWalk());
+        existJobOffer.setEnvBothHands(jobOfferRequest.getEnvBothHands());
+        existJobOffer.setEnvLstnTalk(jobOfferRequest.getEnvLstnTalk());
+        return JobOfferSimpleResponse.builder().title(jobOfferRepository.save(existJobOffer).getTitle()).build();
 
-        } else {
-            if (!jobOfferRepository.existsById(id)) {
-                throw new NotFoundException("not exist JobOffer with id: {id}");
-            } else {
-                throw new NotFoundException("not exist JobOffer with id: {id}");
-            }
-        }
     }
 
     @Override
@@ -306,6 +285,7 @@ public class JobOfferServiceImpl implements JobOfferService {
             e.printStackTrace();
         }
     }
+
     private String getTextContent(Element element, String tagName) {
         NodeList nodeList = element.getElementsByTagName(tagName);
         if (nodeList.getLength() > 0) {
@@ -320,31 +300,23 @@ public class JobOfferServiceImpl implements JobOfferService {
     }
 
     @Override
-    public List<JobOfferSimpleResponse> initialJobOffer(Pageable pageable) {
+    public Page<JobOfferSimpleResponse> initialJobOffer(Pageable pageable) {
         String myName = SecurityConstants.getAuthenticatedUsername();
-        System.out.println("2"+myName);
+//        System.out.println("2"+myName);
         User user = userService.findByUsername(myName);
-        EnvHandWork envHandWork=user.getEnvhandWork();
-        EnvBothHands envBothHands=user.getEnvBothHands();
-        EnvEyesight envEyesight=user.getEnvEyesight();
-        EnvLiftPower envLiftPower=user.getEnvLiftPower();
-        EnvLstnTalk envLstnTalk=user.getEnvLstnTalk();
-        EnvStndWalk envStndWalk=user.getEnvStndWalk();
+        EnvHandWork envHandWork = user.getEnvhandWork();
+        EnvBothHands envBothHands = user.getEnvBothHands();
+        EnvEyesight envEyesight = user.getEnvEyesight();
+        EnvLiftPower envLiftPower = user.getEnvLiftPower();
+        EnvLstnTalk envLstnTalk = user.getEnvLstnTalk();
+        EnvStndWalk envStndWalk = user.getEnvStndWalk();
 
-        List<JobOffer> jobOffers=jobOfferRepository.findByEnvhandWorkOrEnvBothHandsOrEnvLiftPowerOrEnvLstnTalkOrEnvStndWalkOrEnvEyesight(
-                envHandWork,envBothHands,envLiftPower,envLstnTalk,envStndWalk,envEyesight,pageable);
-        System.out.println(jobOffers.size());
-        System.out.println(jobOffers.get(0));
-        List<JobOfferSimpleResponse> offersResponses = new ArrayList<>();
-        for(JobOffer offer:jobOffers){
-            offersResponses.add(JobOfferSimpleResponse.builder()
-                    .id(offer.getId())
-                    .title(offer.getTitle())
-                    .companyName(offer.getCompany().getCompanyName())
-                    .location(offer.getLocation())
-                    .salaryType(offer.getSalaryType())
-                    .salary(offer.getSalary()).build());
-        }
-        return offersResponses;
+//        Page<JobOffer> jobOffers=jobOfferRepository.findByEnvhandWorkOrEnvBothHandsOrEnvLiftPowerOrEnvLstnTalkOrEnvStndWalkOrEnvEyesight(
+//                envHandWork,envBothHands,envLiftPower,envLstnTalk,envStndWalk,envEyesight,pageable).map();
+
+        return jobOfferRepository
+                .findByEnvhandWorkOrEnvBothHandsOrEnvLiftPowerOrEnvLstnTalkOrEnvStndWalkOrEnvEyesight(
+                envHandWork,envBothHands,envLiftPower,envLstnTalk,envStndWalk,envEyesight,pageable)
+                .map(JobOfferSimpleResponse::toDTO);
     }
 }

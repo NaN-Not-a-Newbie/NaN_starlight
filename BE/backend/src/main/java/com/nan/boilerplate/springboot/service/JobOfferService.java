@@ -12,14 +12,11 @@ import java.util.List;
 import java.util.Optional;
 
 public interface JobOfferService {
-    List<JobOfferSimpleResponse> getAllJobOffers(Pageable pageable);
-
-//    Page<JobOfferSimpleResponse> getAllJobOffersPage(Pageable pageable);
+    Page<JobOfferSimpleResponse> getAllJobOffers(Pageable pageable);
 
     Optional<JobOffer> getJobOfferById(long id);
 
     Long addJobOffer(JobOfferRequest jobOfferRequest);
-//    JobOfferResponse addJobOffer(JobOfferRequest jobOfferRequest);
 
     JobOfferSimpleResponse updateJobOffer(Long id, JobOfferRequest jobOfferRequest);
 
@@ -29,5 +26,5 @@ public interface JobOfferService {
 
     boolean existsJobOffer(long id);
 
-    List<JobOfferSimpleResponse> initialJobOffer(Pageable pageable);
+    Page<JobOfferSimpleResponse> initialJobOffer(Pageable pageable);
 }
