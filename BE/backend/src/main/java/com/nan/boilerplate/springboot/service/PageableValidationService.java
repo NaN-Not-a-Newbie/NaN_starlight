@@ -18,7 +18,6 @@ import java.util.stream.Collectors;
 public class PageableValidationService {
     private final Class<JobOffer> entityClass = JobOffer.class;
 
-
     public Pageable validateAndCorrectPageable(Pageable pageable) {
         List<Sort.Order> validOrders = pageable.getSort().stream()
                 .filter(order -> isValidField(order.getProperty()))
