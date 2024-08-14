@@ -28,17 +28,7 @@ public class JobOfferSimpleResponse {
 
     private Education education;
 
-    private EnvEyesight envEyesight;
-
-    private EnvBothHands envBothHands;
-
-    private EnvHandWork envhandWork;
-
-    private EnvLiftPower envLiftPower;
-
-    private EnvStndWalk envStndWalk;
-
-    private EnvLstnTalk envLstnTalk;
+    private String location;
 
     private String deadLine;
 
@@ -51,12 +41,7 @@ public class JobOfferSimpleResponse {
                 .salary(offer.getSalary())
                 .career(offer.getSalary())
                 .education(offer.getEducation())
-                .envEyesight(offer.getEnvEyesight())
-                .envBothHands(offer.getEnvBothHands())
-                .envhandWork(offer.getEnvhandWork())
-                .envLiftPower(offer.getEnvLiftPower())
-                .envStndWalk(offer.getEnvStndWalk())
-                .envLstnTalk(offer.getEnvLstnTalk())
+                .location(offer.getLocation())
                 .deadLine(offer.getDeadLine())
                 .build();
     }

@@ -66,9 +66,9 @@ public class JobOfferServiceImpl implements JobOfferService {
     @Value("${API-KEY.JobOfferKey}")
     String jobOfferKey;
 
-    @Override
-    public List<JobOfferSimpleResponse> getAllJobOffers() {
-        List<JobOffer> offers = jobOfferRepository.findAll();
+//    @Override
+//    public List<JobOfferSimpleResponse> getAllJobOffers() {
+//        List<JobOffer> offers = jobOfferRepository.findAll();
 //        List<JobOfferSimpleResponse> offersResponses = new ArrayList<>();
 //        for (JobOffer offer : offers) {
 //            offersResponses.add(JobOfferSimpleResponse.builder()
@@ -77,9 +77,8 @@ public class JobOfferServiceImpl implements JobOfferService {
 //                    .companyName(offer.getCompany().getCompanyName())
 //                    .build());
 //        }
-
-        return offers.stream().map(JobOfferSimpleResponse::toDTO).collect(Collectors.toList());
-    }
+//        return offers.stream().map(JobOfferSimpleResponse::toDTO).collect(Collectors.toList());
+//    }
 
     @Override
     public Page<JobOfferSimpleResponse> getAllJobOffersPage(Pageable pageable) {
@@ -269,7 +268,7 @@ public class JobOfferServiceImpl implements JobOfferService {
                         default -> salaryType1[3];
                     };
 
-                    JobOfferRequest jobOfferRequest=JobOfferRequest.builder()
+                    JobOfferRequest jobOfferRequest = JobOfferRequest.builder()
                             .title(busplaName+" "+empType+" 채용")
                             .Body(busplaName+" "+empType+" 채용")
                             .career(career.equals("무관") ? 0 :
@@ -285,6 +284,7 @@ public class JobOfferServiceImpl implements JobOfferService {
                             .salary(Long.parseLong(salary.replace(",","")))
                             .salaryType(salaryType2)
                             .build();
+
                     // 결과 출력
                     System.out.println("Business Place Name: " + busplaName);
                     System.out.println("Salary Type: " + salaryType);
@@ -323,31 +323,72 @@ public class JobOfferServiceImpl implements JobOfferService {
         return false;
     }
 
+//    @Override
+//    public List<JobOfferSimpleResponse> initialJobOffer() {
+//        String myName = SecurityConstants.getAuthenticatedUsername();
+//        User user = userService.findByUsername(myName);
+//        EnvHandWork envHandWork=user.getEnvhandWork();
+//        EnvBothHands envBothHands=user.getEnvBothHands();
+//        EnvEyesight envEyesight=user.getEnvEyesight();
+//        EnvLiftPower envLiftPower=user.getEnvLiftPower();
+//        EnvLstnTalk envLstnTalk=user.getEnvLstnTalk();
+//        EnvStndWalk envStndWalk=user.getEnvStndWalk();
+//
+//        List<JobOffer> jobOffers = jobOfferRepository
+//                .findByEnvhandWorkAndEnvBothHandsAndEnvEyesightAndEnvLiftPowerAndEnvLstnTalkAndEnvStndWalk(
+//                envHandWork,envBothHands,envEyesight, envLiftPower,envLstnTalk,envStndWalk);
+//
+////        List<JobOfferSimpleResponse> offersResponses = new ArrayList<>();
+////        for(JobOffer offer:jobOffers){
+////            offersResponses.add(JobOfferSimpleResponse.builder()
+////                    .id(offer.getId())
+////                    .title(offer.getTitle())
+////                    .companyName(offer.getCompany().getCompanyName())
+////                    .location(offer.getLocation())
+////                    .salaryType(offer.getSalaryType())
+////                    .salary(offer.getSalary()).build());
+////        }
+//        return jobOffers.stream().map(JobOfferSimpleResponse::toDTO).collect(Collectors.toList());
+////        return offersResponses;
+//    }
+
+//    @Override
+//    public List<JobOfferSimpleResponse> initialJobOfferPage(Pageable pageable) {
+//        String myName = SecurityConstants.getAuthenticatedUsername();
+//        User user = userService.findByUsername(myName);
+//        EnvHandWork envHandWork=user.getEnvhandWork();
+//        EnvBothHands envBothHands=user.getEnvBothHands();
+//        EnvEyesight envEyesight=user.getEnvEyesight();
+//        EnvLiftPower envLiftPower=user.getEnvLiftPower();
+//        EnvLstnTalk envLstnTalk=user.getEnvLstnTalk();
+//        EnvStndWalk envStndWalk=user.getEnvStndWalk();
+//
+////        List<JobOffer> jobOffers = findByEnv();
+//
+//        return jobOffers.stream().map(JobOfferSimpleResponse::toDTO).collect(Collectors.toList());
+//    }
+
     @Override
-    public List<JobOfferSimpleResponse> initialJobOffer() {
-        String myName = SecurityConstants.getAuthenticatedUsername();
-        User user = userService.findByUsername(myName);
-        EnvHandWork envHandWork=user.getEnvhandWork();
+    public Page<JobOfferSimpleResponse> findByEnv(Pageable pageable) {
+//        String myName = SecurityConstants.getAuthenticatedUsername();
+        User user = userService.findByUsername(SecurityConstants.getAuthenticatedUsername());
+        EnvHandWork envhandWork=user.getEnvhandWork();
         EnvBothHands envBothHands=user.getEnvBothHands();
         EnvEyesight envEyesight=user.getEnvEyesight();
         EnvLiftPower envLiftPower=user.getEnvLiftPower();
         EnvLstnTalk envLstnTalk=user.getEnvLstnTalk();
         EnvStndWalk envStndWalk=user.getEnvStndWalk();
 
-        List<JobOffer> jobOffers=jobOfferRepository.findByEnvhandWorkOrEnvBothHandsOrEnvLiftPowerOrEnvLstnTalkOrEnvStndWalkOrEnvEyesight(
-                envHandWork,envBothHands,envLiftPower,envLstnTalk,envStndWalk,envEyesight);
-        System.out.println(jobOffers.size());
-        System.out.println(jobOffers.get(0));
-        List<JobOfferSimpleResponse> offersResponses = new ArrayList<>();
-        for(JobOffer offer:jobOffers){
-            offersResponses.add(JobOfferSimpleResponse.builder()
-                    .id(offer.getId())
-                    .title(offer.getTitle())
-                    .companyName(offer.getCompany().getCompanyName())
-                    .location(offer.getLocation())
-                    .salaryType(offer.getSalaryType())
-                    .salary(offer.getSalary()).build());
-        }
-        return offersResponses;
+        Page<JobOfferSimpleResponse> jobOffers = jobOfferRepository
+                .findByEnvhandWorkOrEnvBothHandsOrEnvEyesightOrEnvLiftPowerOrEnvLstnTalkOrEnvStndWalk(
+                        envhandWork,envBothHands,envEyesight, envLiftPower,envLstnTalk,envStndWalk, pageable).map(JobOfferSimpleResponse::toDTO);
+        jobOfferRepository.findAll(pageable).map(JobOfferSimpleResponse::toDTO);
+        return jobOffers;
     }
+
+//    @Override
+//    public Page<JobOfferSimpleResponse> getAllJobOffersPage(Pageable pageable) {
+//
+//        return jobOfferRepository.findAll(pageable).map(JobOfferSimpleResponse::toDTO);
+//    }
 }

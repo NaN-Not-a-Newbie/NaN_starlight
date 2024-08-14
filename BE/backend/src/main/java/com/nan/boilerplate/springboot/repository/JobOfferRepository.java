@@ -11,9 +11,16 @@ import java.util.Optional;
 public interface JobOfferRepository extends JpaRepository<JobOffer, Long> {
     Page<JobOffer> findAll(Pageable pageable);
 
-    List<JobOffer> findByEnvhandWorkOrEnvBothHandsOrEnvLiftPowerOrEnvLstnTalkOrEnvStndWalkOrEnvEyesight(
-            EnvHandWork envHandWork, EnvBothHands envBothHands, EnvLiftPower envLiftPower
-            , EnvLstnTalk envLstnTalk, EnvStndWalk envStndWalk, EnvEyesight envEyesight);
+    Page<JobOffer> findByEnvhandWorkOrEnvBothHandsOrEnvEyesightOrEnvLiftPowerOrEnvLstnTalkOrEnvStndWalk(
+            EnvHandWork envhandWork,
+            EnvBothHands envBothHands,
+            EnvEyesight envEyesight,
+            EnvLiftPower envLiftPower,
+            EnvLstnTalk envLstnTalk,
+            EnvStndWalk envStndWalk,
+            Pageable pageable
+    );
+
 }
 
 

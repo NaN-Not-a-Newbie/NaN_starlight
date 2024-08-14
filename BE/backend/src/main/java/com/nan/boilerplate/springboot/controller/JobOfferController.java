@@ -34,12 +34,13 @@ public class JobOfferController {
         this.jobOfferService = jobOfferService;
     }
 
-    @GetMapping
-    public ResponseEntity<List<JobOfferSimpleResponse>> getAllJobOffers() {
-        List<JobOfferSimpleResponse> jobOfferResponses = jobOfferService.getAllJobOffers();
-        return ResponseEntity.ok(jobOfferResponses);
-    }
+//    @GetMapping
+//    public ResponseEntity<List<JobOfferSimpleResponse>> getAllJobOffers() {
+//        List<JobOfferSimpleResponse> jobOfferResponses = jobOfferService.getAllJobOffers();
+//        return ResponseEntity.ok(jobOfferResponses);
+//    }
 
+    // 로그인 안 된 상태에서 전체 공고 페이징
     @GetMapping("/page")
     public ResponseEntity<Page<JobOfferSimpleResponse>> getAllJobOffersPage(@ParameterObject Pageable pageable) {
         try {
@@ -93,12 +94,12 @@ public class JobOfferController {
         return ResponseEntity.noContent().build();
     }
 
-    @GetMapping("/initial")
-    public ResponseEntity<List<JobOfferSimpleResponse>> initialJobOffer(){
-        List<JobOfferSimpleResponse> offers=jobOfferService.initialJobOffer();
-
-        return ResponseEntity.ok(offers);
-    }
+//    @GetMapping("/initial")
+//    public ResponseEntity<List<JobOfferSimpleResponse>> initialJobOffer(){
+//        List<JobOfferSimpleResponse> offers=jobOfferService.initialJobOffer();
+//
+//        return ResponseEntity.ok(offers);
+//    }
 
 //    @GetMapping("/gove")
 //    public ResponseEntity<Void> goveJobOffer(){
