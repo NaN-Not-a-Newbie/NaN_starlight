@@ -82,14 +82,18 @@ public class FileServceImpl implements FileService {
         String myName = SecurityConstants.getAuthenticatedUsername();
 
         User user = userService.findByUsername(myName).get();
-        String paper="근로계약서.pdf";
+        String paper="jobPaper.pdf";
         try {
             //uuid로 검색
             String filePath = dst+user.getPaperPath();
+
             //저장된 디렉토리 위치+파일 이름
-            response.setHeader("Content-Disposition", "attachment;filename=" + paper);
+            response.setContentType("application/pdf");
+            response.setHeader("Content-Disposition", "attachment;filename="+paper);
+
             //내가 보낼 파일의 이름 filename으로 설정해서 전송
             java.io.File file = new java.io.File(filePath);
+            response.setContentLengthLong(file.length());
             //파일 객체 생성
             FileInputStream fis=new FileInputStream(file);
             //파일 읽어서 저장
@@ -164,7 +168,7 @@ public class FileServceImpl implements FileService {
         String uuid= UUID.randomUUID().toString();
         String src="BE/backend/src/main/resources/static/contracts/sample/표준근로계약서+최종.hwp.pdf";
         String dst="BE/backend/src/main/resources/static/contracts/"+uuid+".pdf";
-
+        String sign="BE/backend/src/main/resources/static/sign";
         String myName = SecurityConstants.getAuthenticatedUsername();
         User user = userService.findByUsername(myName).get();
 
@@ -207,7 +211,8 @@ public class FileServceImpl implements FileService {
             document.add(paragraphSalary);
             document.add(paragraphSalaryType);
 
-            String imagePath = user.getSignPath(); // 삽입할 이미지 경로
+            String imagePath = sign+"/"+user.getSignPath();
+            System.out.println(imagePath);// 삽입할 이미지 경로
             ImageData imageData = ImageDataFactory.create(imagePath);
             com.itextpdf.layout.element.Image image = new Image(imageData);
 

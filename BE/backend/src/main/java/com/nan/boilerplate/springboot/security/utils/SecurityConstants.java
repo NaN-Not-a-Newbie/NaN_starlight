@@ -51,16 +51,12 @@ public class SecurityConstants {
      * @return authenticated username from Security Context
      */
     public static String getAuthenticatedUsername() {
-        System.out.println("asdasd");
         final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        System.out.println(authentication);
         System.out.println(authentication.getClass().getName());
 
-        System.out.println(authentication.getPrincipal());
-        System.out.println(authentication.getPrincipal().getClass().getName());
-        System.out.println("adsfkgjbdfjlkg");
+
         final UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-        System.out.println("sdfsdfescv");
+
         return userDetails.getUsername();
     }
 
