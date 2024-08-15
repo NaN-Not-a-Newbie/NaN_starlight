@@ -4,6 +4,9 @@ package com.nan.boilerplate.springboot.security.dto;
 import com.nan.boilerplate.springboot.model.JobOffer;
 import com.nan.boilerplate.springboot.model.Resume;
 import lombok.*;
+import org.springframework.security.core.parameters.P;
+
+import javax.validation.constraints.Pattern;
 
 @Getter
 @Setter

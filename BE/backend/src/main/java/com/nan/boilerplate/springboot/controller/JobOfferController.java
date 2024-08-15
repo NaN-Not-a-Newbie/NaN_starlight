@@ -21,6 +21,7 @@ import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.server.ResponseStatusException;
 import org.webjars.NotFoundException;
 
+import javax.validation.Valid;
 import java.lang.reflect.Field;
 import java.net.URI;
 import java.util.List;
@@ -66,7 +67,7 @@ public class JobOfferController {
     }
 
     @PostMapping
-    public ResponseEntity<Void> addJobOffer(@RequestBody JobOfferRequest jobOfferRequest) {
+    public ResponseEntity<Void> addJobOffer(@Valid @RequestBody JobOfferRequest jobOfferRequest) {
         Long createdJobOfferId = jobOfferService.addJobOffer(jobOfferRequest);
 
         return ResponseEntity.status(HttpStatus.MOVED_PERMANENTLY)
@@ -75,7 +76,7 @@ public class JobOfferController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<JobOfferSimpleResponse> updateJobOffer(@PathVariable Long id, @RequestBody JobOfferRequest jobOfferRequest) {
+    public ResponseEntity<JobOfferSimpleResponse> updateJobOffer(@PathVariable Long id, @Valid @RequestBody JobOfferRequest jobOfferRequest) {
         if (jobOfferService.getJobOfferById(id).isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }

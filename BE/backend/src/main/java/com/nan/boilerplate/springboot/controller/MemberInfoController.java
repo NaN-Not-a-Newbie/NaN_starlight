@@ -47,7 +47,7 @@ public class MemberInfoController {  // 회원정보 수정 컨트롤러
     }
 
     @PutMapping("/user")
-    public ResponseEntity<UserInfoDTO> updateUserInfo(@RequestBody UserInfoDTO userRequest) {
+    public ResponseEntity<UserInfoDTO> updateUserInfo(@Valid @RequestBody UserInfoDTO userRequest) {
         String myName = SecurityConstants.getAuthenticatedUsername();
         if (userService.findByUsername(myName).isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
