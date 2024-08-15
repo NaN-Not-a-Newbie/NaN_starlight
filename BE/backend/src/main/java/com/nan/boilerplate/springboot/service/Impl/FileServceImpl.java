@@ -61,6 +61,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import java.util.stream.Stream;
 
 @Service
 @RequiredArgsConstructor
@@ -191,7 +192,7 @@ public class FileServceImpl implements FileService {
             System.out.println(location);
             String salary = jobOffer.getSalary().toString();
             String salaryType = jobOffer.getSalaryType().toString();
-
+            
             Paragraph paragraphName = new Paragraph(Name).setFont(font);
             Paragraph paragraphcompanyName = new Paragraph(companyName).setFont(font);
             Paragraph paragraphLocation = new Paragraph(location).setFont(font);
@@ -202,7 +203,7 @@ public class FileServceImpl implements FileService {
             paragraphName.setFixedPosition(1, 120, 740, 700); // 페이지 1, x=50, y=1050, 너비=700 포인트
             paragraphcompanyName.setFixedPosition(1, 300, 740, 600);
             paragraphLocation.setFixedPosition(1, 200, 140, 1500);
-            paragraphSalary.setFixedPosition(1, 170, 560, 400);
+            paragraphSalary.setFixedPosition(1, 210, 560, 400);
             paragraphSalaryType.setFixedPosition(1, 120, 560, 300);
 
             document.add(paragraphName);
