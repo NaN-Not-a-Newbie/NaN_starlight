@@ -4,8 +4,11 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.util.JSONPObject;
+import com.itextpdf.io.font.PdfEncodings;
 import com.itextpdf.io.image.ImageData;
 import com.itextpdf.io.image.ImageDataFactory;
+import com.itextpdf.kernel.font.PdfFont;
+import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfPage;
@@ -117,6 +120,7 @@ public class FileServceImpl implements FileService {
             String responseBody = response.getBody();
             System.out.println(responseBody);
             parseData = jsonparse(responseBody);
+            return parseData;
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -131,13 +135,14 @@ public class FileServceImpl implements FileService {
         String dst="BE/backend/src/main/resources/static/contracts/"+uuid+".pdf";
 
         String myName = SecurityConstants.getAuthenticatedUsername();
-        User user = userService.findByUsername(myName);
+        User user = userService.findByUsername(myName).get();
 
         JobOffer jobOffer = jobOfferService.getJobOfferById(userApplyRequest.getJobOfferId()).get();
 
         try{
             File dstFile = new File(dst);
             dstFile.getParentFile().mkdirs();  // 디렉토리가 없으면 생성
+            PdfFont font = PdfFontFactory.createFont("c:/windows/fonts/H2MJRE.TTF", PdfEncodings.IDENTITY_H);
 
             PdfReader reader = new PdfReader(src);
             PdfWriter writer = new PdfWriter(dst);
@@ -148,22 +153,22 @@ public class FileServceImpl implements FileService {
             String Name = user.getName();
             String companyName = jobOffer.getCompany().getCompanyName();
             String location = jobOffer.getLocation();
+            System.out.println(location);
             String salary = jobOffer.getSalary().toString();
             String salaryType = jobOffer.getSalaryType().toString();
 
-            Paragraph paragraphName = new Paragraph(Name);
-            Paragraph paragraphcompanyName = new Paragraph(companyName);
-            Paragraph paragraphLocation = new Paragraph(location);
-            Paragraph paragraphSalary = new Paragraph(salary);
-            Paragraph paragraphSalaryType = new Paragraph(salaryType);
-            PdfPage page = pdf.getFirstPage(); // 첫 페이지를 가져옵니다.
-            Rectangle pageSize = page.getPageSize();
-            System.out.println("페이지 크기: " + pageSize.toString());
-            paragraphName.setFixedPosition(1, 50, 1050, 700); // 페이지 1, x=50, y=1050, 너비=700 포인트
-            paragraphcompanyName.setFixedPosition(1, 100, 900, 600);
-            paragraphLocation.setFixedPosition(1, 170, 210, 2000);
-            paragraphSalary.setFixedPosition(1, 170, 700, 400);
-            paragraphSalaryType.setFixedPosition(1, 400, 600, 300);
+            Paragraph paragraphName = new Paragraph(Name).setFont(font);
+            Paragraph paragraphcompanyName = new Paragraph(companyName).setFont(font);
+            Paragraph paragraphLocation = new Paragraph(location).setFont(font);
+
+            Paragraph paragraphSalary = new Paragraph(salary).setFont(font);
+            Paragraph paragraphSalaryType = new Paragraph(salaryType).setFont(font);
+
+            paragraphName.setFixedPosition(1, 120, 740, 700); // 페이지 1, x=50, y=1050, 너비=700 포인트
+            paragraphcompanyName.setFixedPosition(1, 300, 740, 600);
+            paragraphLocation.setFixedPosition(1, 200, 140, 1500);
+            paragraphSalary.setFixedPosition(1, 170, 560, 400);
+            paragraphSalaryType.setFixedPosition(1, 120, 560, 300);
 
             document.add(paragraphName);
             document.add(paragraphcompanyName);
@@ -179,7 +184,7 @@ public class FileServceImpl implements FileService {
             image.scaleToFit(200, 100);
 
             // 이미지의 위치 설정 (예: x=300, y=500 위치에 삽입)
-            image.setFixedPosition(1, 300, 500);
+            image.setFixedPosition(1, 300, 0);
 
             // 이미지를 문서에 추가
             document.add(image);
