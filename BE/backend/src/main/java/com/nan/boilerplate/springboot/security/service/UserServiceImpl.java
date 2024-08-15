@@ -116,8 +116,33 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void paperPathAdd() {
-        userRepository.save(null);
+    public void paperPathAdd(String userName,String path) {
+
+
+        if (userRepository.findByUsername(userName).isEmpty()) {
+            throw new UserNotFoundException("존재하지 않는 유저입니다.");
+        } else {
+
+            User user = userRepository.findByUsername(userName).get();
+            // 수정 로직
+            user.setPaperPath(path);
+            userRepository.save(user);
+
+        }
+    }
+
+    @Override
+    public void signPathAdd(String username,String path){
+
+        if (userRepository.findByUsername(username).isEmpty()) {
+            throw new UserNotFoundException("존재하지 않는 유저입니다.");
+        } else {
+            User user = userRepository.findByUsername(username).get();
+            // 수정 로직
+            user.setSignPath(path);
+            userRepository.save(user);
+
+        }
     }
 
     @Override

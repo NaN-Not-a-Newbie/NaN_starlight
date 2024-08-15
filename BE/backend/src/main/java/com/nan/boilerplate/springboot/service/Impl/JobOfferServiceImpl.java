@@ -98,6 +98,7 @@ public class JobOfferServiceImpl implements JobOfferService {
                 .envBothHands(jobOfferRequest.getEnvBothHands())
                 .envStndWalk(jobOfferRequest.getEnvStndWalk())
                 .envLstnTalk(jobOfferRequest.getEnvLstnTalk())
+                .deadLine(jobOfferRequest.getDeadLine())
                 .build();
 
         return jobOfferRepository.save(jobOffer).getId();
@@ -179,7 +180,7 @@ public class JobOfferServiceImpl implements JobOfferService {
                     String location = getTextContent(itemElement, "compAddr");
                     String salary = getTextContent(itemElement, "salary");
                     String cntctNo = getTextContent(itemElement, "cntctNo");
-
+                    String deadLine = getTextContent(itemElement, "termDate");
                     EnvBothHands[] envBothHands1=EnvBothHands.values();
                     EnvEyesight[] envEyesight1=EnvEyesight.values();
                     EnvHandWork[] envHandWork1=EnvHandWork.values();
@@ -261,21 +262,24 @@ public class JobOfferServiceImpl implements JobOfferService {
                             .location(location)
                             .salary(Long.parseLong(salary.replace(",","")))
                             .salaryType(salaryType2)
+                            .deadLine(deadLine.substring(deadLine.indexOf("~")+1,deadLine.length()))
                             .build();
                     // 결과 출력
-                    System.out.println("Business Place Name: " + busplaName);
-                    System.out.println("Salary Type: " + salaryType);
-                    System.out.println("Environment Both Hands: " + envBothHands);
-                    System.out.println("Environment Eyesight: " + envEyesight);
-                    System.out.println("Environment Stand Walk: " + envStndWalk);
-                    System.out.println("Environment Listen Talk: " + envLstnTalk);
-                    System.out.println("Environment Lift Power: " + envLiftPower);
-                    System.out.println("Education: " + education);
-                    System.out.println("Environment Hand Work: " + envHandWork);
-                    System.out.println("Career: " + career);
-                    System.out.println("Location: " + location);
-                    System.out.println("Salary Class Name: " + itemElement.getElementsByTagName("salary").item(0).getClass().getName());
-                    System.out.println("-------------------------");
+//                    System.out.println("Business Place Name: " + busplaName);
+//                    System.out.println("Salary Type: " + salaryType);
+//                    System.out.println("Environment Both Hands: " + envBothHands);
+//                    System.out.println("Environment Eyesight: " + envEyesight);
+//                    System.out.println("Environment Stand Walk: " + envStndWalk);
+//                    System.out.println("Environment Listen Talk: " + envLstnTalk);
+//                    System.out.println("Environment Lift Power: " + envLiftPower);
+//                    System.out.println("Education: " + education);
+//                    System.out.println("Environment Hand Work: " + envHandWork);
+//                    System.out.println("Career: " + career);
+//                    System.out.println("Location: " + location);
+//                    System.out.println("Salary Class Name: " + itemElement.getElementsByTagName("salary").item(0).getClass().getName());
+//                    System.out.println("DeadLine: "+deadLine.substring(deadLine.indexOf("~")+1,deadLine.length()));
+//                    System.out.println("-------------------------");
+
                     addJobOffer(jobOfferRequest);
                 }
 

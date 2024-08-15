@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
 import java.net.URI;
 import java.util.List;
 
@@ -45,6 +46,11 @@ public class UserApplyController {
     @PostMapping("/makeContract")
     public ResponseEntity<Void> makeContract(@RequestBody UserApplyRequest userApplyrequest) {
         fileService.makeContract(userApplyrequest);
+        return ResponseEntity.status(HttpStatus.MOVED_PERMANENTLY).build();
+    }
+    @GetMapping("/downloadContract")
+    public ResponseEntity<Void> downloadContract(HttpServletResponse response) {
+        fileService.FileDownloadContract(response);
         return ResponseEntity.status(HttpStatus.MOVED_PERMANENTLY).build();
     }
 

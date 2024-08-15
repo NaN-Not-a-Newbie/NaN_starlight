@@ -45,6 +45,7 @@ public class JobOfferController {
     @GetMapping
     public ResponseEntity<Page<JobOfferSimpleResponse>> getAllJobOffers(Pageable pageable) {
         try {
+
             Page<JobOfferSimpleResponse> page = jobOfferService
                     .getAllJobOffers(pageableValidationService.validateAndCorrectPageable(pageable));
             return ResponseEntity.ok(page);
@@ -115,12 +116,12 @@ public class JobOfferController {
 //    @GetMapping("/gove")
 //    public ResponseEntity<Void> goveJobOffer(){
 //        try{
-//            jobOfferService.getOptialJobOffers();
+//            jobOfferService.getOfficialJobOffers();
 //            return ResponseEntity.noContent().build();
 //      }
 //        catch (Exception e){
 //            return ResponseEntity.notFound().build();
 //        }
 //    }
-    //existjobOffer 개발하면 풀것 User.Role Staff로 설정
+//    existjobOffer 개발하면 풀것 User.Role Staff로 설정
 }
