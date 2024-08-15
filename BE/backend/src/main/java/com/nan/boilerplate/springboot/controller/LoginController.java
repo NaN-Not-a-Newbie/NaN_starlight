@@ -27,7 +27,7 @@ public class LoginController {
     private final UserService userService;
 
     // 로그인
-    @PostMapping("/User")
+    @PostMapping("/user")
     public ResponseEntity<LoginFailResponse> userLoginRequest(@Valid @RequestBody LoginRequest loginRequest) {
 
         if (userService.findByUsername(loginRequest.getUsername()).isEmpty()) {
@@ -53,7 +53,7 @@ public class LoginController {
         }
     }
 
-    @PostMapping("/Company")
+    @PostMapping("/company")
     public ResponseEntity<LoginFailResponse> companyLoginRequest(@Valid @RequestBody LoginRequest loginRequest) {
         if (userService.findByCompanyName(loginRequest.getUsername()).isEmpty()) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)

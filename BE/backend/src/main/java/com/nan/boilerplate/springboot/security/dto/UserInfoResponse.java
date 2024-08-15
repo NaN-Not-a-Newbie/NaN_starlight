@@ -12,11 +12,11 @@ public class UserInfoResponse extends UserInfoDTO{
     private String age;
 
     @Builder(builderMethodName = "userInfoResponseBuilder")
-    public UserInfoResponse(String name, String birthday, String phoneNum, boolean isMale,
+    public UserInfoResponse(String username, String name, String birthday, String phoneNum, boolean isMale,
                             EnvEyesight envEyesight, EnvBothHands envBothHands, EnvHandWork envhandWork,
                             EnvLiftPower envLiftPower, EnvStndWalk envStndWalk, EnvLstnTalk envLstnTalk,
                             Education education, String age) {
-        super(name, birthday, phoneNum, isMale, envEyesight, envBothHands, envhandWork,
+        super(username, name, birthday, phoneNum, isMale, envEyesight, envBothHands, envhandWork,
                 envLiftPower, envStndWalk, envLstnTalk, education);
         this.age = age;
     }

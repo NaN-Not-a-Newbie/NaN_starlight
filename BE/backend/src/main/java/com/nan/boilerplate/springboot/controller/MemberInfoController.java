@@ -19,7 +19,7 @@ import javax.validation.Valid;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/memberInfo")
+@RequestMapping("/me")
 public class MemberInfoController {  // 회원정보 수정 컨트롤러
     private final UserService userService;
 
@@ -28,48 +28,76 @@ public class MemberInfoController {  // 회원정보 수정 컨트롤러
         this.userService = userService;
     }
 
+    @GetMapping("/user")
+    public ResponseEntity<UserInfoDTO> getUserInfo() {
+        String myName = SecurityConstants.getAuthenticatedUsername();
+        if (userService.findByUsername(myName).isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+        return ResponseEntity.ok(UserInfoDTO.toDTO( userService.findByUsername(myName).get()));
+    }
+
+    @GetMapping("/company")
+    public ResponseEntity<CompanyInfoDTO> getCompanyInfo() {
+        String myName = SecurityConstants.getAuthenticatedUsername();
+        if (userService.findByCompanyName(myName).isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+        return ResponseEntity.ok(CompanyInfoDTO.toDTO(userService.findByCompanyName(myName).get()));
+    }
+
     @PutMapping("/user")
     public ResponseEntity<UserInfoDTO> updateUserInfo(@RequestBody UserInfoDTO userRequest) {
+        String myName = SecurityConstants.getAuthenticatedUsername();
+        if (userService.findByUsername(myName).isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
         return ResponseEntity.ok(userService.updateUserInfo(userRequest));
     }
 
     @PutMapping("/company")
     public ResponseEntity<CompanyInfoDTO> updateCompanyInfo(@Valid @RequestBody CompanyInfoDTO companyRequest) {
+        String myName = SecurityConstants.getAuthenticatedUsername();
+
+        if (userService.findByCompanyName(myName).isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+
         return ResponseEntity.ok(userService.updateCompanyInfo(companyRequest));
     }
 
     @PostMapping("/pwCheck")
     public ResponseEntity<String> validPassword(String password) {
         String myName = SecurityConstants.getAuthenticatedUsername();
-        if (userService.findByUsername(myName).isEmpty() && userService.findByCompanyName(myName).isEmpty()){
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("존재하지 않는 유저입니다.");
+        if (userService.findByUsername(myName).isEmpty() && userService.findByCompanyName(myName).isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("존재하지 않는 유저입니다.");
         }
 
         if (userService.findByUsername(myName).isEmpty()) {
-          return ResponseEntity.ok(userService.validPassword(password, userService.findByCompanyName(myName).get().getPassword()));
+            return ResponseEntity.ok(userService.validPassword(password, userService.findByCompanyName(myName).get().getPassword()));
         } else {
             return ResponseEntity.ok(userService.validPassword(password, userService.findByUsername(myName).get().getPassword()));
         }
     }
 
-    @DeleteMapping
-    public ResponseEntity<String> withdraw() {
-        String myName = SecurityConstants.getAuthenticatedUsername();
-        if (userService.findByUsername(myName).isEmpty() && userService.findByCompanyName(myName).isEmpty()){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("존재하지 않는 유저입니다.");
-        }
-
-        if (userService.findByUsername(myName).isEmpty()) {
-            Company company = userService.findByCompanyName(myName).get();
-            return ResponseEntity.ok(userService.withdraw(company.getUserRole(), company.getId()));
-        } else {
-            User user = userService.findByUsername(myName).get();
-            return ResponseEntity.ok(userService.withdraw(user.getUserRole(), user.getId()));
-        }
-    }
-
-
-
-
-
+//    @DeleteMapping
+//    public ResponseEntity<String> withdraw() {
+//        String myName = SecurityConstants.getAuthenticatedUsername();
+//        if (userService.findByUsername(myName).isEmpty() && userService.findByCompanyName(myName).isEmpty()){
+//            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("존재하지 않는 유저입니다.");
+//        }
+//
+//        if (userService.findByUsername(myName).isEmpty()) {
+//            Company company = userService.findByCompanyName(myName).get();
+//            return ResponseEntity.ok(userService.withdraw(company.getUserRole(), company.getId()));
+//        } else {
+//            User user = userService.findByUsername(myName).get();
+//            return ResponseEntity.ok(userService.withdraw(user.getUserRole(), user.getId()));
+//        }
+//    }
 }
+
+
+
+
+

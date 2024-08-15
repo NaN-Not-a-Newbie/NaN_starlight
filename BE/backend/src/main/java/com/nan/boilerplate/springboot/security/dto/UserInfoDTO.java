@@ -10,6 +10,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserInfoDTO {
+    private String username;
     private String name;
     private String birthday;
     private String phoneNum;
@@ -21,4 +22,21 @@ public class UserInfoDTO {
     private EnvStndWalk envStndWalk;
     private EnvLstnTalk envLstnTalk;
     private Education education;
+
+    public static UserInfoDTO toDTO(User user) {
+        return UserInfoDTO.builder()
+                .username(user.getUsername())
+                .name(user.getName())
+                .birthday(user.getBirthday())
+                .phoneNum(user.getPhoneNum())
+                .isMale(user.isMale())
+                .envEyesight(user.getEnvEyesight())
+                .envBothHands(user.getEnvBothHands())
+                .envhandWork(user.getEnvhandWork())
+                .envLiftPower(user.getEnvLiftPower())
+                .envStndWalk(user.getEnvStndWalk())
+                .envLstnTalk(user.getEnvLstnTalk())
+                .education(user.getEducation())
+                .build();
+    }
 }

@@ -106,7 +106,7 @@ public class RegistrationController {
                     .body(new LoginFailResponse("로그인 권한이 없습니다. 관리자에게 문의하세요."));
         }
     }
-    @PostMapping(value = "/company/IDcard", consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/company/idCard", consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<String>> CompanyIDOCR(@ModelAttribute MultipartFile file){
 
         String boundary = "----" + UUID.randomUUID().toString().replaceAll("-", "");

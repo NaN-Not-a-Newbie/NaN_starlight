@@ -191,6 +191,7 @@ public class UserServiceImpl implements UserService {
             user.setEducation(request.getEducation());
             userRepository.save(user);
             return UserInfoResponse.userInfoResponseBuilder()
+                    .username(user.getUsername())
                     .name(user.getName())
                     .birthday(user.getBirthday())
                     .age(user.getAge())
@@ -228,6 +229,7 @@ public class UserServiceImpl implements UserService {
             company.setCompanyAddress(request.getCompanyAddress());
             companyRepository.save(company);
             return CompanyInfoDTO.builder()
+                    .username(company.getUsername())
                     .companyName(company.getCompanyName())
                     .companyRegistrationNumber(company.getCompanyRegistrationNumber())
                     .phoneNum(company.getPhoneNum())
