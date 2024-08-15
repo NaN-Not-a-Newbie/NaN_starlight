@@ -29,6 +29,10 @@ public class Company {
     private String phoneNum;
 
     private String companyAddress;
+    
+    private String sighPath; // 서명 저장
+    
+    private String paperPath; // 계약서
 
     private UserRole userRole;
 
