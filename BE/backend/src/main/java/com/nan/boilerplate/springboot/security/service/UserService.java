@@ -19,7 +19,7 @@ public interface UserService {
 
     AuthenticatedUserDto findAuthenticatedUserByUsername(String username);
 
-
+    void paperPathAdd();
 
     AuthenticatedUserDto demoteUser(String username);
 

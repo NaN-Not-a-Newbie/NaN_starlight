@@ -65,13 +65,13 @@ public class UserApplyServiceImpl implements UserApplyService {
     public UserApplyResponse updateUserApply(Long id, UserApplyRequest userApplyRequest) {
         if (userApplyRepository.existsById(id)) {
             UserApply existUserApply = userApplyRepository.getReferenceById(id);
-            if (userApplyRequest.isHire()) {
-                existUserApply.setHire(false);
+            if (!userApplyRequest.isHire()) {
+                existUserApply.setHire(true);
                 return UserApplyResponse.builder()
                         .message("Hired").build();
             }
             else{
-                existUserApply.setHire(true);
+                existUserApply.setHire(false);
                 return UserApplyResponse.builder()
                         .message("Fired").build();
             }

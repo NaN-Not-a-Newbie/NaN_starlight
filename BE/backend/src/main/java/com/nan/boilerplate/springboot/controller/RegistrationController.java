@@ -18,6 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
+import java.io.IOException;
 import java.net.URI;
 import java.util.*;
 
@@ -51,6 +52,18 @@ public class RegistrationController {
         } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
+    }
+
+    @PostMapping(value = "/user/sign",consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<LoginResponse> signUpRequest(@ModelAttribute MultipartFile file) {
+        try {
+            System.out.println(file.getBytes().toString());
+            fileService.backgroundCutout(file.getInputStream());
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     @PostMapping("company")

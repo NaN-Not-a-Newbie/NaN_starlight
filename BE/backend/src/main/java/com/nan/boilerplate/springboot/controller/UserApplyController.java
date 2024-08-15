@@ -3,6 +3,7 @@ package com.nan.boilerplate.springboot.controller;
 import com.nan.boilerplate.springboot.model.UserApply;
 import com.nan.boilerplate.springboot.security.dto.UserApplyRequest;
 import com.nan.boilerplate.springboot.security.dto.UserApplyResponse;
+import com.nan.boilerplate.springboot.service.FileService;
 import com.nan.boilerplate.springboot.service.UserApplyService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
@@ -19,7 +20,7 @@ import java.util.List;
 @RequestMapping("/userApply")
 public class UserApplyController {
     private final UserApplyService userApplyService;
-
+    private final FileService fileService;
     @GetMapping
     public ResponseEntity<List<UserApplyResponse>> getAllUserApplies(Pageable pageable) {
         List<UserApplyResponse> jobOfferResponses = userApplyService.getAllUserApply(pageable);
@@ -40,6 +41,11 @@ public class UserApplyController {
                     .build();
             return ResponseEntity.ok(response);
         }
+    }
+    @PostMapping("/makeContract")
+    public ResponseEntity<Void> makeContract(@RequestBody UserApplyRequest userApplyrequest) {
+        fileService.makeContract(userApplyrequest);
+        return ResponseEntity.status(HttpStatus.MOVED_PERMANENTLY).build();
     }
 
     @PostMapping
