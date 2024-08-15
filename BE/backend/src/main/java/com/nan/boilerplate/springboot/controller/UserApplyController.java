@@ -3,8 +3,10 @@ package com.nan.boilerplate.springboot.controller;
 import com.nan.boilerplate.springboot.model.UserApply;
 import com.nan.boilerplate.springboot.security.dto.UserApplyRequest;
 import com.nan.boilerplate.springboot.security.dto.UserApplyResponse;
+import com.nan.boilerplate.springboot.service.FileService;
 import com.nan.boilerplate.springboot.service.UserApplyService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,10 +20,10 @@ import java.util.List;
 @RequestMapping("/userApply")
 public class UserApplyController {
     private final UserApplyService userApplyService;
-
+    private final FileService fileService;
     @GetMapping
-    public ResponseEntity<List<UserApplyResponse>> getAllUserApplies() {
-        List<UserApplyResponse> jobOfferResponses = userApplyService.getAllUserApply();
+    public ResponseEntity<List<UserApplyResponse>> getAllUserApplies(Pageable pageable) {
+        List<UserApplyResponse> jobOfferResponses = userApplyService.getAllUserApply(pageable);
         return ResponseEntity.ok(jobOfferResponses);
     }
 
@@ -39,6 +41,11 @@ public class UserApplyController {
                     .build();
             return ResponseEntity.ok(response);
         }
+    }
+    @PostMapping("/makeContract")
+    public ResponseEntity<Void> makeContract(@RequestBody UserApplyRequest userApplyrequest) {
+        fileService.makeContract(userApplyrequest);
+        return ResponseEntity.status(HttpStatus.MOVED_PERMANENTLY).build();
     }
 
     @PostMapping      // User만 허용

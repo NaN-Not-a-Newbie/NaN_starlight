@@ -116,6 +116,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public void paperPathAdd() {
+        userRepository.save(null);
+    }
+
+    @Override
     public User activateUser(String username) {
         User user = userRepository.findByUsername(username).get();
         user.setActive(true);

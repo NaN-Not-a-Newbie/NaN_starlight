@@ -16,6 +16,7 @@ import com.nan.boilerplate.springboot.service.UserApplyService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Service;
 
@@ -32,7 +33,7 @@ public class UserApplyServiceImpl implements UserApplyService {
     private final ResumeRepository resumeRepository;
 
     @Override
-    public List<UserApplyResponse> getAllUserApply() {
+    public List<UserApplyResponse> getAllUserApply(Pageable pageable) {
         List<UserApply> userApplies = userApplyRepository.findAll();
         List<UserApplyResponse> appliesResponses = new ArrayList<>();
         for (UserApply apply : userApplies) {
@@ -64,18 +65,15 @@ public class UserApplyServiceImpl implements UserApplyService {
     public UserApplyResponse updateUserApply(Long id, UserApplyRequest userApplyRequest) {
         if (userApplyRepository.existsById(id)) {
             UserApply existUserApply = userApplyRepository.getReferenceById(id);
-            if (userApplyRequest.getHireCode() == 1) {
+            if (!userApplyRequest.isHire()) {
                 existUserApply.setHire(true);
                 return UserApplyResponse.builder()
                         .message("Hired").build();
-            } else if (userApplyRequest.getHireCode() == 0) {
+            }
+            else{
                 existUserApply.setHire(false);
                 return UserApplyResponse.builder()
                         .message("Fired").build();
-            } else {
-                return UserApplyResponse.builder()
-                        .message("code Error").build();
-
             }
         }
         return null;

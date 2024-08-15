@@ -16,6 +16,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.validation.Valid;
+import java.io.IOException;
+import java.net.URI;
 import java.util.*;
 
 
@@ -29,14 +31,14 @@ public class RegistrationController {
     private final JwtTokenService jwtTokenService;
     private final FileService fileService;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
-    
+
     @PostMapping("users")
     public ResponseEntity<LoginFailResponse> registrationRequest(@Valid @RequestBody UserRegistrationRequest userRegistrationRequest) {
         // 회원가입 로직
         String message = userService.registrationUser(userRegistrationRequest).getMessage();
         LoginRequest loginRequest = LoginRequest.builder()
                 .password(userRegistrationRequest.getPassword()).username(userRegistrationRequest.getUsername()).build();
-        
+
         // 로그인 로직
         if (userService.findByUsername(loginRequest.getUsername()).isEmpty()) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
@@ -60,9 +62,19 @@ public class RegistrationController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
                     .body(new LoginFailResponse("로그인 권한이 없습니다. 관리자에게 문의하세요."));
         }
-
     }
 
+    @PostMapping(value = "/user/sign",consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<LoginResponse> signUpRequest(@ModelAttribute MultipartFile file) {
+        try {
+            System.out.println(file.getBytes().toString());
+            fileService.backgroundCutout(file.getInputStream());
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
     @PostMapping("company")
     public ResponseEntity<LoginFailResponse> registrationRequest(@Valid @RequestBody CompanyRegistrationRequest companyRegistrationRequest, RedirectAttributes redirectAttributes) {
@@ -94,7 +106,6 @@ public class RegistrationController {
                     .body(new LoginFailResponse("로그인 권한이 없습니다. 관리자에게 문의하세요."));
         }
     }
-
     @PostMapping(value = "/company/IDcard", consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<String>> CompanyIDOCR(@ModelAttribute MultipartFile file){
 
