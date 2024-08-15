@@ -39,7 +39,7 @@ public interface UserService {
 
     AuthenticatedCompanyDto findAuthenticatedCompanyByUsername(String username);
 
-    UserInfoDTO updateUserInfo(UserInfoDTO request);
+    UserInfoResponse updateUserInfo(UserInfoDTO request);
 
     CompanyInfoDTO updateCompanyInfo(CompanyInfoDTO request);
 

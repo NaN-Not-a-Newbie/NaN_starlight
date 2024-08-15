@@ -1,17 +1,18 @@
 package com.nan.boilerplate.springboot.security.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import org.springframework.boot.autoconfigure.batch.BatchDataSource;
+
+import javax.validation.constraints.NotEmpty;
 
 
 @Getter
 @Setter
-public class LoginResponse extends LoginFailResponse{
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+public class LoginResponse {
     private String token;
+    private String message;
 
-    public LoginResponse(String token, String message) {
-        super(message);
-        this.token = token;
-    }
 }

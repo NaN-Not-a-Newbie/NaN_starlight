@@ -28,11 +28,11 @@ public class LoginController {
 
     // 로그인
     @PostMapping("/user")
-    public ResponseEntity<LoginFailResponse> userLoginRequest(@Valid @RequestBody LoginRequest loginRequest) {
+    public ResponseEntity<LoginResponse> userLoginRequest(@Valid @RequestBody LoginRequest loginRequest) {
 
         if (userService.findByUsername(loginRequest.getUsername()).isEmpty()) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-                    .body(new LoginFailResponse("존재하지 않는 아이디 입니다."));
+                    .body(new LoginResponse("존재하지 않는 아이디 입니다."));
         }
 
         User user = userService.findByUsername(loginRequest.getUsername()).get();

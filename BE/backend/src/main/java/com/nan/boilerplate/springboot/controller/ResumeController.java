@@ -80,6 +80,11 @@ public class ResumeController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteResume(@PathVariable Long id) {
+        String myName = SecurityConstants.getAuthenticatedUsername(); // 로그인 된 계정의 username
+        String author = resumeService.getResumeById(id).get().getUser().getUsername(); // 글 작성자
+        if (!author.equals(myName)) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("작성자만 삭제할 수 있습니다.");
+        }
         try {
             resumeService.deleteResume(id);
             return ResponseEntity.noContent().build();

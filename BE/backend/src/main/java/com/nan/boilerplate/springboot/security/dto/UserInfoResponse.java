@@ -1,24 +1,42 @@
 package com.nan.boilerplate.springboot.security.dto;
 
+import com.nan.boilerplate.springboot.exceptions.EnumPattern;
 import com.nan.boilerplate.springboot.model.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+
 @Getter
 @Setter
-public class UserInfoResponse extends UserInfoDTO{
+@Builder
+public class UserInfoResponse {
+    private String username;
+
+    private String name;
+
+    private String birthday;
+
+    private String phoneNum;
+
+    private boolean isMale;
+
+    private EnvEyesight envEyesight;
+
+    private EnvBothHands envBothHands;
+
+    private EnvHandWork envhandWork;
+
+    private EnvLiftPower envLiftPower;
+
+    private EnvStndWalk envStndWalk;
+
+    private EnvLstnTalk envLstnTalk;
+
+    private Education education;
 
     private String age;
-
-    @Builder(builderMethodName = "userInfoResponseBuilder")
-    public UserInfoResponse(String username, String name, String birthday, String phoneNum, boolean isMale,
-                            EnvEyesight envEyesight, EnvBothHands envBothHands, EnvHandWork envhandWork,
-                            EnvLiftPower envLiftPower, EnvStndWalk envStndWalk, EnvLstnTalk envLstnTalk,
-                            Education education, String age) {
-        super(username, name, birthday, phoneNum, isMale, envEyesight, envBothHands, envhandWork,
-                envLiftPower, envStndWalk, envLstnTalk, education);
-        this.age = age;
-    }
 
 }
