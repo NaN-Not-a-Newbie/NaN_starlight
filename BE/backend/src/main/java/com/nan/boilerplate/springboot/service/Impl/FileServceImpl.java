@@ -3,6 +3,8 @@ package com.nan.boilerplate.springboot.service.Impl;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ArrayNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.itextpdf.io.font.PdfEncodings;
 import com.itextpdf.io.image.ImageData;
 import com.itextpdf.io.image.ImageDataFactory;
@@ -14,6 +16,7 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
+import com.nan.boilerplate.springboot.exceptions.BadRequestException;
 import com.nan.boilerplate.springboot.model.JobOffer;
 import com.nan.boilerplate.springboot.model.User;
 import com.nan.boilerplate.springboot.security.dto.CompanyRegistrationRequest;
@@ -27,18 +30,10 @@ import com.nan.boilerplate.springboot.security.service.UserService;
 import com.nan.boilerplate.springboot.security.utils.SecurityConstants;
 import com.nan.boilerplate.springboot.service.FileService;
 import com.nan.boilerplate.springboot.service.JobOfferService;
-import io.swagger.v3.core.util.Json;
 import lombok.RequiredArgsConstructor;
-import org.apache.pdfbox.Loader;
-import org.apache.pdfbox.pdmodel.PDDocument;
 
-import org.apache.pdfbox.rendering.ImageType;
-import org.apache.pdfbox.rendering.PDFRenderer;
 import org.apache.tomcat.util.codec.binary.Base64;
-import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
-import org.json.JSONArray;
-import org.json.JSONObject;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
@@ -46,21 +41,15 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.imageio.ImageIO;
-import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletResponse;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.UUID;
+
 
 @Service
 @RequiredArgsConstructor
@@ -81,6 +70,9 @@ public class FileServceImpl implements FileService {
     public void FileDownloadContract(HttpServletResponse response) {
         String myName = SecurityConstants.getAuthenticatedUsername();
 
+        if(userService.findByUsername(myName).isEmpty()){
+            throw new BadRequestException("존재하지 않는 유저입니다.");
+        }
         User user = userService.findByUsername(myName).get();
         String paper="jobPaper.pdf";
         try {
@@ -123,19 +115,24 @@ public class FileServceImpl implements FileService {
 
         try {
             // JSON 데이터 구성
-            JSONObject json = new JSONObject();
+            ObjectMapper objectMapper = new ObjectMapper();
+
+            // JSON 객체 생성
+            ObjectNode json = objectMapper.createObjectNode();
             json.put("version", "V2");
             json.put("requestId", UUID.randomUUID().toString());
             json.put("timestamp", System.currentTimeMillis());
 
-            JSONObject image = new JSONObject();
+            // 이미지 객체 생성
+            ObjectNode image = objectMapper.createObjectNode();
             image.put("format", multipartFile.getOriginalFilename().substring(multipartFile.getOriginalFilename().lastIndexOf(".")+1));
             image.put("data", Base64.encodeBase64String(multipartFile.getBytes()));
             image.put("name", "StarLightCompany");
 
-            JSONArray images = new JSONArray();
-            images.put(image);
-            json.put("images", images);
+            // 이미지 배열 생성 및 추가
+            ArrayNode images = objectMapper.createArrayNode();
+            images.add(image);
+            json.set("images", images);
 
             // RestTemplate 인스턴스 생성
             RestTemplate restTemplate = new RestTemplate();
@@ -170,12 +167,18 @@ public class FileServceImpl implements FileService {
         String dst="BE/backend/src/main/resources/static/contracts/"+uuid+".pdf";
         String sign="BE/backend/src/main/resources/static/sign";
         String myName = SecurityConstants.getAuthenticatedUsername();
+        if(userService.findByUsername(myName).isEmpty() || jobOfferService.getJobOfferById(userApplyRequest.getJobOfferId()).isEmpty()){
+            throw new BadRequestException("존재하지 않는 사용자 혹은 구인공고입니다.");
+        }
         User user = userService.findByUsername(myName).get();
 
         JobOffer jobOffer = jobOfferService.getJobOfferById(userApplyRequest.getJobOfferId()).get();
 
         try{
             File dstFile = new File(dst);
+            if(!dstFile.getParentFile().exists()){
+                throw new BadRequestException("존재하지 않는 사용자입니다.");
+            }
             dstFile.getParentFile().mkdirs();  // 디렉토리가 없으면 생성
             PdfFont font = PdfFontFactory.createFont("c:/windows/fonts/H2MJRE.TTF", PdfEncodings.IDENTITY_H);
 
@@ -202,7 +205,7 @@ public class FileServceImpl implements FileService {
             paragraphName.setFixedPosition(1, 120, 740, 700); // 페이지 1, x=50, y=1050, 너비=700 포인트
             paragraphcompanyName.setFixedPosition(1, 300, 740, 600);
             paragraphLocation.setFixedPosition(1, 200, 140, 1500);
-            paragraphSalary.setFixedPosition(1, 170, 560, 400);
+            paragraphSalary.setFixedPosition(1, 210, 560, 400);
             paragraphSalaryType.setFixedPosition(1, 120, 560, 300);
 
             document.add(paragraphName);
