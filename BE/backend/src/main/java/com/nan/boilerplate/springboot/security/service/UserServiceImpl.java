@@ -8,17 +8,21 @@ import com.nan.boilerplate.springboot.repository.UserRepository;
 import com.nan.boilerplate.springboot.security.dto.*;
 import com.nan.boilerplate.springboot.security.mapper.UserMapper;
 import com.nan.boilerplate.springboot.security.utils.SecurityConstants;
+import com.nan.boilerplate.springboot.service.FileService;
 import com.nan.boilerplate.springboot.service.UserValidationService;
 import com.nan.boilerplate.springboot.utils.GeneralMessageAccessor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 
 @Slf4j
@@ -78,9 +82,9 @@ public class UserServiceImpl implements UserService {
     @Override
     public RegistrationResponse registrationCompany(CompanyRegistrationRequest companyRegistrationRequest) {
 
+        String uuid = UUID.randomUUID().toString();
         userValidationService.validateUsernameUnique(companyRegistrationRequest.getUsername()); // 이미 존재하는 유저인지 확인
         userValidationService.checkPassword(companyRegistrationRequest.getPassword(), companyRegistrationRequest.getPassword2());
-
         if (!companyRegistrationRequest.getCompanyRegistrationNumber().chars().allMatch(Character::isDigit)) {
             throw new BadRequestException("사업자등록번호는 숫자로만 입력하세요.");
         }
@@ -98,6 +102,7 @@ public class UserServiceImpl implements UserService {
         log.info("{} registered successfully!", companyName);
 
         return new RegistrationResponse().builder().message(registrationSuccessMessage).username(companyName).password(companyRegistrationRequest.getPassword()).build();//User
+
     }
 
     @Override

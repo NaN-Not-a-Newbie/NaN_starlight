@@ -10,7 +10,9 @@ import java.io.InputStreamReader;
 import java.util.List;
 
 public interface FileService {
-    void FileUpload(MultipartFile file, String uuid);
+    void FileUploadUserSign(MultipartFile file, String uuid);
+
+    void FileDownloadContract();
 
     List<String> NaverOCRCompany(MultipartFile multipartFile, String uuid);
 

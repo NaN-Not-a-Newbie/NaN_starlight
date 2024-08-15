@@ -4,6 +4,7 @@ import com.nan.boilerplate.springboot.model.Company;
 import com.nan.boilerplate.springboot.model.User;
 import com.nan.boilerplate.springboot.model.UserRole;
 import com.nan.boilerplate.springboot.security.dto.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Optional;
 

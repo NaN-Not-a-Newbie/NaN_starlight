@@ -19,7 +19,9 @@ import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
 import com.nan.boilerplate.springboot.model.JobOffer;
 import com.nan.boilerplate.springboot.model.User;
+import com.nan.boilerplate.springboot.security.dto.CompanyRegistrationRequest;
 import com.nan.boilerplate.springboot.security.dto.UserApplyRequest;
+import com.nan.boilerplate.springboot.security.dto.UserRegistrationRequest;
 import com.nan.boilerplate.springboot.security.service.UserService;
 import com.nan.boilerplate.springboot.security.utils.SecurityConstants;
 import com.nan.boilerplate.springboot.service.FileService;
@@ -72,7 +74,7 @@ public class FileServceImpl implements FileService {
     String CompanyKey;
     private String uploadDir = "src/main/resources/static/uploads";
 
-    public void FileUpload(MultipartFile multipartFile, String uuid) {
+    public void FileUploadUserSign(MultipartFile multipartFile, String uuid) {
         //uuid로 저장해야함
         // File.seperator 는 OS종속적이다.
         // Spring에서 제공하는 StringUtils.cleanPath()를 통해서 ../ 내부 점들에 대해서 사용을 억제한다
@@ -84,6 +86,18 @@ public class FileServceImpl implements FileService {
         }
     }
 
+    public void FileDownloadContract() {
+        //uuid로 저장해야함
+        // File.seperator 는 OS종속적이다.
+        // Spring에서 제공하는 StringUtils.cleanPath()를 통해서 ../ 내부 점들에 대해서 사용을 억제한다
+        Path copyOfLocation = Paths.get(uploadDir);
+//        try {
+//            Files.copy(multipartFile.getInputStream(), copyOfLocation.resolve(uuid), StandardCopyOption.REPLACE_EXISTING);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+        }
+
+    @Override
     public List<String> NaverOCRCompany(MultipartFile multipartFile, String uuid) {
         List<String> parseData = null;
 
@@ -120,6 +134,7 @@ public class FileServceImpl implements FileService {
             String responseBody = response.getBody();
             System.out.println(responseBody);
             parseData = jsonparse(responseBody);
+
             return parseData;
         } catch (Exception e) {
             e.printStackTrace();
@@ -198,6 +213,7 @@ public class FileServceImpl implements FileService {
 
     }
 
+    @Override
     public void backgroundCutout(InputStream inputPdfStream) throws IOException {
         String uuid = UUID.randomUUID().toString();
         String dst = "BE/backend/src/main/resources/static/sign/" + uuid + ".png";
@@ -234,8 +250,6 @@ public class FileServceImpl implements FileService {
             }
         }
     }
-
-
     private static List<String> jsonparse(String response) throws Exception {
         // json 파싱 (기존 코드 사용)
         ObjectMapper objectMapper = new ObjectMapper();
@@ -248,23 +262,10 @@ public class FileServceImpl implements FileService {
                     .path(0)
                     .path("bizLicense")
                     .path("result")
-                    .path("birth")
-                    .path(0)
-                    .path("text").asText());
-            parseData.add(jsonNode.path("images")
-                    .path(0)
-                    .path("bizLicense")
-                    .path("result")
                     .path("bisAddress")
                     .path(0)
                     .path("text").asText());
-            parseData.add(jsonNode.path("images")
-                    .path(0)
-                    .path("bizLicense")
-                    .path("result")
-                    .path("registerNumber")
-                    .path(0)
-                    .path("text").asText());
+
             parseData.add(jsonNode.path("images")
                     .path(0)
                     .path("bizLicense")
@@ -276,17 +277,10 @@ public class FileServceImpl implements FileService {
                     .path(0)
                     .path("bizLicense")
                     .path("result")
-                    .path("bisType")
-                    .path(0)
-                    .path("text").asText());
-            parseData.add(jsonNode.path("images")
-                    .path(0)
-                    .path("bizLicense")
-                    .path("result")
                     .path("companyName")
                     .path(0)
                     .path("text").asText());
-            
+
             System.out.println(parseData);
             return parseData;
         } catch (Exception e) {
@@ -295,4 +289,9 @@ public class FileServceImpl implements FileService {
         return parseData;//빈 리스트
     }
 }
+
+
+
+
+
 
