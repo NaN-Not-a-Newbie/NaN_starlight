@@ -81,9 +81,9 @@ public class UserServiceImpl implements UserService {
         userValidationService.validateUsernameUnique(companyRegistrationRequest.getUsername()); // 이미 존재하는 유저인지 확인
         userValidationService.checkPassword(companyRegistrationRequest.getPassword(), companyRegistrationRequest.getPassword2());
 
-        if (!companyRegistrationRequest.getCompanyRegistrationNumber().chars().allMatch(Character::isDigit)) {
-            throw new BadRequestException("사업자등록번호는 숫자로만 입력하세요.");
-        }
+//        if (!companyRegistrationRequest.getCompanyRegistrationNumber().chars().allMatch(Character::isDigit)) {
+//            throw new BadRequestException("사업자등록번호는 숫자로만 입력하세요.");
+//        }
 
         final Company company = UserMapper.INSTANCE.convertToCompany(companyRegistrationRequest); // 엔티티 디티오 변환
         company.setPassword(bCryptPasswordEncoder.encode(company.getPassword()));
@@ -92,7 +92,7 @@ public class UserServiceImpl implements UserService {
 
         companyRepository.save(company);
 
-        final String companyName = companyRegistrationRequest.getCompanyName();
+        final String companyName = company.getCompanyName();
         final String registrationSuccessMessage = generalMessageAccessor.getMessage(null, REGISTRATION_SUCCESSFUL, companyName);
 
         log.info("{} registered successfully!", companyName);

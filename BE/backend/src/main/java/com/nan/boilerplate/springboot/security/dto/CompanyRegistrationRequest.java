@@ -19,22 +19,20 @@ import javax.validation.constraints.Size;
 @NoArgsConstructor
 public class CompanyRegistrationRequest {
 
-    @NotEmpty(message = "사업자등록번호 10자리 입력")
-    @Length(min = 10, max = 10, message = "사업자등록번호 10자리를 입력하세요.")
-    private String companyRegistrationNumber; //사업자 등록 번호
-
-    // private 사업자등록증명
-
-    @NotEmpty(message = "{registration_name_not_empty}")
-    private String companyName;
+//    @NotEmpty(message = "사업자등록번호 10자리 입력")
+//    @Length(min = 10, max = 10, message = "사업자등록번호 10자리를 입력하세요.")
+//    private String companyRegistrationNumber; //사업자 등록 번호
+//
+//    @NotEmpty(message = "{registration_name_not_empty}")
+//    private String companyName;
 
     // 직종 -> 디비 만들고 추가
 
     @NotEmpty(message = "{registration_name_not_empty}")
     private String PhoneNum;
 
-    @NotEmpty(message = "{registration_name_not_empty}")
-    private String CompanyAddress;
+//    @NotEmpty(message = "{registration_name_not_empty}")
+//    private String CompanyAddress;
 
     @NotEmpty(message = "{registration_username_not_empty}")
     private String username;

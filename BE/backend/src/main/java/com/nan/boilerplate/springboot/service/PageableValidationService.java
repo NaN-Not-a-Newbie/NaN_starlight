@@ -19,10 +19,11 @@ public class PageableValidationService {
     private final Class<JobOffer> entityClass = JobOffer.class;
 
     public Pageable validateAndCorrectPageable(Pageable pageable) {
+        System.out.println("------------------1");
         List<Sort.Order> validOrders = pageable.getSort().stream()
                 .filter(order -> isValidField(order.getProperty()))
                 .collect(Collectors.toList());
-
+        System.out.println(validOrders);
         if (validOrders.isEmpty()) {
             throw new BadRequestException("존재하지 않는 컬럼 입니다.");
         } else {

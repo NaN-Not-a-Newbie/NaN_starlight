@@ -8,5 +8,6 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ResumeSimpleResponse {
+    private Long id;
     private String title;
 }

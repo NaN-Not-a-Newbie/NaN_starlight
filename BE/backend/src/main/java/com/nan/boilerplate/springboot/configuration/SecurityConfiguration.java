@@ -41,16 +41,25 @@ public class SecurityConfiguration {
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
                 .authorizeRequests()
                 .antMatchers("/register/**", "/login/**", "/api/swagger/**", "/actuator/**").permitAll()
-                .antMatchers(GET, "/jobOffer/initial").hasAnyAuthority("USER")
-                .antMatchers(GET, "/jobOffer", "/jobOffer/{id}").permitAll()
+                .antMatchers(GET, "/jobOffer/initial").hasAnyAuthority("USER") // 맞춤 공고는 로그인된 유저만
+                .antMatchers(GET, "/jobOffer", "/jobOffer/{id}").permitAll() // 공고 조회는 비로그인에게도 허용
                 .antMatchers(PATCH, "/admin/manageActive/**").hasAnyAuthority("ADMIN", "STAFF") // 로그인 승인
-                .antMatchers(PATCH, "/admin/manageAuthority/**").hasAnyAuthority("ADMIN")
-//                .antMatchers(POST, "/resume").hasAnyAuthority("USER") // 지원서 작성과 수정은 유저만 허용
-//                .antMatchers(PUT, "/resume/{id}").hasAnyAuthority("USER")
-//                .antMatchers(POST, "/jobOffer").hasAnyAuthority("COMPANY") // 공고 작성과 수정은 회사만 허용
-//                .antMatchers(PUT, "/jobOffer/{id}").hasAnyAuthority("COMPANY")
-                .antMatchers(POST, "/userApply").hasAnyAuthority("USER") // 유저가 기업에게 구직 신청
-                .antMatchers(PUT, "/userApply/{id}").hasAnyAuthority("COMPANY") // 기업이 유저 채용
+                .antMatchers(PATCH, "/admin/manageAuthority/**").hasAnyAuthority("ADMIN") // 유저 권한 관리
+                // 이력서 작성,수정,삭제는 유저만 허용
+                .antMatchers(POST, "/resume").hasAnyAuthority("USER")
+                .antMatchers(PUT, "/resume/{id}").hasAnyAuthority("USER")
+                .antMatchers(DELETE, "/resume/{id}").hasAnyAuthority("USER")
+                
+                 // 공고 작성,수정,삭제(관리자도)는 회사만 허용
+                .antMatchers(POST, "/jobOffer").hasAnyAuthority("COMPANY")
+                .antMatchers(PUT, "/jobOffer/{id}").hasAnyAuthority("COMPANY")
+                .antMatchers(DELETE, "/jobOffer/{id}").hasAnyAuthority("COMPANY", "STAFF","ADMIN")
+
+                .antMatchers(PUT, "/memberInfo/company").hasAnyAuthority("COMPANY")
+                .antMatchers(PUT, "/memberInfo/user").hasAnyAuthority("USER")
+
+                .antMatchers(POST, "/userApply").hasAnyAuthority("USER") // -> 유저가 기업에게 구직 신청
+                .antMatchers(PUT, "/userApply/{id}").hasAnyAuthority("COMPANY") // -> 기업이 유저 채용
                 .anyRequest().authenticated().and()
                 .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)

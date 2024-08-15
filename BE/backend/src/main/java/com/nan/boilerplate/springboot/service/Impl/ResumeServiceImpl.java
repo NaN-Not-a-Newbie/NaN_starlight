@@ -31,7 +31,7 @@ public class ResumeServiceImpl implements ResumeService{
         List<ResumeSimpleResponse> resumesResponses = new ArrayList<>();
         for (Resume resume : resumes) {
             resumesResponses.add(ResumeSimpleResponse.builder()
-                    .title(resume.getTitle()).build());
+                    .id(resume.getId()).title(resume.getTitle()).build());
         }
         return resumesResponses;
     }
@@ -58,9 +58,10 @@ public class ResumeServiceImpl implements ResumeService{
             Resume existResume = resumeRepository.getReferenceById(id);
             existResume.setTitle(resumeRequest.getTitle());
             existResume.setBody(resumeRequest.getBody());
+            Resume resume = resumeRepository.save(existResume);
             return ResumeSimpleResponse.builder()
-                    .title(resumeRepository.save(existResume)
-                            .getTitle()).build();
+                    .id(resume.getId())
+                    .title(resume.getTitle()).build();
 
     }
 

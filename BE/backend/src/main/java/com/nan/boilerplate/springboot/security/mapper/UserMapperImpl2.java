@@ -37,12 +37,12 @@ public class UserMapperImpl2 implements UserMapper{
             return null;
         } else {
             Company.CompanyBuilder company = Company.builder();
-            company.companyName(companyRegistrationRequest.getCompanyName());
-            company.companyRegistrationNumber(companyRegistrationRequest.getCompanyRegistrationNumber());
+//            company.companyName(companyRegistrationRequest.getCompanyName());
+//            company.companyRegistrationNumber(companyRegistrationRequest.getCompanyRegistrationNumber());
             company.username(companyRegistrationRequest.getUsername());
             company.password(companyRegistrationRequest.getPassword());
             company.phoneNum(companyRegistrationRequest.getPhoneNum());
-            company.companyAddress(companyRegistrationRequest.getCompanyAddress());
+//            company.companyAddress(companyRegistrationRequest.getCompanyAddress());
             return company.build();
         }
     }

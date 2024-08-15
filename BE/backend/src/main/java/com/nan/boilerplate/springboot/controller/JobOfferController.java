@@ -100,11 +100,14 @@ public class JobOfferController {
     @GetMapping("/initial")
     public ResponseEntity<Page<JobOfferSimpleResponse>> initialJobOffer(Pageable pageable){
         try {
-            return ResponseEntity.ok(jobOfferService.initialJobOffer(pageable));
+            Page<JobOfferSimpleResponse> page = jobOfferService
+                    .initialJobOffer(pageableValidationService.validateAndCorrectPageable(pageable));
+
+            return ResponseEntity.ok(page);
         } catch (Exception e) {
 
             log.error("Error occurred while fetching job offers page", e);
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "서버에서 문제가 발생했습니다.");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "존재하지 않는 컬럼입니다.");
         }
     }
 
