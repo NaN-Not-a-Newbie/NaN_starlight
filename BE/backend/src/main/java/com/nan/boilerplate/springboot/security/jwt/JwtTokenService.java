@@ -2,7 +2,6 @@ package com.nan.boilerplate.springboot.security.jwt;
 
 import com.nan.boilerplate.springboot.model.Company;
 import com.nan.boilerplate.springboot.model.User;
-import com.nan.boilerplate.springboot.repository.UserRepository;
 import com.nan.boilerplate.springboot.security.dto.AuthenticatedCompanyDto;
 import com.nan.boilerplate.springboot.security.dto.AuthenticatedUserDto;
 import com.nan.boilerplate.springboot.security.dto.LoginRequest;
@@ -14,8 +13,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.stereotype.Service;
-
-import javax.validation.constraints.Null;
 
 
 @Slf4j
@@ -30,14 +27,14 @@ public class JwtTokenService {
     private final AuthenticationManager authenticationManager;
 
     public LoginResponse getLoginResponse(LoginRequest loginRequest) {
-        System.out.println("----------10");
         final String username = loginRequest.getUsername();
         final String password = loginRequest.getPassword();
         final UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(username, password);
-        System.out.println("----------20");
+
         authenticationManager.authenticate(usernamePasswordAuthenticationToken);
-        System.out.println("----------30");
-        if(userService.findByUsername(loginRequest.getUsername())==null){
+
+//        if(userService.findByUsername(loginRequest.getUsername())==null){
+        if(userService.findByUsername(loginRequest.getUsername()).isEmpty()){
             final AuthenticatedCompanyDto authenticatedCompanyDto = userService.findAuthenticatedCompanyByUsername(username);
             final Company user = UserMapper.INSTANCE.convertToCompany(authenticatedCompanyDto);
             final String token = jwtTokenManager.generateCompanyToken(user);

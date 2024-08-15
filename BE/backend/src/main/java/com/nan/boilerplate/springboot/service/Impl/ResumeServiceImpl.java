@@ -46,7 +46,7 @@ public class ResumeServiceImpl implements ResumeService{
         Resume resume = Resume.builder()
                 .title(resumeRequest.getTitle())
                 .body(resumeRequest.getBody())
-                .user(userService.findByUsername(SecurityConstants.getAuthenticatedUsername()))
+                .user(userService.findByUsername(SecurityConstants.getAuthenticatedUsername()).get())
                 .build();
         return resumeRepository.save(resume).getId();
     }

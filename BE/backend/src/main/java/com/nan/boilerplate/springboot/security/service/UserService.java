@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public interface UserService {
 
-    User findByUsername(String username);
+    Optional<User> findByUsername(String username);
 
     User activateUser(String username);
 
@@ -35,6 +35,12 @@ public interface UserService {
 
     AuthenticatedCompanyDto findAuthenticatedCompanyByUsername(String username);
 
-//    String calculateAge(String birthday);
+    UserInfoDTO updateUserInfo(UserInfoDTO request);
+
+    CompanyInfoDTO updateCompanyInfo(CompanyInfoDTO request);
+
+    String validPassword(String password, String encodedPassword);
+
+    String withdraw(UserRole userRole, Long id);
 
 }

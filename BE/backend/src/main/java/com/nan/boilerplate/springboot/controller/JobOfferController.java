@@ -1,15 +1,19 @@
 package com.nan.boilerplate.springboot.controller;
 
+import com.nan.boilerplate.springboot.exceptions.BadRequestException;
 import com.nan.boilerplate.springboot.model.JobOffer;
 import com.nan.boilerplate.springboot.security.dto.JobOfferRequest;
 import com.nan.boilerplate.springboot.security.dto.JobOfferResponse;
 import com.nan.boilerplate.springboot.security.dto.JobOfferSimpleResponse;
 import com.nan.boilerplate.springboot.security.utils.SecurityConstants;
 import com.nan.boilerplate.springboot.service.JobOfferService;
+import com.nan.boilerplate.springboot.service.PageableValidationService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.util.ReflectionUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,8 +21,10 @@ import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.server.ResponseStatusException;
 import org.webjars.NotFoundException;
 
+import java.lang.reflect.Field;
 import java.net.URI;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Slf4j
 @CrossOrigin
@@ -26,24 +32,25 @@ import java.util.List;
 @RequestMapping("/jobOffer")
 public class JobOfferController {
     private final JobOfferService jobOfferService;
+    private final PageableValidationService pageableValidationService;
 
     @Autowired
-    public JobOfferController(JobOfferService jobOfferService) {
+    public JobOfferController(JobOfferService jobOfferService, PageableValidationService pageableValidationService) {
         this.jobOfferService = jobOfferService;
+        this.pageableValidationService = pageableValidationService;
     }
     
     // 로그인 안 된 상태에서 모든 공고 페이징 불러오기
     @GetMapping
     public ResponseEntity<Page<JobOfferSimpleResponse>> getAllJobOffers(Pageable pageable) {
         try {
-            // 서비스 호출 및 응답 생성
-            Page<JobOfferSimpleResponse> page = jobOfferService.getAllJobOffers(pageable);
+            Page<JobOfferSimpleResponse> page = jobOfferService
+                    .getAllJobOffers(pageableValidationService.validateAndCorrectPageable(pageable));
             return ResponseEntity.ok(page);
 
-        } catch (Exception e) {
-            // 오류 발생 시 예외 처리 및 로깅
+        } catch (BadRequestException e) {
             log.error("Error occurred while fetching job offers page", e);
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "서버에서 문제가 발생했습니다.");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "존재하지 않는 컬럼입니다.");
         }
     }
     
@@ -99,11 +106,6 @@ public class JobOfferController {
             log.error("Error occurred while fetching job offers page", e);
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "서버에서 문제가 발생했습니다.");
         }
-//        size : 한 페이지당 담길 데이터의 양 ex) 10, 5, ...
-//        page : size를 기준으로 몇번째 페이지인지? ex) 0, 1, ...
-//        sort : 무엇을 기준으로 정렬할 것인지? ex) createdAt,DESC, description
-//        page=0&size=10&sort=description,DESC
-
     }
 
 //    @GetMapping("/gove")
@@ -111,7 +113,7 @@ public class JobOfferController {
 //        try{
 //            jobOfferService.getOptialJobOffers();
 //            return ResponseEntity.noContent().build();
-//    }
+//      }
 //        catch (Exception e){
 //            return ResponseEntity.notFound().build();
 //        }
