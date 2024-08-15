@@ -38,7 +38,7 @@ public class JobOfferSimpleResponse {
                 .title(offer.getTitle())
                 .salaryType(offer.getSalaryType())
                 .salary(offer.getSalary())
-                .career(offer.getSalary())
+                .career(offer.getCareer())
                 .education(offer.getEducation())
                 .location(offer.getLocation())
                 .deadLine(offer.getDeadLine())
