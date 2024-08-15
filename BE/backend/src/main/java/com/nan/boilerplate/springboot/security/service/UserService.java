@@ -21,7 +21,9 @@ public interface UserService {
 
     AuthenticatedUserDto findAuthenticatedUserByUsername(String username);
 
-    void paperPathAdd();
+    void paperPathAdd(String path,String userName);
+
+    void signPathAdd(String path,String userName);
 
     AuthenticatedUserDto demoteUser(String username);
 

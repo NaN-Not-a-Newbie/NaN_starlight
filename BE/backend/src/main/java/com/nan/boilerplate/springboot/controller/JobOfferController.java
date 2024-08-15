@@ -44,6 +44,7 @@ public class JobOfferController {
     @GetMapping
     public ResponseEntity<Page<JobOfferSimpleResponse>> getAllJobOffers(Pageable pageable) {
         try {
+
             Page<JobOfferSimpleResponse> page = jobOfferService
                     .getAllJobOffers(pageableValidationService.validateAndCorrectPageable(pageable));
             return ResponseEntity.ok(page);

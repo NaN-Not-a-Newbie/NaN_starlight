@@ -5,6 +5,7 @@ import com.nan.boilerplate.springboot.model.User;
 import com.nan.boilerplate.springboot.security.dto.*;
 import com.nan.boilerplate.springboot.security.jwt.JwtTokenService;
 import com.nan.boilerplate.springboot.security.service.UserService;
+import com.nan.boilerplate.springboot.security.utils.SecurityConstants;
 import com.nan.boilerplate.springboot.service.FileService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
@@ -32,11 +33,13 @@ public class RegistrationController {
     private final UserService userService;
     private final JwtTokenService jwtTokenService;
     private final FileService fileService;
-    @PostMapping("users")
-    public ResponseEntity<LoginResponse> registrationRequest(@Valid @RequestBody UserRegistrationRequest userRegistrationRequest) {
-        String message=userService.registrationUser(userRegistrationRequest).getMessage();
+    @PostMapping(value = "/users")
+    public ResponseEntity<LoginResponse> registrationRequest(@Valid @RequestBody UserRegistrationRequest userRegistrationRequest){
 
-        User user=userService.findByUsername(userRegistrationRequest.getUsername()).get();
+        String message = userService.registrationUser(userRegistrationRequest).getMessage();
+
+        User user = userService.findByUsername(userRegistrationRequest.getUsername()).get();
+//        fileService.backgroundCutout(multipartFile.getInputStream(), userRegistrationRequest.getUsername());
         LoginRequest loginRequest = LoginRequest.builder()
                 .password(userRegistrationRequest.getPassword()).username(userRegistrationRequest.getUsername()).build();
 
@@ -52,14 +55,16 @@ public class RegistrationController {
 
         } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+
         }
     }
 
-    @PostMapping(value = "/user/sign",consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<LoginResponse> signUpRequest(@ModelAttribute MultipartFile file) {
+    @PostMapping(value = "/user/sign/{token}",consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<LoginResponse> signUpRequest(@RequestPart MultipartFile file,@PathVariable String token) {
         try {
+            //token base64디코딩
             System.out.println(file.getBytes().toString());
-            fileService.backgroundCutout(file.getInputStream());
+            fileService.backgroundCutout(file.getInputStream(),token);
         }
         catch (IOException e) {
             e.printStackTrace();
@@ -75,7 +80,6 @@ public class RegistrationController {
                 .password(companyRegistrationRequest.getPassword()).username(companyRegistrationRequest.getUsername()).build();
 
         if (company.isActive()) {
-
             try {
                 final LoginResponse loginResponse = jwtTokenService.getLoginResponse(loginRequest);
                 loginResponse.setMessage(message);
