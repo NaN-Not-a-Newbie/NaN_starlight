@@ -265,13 +265,10 @@ public class FileServceImpl implements FileService {
                     }
                 }
             }
-            System.out.println(token);
 
             byte[] decodedBytes = java.util.Base64.getDecoder().decode(token);
             String decodedStr = new String(decodedBytes);
-            System.out.println(decodedStr);
             String jwtToUsername = jwtTokenManager.getUsernameFromToken(decodedStr);
-            System.out.println(jwtToUsername);
             userService.signPathAdd(jwtToUsername,uuid +".png");
             // 수정된 이미지를 PNG 파일로 저장
             File outputImageFile = new File(dst);
