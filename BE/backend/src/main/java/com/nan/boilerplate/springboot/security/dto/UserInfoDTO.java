@@ -16,7 +16,7 @@ import javax.validation.constraints.Pattern;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserInfoDTO {
+public class UserInfoDTO implements InfoDTO {
     private String username;
 
     @NotEmpty
