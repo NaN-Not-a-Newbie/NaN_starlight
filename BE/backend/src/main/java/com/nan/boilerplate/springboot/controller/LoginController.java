@@ -2,7 +2,6 @@ package com.nan.boilerplate.springboot.controller;
 
 import com.nan.boilerplate.springboot.model.Company;
 import com.nan.boilerplate.springboot.model.User;
-import com.nan.boilerplate.springboot.security.dto.LoginFailResponse;
 import com.nan.boilerplate.springboot.security.dto.LoginRequest;
 import com.nan.boilerplate.springboot.security.dto.LoginResponse;
 import com.nan.boilerplate.springboot.security.jwt.JwtTokenService;
@@ -28,18 +27,18 @@ public class LoginController {
 
     // 로그인
     @PostMapping("/user")
-    public ResponseEntity<LoginFailResponse> userLoginRequest(@Valid @RequestBody LoginRequest loginRequest) {
+    public ResponseEntity<LoginResponse> userLoginRequest(@Valid @RequestBody LoginRequest loginRequest) {
 
         if (userService.findByUsername(loginRequest.getUsername()).isEmpty()) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-                    .body(new LoginFailResponse("존재하지 않는 아이디 입니다."));
+                    .body(new LoginResponse("존재하지 않는 아이디 입니다."));
         }
 
         User user = userService.findByUsername(loginRequest.getUsername()).get();
 
         if (!bCryptPasswordEncoder.matches(loginRequest.getPassword(), user.getPassword())) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-                    .body(new LoginFailResponse("잘못된 비밀번호 입니다."));
+                    .body(new LoginResponse("잘못된 비밀번호 입니다."));
         }
 
         if (user.isActive()) {
@@ -49,15 +48,15 @@ public class LoginController {
 
         } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-                    .body(new LoginFailResponse("로그인 권한이 없습니다. 관리자에게 문의하세요."));
+                    .body(new LoginResponse("로그인 권한이 없습니다. 관리자에게 문의하세요."));
         }
     }
 
     @PostMapping("/company")
-    public ResponseEntity<LoginFailResponse> companyLoginRequest(@Valid @RequestBody LoginRequest loginRequest) {
+    public ResponseEntity<LoginResponse> companyLoginRequest(@Valid @RequestBody LoginRequest loginRequest) {
         if (userService.findByCompanyName(loginRequest.getUsername()).isEmpty()) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-                    .body(new LoginFailResponse("존재하지 않는 아이디 입니다."));
+                    .body(new LoginResponse("존재하지 않는 아이디 입니다."));
 
         }
 
@@ -65,7 +64,7 @@ public class LoginController {
 
         if (!bCryptPasswordEncoder.matches(loginRequest.getPassword(), company.getPassword())) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-                    .body(new LoginFailResponse("잘못된 비밀번호 입니다."));
+                    .body(new LoginResponse("잘못된 비밀번호 입니다."));
         }
 
         if (company.isActive()) {
@@ -76,7 +75,7 @@ public class LoginController {
 
         } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-                    .body(new LoginFailResponse("로그인 권한이 없습니다. 관리자에게 문의하세요."));
+                    .body(new LoginResponse("로그인 권한이 없습니다. 관리자에게 문의하세요."));
         }
     }
 }

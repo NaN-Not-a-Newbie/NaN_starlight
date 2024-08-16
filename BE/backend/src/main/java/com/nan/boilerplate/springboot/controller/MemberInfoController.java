@@ -4,6 +4,7 @@ import com.nan.boilerplate.springboot.model.Company;
 import com.nan.boilerplate.springboot.model.User;
 import com.nan.boilerplate.springboot.security.dto.CompanyInfoDTO;
 import com.nan.boilerplate.springboot.security.dto.UserInfoDTO;
+import com.nan.boilerplate.springboot.security.dto.UserInfoResponse;
 import com.nan.boilerplate.springboot.security.service.UserService;
 import com.nan.boilerplate.springboot.security.utils.SecurityConstants;
 import com.nan.boilerplate.springboot.service.JobOfferService;
@@ -47,7 +48,7 @@ public class MemberInfoController {  // 회원정보 수정 컨트롤러
     }
 
     @PutMapping("/user")
-    public ResponseEntity<UserInfoDTO> updateUserInfo(@Valid @RequestBody UserInfoDTO userRequest) {
+    public ResponseEntity<UserInfoResponse> updateUserInfo(@Valid @RequestBody UserInfoDTO userRequest) {
         String myName = SecurityConstants.getAuthenticatedUsername();
         if (userService.findByUsername(myName).isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();

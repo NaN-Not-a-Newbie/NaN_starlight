@@ -3,6 +3,7 @@ package com.nan.boilerplate.springboot.service.Impl;
 import com.nan.boilerplate.springboot.model.JobOffer;
 import com.nan.boilerplate.springboot.model.Resume;
 import com.nan.boilerplate.springboot.repository.ResumeRepository;
+import com.nan.boilerplate.springboot.repository.UserRepository;
 import com.nan.boilerplate.springboot.security.dto.ResumeRequest;
 import com.nan.boilerplate.springboot.security.dto.ResumeResponse;
 import com.nan.boilerplate.springboot.security.dto.ResumeSimpleResponse;
@@ -11,6 +12,8 @@ import com.nan.boilerplate.springboot.security.utils.SecurityConstants;
 import com.nan.boilerplate.springboot.service.ResumeService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.webjars.NotFoundException;
 
@@ -24,16 +27,14 @@ import java.util.Optional;
 public class ResumeServiceImpl implements ResumeService{
     private final ResumeRepository resumeRepository;
     private final UserService userService;
+    private final UserRepository userRepository;
 
     @Override
-    public List<ResumeSimpleResponse> getAllResumes() {
-        List<Resume> resumes = resumeRepository.findAll();
-        List<ResumeSimpleResponse> resumesResponses = new ArrayList<>();
-        for (Resume resume : resumes) {
-            resumesResponses.add(ResumeSimpleResponse.builder()
-                    .id(resume.getId()).title(resume.getTitle()).build());
-        }
-        return resumesResponses;
+    public Page<ResumeSimpleResponse> getAllResumes(Pageable pageable) {
+        String myName = SecurityConstants.getAuthenticatedUsername();
+        Long myId = userService.findByUsername(myName).get().getId();
+        return resumeRepository.findByUserId(myId, pageable).map(ResumeSimpleResponse::toDTO);
+
     }
 
 
@@ -62,7 +63,6 @@ public class ResumeServiceImpl implements ResumeService{
             return ResumeSimpleResponse.builder()
                     .id(resume.getId())
                     .title(resume.getTitle()).build();
-
     }
 
     public void deleteResume(Long id) {

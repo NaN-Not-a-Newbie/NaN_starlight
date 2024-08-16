@@ -2,6 +2,8 @@ package com.nan.boilerplate.springboot.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -67,7 +69,13 @@ public class User {
 
     private boolean isWithdraw; // 관리자가 activateUser할 때 확인, true이면 activate 불가
 
-    private LocalDateTime localDateTime=LocalDateTime.now();
+//    private LocalDateTime localDateTime=LocalDateTime.now();
+
+    @CreatedDate
+    private LocalDateTime createdAt;
+
+    @LastModifiedDate
+    private LocalDateTime updatedAt;
 
     public boolean isActive() {
         return isActive;
