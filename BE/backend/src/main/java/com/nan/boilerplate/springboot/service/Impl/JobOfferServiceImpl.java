@@ -65,11 +65,21 @@ public class JobOfferServiceImpl implements JobOfferService {
     @Value("${API-KEY.JobOfferKey}")
     String jobOfferKey;
 
+
+   public List<JobOffer> getJobOfferById(Long companyId) {
+       return jobOfferRepository.findByCompanyId(companyId);
+   }
+
     // 로그인 안 된 상태에서 모든 공고 불러오기
     @Override
     public Page<JobOfferSimpleResponse> getAllJobOffers(Pageable pageable) {
 
         return jobOfferRepository.findAll(pageable).map(JobOfferSimpleResponse::toDTO);
+    }
+
+    @Override
+    public List<JobOffer> getJobOfferByCompanyId(Long companyId) {
+       return jobOfferRepository.findByCompanyId(companyId);
     }
 
     @Override

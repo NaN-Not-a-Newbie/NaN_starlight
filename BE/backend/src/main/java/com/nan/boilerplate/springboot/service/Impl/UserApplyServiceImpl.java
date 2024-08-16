@@ -2,6 +2,7 @@ package com.nan.boilerplate.springboot.service.Impl;
 
 
 import com.nan.boilerplate.springboot.model.JobOffer;
+import com.nan.boilerplate.springboot.model.User;
 import com.nan.boilerplate.springboot.model.UserApply;
 import com.nan.boilerplate.springboot.repository.JobOfferRepository;
 import com.nan.boilerplate.springboot.repository.ResumeRepository;
@@ -16,6 +17,7 @@ import com.nan.boilerplate.springboot.service.UserApplyService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Service;
@@ -31,6 +33,11 @@ public class UserApplyServiceImpl implements UserApplyService {
     private final UserApplyRepository userApplyRepository;
     private final JobOfferRepository jobOfferRepository;
     private final ResumeRepository resumeRepository;
+
+//    @Override
+//    public List<UserApply> findByJobOfferId(Long jobOfferId) {
+//        return userApplyRepository.findByJobOfferId(jobOfferId);
+//    }
 
     @Override
     public List<UserApplyResponse> getAllUserApply(Pageable pageable) {
@@ -52,13 +59,13 @@ public class UserApplyServiceImpl implements UserApplyService {
     }
 
     @Override
-    public Long addUserApply(UserApplyRequest userApplyRequest) {
+    public UserApply addUserApply(UserApplyRequest userApplyRequest) {
         UserApply userApply = UserApply.builder()
                 .jobOffer(jobOfferRepository.findById(userApplyRequest.getJobOfferId()).get())
                 .resume(resumeRepository.findById(userApplyRequest.getResumeId()).get())
                 .hire(false)
                 .build();
-        return userApplyRepository.save(userApply).getId();
+        return userApplyRepository.save(userApply);
     }
 
     @Override

@@ -15,6 +15,7 @@ import java.util.Optional;
 public interface JobOfferRepository extends JpaRepository<JobOffer, Long> , JpaSpecificationExecutor<JobOffer> {
     Page<JobOffer> findAll(Pageable pageable);
 
+    List<JobOffer> findByCompanyId(Long companyId);
 
     Page<JobOffer> findByEnvhandWorkOrEnvBothHandsOrEnvLiftPowerOrEnvLstnTalkOrEnvStndWalkOrEnvEyesight(
             EnvHandWork envHandWork, EnvBothHands envBothHands, EnvLiftPower envLiftPower

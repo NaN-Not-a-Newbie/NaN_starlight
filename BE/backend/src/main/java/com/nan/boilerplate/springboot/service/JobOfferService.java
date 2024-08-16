@@ -14,6 +14,8 @@ import java.util.List;
 import java.util.Optional;
 
 public interface JobOfferService {
+
+    List<JobOffer> getJobOfferByCompanyId(Long companyId);
     Page<JobOfferSimpleResponse> getAllJobOffers(Pageable pageable);
 
     Optional<JobOffer> getJobOfferById(long id);
