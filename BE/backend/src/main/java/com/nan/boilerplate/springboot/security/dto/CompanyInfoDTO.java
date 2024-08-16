@@ -11,7 +11,7 @@ import javax.validation.constraints.Pattern;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class CompanyInfoDTO {
+public class CompanyInfoDTO implements InfoDTO{
     private String username; // 아이디같은거
     private String companyName;
 

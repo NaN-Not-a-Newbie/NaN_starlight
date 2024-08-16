@@ -6,6 +6,7 @@ import com.nan.boilerplate.springboot.security.dto.UserApplyResponse;
 import com.nan.boilerplate.springboot.service.FileService;
 import com.nan.boilerplate.springboot.service.UserApplyService;
 import lombok.RequiredArgsConstructor;
+import org.bouncycastle.jcajce.provider.asymmetric.rsa.CipherSpi;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletResponse;
 import java.net.URI;
 import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin
 @RestController
@@ -30,10 +32,11 @@ public class UserApplyController {
 
     @GetMapping("/{id}")
     public ResponseEntity<UserApplyResponse> getUserApplyById(@PathVariable Long id) {
-        if (userApplyService.getUserApply(id).isEmpty()) {
+        Optional<UserApply> userApplyOptional = userApplyService.getUserApply(id);
+        if (userApplyOptional.isEmpty()) {
             return ResponseEntity.notFound().build();
         } else {
-            UserApply userApply = userApplyService.getUserApply(id).get();
+            UserApply userApply = userApplyOptional.get();
             UserApplyResponse response = UserApplyResponse.builder()
                     .jobOfferId(userApply.getJobOffer().getId())
                     .resumeId(userApply.getResume().getId())

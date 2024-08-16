@@ -17,7 +17,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 import java.util.Optional;
+import java.util.UUID;
 
 @CrossOrigin
 @RestController
@@ -30,26 +33,61 @@ public class MemberInfoController {  // 회원정보 수정 컨트롤러
         this.userService = userService;
     }
 
-    @GetMapping("/user")
-    public ResponseEntity<UserInfoDTO> getUserInfo() {
+    @GetMapping
+    public ResponseEntity<ObjectNode> getInfo() {
         String myName = SecurityConstants.getAuthenticatedUsername();
-        if (userService.findByUsername(myName).isEmpty()) {
+
+        Optional<User> userOptional = userService.findByUsername(myName);
+        Optional<Company> companyOptional = userService.findByCompanyName(myName);
+
+        if (userOptional.isEmpty() && companyOptional.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
-        return ResponseEntity.ok(UserInfoDTO.toDTO( userService.findByUsername(myName).get()));
-    }
 
-//    @GetMapping("")
-//    public ResponseEntity<CompanyInfoDTO> getCompanyInfo() {
-//        String myName = SecurityConstants.getAuthenticatedUsername();
-//        Optional<User> userOptional = userService.findByUsername(myName);
-//        Optional<Company> companyOptional = userService.findByCompanyName(myName);
-//        if (userOptional.isEmpty()&&!companyOptional.isEmpty()) {
-//
-//            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-//        }
-//        return ResponseEntity.ok(CompanyInfoDTO.toDTO(userService.findByCompanyName(myName).get()));
-//    }
+        ObjectMapper objectMapper = new ObjectMapper();
+        ObjectNode json = objectMapper.createObjectNode();
+        ObjectNode information = objectMapper.createObjectNode();
+
+        if (userOptional.isPresent()) {
+            User user = userOptional.get();
+
+            // JSON 데이터 구성
+            json.put("role", user.getUserRole().toString());
+
+            // information 객체 구성
+            information.put("username", user.getUsername());
+            information.put("name", user.getName());
+            information.put("birthday", user.getBirthday());
+            information.put("phoneNum", user.getPhoneNum());
+            information.put("isMale", user.isMale());
+            information.put("envEyesight", user.getEnvEyesight().toString());
+            information.put("envBothHands", user.getEnvBothHands().toString());
+            information.put("envhandWork", user.getEnvhandWork().toString());
+            information.put("envLiftPower", user.getEnvLiftPower().toString());
+            information.put("envStndWalk", user.getEnvStndWalk().toString());
+            information.put("envLstnTalk", user.getEnvLstnTalk().toString());
+            information.put("education", user.getEducation().toString());
+
+            json.set("information", information);
+
+        } else {
+            Company company = companyOptional.get();
+
+            // JSON 데이터 구성
+            json.put("role", company.getUserRole().toString());
+
+            // information 객체 구성
+            information.put("username", company.getUsername());
+            information.put("companyName", company.getCompanyName());
+            information.put("companyRegistrationNumber", company.getCompanyRegistrationNumber());
+            information.put("phoneNum", company.getPhoneNum());
+            information.put("companyAddress", company.getCompanyAddress());
+
+            json.set("information", information);
+        }
+
+        return ResponseEntity.ok(json);
+    }
 
     @PutMapping("/user")
     public ResponseEntity<UserInfoResponse> updateUserInfo(@Valid @RequestBody UserInfoDTO userRequest) {

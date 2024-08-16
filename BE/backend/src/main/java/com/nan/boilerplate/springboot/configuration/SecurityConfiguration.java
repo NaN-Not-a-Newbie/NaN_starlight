@@ -55,8 +55,8 @@ public class SecurityConfiguration {
                 .antMatchers(PUT, "/jobOffer/{id}").hasAnyAuthority("COMPANY")
                 .antMatchers(DELETE, "/jobOffer/{id}").hasAnyAuthority("COMPANY", "STAFF","ADMIN")
 
-                .antMatchers(PUT, "/memberInfo/company").hasAnyAuthority("COMPANY")
-                .antMatchers(PUT, "/memberInfo/user").hasAnyAuthority("USER")
+//                .antMatchers(PUT, "/memberInfo/company").hasAnyAuthority("COMPANY")
+//                .antMatchers(PUT, "/memberInfo/user").hasAnyAuthority("USER")
 
                 .antMatchers(POST, "/userApply").hasAnyAuthority("USER") // -> 유저가 기업에게 구직 신청
                 .antMatchers(PUT, "/userApply/{id}").hasAnyAuthority("COMPANY") // -> 기업이 유저 채용
