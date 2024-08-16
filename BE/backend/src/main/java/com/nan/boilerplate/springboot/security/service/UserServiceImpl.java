@@ -122,7 +122,9 @@ public class UserServiceImpl implements UserService {
         if (userOptional.isEmpty()) {
             throw new UserNotFoundException("존재하지 않는 유저입니다.");
         } else {
-
+            if(userOptional.get()==null){
+                throw new UserNotFoundException("잘못된 접근입니다.");
+            }
             User user = userOptional.get();
             // 수정 로직
             user.setPaperPath(path);
@@ -137,6 +139,9 @@ public class UserServiceImpl implements UserService {
         if (userOptional.isEmpty()) {
             throw new UserNotFoundException("존재하지 않는 유저입니다.");
         } else {
+            if(userOptional.get()==null){
+                throw new UserNotFoundException("존재하지 않는 유저입니다.");
+            }
             User user = userOptional.get();
             // 수정 로직
             user.setSignPath(path);
@@ -181,6 +186,9 @@ public class UserServiceImpl implements UserService {
         if(companyOptional.isEmpty()){
             throw new BadRequestException("존재하지 않는 사용자입니다.");
         }
+        if (companyOptional.get()==null){
+            throw new BadRequestException("잘못된 접근입니다.");
+        }
         Company company = companyOptional.get();
         company.setActive(false);
         companyRepository.save(company);
@@ -192,6 +200,9 @@ public class UserServiceImpl implements UserService {
         Optional<Company> optionalCompany = companyRepository.findByUsername(username);
         if(optionalCompany.isEmpty()){
             throw new BadRequestException("존재하지 않는 사용자입니다.");
+        }
+        if (optionalCompany.get()==null){
+            throw new BadRequestException("잘못된 접근입니다.");
         }
         Company company = optionalCompany.get();
         company.setActive(false);
@@ -231,6 +242,9 @@ public class UserServiceImpl implements UserService {
         if (userOptional.isEmpty()) {
             throw new UserNotFoundException("존재하지 않는 유저입니다.");
         } else {
+            if(userOptional.get()==null){
+                throw new UserNotFoundException("존재하지 않는 유저입니다.");
+            }
             User user = userOptional.get();
             
             // 수정 로직

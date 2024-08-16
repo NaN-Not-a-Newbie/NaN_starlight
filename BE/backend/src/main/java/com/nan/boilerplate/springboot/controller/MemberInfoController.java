@@ -2,6 +2,7 @@ package com.nan.boilerplate.springboot.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.nan.boilerplate.springboot.exceptions.BadRequestException;
 import com.nan.boilerplate.springboot.model.Company;
 import com.nan.boilerplate.springboot.model.User;
 import com.nan.boilerplate.springboot.security.dto.CompanyInfoDTO;
@@ -117,10 +118,15 @@ public class MemberInfoController {  // 회원정보 수정 컨트롤러
         if (userService.findByUsername(myName).isEmpty() && userService.findByCompanyName(myName).isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("존재하지 않는 유저입니다.");
         }
-
         if (userService.findByUsername(myName).isEmpty()) {
+            if(userService.findByUsername(myName).get()==null){
+                throw new BadRequestException("잘못된 접근입니다.");
+            }
             return ResponseEntity.ok(userService.validPassword(password, userService.findByCompanyName(myName).get().getPassword()));
         } else {
+            if(userService.findByUsername(myName).get()==null){
+                throw new BadRequestException("잘못된 접근입니다.");
+            }
             return ResponseEntity.ok(userService.validPassword(password, userService.findByUsername(myName).get().getPassword()));
         }
     }

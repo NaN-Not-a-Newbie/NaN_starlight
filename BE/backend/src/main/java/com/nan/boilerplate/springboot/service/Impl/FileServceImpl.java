@@ -17,6 +17,7 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
 import com.nan.boilerplate.springboot.exceptions.BadRequestException;
+import com.nan.boilerplate.springboot.exceptions.UserNotFoundException;
 import com.nan.boilerplate.springboot.model.JobOffer;
 import com.nan.boilerplate.springboot.model.User;
 import com.nan.boilerplate.springboot.security.dto.CompanyRegistrationRequest;
@@ -72,12 +73,14 @@ public class FileServceImpl implements FileService {
         if(userOptional.isEmpty()){
             throw new BadRequestException("존재하지 않는 유저입니다.");
         }
+        if (userOptional.get()==null){
+            throw new UserNotFoundException("존재하지 않는 유저입니다.");
+        }
         User user = userOptional.get();
         String paper="jobPaper.pdf";
         try {
             //uuid로 검색
             String filePath = dst+user.getPaperPath();
-            System.out.println("r갸갸갸갹"+filePath);
 
             //저장된 디렉토리 위치+파일 이름
             response.setContentType("application/pdf");
@@ -173,12 +176,20 @@ public class FileServceImpl implements FileService {
         if(userOptional.isEmpty() || jobOfferOptional.isEmpty()){
             throw new BadRequestException("존재하지 않는 사용자 혹은 구인공고입니다.");
         }
+        if (userOptional.get()==null){
+            throw new BadRequestException("잘못된 접근입니다.");
+        }
         User user = userOptional.get();
-
+        if (jobOfferOptional.get()==null){
+            throw new BadRequestException("잘못된 접근입니다.");
+        }
         JobOffer jobOffer = jobOfferOptional.get();
 
         try{
             File dstFile = new File(dst);
+            if(dstFile.getParentFile()==null){
+                throw new BadRequestException("잘못된 접근입니다.");
+            }
             if(!dstFile.getParentFile().exists()){
                 throw new BadRequestException("존재하지 않는 사용자입니다.");
             }
@@ -247,6 +258,9 @@ public class FileServceImpl implements FileService {
 
         try {
             // 이미지를 읽어오기 (inputImageStream은 PNG 이미지 InputStream)
+            if(ImageIO.read(inputStream)==null){
+                throw new FileNotFoundException("잘못된 접근입니다.");
+            }
             BufferedImage image = ImageIO.read(inputStream);
 
             BufferedImage newImage = new BufferedImage(image.getWidth(), image.getHeight(), BufferedImage.TYPE_INT_ARGB);
@@ -269,6 +283,7 @@ public class FileServceImpl implements FileService {
             byte[] decodedBytes = java.util.Base64.getDecoder().decode(token);
             String decodedStr = new String(decodedBytes);
             String jwtToUsername = jwtTokenManager.getUsernameFromToken(decodedStr);
+            System.out.println(jwtToUsername);
             userService.signPathAdd(jwtToUsername,uuid +".png");
             // 수정된 이미지를 PNG 파일로 저장
             File outputImageFile = new File(dst);

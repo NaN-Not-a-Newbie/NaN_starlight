@@ -1,6 +1,7 @@
 package com.nan.boilerplate.springboot.controller;
 
 import com.nan.boilerplate.springboot.exceptions.BadRequestException;
+import com.nan.boilerplate.springboot.exceptions.UserNotFoundException;
 import com.nan.boilerplate.springboot.model.Resume;
 import com.nan.boilerplate.springboot.security.dto.JobOfferSimpleResponse;
 import com.nan.boilerplate.springboot.security.dto.ResumeRequest;
@@ -53,6 +54,9 @@ public class ResumeController {
         if (resumeService.getResumeById(id).isEmpty()) {
             return ResponseEntity.notFound().build();
         }
+        if(resumeService.getResumeById(id).get()==null){
+            throw new UserNotFoundException("존재하지 않는 유저입니다.");
+        }
         Resume resume = resumeService.getResumeById(id).get();
         return ResponseEntity.ok(ResumeResponse.builder()
                 .title(resume.getTitle())
@@ -90,7 +94,11 @@ public class ResumeController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteResume(@PathVariable Long id) {
-        String myName = SecurityConstants.getAuthenticatedUsername(); // 로그인 된 계정의 username
+        String myName = SecurityConstants.getAuthenticatedUsername();
+        if(resumeService.getResumeById(id).get()==null){
+            // 로그인 된 계정의 username
+            throw new UserNotFoundException("존재하지 않는 유저입니다.");
+        }
         String author = resumeService.getResumeById(id).get().getUser().getUsername(); // 글 작성자
         if (!author.equals(myName)) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("작성자만 삭제할 수 있습니다.");

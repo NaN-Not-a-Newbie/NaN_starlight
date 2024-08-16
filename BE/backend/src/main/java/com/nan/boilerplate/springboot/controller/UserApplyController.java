@@ -1,5 +1,6 @@
 package com.nan.boilerplate.springboot.controller;
 
+import com.nan.boilerplate.springboot.exceptions.UserNotFoundException;
 import com.nan.boilerplate.springboot.model.UserApply;
 import com.nan.boilerplate.springboot.security.dto.UserApplyRequest;
 import com.nan.boilerplate.springboot.security.dto.UserApplyResponse;
@@ -36,6 +37,9 @@ public class UserApplyController {
         if (userApplyOptional.isEmpty()) {
             return ResponseEntity.notFound().build();
         } else {
+            if (userApplyOptional.get() == null) {
+                throw new UserNotFoundException("존재하지 않는 유저입니다.");
+            }
             UserApply userApply = userApplyOptional.get();
             UserApplyResponse response = UserApplyResponse.builder()
                     .jobOfferId(userApply.getJobOffer().getId())

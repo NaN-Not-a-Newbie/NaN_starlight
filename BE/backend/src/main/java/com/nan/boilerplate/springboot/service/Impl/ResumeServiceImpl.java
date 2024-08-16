@@ -1,5 +1,6 @@
 package com.nan.boilerplate.springboot.service.Impl;
 
+import com.nan.boilerplate.springboot.exceptions.UserNotFoundException;
 import com.nan.boilerplate.springboot.model.JobOffer;
 import com.nan.boilerplate.springboot.model.Resume;
 import com.nan.boilerplate.springboot.model.User;
@@ -37,7 +38,9 @@ public class ResumeServiceImpl implements ResumeService{
         if (userOptional.isEmpty()) {
 
         }
-
+        if(userService.findByUsername(myName).get()==null){
+            throw new UserNotFoundException("존재하지 않는 유저입니다.");
+        }
         Long myId = userService.findByUsername(myName).get().getId();
         return resumeRepository.findByUserId(myId, pageable).map(ResumeSimpleResponse::toDTO);
 

@@ -1,5 +1,6 @@
 package com.nan.boilerplate.springboot.controller;
 
+import com.nan.boilerplate.springboot.exceptions.UserNotFoundException;
 import com.nan.boilerplate.springboot.model.Company;
 import com.nan.boilerplate.springboot.model.User;
 import com.nan.boilerplate.springboot.security.dto.*;
@@ -12,6 +13,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
@@ -38,6 +40,9 @@ public class RegistrationController {
 
         String message = userService.registrationUser(userRegistrationRequest).getMessage();
 
+        if(userService.findByUsername(userRegistrationRequest.getUsername()).get()==null){
+            throw new UsernameNotFoundException("잘못된 접근입니다.");
+        }
         User user = userService.findByUsername(userRegistrationRequest.getUsername()).get();
 //        fileService.backgroundCutout(multipartFile.getInputStream(), userRegistrationRequest.getUsername());
         LoginRequest loginRequest = LoginRequest.builder()
@@ -80,6 +85,9 @@ public class RegistrationController {
     @PostMapping(value = "company")
     public ResponseEntity<LoginResponse> registrationRequest(@Valid @RequestBody CompanyRegistrationRequest companyRegistrationRequest) {
         String message=userService.registrationCompany(companyRegistrationRequest).getMessage();
+        if(userService.findByCompanyName(companyRegistrationRequest.getCompanyName())==null){
+            throw new UserNotFoundException("잘못된 접근입니다.");
+        }
         Company company=userService.findByCompanyName(companyRegistrationRequest.getUsername()).get();
         LoginRequest loginRequest = LoginRequest.builder()
                 .password(companyRegistrationRequest.getPassword()).username(companyRegistrationRequest.getUsername()).build();
