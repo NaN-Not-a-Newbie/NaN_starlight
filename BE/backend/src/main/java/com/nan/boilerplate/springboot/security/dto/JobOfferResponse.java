@@ -51,6 +51,7 @@ public class JobOfferResponse {
                 .career(offer.getCareer())
                 .companyName(offer.getCompany().getCompanyName())
                 .salary(offer.getSalary())
+                .cntctNo(offer.getCntctNo())
                 .education(offer.getEducation())
                 .envBothHands(offer.getEnvBothHands())
                 .envEyesight(offer.getEnvEyesight())

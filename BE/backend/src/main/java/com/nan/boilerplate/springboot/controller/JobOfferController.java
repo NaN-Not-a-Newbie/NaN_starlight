@@ -4,8 +4,10 @@ import com.nan.boilerplate.springboot.exceptions.BadRequestException;
 import com.nan.boilerplate.springboot.model.JobOffer;
 import com.nan.boilerplate.springboot.security.dto.JobOfferRequest;
 import com.nan.boilerplate.springboot.security.dto.JobOfferResponse;
+import com.nan.boilerplate.springboot.security.dto.JobOfferSearch;
 import com.nan.boilerplate.springboot.security.dto.JobOfferSimpleResponse;
 import com.nan.boilerplate.springboot.security.utils.SecurityConstants;
+import com.nan.boilerplate.springboot.service.Impl.JobOfferSpecifiction;
 import com.nan.boilerplate.springboot.service.JobOfferService;
 import com.nan.boilerplate.springboot.service.PageableValidationService;
 import lombok.extern.slf4j.Slf4j;
@@ -113,6 +115,13 @@ public class JobOfferController {
         }
     }
 
+    @GetMapping("/search")
+    public ResponseEntity<List<JobOffer>> jobOfferSearch(JobOfferSearch jobOfferSearch){
+
+        List<JobOffer> jobLists=jobOfferService.searchJobOffer(jobOfferSearch);
+        System.out.println(jobLists.size());
+        return ResponseEntity.ok().body(jobLists);
+    }
 //    @GetMapping("/gove")
 //    public ResponseEntity<Void> goveJobOffer(){
 //        try{
