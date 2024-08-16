@@ -37,7 +37,6 @@ public class JobOfferSpecifiction {
 
     public static Specification<JobOffer> hasEnvBothHands(EnvBothHands envBothHands) {
         return (Root<JobOffer> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) -> {
-            System.out.println(envBothHands);
             if (envBothHands == null) return null; // 조건이 null이면 무시
             return criteriaBuilder.equal(root.get("envBothHands"), envBothHands);
         };

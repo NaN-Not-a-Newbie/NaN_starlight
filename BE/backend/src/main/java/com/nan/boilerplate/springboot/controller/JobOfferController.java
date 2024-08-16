@@ -28,6 +28,7 @@ import java.lang.reflect.Field;
 import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Slf4j
 @CrossOrigin
@@ -116,11 +117,10 @@ public class JobOfferController {
     }
 
     @GetMapping("/search")
-    public ResponseEntity<List<JobOffer>> jobOfferSearch(JobOfferSearch jobOfferSearch){
+    public ResponseEntity<List<JobOfferSimpleResponse>> jobOfferSearch(JobOfferSearch jobOfferSearch){
 
         List<JobOffer> jobLists=jobOfferService.searchJobOffer(jobOfferSearch);
-        System.out.println(jobLists.size());
-        return ResponseEntity.ok().body(jobLists);
+        return ResponseEntity.ok().body(jobLists.stream().map(JobOfferSimpleResponse::toDTO).collect(Collectors.toList()));
     }
 //    @GetMapping("/gove")
 //    public ResponseEntity<Void> goveJobOffer(){
