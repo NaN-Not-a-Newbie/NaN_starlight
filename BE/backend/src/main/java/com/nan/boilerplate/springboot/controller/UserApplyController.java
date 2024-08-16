@@ -2,9 +2,12 @@ package com.nan.boilerplate.springboot.controller;
 
 import com.nan.boilerplate.springboot.exceptions.UserNotFoundException;
 import com.nan.boilerplate.springboot.model.UserApply;
+import com.nan.boilerplate.springboot.security.dto.JobOfferSimpleResponse;
 import com.nan.boilerplate.springboot.security.dto.UserApplyRequest;
 import com.nan.boilerplate.springboot.security.dto.UserApplyResponse;
 import com.nan.boilerplate.springboot.service.FileService;
+import com.nan.boilerplate.springboot.service.JobOfferService;
+import com.nan.boilerplate.springboot.service.ResumeService;
 import com.nan.boilerplate.springboot.service.UserApplyService;
 import lombok.RequiredArgsConstructor;
 import org.bouncycastle.jcajce.provider.asymmetric.rsa.CipherSpi;
@@ -25,6 +28,10 @@ import java.util.Optional;
 public class UserApplyController {
     private final UserApplyService userApplyService;
     private final FileService fileService;
+    private final ResumeService resumeService;
+    private final JobOfferService jobOfferService;
+
+
     @GetMapping
     public ResponseEntity<List<UserApplyResponse>> getAllUserApplies(Pageable pageable) {
         List<UserApplyResponse> jobOfferResponses = userApplyService.getAllUserApply(pageable);
@@ -49,11 +56,13 @@ public class UserApplyController {
             return ResponseEntity.ok(response);
         }
     }
+
     @PostMapping("/makeContract")
     public ResponseEntity<Void> makeContract(@RequestBody UserApplyRequest userApplyrequest) {
         fileService.makeContract(userApplyrequest);
         return ResponseEntity.status(HttpStatus.MOVED_PERMANENTLY).build();
     }
+
     @GetMapping("/downloadContract")
     public ResponseEntity<Void> downloadContract(HttpServletResponse response) {
         fileService.FileDownloadContract(response);
@@ -61,16 +70,22 @@ public class UserApplyController {
     }
 
     @PostMapping      // User만 허용
-    public ResponseEntity<Void> addUserApply(@RequestBody UserApplyRequest userApplyrequest) {
-        Long createdUserApplyId = userApplyService.addUserApply(userApplyrequest);
+    public ResponseEntity<UserApplyResponse> addUserApply(@RequestBody UserApplyRequest request) {
+//        Long createdUserApplyId = userApplyService.addUserApply(userApplyrequest);
+        if (resumeService.getResumeById(request.getResumeId()).isEmpty()
+                || jobOfferService.getJobOfferById(request.getJobOfferId()).isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
 
-        return ResponseEntity.status(HttpStatus.MOVED_PERMANENTLY)
-                .location(URI.create("/userApply/" + createdUserApplyId))
-                .build();  // 리다이렉트
+        return ResponseEntity.ok(UserApplyResponse.toDTO(userApplyService.addUserApply(request)));
+//        return ResponseEntity.status(HttpStatus.MOVED_PERMANENTLY)
+//                .location(URI.create("/userApply/" + createdUserApplyId))
+//                .build();  // 리다이렉트
     }
 
     @PutMapping("/{id}")     // Company만 허용
     public ResponseEntity<UserApplyResponse> updateUserApply(@PathVariable Long id, @RequestBody UserApplyRequest userApplyrequest) {
+
         return ResponseEntity.ok(userApplyService.updateUserApply(id, userApplyrequest));
     }
 

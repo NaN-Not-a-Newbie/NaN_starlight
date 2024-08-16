@@ -66,10 +66,21 @@ public class JobOfferServiceImpl implements JobOfferService {
     @Value("${API-KEY.JobOfferKey}")
     String jobOfferKey;
 
+
+   public List<JobOffer> getJobOfferById(Long companyId) {
+       return jobOfferRepository.findByCompanyId(companyId);
+   }
+
     // 로그인 안 된 상태에서 모든 공고 불러오기
     @Override
     public Page<JobOfferSimpleResponse> getAllJobOffers(Pageable pageable) {
+
         return jobOfferRepository.findAll(pageable).map(JobOfferSimpleResponse::toDTO);
+    }
+
+    @Override
+    public List<JobOffer> getJobOfferByCompanyId(Long companyId) {
+       return jobOfferRepository.findByCompanyId(companyId);
     }
 
     @Override
@@ -81,7 +92,7 @@ public class JobOfferServiceImpl implements JobOfferService {
     public Optional<JobOffer> getJobOfferById(long id) {
         return jobOfferRepository.findById(id);
     }
-
+    
     // 공고 작성
     @Override
     public Long addJobOffer(JobOfferRequest jobOfferRequest) {
@@ -324,7 +335,7 @@ public class JobOfferServiceImpl implements JobOfferService {
 
         return jobOfferRepository
                 .findByEnvhandWorkOrEnvBothHandsOrEnvLiftPowerOrEnvLstnTalkOrEnvStndWalkOrEnvEyesight(
-                        envHandWork,envBothHands,envLiftPower,envLstnTalk,envStndWalk,envEyesight,pageable)
+                envHandWork,envBothHands,envLiftPower,envLstnTalk,envStndWalk,envEyesight,pageable)
                 .map(JobOfferSimpleResponse::toDTO);
     }
 }

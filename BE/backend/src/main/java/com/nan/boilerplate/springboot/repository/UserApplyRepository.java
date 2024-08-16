@@ -6,6 +6,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
+
 public interface UserApplyRepository extends JpaRepository<UserApply, Long> {
     Page<UserApply> findAll(Pageable pageable);
+
+    List<UserApply> findByJobOfferId(Long jobOfferId);
 }

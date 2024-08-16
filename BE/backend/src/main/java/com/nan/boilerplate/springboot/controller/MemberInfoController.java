@@ -2,8 +2,6 @@ package com.nan.boilerplate.springboot.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.nan.boilerplate.springboot.exceptions.BadRequestException;
-import com.nan.boilerplate.springboot.exceptions.UserNotFoundException;
 import com.nan.boilerplate.springboot.model.Company;
 import com.nan.boilerplate.springboot.model.User;
 import com.nan.boilerplate.springboot.security.dto.CompanyInfoDTO;
@@ -31,10 +29,82 @@ import java.util.UUID;
 @RequestMapping("/me")
 public class MemberInfoController {  // 회원정보 수정 컨트롤러
     private final UserService userService;
+    private final UserApplyService userApplyService;
+    private final JobOfferService jobOfferService;
+
 
     @Autowired
     public MemberInfoController(UserService userService) {
         this.userService = userService;
+        this.userApplyService = userApplyService;
+        this.jobOfferService = jobOfferService;
+    }
+
+    // 지원한 유저정보 applicant UserInfoDTO
+//    @GetMapping("/company")
+//    public ResponseEntity<String> get() {
+//        String myName = SecurityConstants.getAuthenticatedUsername();
+//        Optional<Company> companyOptional = userService.findByCompanyName(myName);
+//        if (companyOptional.isEmpty()) {
+//            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("");
+//        }
+//        Company company = companyOptional.get();
+//
+//
+//        userApplyService.getJobOfferByCompanyId(company.getId());
+//    }
+
+    @GetMapping("/jobOffers")
+    public ResponseEntity<List<JobOffer>> getJobOffers() {
+
+        Company company = userService.findByCompanyName(SecurityConstants.getAuthenticatedUsername()).get();
+        List<JobOffer> jobOffers = jobOfferService.getJobOfferByCompanyId(company.getId());
+        return ResponseEntity.ok(jobOfferService.getJobOfferByCompanyId(company.getId()));
+//        // 이력서 모음
+//        List<UserApply> applies = new ArrayList<>();
+//        for (JobOffer jobOffer:jobOffers) {
+//            applies.add(userApplyService.findByJobOfferId(jobOffer.getId()));
+//        }
+//
+//
+//        for (JobOffer jobOffer : jobOffers) {
+//            ObjectNode jobOfferJson = objectMapper.createObjectNode();
+//            jobOfferJson.put("jobOfferId", jobOffer.getId());
+//            jobOfferJson.put("title", jobOffer.getTitle());
+//
+//            // 지원자 목록을 ArrayNode로 생성
+//            ArrayNode applicantsArray = objectMapper.createArrayNode();
+//
+//            for (UserApply userApply : applies) {
+//                ObjectNode applicantJson = objectMapper.createObjectNode();
+//                User user = userApply.getResume().getUser();
+//
+//                applicantJson.put("name", user.getName());
+//                applicantJson.put("birthday", user.getBirthday());
+//                applicantJson.put("phoneNum", user.getPhoneNum());
+//                applicantJson.put("isMale", user.isMale());
+//                applicantJson.put("envEyesight", user.getEnvEyesight().toString());
+//                applicantJson.put("envBothHands", user.getEnvBothHands().toString());
+//                applicantJson.put("envhandWork", user.getEnvhandWork().toString());
+//                applicantJson.put("envLiftPower", user.getEnvLiftPower().toString());
+//                applicantJson.put("envStndWalk", user.getEnvStndWalk().toString());
+//                applicantJson.put("envLstnTalk", user.getEnvLstnTalk().toString());
+//                applicantJson.put("education", user.getEducation().toString());
+//                // 지원자 정보를 applicantsArray에 추가
+//                applicantsArray.add(applicantJson);
+//            }
+//
+//            // 지원자 목록을 jobOfferJson에 추가
+//            jobOfferJson.set("applicants", applicantsArray);
+//
+//            // jobOffer를 jobOffersArray에 추가
+//            jobOffersArray.add(jobOfferJson);
+//        }
+//
+//        // 최종적으로 jobOffersArray를 responseJson에 추가
+//        responseJson.set("jobOffers", jobOffersArray);
+//
+//        return ResponseEntity.ok(responseJson);
     }
 
     @GetMapping
