@@ -10,6 +10,7 @@ import lombok.*;
 @NoArgsConstructor
 public class UserApplyResponse {
     private Long jobOfferId;
+    private Long resumeId;
     private boolean hire;
     private String message;
 
