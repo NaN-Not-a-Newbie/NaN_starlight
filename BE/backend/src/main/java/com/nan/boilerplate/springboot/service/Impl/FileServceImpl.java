@@ -78,6 +78,7 @@ public class FileServceImpl implements FileService {
         try {
             //uuid로 검색
             String filePath = dst+user.getPaperPath();
+            System.out.println("r갸갸갸갹"+filePath);
 
             //저장된 디렉토리 위치+파일 이름
             response.setContentType("application/pdf");

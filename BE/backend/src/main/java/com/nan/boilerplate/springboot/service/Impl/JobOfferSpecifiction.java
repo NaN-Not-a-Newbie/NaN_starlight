@@ -3,6 +3,7 @@ package com.nan.boilerplate.springboot.service.Impl;
 import com.nan.boilerplate.springboot.model.*;
 import com.nan.boilerplate.springboot.repository.JobOfferRepository;
 import com.nan.boilerplate.springboot.security.dto.JobOfferSearch;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 
 import javax.persistence.criteria.*;
