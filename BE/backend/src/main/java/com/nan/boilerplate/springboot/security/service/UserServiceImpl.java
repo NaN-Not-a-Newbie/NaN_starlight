@@ -156,6 +156,9 @@ public class UserServiceImpl implements UserService {
         if (userOptional.isEmpty()) {
             throw new UserNotFoundException("존재하지 않는 유저입니다.");
         } else {
+            if(userOptional.get()==null){
+                throw new UserNotFoundException("잘못된 접근입니다.");
+            }
             User user = userOptional.get();
             user.setActive(true);
             userRepository.save(user);
@@ -173,6 +176,9 @@ public class UserServiceImpl implements UserService {
         if (userOptional.isEmpty()) {
             throw new UserNotFoundException("존재하지 않는 유저입니다.");
         } else {
+            if(userOptional.get()==null){
+                throw new UserNotFoundException("잘못된 접근입니다.");
+            }
             User user = userOptional.get();
             user.setActive(false);
             userRepository.save(user);
@@ -215,6 +221,9 @@ public class UserServiceImpl implements UserService {
         if (userOptional.isEmpty()) {
             throw new UserNotFoundException("존재하지 않는 유저입니다.");
         } else {
+            if(userOptional.get()==null){
+                throw new UserNotFoundException("잘못된 접근입니다.");
+            }
             User user = userOptional.get();
             user.setUserRole(UserRole.USER);
             userRepository.save(user);
@@ -228,6 +237,9 @@ public class UserServiceImpl implements UserService {
         if (userOptional.isEmpty()) {
             throw new UserNotFoundException("존재하지 않는 유저입니다.");
         } else {
+            if(userOptional.get()==null){
+                throw new UserNotFoundException("잘못된 접근입니다.");
+            }
             User user = userOptional.get();
             user.setUserRole(UserRole.STAFF);
             userRepository.save(user);
@@ -292,6 +304,9 @@ public class UserServiceImpl implements UserService {
         if (companyOptional.isEmpty()) {
             throw new UserNotFoundException("존재하지 않는 유저입니다.");
         } else {
+            if (companyOptional.get()==null){
+                throw new UserNotFoundException("잘못된 접근입니다.");
+            }
             Company company = companyOptional.get();
 
             // 수정 로직
@@ -337,6 +352,9 @@ public class UserServiceImpl implements UserService {
         }
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        if(LocalDate.parse(birthday, formatter)==null){
+            throw new BadRequestException("잘못된 접근입니다.");
+        }
         LocalDate birthDate = LocalDate.parse(birthday, formatter);
         LocalDate currentDate = LocalDate.now();
 

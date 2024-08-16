@@ -3,6 +3,7 @@ package com.nan.boilerplate.springboot.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.nan.boilerplate.springboot.exceptions.BadRequestException;
+import com.nan.boilerplate.springboot.exceptions.UserNotFoundException;
 import com.nan.boilerplate.springboot.model.Company;
 import com.nan.boilerplate.springboot.model.User;
 import com.nan.boilerplate.springboot.security.dto.CompanyInfoDTO;
@@ -52,6 +53,9 @@ public class MemberInfoController {  // 회원정보 수정 컨트롤러
         ObjectNode information = objectMapper.createObjectNode();
 
         if (userOptional.isPresent()) {
+            if(userOptional.get()==null){
+                throw new UserNotFoundException("잘못된 접근입니다.");
+            }
             User user = userOptional.get();
 
             // JSON 데이터 구성
@@ -74,6 +78,9 @@ public class MemberInfoController {  // 회원정보 수정 컨트롤러
             json.set("information", information);
 
         } else {
+            if(companyOptional.get()==null){
+                throw new UserNotFoundException("잘못된 접근입니다.");
+            }
             Company company = companyOptional.get();
 
             // JSON 데이터 구성

@@ -1,6 +1,7 @@
 package com.nan.boilerplate.springboot.controller;
 
 import com.nan.boilerplate.springboot.exceptions.BadRequestException;
+import com.nan.boilerplate.springboot.exceptions.UserNotFoundException;
 import com.nan.boilerplate.springboot.model.JobOffer;
 import com.nan.boilerplate.springboot.security.dto.JobOfferRequest;
 import com.nan.boilerplate.springboot.security.dto.JobOfferResponse;
@@ -85,6 +86,9 @@ public class JobOfferController {
         }
 
         String myName = SecurityConstants.getAuthenticatedUsername(); // 로그인 된 계정의 username
+        if(jobOfferService.getJobOfferById(id).get()==null){
+            throw new UserNotFoundException("잘못된 접근입니다.");
+        }
         String author = jobOfferService.getJobOfferById(id).get().getCompany().getUsername(); // 글 작성자
 
         if (!author.equals(myName)) {

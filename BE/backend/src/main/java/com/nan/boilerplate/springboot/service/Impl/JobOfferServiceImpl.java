@@ -1,5 +1,6 @@
 package com.nan.boilerplate.springboot.service.Impl;
 
+import com.nan.boilerplate.springboot.exceptions.UserNotFoundException;
 import com.nan.boilerplate.springboot.model.*;
 import com.nan.boilerplate.springboot.repository.CompanyRepository;
 import com.nan.boilerplate.springboot.repository.JobOfferRepository;
@@ -310,6 +311,9 @@ public class JobOfferServiceImpl implements JobOfferService {
     public Page<JobOfferSimpleResponse> initialJobOffer(Pageable pageable) {
         String myName = SecurityConstants.getAuthenticatedUsername();
 //        System.out.println("2"+myName);
+        if(userService.findByCompanyName(myName).get()==null){
+            throw new UserNotFoundException("잘못된 접근입니다.");
+        }
         User user = userService.findByUsername(myName).get();
         EnvHandWork envHandWork = user.getEnvhandWork();
         EnvBothHands envBothHands = user.getEnvBothHands();

@@ -1,5 +1,6 @@
 package com.nan.boilerplate.springboot.controller;
 
+import com.nan.boilerplate.springboot.exceptions.UserNotFoundException;
 import com.nan.boilerplate.springboot.model.Company;
 import com.nan.boilerplate.springboot.model.User;
 import com.nan.boilerplate.springboot.security.dto.LoginRequest;
@@ -33,7 +34,9 @@ public class LoginController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
                     .body(new LoginResponse("존재하지 않는 아이디 입니다."));
         }
-
+        if(userService.findByUsername(loginRequest.getUsername()).get()==null){
+            throw new UserNotFoundException("잘못된 접근입니다.");
+        }
         User user = userService.findByUsername(loginRequest.getUsername()).get();
 
         if (!bCryptPasswordEncoder.matches(loginRequest.getPassword(), user.getPassword())) {
@@ -59,7 +62,9 @@ public class LoginController {
                     .body(new LoginResponse("존재하지 않는 아이디 입니다."));
 
         }
-
+        if(userService.findByCompanyName(loginRequest.getUsername()).get()==null){
+            throw new UserNotFoundException("잘못된 접근입니다.");
+        }
         Company company = userService.findByCompanyName(loginRequest.getUsername()).get();
 
         if (!bCryptPasswordEncoder.matches(loginRequest.getPassword(), company.getPassword())) {
