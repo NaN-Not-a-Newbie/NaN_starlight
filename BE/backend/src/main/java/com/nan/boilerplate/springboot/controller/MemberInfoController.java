@@ -2,7 +2,10 @@ package com.nan.boilerplate.springboot.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.nan.boilerplate.springboot.exceptions.BadRequestException;
+import com.nan.boilerplate.springboot.exceptions.UserNotFoundException;
 import com.nan.boilerplate.springboot.model.Company;
+import com.nan.boilerplate.springboot.model.JobOffer;
 import com.nan.boilerplate.springboot.model.User;
 import com.nan.boilerplate.springboot.security.dto.CompanyInfoDTO;
 import com.nan.boilerplate.springboot.security.dto.UserInfoDTO;
@@ -11,6 +14,7 @@ import com.nan.boilerplate.springboot.security.service.UserService;
 import com.nan.boilerplate.springboot.security.utils.SecurityConstants;
 import com.nan.boilerplate.springboot.service.JobOfferService;
 import com.nan.boilerplate.springboot.service.PageableValidationService;
+import com.nan.boilerplate.springboot.service.UserApplyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +25,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -34,7 +39,7 @@ public class MemberInfoController {  // 회원정보 수정 컨트롤러
 
 
     @Autowired
-    public MemberInfoController(UserService userService) {
+    public MemberInfoController(UserService userService,UserApplyService userApplyService, JobOfferService jobOfferService) {
         this.userService = userService;
         this.userApplyService = userApplyService;
         this.jobOfferService = jobOfferService;
