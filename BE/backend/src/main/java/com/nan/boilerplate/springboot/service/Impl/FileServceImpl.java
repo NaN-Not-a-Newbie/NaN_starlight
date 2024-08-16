@@ -48,6 +48,7 @@ import java.io.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 
@@ -69,11 +70,11 @@ public class FileServceImpl implements FileService {
 
     public void FileDownloadContract(HttpServletResponse response) {
         String myName = SecurityConstants.getAuthenticatedUsername();
-
-        if(userService.findByUsername(myName).isEmpty()){
+        Optional<User> userOptional = userService.findByUsername(myName);
+        if(userOptional.isEmpty()){
             throw new BadRequestException("존재하지 않는 유저입니다.");
         }
-        User user = userService.findByUsername(myName).get();
+        User user = userOptional.get();
         String paper="jobPaper.pdf";
         try {
             //uuid로 검색
@@ -86,7 +87,7 @@ public class FileServceImpl implements FileService {
             //내가 보낼 파일의 이름 filename으로 설정해서 전송
             java.io.File file = new java.io.File(filePath);
             response.setContentLengthLong(file.length());
-            //파일 객체 생성
+            //파일 객체 생성 -> 리소스 누수
             FileInputStream fis=new FileInputStream(file);
             //파일 읽어서 저장
             OutputStream out=response.getOutputStream();
@@ -167,12 +168,15 @@ public class FileServceImpl implements FileService {
         String dst="BE/backend/src/main/resources/static/contracts/"+uuid+".pdf";
         String sign="BE/backend/src/main/resources/static/sign";
         String myName = SecurityConstants.getAuthenticatedUsername();
-        if(userService.findByUsername(myName).isEmpty() || jobOfferService.getJobOfferById(userApplyRequest.getJobOfferId()).isEmpty()){
+
+        Optional<User> userOptional = userService.findByUsername(myName);
+        Optional<JobOffer> jobOfferOptional = jobOfferService.getJobOfferById(userApplyRequest.getJobOfferId());
+        if(userOptional.isEmpty() || jobOfferOptional.isEmpty()){
             throw new BadRequestException("존재하지 않는 사용자 혹은 구인공고입니다.");
         }
-        User user = userService.findByUsername(myName).get();
+        User user = userOptional.get();
 
-        JobOffer jobOffer = jobOfferService.getJobOfferById(userApplyRequest.getJobOfferId()).get();
+        JobOffer jobOffer = jobOfferOptional.get();
 
         try{
             File dstFile = new File(dst);
@@ -215,7 +219,6 @@ public class FileServceImpl implements FileService {
             document.add(paragraphSalaryType);
 
             String imagePath = sign+"/"+user.getSignPath();
-            System.out.println(imagePath);// 삽입할 이미지 경로
             ImageData imageData = ImageDataFactory.create(imagePath);
             com.itextpdf.layout.element.Image image = new Image(imageData);
 

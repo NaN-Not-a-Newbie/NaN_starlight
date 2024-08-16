@@ -2,6 +2,7 @@ package com.nan.boilerplate.springboot.service.Impl;
 
 import com.nan.boilerplate.springboot.model.JobOffer;
 import com.nan.boilerplate.springboot.model.Resume;
+import com.nan.boilerplate.springboot.model.User;
 import com.nan.boilerplate.springboot.repository.ResumeRepository;
 import com.nan.boilerplate.springboot.repository.UserRepository;
 import com.nan.boilerplate.springboot.security.dto.ResumeRequest;
@@ -32,6 +33,11 @@ public class ResumeServiceImpl implements ResumeService{
     @Override
     public Page<ResumeSimpleResponse> getAllResumes(Pageable pageable) {
         String myName = SecurityConstants.getAuthenticatedUsername();
+        Optional<User> userOptional = userService.findByUsername(myName);
+        if (userOptional.isEmpty()) {
+
+        }
+
         Long myId = userService.findByUsername(myName).get().getId();
         return resumeRepository.findByUserId(myId, pageable).map(ResumeSimpleResponse::toDTO);
 

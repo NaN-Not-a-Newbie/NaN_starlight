@@ -29,24 +29,6 @@ public class MemberInfoController {  // 회원정보 수정 컨트롤러
         this.userService = userService;
     }
 
-    @GetMapping("/user")
-    public ResponseEntity<UserInfoDTO> getUserInfo() {
-        String myName = SecurityConstants.getAuthenticatedUsername();
-        if (userService.findByUsername(myName).isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
-        return ResponseEntity.ok(UserInfoDTO.toDTO( userService.findByUsername(myName).get()));
-    }
-
-    @GetMapping("/company")
-    public ResponseEntity<CompanyInfoDTO> getCompanyInfo() {
-        String myName = SecurityConstants.getAuthenticatedUsername();
-        if (userService.findByCompanyName(myName).isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
-        return ResponseEntity.ok(CompanyInfoDTO.toDTO(userService.findByCompanyName(myName).get()));
-    }
-
     @PutMapping("/user")
     public ResponseEntity<UserInfoResponse> updateUserInfo(@Valid @RequestBody UserInfoDTO userRequest) {
         String myName = SecurityConstants.getAuthenticatedUsername();

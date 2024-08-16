@@ -117,13 +117,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void paperPathAdd(String userName,String path) {
+        Optional<User> userOptional = userRepository.findByUsername(userName);
 
-
-        if (userRepository.findByUsername(userName).isEmpty()) {
+        if (userOptional.isEmpty()) {
             throw new UserNotFoundException("존재하지 않는 유저입니다.");
         } else {
 
-            User user = userRepository.findByUsername(userName).get();
+            User user = userOptional.get();
             // 수정 로직
             user.setPaperPath(path);
             userRepository.save(user);
@@ -133,11 +133,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void signPathAdd(String username,String path){
-
-        if (userRepository.findByUsername(username).isEmpty()) {
+        Optional<User> userOptional = userRepository.findByUsername(username);
+        if (userOptional.isEmpty()) {
             throw new UserNotFoundException("존재하지 않는 유저입니다.");
         } else {
-            User user = userRepository.findByUsername(username).get();
+            User user = userOptional.get();
             // 수정 로직
             user.setSignPath(path);
             userRepository.save(user);
@@ -147,26 +147,41 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User activateUser(String username) {
-        User user = userRepository.findByUsername(username).get();
-        user.setActive(true);
-        userRepository.save(user);
-        return user;
+        Optional<User> userOptional = userRepository.findByUsername(username);
+        if (userOptional.isEmpty()) {
+            throw new UserNotFoundException("존재하지 않는 유저입니다.");
+        } else {
+            User user = userOptional.get();
+            user.setActive(true);
+            userRepository.save(user);
+            return user;
+        }
+//        User user = userOptional.get();
+//        user.setActive(true);
+//        userRepository.save(user);
+//        return user;
         }
 
     @Override
     public User deActivateUser(String username) {
-        User user = userRepository.findByUsername(username).get();
-        user.setActive(false);
-        userRepository.save(user);
-        return user;
+        Optional<User> userOptional = userRepository.findByUsername(username);
+        if (userOptional.isEmpty()) {
+            throw new UserNotFoundException("존재하지 않는 유저입니다.");
+        } else {
+            User user = userOptional.get();
+            user.setActive(false);
+            userRepository.save(user);
+            return user;
+        }
     }
 
     @Override
     public Company activateCompany(String username) {
-        if(companyRepository.findByUsername(username).isEmpty()){
+        Optional<Company> companyOptional = companyRepository.findByUsername(username);
+        if(companyOptional.isEmpty()){
             throw new BadRequestException("존재하지 않는 사용자입니다.");
         }
-        Company company = companyRepository.findByUsername(username).get();
+        Company company = companyOptional.get();
         company.setActive(false);
         companyRepository.save(company);
         return company;
@@ -185,28 +200,38 @@ public class UserServiceImpl implements UserService {
     }
     @Override
     public AuthenticatedUserDto demoteUser(String username){
-        User user = userRepository.findByUsername(username).get();
-        user.setUserRole(UserRole.USER);
-        userRepository.save(user);
-        return new AuthenticatedUserDto(username, user.getUserRole(), user.isActive());
+        Optional<User> userOptional = userRepository.findByUsername(username);
+        if (userOptional.isEmpty()) {
+            throw new UserNotFoundException("존재하지 않는 유저입니다.");
+        } else {
+            User user = userOptional.get();
+            user.setUserRole(UserRole.USER);
+            userRepository.save(user);
+            return new AuthenticatedUserDto(username, user.getUserRole(), user.isActive());
+        }
     }
 
     @Override
     public AuthenticatedUserDto promoteUser(String username){
-        User user = userRepository.findByUsername(username).get();
-        user.setUserRole(UserRole.STAFF);
-        userRepository.save(user);
-        return new AuthenticatedUserDto(username, user.getUserRole(), user.isActive());
+        Optional<User> userOptional = userRepository.findByUsername(username);
+        if (userOptional.isEmpty()) {
+            throw new UserNotFoundException("존재하지 않는 유저입니다.");
+        } else {
+            User user = userOptional.get();
+            user.setUserRole(UserRole.STAFF);
+            userRepository.save(user);
+            return new AuthenticatedUserDto(username, user.getUserRole(), user.isActive());
+        }
     }
 
     @Override
     public UserInfoResponse updateUserInfo(UserInfoDTO request) {
         String myName = SecurityConstants.getAuthenticatedUsername();
-
-        if (userRepository.findByUsername(myName).isEmpty()) {
+        Optional<User> userOptional = userRepository.findByUsername(myName);
+        if (userOptional.isEmpty()) {
             throw new UserNotFoundException("존재하지 않는 유저입니다.");
         } else {
-            User user = userRepository.findByUsername(myName).get();
+            User user = userOptional.get();
             
             // 수정 로직
             user.setName(request.getName());
@@ -248,10 +273,12 @@ public class UserServiceImpl implements UserService {
             throw new BadRequestException("사업자등록번호는 숫자로만 입력하세요.");
         }
 
-        if (companyRepository.findByUsername(myName).isEmpty()) {
+        Optional<Company> companyOptional = companyRepository.findByUsername(myName);
+
+        if (companyOptional.isEmpty()) {
             throw new UserNotFoundException("존재하지 않는 유저입니다.");
         } else {
-            Company company = companyRepository.findByUsername(myName).get();
+            Company company = companyOptional.get();
 
             // 수정 로직
             company.setCompanyName(request.getCompanyName());
