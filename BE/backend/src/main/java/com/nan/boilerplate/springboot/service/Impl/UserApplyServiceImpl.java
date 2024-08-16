@@ -45,7 +45,7 @@ public class UserApplyServiceImpl implements UserApplyService {
         List<UserApplyResponse> appliesResponses = new ArrayList<>();
         for (UserApply apply : userApplies) {
             appliesResponses.add(UserApplyResponse.builder()
-                            .resumeId(apply.getResume().getId())
+
                             .jobOfferId(apply.getJobOffer().getId())
                             .hire(apply.isHire())
                             .build());
@@ -62,7 +62,6 @@ public class UserApplyServiceImpl implements UserApplyService {
     public UserApply addUserApply(UserApplyRequest userApplyRequest) {
         UserApply userApply = UserApply.builder()
                 .jobOffer(jobOfferRepository.findById(userApplyRequest.getJobOfferId()).get())
-                .resume(resumeRepository.findById(userApplyRequest.getResumeId()).get())
                 .hire(false)
                 .build();
         return userApplyRepository.save(userApply);

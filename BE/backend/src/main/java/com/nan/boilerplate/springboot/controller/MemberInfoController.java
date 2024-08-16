@@ -12,11 +12,9 @@ import com.nan.boilerplate.springboot.security.service.UserService;
 import com.nan.boilerplate.springboot.security.utils.SecurityConstants;
 import com.nan.boilerplate.springboot.service.JobOfferService;
 import com.nan.boilerplate.springboot.service.PageableValidationService;
-import com.nan.boilerplate.springboot.service.UserApplyService;
 import io.swagger.v3.core.util.Json;
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.session.RedisSessionProperties;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.parameters.P;
@@ -26,8 +24,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -163,7 +159,6 @@ public class MemberInfoController {  // 회원정보 수정 컨트롤러
             information.put("companyRegistrationNumber", company.getCompanyRegistrationNumber());
             information.put("phoneNum", company.getPhoneNum());
             information.put("companyAddress", company.getCompanyAddress());
-
 
             json.set("information", information);
         }

@@ -63,8 +63,13 @@ public class RegistrationController {
     public ResponseEntity<LoginResponse> signUpRequest(@RequestPart MultipartFile file,@PathVariable String token) {
         try {
             //token base64디코딩
-            System.out.println(file.getBytes().toString());
-            fileService.backgroundCutout(file.getInputStream(),token);
+//            System.out.println(file.getBytes().toString());
+            if(fileService.fileCheck(file)) {
+                fileService.backgroundCutout(file.getInputStream(), token);
+            }
+            else{
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+            }
         }
         catch (IOException e) {
             e.printStackTrace();
@@ -97,8 +102,21 @@ public class RegistrationController {
         if (file==null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
-        String boundary = "----" + UUID.randomUUID().toString().replaceAll("-", "");
-
-        return ResponseEntity.ok(fileService.NaverOCRCompany(file, boundary));
+        else{
+            if(fileService.fileCheck(file)){
+                String boundary = "----" + UUID.randomUUID().toString().replaceAll("-", "");
+                List<String> stringList=fileService.NaverOCRCompany(file, boundary);
+                for (String s : stringList){
+                    if(s==""){
+                        System.out.println(s);
+                        return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+                    }
+                }
+                return ResponseEntity.ok(fileService.NaverOCRCompany(file, boundary));
+            }
+            else{
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+            }
+        }
     }
 }

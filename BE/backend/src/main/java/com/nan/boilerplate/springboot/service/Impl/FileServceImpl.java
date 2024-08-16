@@ -46,10 +46,8 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
 
-import java.util.ArrayList;
+import java.util.*;
 import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
 
 
 @Service
@@ -79,6 +77,7 @@ public class FileServceImpl implements FileService {
         try {
             //uuid로 검색
             String filePath = dst+user.getPaperPath();
+            System.out.println("r갸갸갸갹"+filePath);
 
             //저장된 디렉토리 위치+파일 이름
             response.setContentType("application/pdf");
@@ -266,26 +265,45 @@ public class FileServceImpl implements FileService {
                     }
                 }
             }
-            System.out.println(token);
 
             byte[] decodedBytes = java.util.Base64.getDecoder().decode(token);
             String decodedStr = new String(decodedBytes);
-            System.out.println(decodedStr);
             String jwtToUsername = jwtTokenManager.getUsernameFromToken(decodedStr);
-            System.out.println(jwtToUsername);
             userService.signPathAdd(jwtToUsername,uuid +".png");
             // 수정된 이미지를 PNG 파일로 저장
             File outputImageFile = new File(dst);
             ImageIO.write(newImage, "PNG", outputImageFile);
             // 저장된 파일 경로를 사용자 서비스에 추가
-
-
-
-
         } catch (IOException e) {
             e.printStackTrace();
         }
             }
+
+    @Override
+    public boolean fileCheck(MultipartFile multipartFile) {
+        //확장자
+        String ext=multipartFile.getOriginalFilename().toLowerCase();
+
+        byte[] pngsignature=new byte[]{(byte) 0x89, (byte) 0x50, (byte) 0x4E, (byte) 0x47, (byte) 0x0D, (byte) 0x0A, (byte) 0x1A, (byte) 0x0A};
+        byte[] jpegsignature=new byte[]{(byte) 0xFF, (byte) 0xD8, (byte) 0xFF, (byte) 0xE8};
+        byte[] jpgsignature=new byte[]{(byte) 0xFF, (byte) 0xD8, (byte) 0xFF, (byte) 0xE0};
+        try {
+            byte[] bytes = multipartFile.getBytes();
+            byte[] header8 = Arrays.copyOfRange(bytes, 0, 8);
+            byte[] header4 = Arrays.copyOfRange(bytes, 0, 4);
+            if(false){return false;}
+            if (ext.endsWith(".jpg") && Arrays.equals(header4, jpgsignature)) {return true;}
+            else if (ext.endsWith(".jpeg") && Arrays.equals(header4, jpegsignature)) {return true;}
+            else if (ext.endsWith(".png") && Arrays.equals(header8, pngsignature)) { return true;}
+            else{return false;}
+        }
+
+        catch(IOException e){
+            throw new BadRequestException("잘못된 접근입니다.");
+
+        }
+    }
+
     private static List<String> jsonparse(String response) throws Exception {
         // json 파싱 (기존 코드 사용)
         ObjectMapper objectMapper = new ObjectMapper();

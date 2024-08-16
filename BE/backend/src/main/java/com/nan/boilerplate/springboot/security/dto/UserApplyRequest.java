@@ -15,6 +15,5 @@ import javax.validation.constraints.Pattern;
 @AllArgsConstructor
 public class UserApplyRequest {
     private boolean hire;
-    private Long resumeId;
     private Long jobOfferId;
 }

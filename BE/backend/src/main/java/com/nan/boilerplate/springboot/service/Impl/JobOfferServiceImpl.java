@@ -83,8 +83,8 @@ public class JobOfferServiceImpl implements JobOfferService {
     }
 
     @Override
-    public List<JobOffer> searchJobOffer(JobOfferSearch jobOfferSearch) {
-        return JobOfferSpecifiction.findJobOffers(jobOfferSearch,jobOfferRepository);
+    public Page<JobOfferSimpleResponse> searchJobOffer(JobOfferSearch jobOfferSearch, Pageable pageable) {
+        return JobOfferSpecifiction.findJobOffers(jobOfferSearch,pageable,jobOfferRepository).map(JobOfferSimpleResponse::toDTO);
     }
     // 공고 자세히 보기
     @Override

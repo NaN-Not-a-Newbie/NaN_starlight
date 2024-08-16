@@ -31,7 +31,7 @@ public class User {
 
     private String age;
 
-    private String SignPath; // 서명 저장
+    private String signPath; // 서명 저장
 
     private String paperPath; // 계약서 저장
 

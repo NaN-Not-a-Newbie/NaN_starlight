@@ -3,6 +3,8 @@ package com.nan.boilerplate.springboot.service.Impl;
 import com.nan.boilerplate.springboot.model.*;
 import com.nan.boilerplate.springboot.repository.JobOfferRepository;
 import com.nan.boilerplate.springboot.security.dto.JobOfferSearch;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 
 import javax.persistence.criteria.*;
@@ -84,7 +86,7 @@ public class JobOfferSpecifiction {
         };
     }
 
-    public static List<JobOffer> findJobOffers(JobOfferSearch jobOfferSearch, JobOfferRepository jobOfferRepository) {
+    public static Page<JobOffer> findJobOffers(JobOfferSearch jobOfferSearch, Pageable pageable, JobOfferRepository jobOfferRepository) {
         Specification<JobOffer> spec = Specification
                 .where(hasSalaryGreaterThan(jobOfferSearch.getSalary()))
                 .and(likeBody(jobOfferSearch.getBody()))
@@ -98,7 +100,7 @@ public class JobOfferSpecifiction {
                 .and(hasEnvEyesight(jobOfferSearch.getEnvEyesight()))
                 .and(hasEducation(jobOfferSearch.getEducation()));
 
-        return jobOfferRepository.findAll(spec);
+        return jobOfferRepository.findAll(spec,pageable);
     }
 
 }

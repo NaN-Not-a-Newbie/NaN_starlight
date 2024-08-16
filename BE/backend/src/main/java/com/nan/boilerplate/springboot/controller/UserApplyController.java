@@ -46,7 +46,6 @@ public class UserApplyController {
             UserApply userApply = userApplyOptional.get();
             UserApplyResponse response = UserApplyResponse.builder()
                     .jobOfferId(userApply.getJobOffer().getId())
-                    .resumeId(userApply.getResume().getId())
                     .hire(userApply.isHire())
                     .message("UsersApply")
                     .build();
