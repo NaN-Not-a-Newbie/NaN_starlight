@@ -174,10 +174,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Company deActivateCompany(String username) {
-        if(companyRepository.findByUsername(username).isEmpty()){
+        Optional<Company> optionalCompany = companyRepository.findByUsername(username);
+        if(optionalCompany.isEmpty()){
             throw new BadRequestException("존재하지 않는 사용자입니다.");
         }
-        Company company = companyRepository.findByUsername(username).get();
+        Company company = optionalCompany.get();
         company.setActive(false);
         companyRepository.save(company);
         return company;

@@ -40,34 +40,28 @@ public class UserRegistrationRequest {
     @Pattern(regexp = "^\\d{2,3}-\\d{3,4}-\\d{4}$", message = "전화번호 양식에 맞지 않습니다.")
     private String PhoneNum;
 
-    @NotEmpty
     private boolean isMale;
 
-    @NotEmpty
     @Enumerated(EnumType.STRING)
     private EnvEyesight envEyesight;
 
-    @NotEmpty
     @Enumerated(EnumType.STRING)
     private EnvBothHands envBothHands;
 
-    @NotEmpty
     @Enumerated(EnumType.STRING)
     private EnvHandWork envhandWork;
 
-    @NotEmpty
     @Enumerated(EnumType.STRING)
     private EnvLiftPower envLiftPower;
 
-    @NotEmpty
     @Enumerated(EnumType.STRING)
     private EnvStndWalk envStndWalk;
 
-    @NotEmpty
+
     @Enumerated(EnumType.STRING)
     private EnvLstnTalk envLstnTalk;
 
-    @NotEmpty
+
     @Enumerated(EnumType.STRING)
     private Education education;
 }
