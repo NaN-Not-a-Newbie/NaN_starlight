@@ -68,20 +68,19 @@ public class JobOfferServiceImpl implements JobOfferService {
     // 로그인 안 된 상태에서 모든 공고 불러오기
     @Override
     public Page<JobOfferSimpleResponse> getAllJobOffers(Pageable pageable) {
-
         return jobOfferRepository.findAll(pageable).map(JobOfferSimpleResponse::toDTO);
     }
 
     @Override
-    public List<JobOffer> searchJobOffer(JobOfferSearch jobOfferSearch) {
-        return JobOfferSpecifiction.findJobOffers(jobOfferSearch,jobOfferRepository);
+    public Page<JobOfferSimpleResponse> searchJobOffer(JobOfferSearch jobOfferSearch, Pageable pageable) {
+        return JobOfferSpecifiction.findJobOffers(jobOfferSearch,pageable,jobOfferRepository).map(JobOfferSimpleResponse::toDTO);
     }
     // 공고 자세히 보기
     @Override
     public Optional<JobOffer> getJobOfferById(long id) {
         return jobOfferRepository.findById(id);
     }
-    
+
     // 공고 작성
     @Override
     public Long addJobOffer(JobOfferRequest jobOfferRequest) {
@@ -321,7 +320,7 @@ public class JobOfferServiceImpl implements JobOfferService {
 
         return jobOfferRepository
                 .findByEnvhandWorkOrEnvBothHandsOrEnvLiftPowerOrEnvLstnTalkOrEnvStndWalkOrEnvEyesight(
-                envHandWork,envBothHands,envLiftPower,envLstnTalk,envStndWalk,envEyesight,pageable)
+                        envHandWork,envBothHands,envLiftPower,envLstnTalk,envStndWalk,envEyesight,pageable)
                 .map(JobOfferSimpleResponse::toDTO);
     }
 }

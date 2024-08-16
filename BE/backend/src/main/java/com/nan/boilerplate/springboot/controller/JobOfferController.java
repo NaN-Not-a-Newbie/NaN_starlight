@@ -43,14 +43,13 @@ public class JobOfferController {
         this.jobOfferService = jobOfferService;
         this.pageableValidationService = pageableValidationService;
     }
-    
+
     // 로그인 안 된 상태에서 모든 공고 페이징 불러오기
     @GetMapping
-    public ResponseEntity<Page<JobOfferSimpleResponse>> getAllJobOffers(Pageable pageable) {
+    public ResponseEntity<Page<JobOfferSimpleResponse>> getAllJobOffers(JobOfferSearch jobOfferSearch, Pageable pageable) {
         try {
-
-            Page<JobOfferSimpleResponse> page = jobOfferService
-                    .getAllJobOffers(pageableValidationService.validateAndCorrectPageable(pageable));
+            log.debug(jobOfferSearch.toString());
+            Page<JobOfferSimpleResponse> page = jobOfferService.searchJobOffer(jobOfferSearch, pageableValidationService.validateAndCorrectPageable(pageable));
             return ResponseEntity.ok(page);
 
         } catch (BadRequestException e) {
@@ -58,7 +57,7 @@ public class JobOfferController {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "존재하지 않는 컬럼입니다.");
         }
     }
-    
+
     // 공고 자세히 보기
     @GetMapping("/{id}")
     public ResponseEntity<JobOfferResponse> getJobOfferById(@PathVariable Long id) {
@@ -103,25 +102,24 @@ public class JobOfferController {
 
     // 로그인 된 상태에서 맞춤화된 공고 불러오기
     @GetMapping("/initial")
-    public ResponseEntity<Page<JobOfferSimpleResponse>> initialJobOffer(Pageable pageable){
+    public ResponseEntity<Page<JobOfferSimpleResponse>> initialJobOffer(Pageable pageable) {
         try {
             Page<JobOfferSimpleResponse> page = jobOfferService
                     .initialJobOffer(pageableValidationService.validateAndCorrectPageable(pageable));
 
             return ResponseEntity.ok(page);
         } catch (Exception e) {
-
             log.error("Error occurred while fetching job offers page", e);
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "존재하지 않는 컬럼입니다.");
         }
     }
 
-    @GetMapping("/search")
-    public ResponseEntity<List<JobOfferSimpleResponse>> jobOfferSearch(JobOfferSearch jobOfferSearch){
-
-        List<JobOffer> jobLists=jobOfferService.searchJobOffer(jobOfferSearch);
-        return ResponseEntity.ok().body(jobLists.stream().map(JobOfferSimpleResponse::toDTO).collect(Collectors.toList()));
-    }
+//    @GetMapping("/search")
+//    public ResponseEntity<List<JobOfferSimpleResponse>> jobOfferSearch(JobOfferSearch jobOfferSearch){
+//
+//        List<JobOffer> jobLists=jobOfferService.searchJobOffer(jobOfferSearch);
+//        return ResponseEntity.ok().body(jobLists.stream().map(JobOfferSimpleResponse::toDTO).collect(Collectors.toList()));
+//    }
 //    @GetMapping("/gove")
 //    public ResponseEntity<Void> goveJobOffer(){
 //        try{

@@ -30,5 +30,5 @@ public interface JobOfferService {
 
     Page<JobOfferSimpleResponse> initialJobOffer(Pageable pageable);
 
-    List<JobOffer> searchJobOffer(JobOfferSearch jobOfferSearch);
+    Page<JobOfferSimpleResponse> searchJobOffer(JobOfferSearch jobOfferSearch, Pageable pageable);
 }
