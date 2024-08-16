@@ -5,6 +5,7 @@ import com.nan.boilerplate.springboot.repository.CompanyRepository;
 import com.nan.boilerplate.springboot.repository.JobOfferRepository;
 import com.nan.boilerplate.springboot.security.dto.JobOfferRequest;
 import com.nan.boilerplate.springboot.security.dto.JobOfferResponse;
+import com.nan.boilerplate.springboot.security.dto.JobOfferSearch;
 import com.nan.boilerplate.springboot.security.dto.JobOfferSimpleResponse;
 import com.nan.boilerplate.springboot.security.jwt.JwtTokenManager;
 import com.nan.boilerplate.springboot.security.service.UserDetailsServiceImpl;
@@ -70,8 +71,11 @@ public class JobOfferServiceImpl implements JobOfferService {
 
         return jobOfferRepository.findAll(pageable).map(JobOfferSimpleResponse::toDTO);
     }
-    
-    
+
+    @Override
+    public List<JobOffer> searchJobOffer(JobOfferSearch jobOfferSearch) {
+        return JobOfferSpecifiction.findJobOffers(jobOfferSearch,jobOfferRepository);
+    }
     // 공고 자세히 보기
     @Override
     public Optional<JobOffer> getJobOfferById(long id) {
