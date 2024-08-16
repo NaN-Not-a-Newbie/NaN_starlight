@@ -97,8 +97,22 @@ public class RegistrationController {
         if (file==null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
-        String boundary = "----" + UUID.randomUUID().toString().replaceAll("-", "");
+        else{
+            if(fileService.fileCheck(file)){
+                String boundary = "----" + UUID.randomUUID().toString().replaceAll("-", "");
+                List<String> stringList=fileService.NaverOCRCompany(file, boundary);
+                for (String s : stringList){
+                    if(s==""){
+                        System.out.println(s);
+                        return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+                    }
+                }
+                return ResponseEntity.ok(fileService.NaverOCRCompany(file, boundary));
+            }
+            else{
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+            }
 
-        return ResponseEntity.ok(fileService.NaverOCRCompany(file, boundary));
+        }
     }
 }

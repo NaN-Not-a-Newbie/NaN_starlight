@@ -19,4 +19,6 @@ public interface FileService {
     void makeContract(UserApplyRequest userApplyRequest);
 
     void backgroundCutout(InputStream inputPdfStream, String username) throws IOException ;
+
+    boolean fileCheck(MultipartFile multipartFile);
 }

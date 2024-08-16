@@ -8,7 +8,6 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserApplyResponse {
-    private Long resumeId;
     private Long jobOfferId;
     private boolean hire;
     private String message;
