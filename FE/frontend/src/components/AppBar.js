@@ -27,7 +27,7 @@ function MyAppBar() {
   useEffect(() => {
     const token = localStorage.getItem('token');
     setIsLoggedIn(!!token);  // 토큰이 있으면 true, 없으면 false
-  }, []);
+  }, [isLoggedIn]);
 
   const toggleDrawer = (open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -40,7 +40,9 @@ function MyAppBar() {
     if (isLoggedIn) {
       // 로그아웃 처리
       localStorage.removeItem('token');
+      sessionStorage.removeItem('company');
       setIsLoggedIn(false);
+      navigate('/')
     } else {
       // 로그인 페이지로 이동
       window.location.href = '/login';
@@ -72,7 +74,7 @@ function MyAppBar() {
           </IconButton>
         </Box>
         <List>
-          <ListItem button component={Link} to="/">
+          {/* <ListItem button component={Link} to="/">
             <ListItemText primary="홈" />
           </ListItem>
           <ListItem button component={Link} to="/login">
@@ -80,7 +82,7 @@ function MyAppBar() {
           </ListItem>
           <ListItem button component={Link} to="/register">
             <ListItemText primary="회원가입" />
-          </ListItem>
+          </ListItem> */}
         </List>
       </Box>
       <Box sx={{ padding: 2 }}>
@@ -121,46 +123,7 @@ function MyAppBar() {
         </Toolbar>
       </AppBar>
 
-      {(location.pathname === '/' || location.pathname === '/jobs') && ( // 조건부 렌더링
-        <Box sx={{
-          padding: '15px',
-          position: 'sticky',
-          top: 0,
-          zIndex: 1100,
-          backgroundColor: 'white',
-        }}>
-          <FilledInput
-            fullWidth
-            placeholder="검색"
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton>
-                  <SearchIcon />
-                </IconButton>
-              </InputAdornment>
-            }
-            sx={{
-              mb: 2,
-              borderRadius: '10px',
-              border: '0.105rem solid',
-              borderColor: 'primary.main',
-              backgroundColor: 'transparent',
-              '&:hover': {
-                backgroundColor: 'transparent',
-              },
-              '& .MuiFilledInput-input': {
-                padding: '10px 12px',
-              },
-              '&:before': {
-                display: 'none',
-              },
-              '&:after': {
-                display: 'none',
-              },
-            }}
-          />
-        </Box>
-      )}
+      
 
       <Drawer
         anchor="right"

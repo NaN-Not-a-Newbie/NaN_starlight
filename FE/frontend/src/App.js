@@ -10,6 +10,10 @@ import AppBar from './components/AppBar';
 import Footer from './components/Footer';
 import { theme, globalStyles } from './theme';
 import Notification from './pages/Notification';
+import JobDetail from './pages/JobDetail';
+import Jobs from './pages/Jobs';
+import MyPage from './pages/MyPage';
+import WriteOffer from './pages/WriteOffer';
 
 function App() {
   return (
@@ -24,6 +28,10 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/notification" element={<Notification />} />
+              <Route path="/jobs" element={<Jobs />} />
+              <Route path="/job/:id" element={<JobDetail />} />
+              <Route path="/mypage" element={<MyPage/>} />
+              <Route path="/writeoffer" element={<WriteOffer/>}/>
             </Routes>
           </Box>
           <Footer />

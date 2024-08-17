@@ -1,22 +1,49 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BottomNavigation, BottomNavigationAction, Box } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
 import WorkIcon from '@mui/icons-material/Work';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 function Footer() {
   const [value, setValue] = useState(0);
+  const [isCompany, setIsCompany] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // /me 엔드포인트를 호출하여 role을 확인
+    const fetchUserRole = async () => {
+      const token = localStorage.getItem('token');
+      if (token) {
+        try {
+          const response = await axios.get('http://localhost:8080/me', {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          });
+          setIsCompany(response.data.role === 'COMPANY');
+        } catch (error) {
+          console.error('Error fetching user role:', error);
+        }
+      }
+    };
+
+    fetchUserRole();
+  }, [isCompany]);
 
   const handleNavigationChange = (event, newValue) => {
     setValue(newValue);
 
-    // 각 네비게이션 아이템 클릭 시 해당 경로로 이동
     if (newValue === 0) {
       navigate('/');
     } else if (newValue === 1) {
-      navigate('/jobs');
+      if (isCompany) {
+        navigate('/writeoffer');  // 공고 작성 페이지로 이동
+      } else {
+        navigate('/jobs');  // 채용 공고 페이지로 이동
+      }
     } else if (newValue === 2) {
       const token = localStorage.getItem('token');
       if (token) {
@@ -41,7 +68,10 @@ function Footer() {
       >
         <BottomNavigation value={value} onChange={handleNavigationChange} showLabels>
           <BottomNavigationAction label="홈" icon={<HomeIcon />} />
-          <BottomNavigationAction label="채용공고" icon={<WorkIcon />} />
+          <BottomNavigationAction
+            label={isCompany ? "공고 작성" : "채용공고"}
+            icon={isCompany ? <AddCircleIcon /> : <WorkIcon />}
+          />
           <BottomNavigationAction label="마이 페이지" icon={<AccountCircleIcon />} />
         </BottomNavigation>
       </Box>
